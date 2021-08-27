@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/categories/</link>
+    <description>Recent content in Categories on Sync&#39;ing from Memory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Mar 2020 10:46:59 +0530</lastBuildDate><atom:link href="https://msync.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data</title>
+      <link>https://msync.org/categories/data/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/categories/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://msync.org/categories/machine-learning/</link>
+      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
+      
+      <guid>https://msync.org/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://msync.org/categories/javascript/</link>
+      <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
+      
+      <guid>https://msync.org/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming,</title>
+      <link>https://msync.org/categories/programming/</link>
+      <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
+      
+      <guid>https://msync.org/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clojure</title>
+      <link>https://msync.org/categories/clojure/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      
+      <guid>https://msync.org/categories/clojure/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

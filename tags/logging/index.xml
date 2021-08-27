@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logging on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/tags/logging/</link>
+    <description>Recent content in logging on Sync&#39;ing from Memory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jun 2015 22:20:00 +0530</lastBuildDate><atom:link href="https://msync.org/tags/logging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Useful Clojure Asides - Logging and Exceptions</title>
+      <link>https://msync.org/posts/2015/2015-06-08-clojure-useful-asides/</link>
+      <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
+      
+      <guid>https://msync.org/posts/2015/2015-06-08-clojure-useful-asides/</guid>
+      <description>Logging and exception handling are such core requirements in any application which are rarely, if ever, discussed. At least in the initial phases of any application. But as any developer would vouch (when asked, not voluntarily, I think), logging right is a very crucial aspect of any application. Not only does it help you understand the (then-) current state of the application, they also help folks trace causes of various problems when done right.</description>
+    </item>
+    
+  </channel>
+</rss>

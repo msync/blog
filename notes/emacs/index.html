@@ -1,0 +1,273 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>Emacs Productivity Notes For The Newbie | Sync&#39;ing from Memory</title>
+<meta property="og:title" content="Emacs Productivity Notes For The Newbie"/>
+
+<meta property="og:description" content="Packages and config about Emacs that I tend to forget, so here are my reminders"/>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@jaju"/>
+<meta name="twitter:creator" content="@jaju"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
+<link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
+
+</head>
+<body>
+<header>
+    <div class="content">
+  <a class="title" href="https://msync.org/">Sync&#39;ing from Memory</a>
+  <nav>
+    
+    <a class="link" href="https://msync.org/notes/">Notes</a>
+    
+    <a class="link" href="https://msync.org/posts/">Posts</a>
+    
+  </nav>
+</div>
+
+</header>
+<div id="main-wrapper">
+    <div class="grid-x">
+        <div class="cell medium-offset-1 medium-10 small-offset-1 small-10">
+            <div id="main">
+                
+
+<div id="toc" class="cell hide-for-small-only">
+  <div><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">Workspaces</a>
+</li>
+<li><a href="#headline-2">File Management</a>
+<ul>
+<li><a href="#headline-3">Renames and Moves</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-4">Powerful Completions</a>
+<ul>
+<li><a href="#headline-5">Counsel</a>
+</li>
+<li><a href="#headline-6">Swiper</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-7">A Shorter Path</a>
+<ul>
+<li><a href="#headline-8">Hydra</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-9">Org-mode</a>
+<ul>
+<li><a href="#headline-10">Quick Navigation</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div>
+
+<article class="notes" itemscope itemtype="http://schema.org/CreativeWork">
+
+  <header class="header">
+    <h1 itemprop="name" class="title">Emacs Productivity Notes For The Newbie</h1>
+    <div class="meta">
+      <span class="author-name" itemprop="author">
+        
+      </span>
+      <time datetime="2020-09-13 10:48:55 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+        <span class="weekday">Sun</span>,
+        <span class="day">13</span>
+        <span class="month">Sep</span>,
+        <span class="year">2020</span>
+      </time>
+
+      
+      <time datetime="2020-09-13 10:48:55 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+        Last updated:
+        <span class="weekday">Sun</span>,
+        <span class="day">13</span>
+        <span class="month">Sep</span>,
+        <span class="year">2020</span>
+      </time>
+      
+    </div>
+  </header>
+
+  <summary>
+    Packages and config about Emacs that I tend to forget, so here are my reminders
+  </summary>
+
+  <main>
+    
+<p>
+This is for the newbie, but not exactly the noobie newbie. More for those who are comfortable with Emacs but not comfortable with what features are available and how to personalize emacs.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Workspaces
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p><a href="https://github.com/Alexander-Miller/treemacs">Treemacs</a> is a file layout for Emacs that supports notions of workspaces and projects. It also supports <a href="https://github.com/bbatsov/projectile">projectile</a> projects.
+Workspaces group projects. They can remember (and re-load) states. These are like your virtual desktops.</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+File Management
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Renames and Moves
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p><code>dired</code> gives you quick ways if you don&#39;t want to hack your own (you don&#39;t!). Once in the <code>dired</code> buffer for the appropriate directory, use bound keystrokes for your work. <code>R</code> stands for rename, for example. Also, <code>dired</code> will creating missing directories.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+Powerful Completions
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>
+<a href="https://github.com/abo-abo/swiper">Swiper</a> provides some power behavior for Emacs. It provides</p>
+<ul>
+<li>
+<p>Ivy</p>
+</li>
+<li>
+<p>Counsel, and</p>
+</li>
+<li>
+<p>Swiper</p>
+</li>
+</ul>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Counsel
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p><a href="https://github.com/abo-abo/swiper#counsel">Counsel</a> provides versions of some common Emacs commands that leverage Ivy.</p>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Swiper
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
+<p><a href="https://github.com/abo-abo/swiper#swiper">Swiper</a> is an isearch alternative that shows a nice overview of search matches.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
+A Shorter Path
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Hydra
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p><a href="https://github.com/abo-abo/hydra">Hydra</a> allows you to define a common prefix, behind which exist a host of keys that are meaningful only in that context, <strong>and</strong> those keys can execute any command bound to them.
+In simpler words, beyond the prefix, you now get the freedom to not use the Control/Meta keys - a nice productivity boost.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+Org-mode
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Quick Navigation
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>If you have Counsel, then it provides <code>counsel-outline</code> which</p>
+<ul>
+<li>
+<p>Shows you your org-mode outline</p>
+</li>
+<li>
+<p>Uses <code>ivy</code> for quick search-based narrow-down.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+  </main>
+
+</article>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="hide-for-small-only float-left">
+  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2021</span>
+</div>
+
+<div class="social-media-list float-right">
+
+  <span class="social-media-item">
+    <a href="https://github.com/jaju">
+      <span class="svg-social-icon icon--github">
+        <svg viewBox="0 0 16 16">
+          <path fill="#828282"
+                d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+        </svg>
+      </span>
+      <span class="username">jaju</span>
+    </a>
+  </span>
+  <span class="social-media-item">
+    <a href="https://twitter.com/jaju">
+      <span class="svg-social-icon icon--twitter">
+        <svg viewBox="0 0 16 16">
+          <path fill="#828282"
+                d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+        </svg>
+      </span>
+      <span class="username">jaju</span>
+    </a>
+  </span>
+
+</div>
+
+</footer>
+<script src="/js/bundle.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1397428-5', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

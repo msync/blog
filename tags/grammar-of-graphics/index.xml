@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grammar-of-graphics on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/tags/grammar-of-graphics/</link>
+    <description>Recent content in grammar-of-graphics on Sync&#39;ing from Memory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Mar 2020 10:46:59 +0530</lastBuildDate><atom:link href="https://msync.org/tags/grammar-of-graphics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
+      <link>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</guid>
+      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/notes/</link>
+    <description>Recent content in Notes on Sync&#39;ing from Memory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Sep 2020 10:48:55 +0530</lastBuildDate><atom:link href="https://msync.org/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs Productivity Notes For The Newbie</title>
+      <link>https://msync.org/notes/emacs-productivity-notes-for-the-newbie/</link>
+      <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/emacs-productivity-notes-for-the-newbie/</guid>
+      <description>Packages and config about Emacs that I tend to forget, so here are my reminders</description>
+    </item>
+    
+    <item>
+      <title>Notes for Deep Learning with Python</title>
+      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
+      <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+    </item>
+    
+    <item>
+      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
+      <link>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</guid>
+      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
+    </item>
+    
+    <item>
+      <title>ML in Clojure via Python</title>
+      <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
+      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/ml-in-clojure-via-python/</guid>
+      <description>Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj</description>
+    </item>
+    
+    <item>
+      <title>JS Quick Restart for the Impatient</title>
+      <link>https://msync.org/notes/js-quick-restart-for-the-impatient/</link>
+      <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/js-quick-restart-for-the-impatient/</guid>
+      <description>For polyglots who can&amp;#39;t keep too many languages in their heads and need a deep refresher.</description>
+    </item>
+    
+    <item>
+      <title>A Neural Network Primer</title>
+      <link>https://msync.org/notes/a-neural-network-primer/</link>
+      <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/a-neural-network-primer/</guid>
+      <description>Preface/Purpose  I chanced upon this primer from the 90s, on artificial neural networks, and thought it might be a good idea to write something similar.
+  It&amp;#39;s just a function…  A neuron is a computing unit &amp;amp;mdash; a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line neurons to consume as their input.</description>
+    </item>
+    
+    <item>
+      <title>Text Learning - Pointers</title>
+      <link>https://msync.org/notes/text-learning-pointers/</link>
+      <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/text-learning-pointers/</guid>
+      <description>Pointers for DL for text</description>
+    </item>
+    
+    <item>
+      <title>Clojure</title>
+      <link>https://msync.org/notes/clojure/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/clojure/</guid>
+      <description>Clojure Notes - An aimless dump of anything and everything interesting I find &amp;lt;em&amp;gt;and&amp;lt;/em&amp;gt; manage to record.</description>
+    </item>
+    
+    <item>
+      <title>Org-mode Quick Guide</title>
+      <link>https://msync.org/notes/org-mode-quick-guide/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/org-mode-quick-guide/</guid>
+      <description>Summarized guide for features I commonly use, for quick reference</description>
+    </item>
+    
+  </channel>
+</rss>

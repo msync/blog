@@ -1,0 +1,708 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>ML in Clojure via Python | Sync&#39;ing from Memory</title>
+<meta property="og:title" content="ML in Clojure via Python"/>
+
+<meta property="og:description" content="Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj"/>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@jaju"/>
+<meta name="twitter:creator" content="@jaju"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
+<link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
+
+</head>
+<body>
+<header>
+    <div class="content">
+  <a class="title" href="https://msync.org/">Sync&#39;ing from Memory</a>
+  <nav>
+    
+    <a class="link" href="https://msync.org/notes/">Notes</a>
+    
+    <a class="link" href="https://msync.org/posts/">Posts</a>
+    
+  </nav>
+</div>
+
+</header>
+<div id="main-wrapper">
+    <div class="grid-x">
+        <div class="cell medium-offset-1 medium-10 small-offset-1 small-10">
+            <div id="main">
+                
+
+<div id="toc" class="cell hide-for-small-only">
+  <div><nav id="TableOfContents">
+<ul>
+<li><a href="#headline-1">Introduction</a>
+</li>
+<li><a href="#headline-2">Shell and Python Setup</a>
+</li>
+<li><a href="#headline-3">Session setup</a>
+<ul>
+<li><a href="#headline-4">Python</a>
+</li>
+<li><a href="#headline-5">Clojure</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-6">Hello Tensorflow</a>
+<ul>
+<li><a href="#headline-7">Train</a>
+</li>
+<li><a href="#headline-8">Evaluate</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-9">Hello Tensorflow - Clojure Edition</a>
+<ul>
+<li><a href="#headline-10">A Few More Tips</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-11">Huggingface Tokenizers      </a>
+</li>
+<li><a href="#headline-12">General Array Operations</a>
+</li>
+</ul>
+</nav></div>
+</div>
+
+<article class="notes" itemscope itemtype="http://schema.org/CreativeWork">
+
+  <header class="header">
+    <h1 itemprop="name" class="title">ML in Clojure via Python</h1>
+    <div class="meta">
+      <span class="author-name" itemprop="author">
+        Ravindra R. Jaju
+      </span>
+      <time datetime="2020-02-02 16:34:55 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+        <span class="weekday">Sun</span>,
+        <span class="day">2</span>
+        <span class="month">Feb</span>,
+        <span class="year">2020</span>
+      </time>
+
+      
+      <time datetime="2020-05-30 18:35:35 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+        Last updated:
+        <span class="weekday">Sat</span>,
+        <span class="day">30</span>
+        <span class="month">May</span>,
+        <span class="year">2020</span>
+      </time>
+      
+    </div>
+  </header>
+
+  <summary>
+    Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj
+  </summary>
+
+  <main>
+    
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Introduction&#xa0;&#xa0;&#xa0;<span class="tags"><span>clojure</span></span>
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>The primary focus of these notes is around exploring the use of Chris Nuernberger&#39;s <a href="https://github.com/cnuernber/libpython-clj">libpython-clj</a> (does he have a blog or Twitter?) for Clojurists unwilling to leave the comfort of their favourite language while still being able to leverage the power of the vast body of work available to Pythonistas.</p>
+<p>
+For more depth and breadth, follow Carin Meier - <a href="https://twitter.com/gigasquid/">here</a>, <a href="https://github.com/gigasquid">here</a>, and <a href="https://gigasquidsoftware.com/">here</a>.</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Shell and Python Setup
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<ul>
+<li>
+<p>Straightforward shell commands to set up a <em>virtualenv</em> which we will call <code>ml</code></p>
+</li>
+<li>
+<p>MacOS notes (haven&#39;t checked Linux yet)</p>
+<ul>
+<li>
+<p>Symlinking of the <em>dylib</em> from the <em>virtualenv</em>&#39;s <strong>lib</strong> directory is required for <em>libpython-clj</em> to work</p>
+</li>
+<li>
+<p>libpython-clj version <strong>1.44</strong></p>
+</li>
+<li>
+<p>Python version <strong>3.8</strong> installed via <em>virtualenv</em></p>
+</li>
+<li>
+<p>Clojure initialization of the Python subsystem also needs some careful consideration, which is shown in the Clojure code sample later.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="src src-bash">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#75715e"># Choose your own path</span>
+  virtualenv -p python3.8 ~/.venv/ml
+  source ~/.venv/ml/bin/activate
+  <span style="color:#75715e"># Use the latest pip</span>
+  pip install --upgrade pip
+
+  <span style="color:#75715e"># For reasons beyond me, the following is required</span>
+  <span style="color:#75715e"># for python-clj to work with the virtualenv system.</span>
+  cd ~/.venv/ml/lib
+  <span style="color:#75715e"># *IMPORTANT* - Based on the paths of brew-owned python version 3.8</span>
+  ln -s /usr/local/Cellar/python@3.8/3.8.5/Frameworks/Python.framework/Versions/3.8/Python libpython3.8m.dylib</code></pre></div>
+</div>
+<pre class="example">
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+bash-3.2$ created virtual environment CPython3.8.5.final.0-64 in 387ms
+  creator CPython3Posix(dest=/Users/jaju/.venv/ml, clear=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/jaju/Library/Application Support/virtualenv)
+    added seed packages: pip==20.1.1, setuptools==47.3.1, wheel==0.34.2
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+(ml) bash-3.2$ (ml) bash-3.2$ Collecting pip
+  Downloading pip-20.2-py2.py3-none-any.whl (1.5 MB)
+  Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.1.1
+    Uninstalling pip-20.1.1:
+      Successfully uninstalled pip-20.1.1
+Successfully installed pip-20.2
+</pre>
+<p>
+We next install <span style="text-decoration: underline;">tensorflow</span>.</p>
+<div class="src src-bash">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  <span style="color:#75715e"># Install tensorflow</span>
+  pip install tensorflow</code></pre></div>
+</div>
+<p>
+Here onwards, in any new shell where you wish to use the <code>ml</code> virtualenv, run the following</p>
+<div class="src src-bash">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  source ~/.venv/ml/bin/activate
+  python --version
+  python -c <span style="color:#e6db74">&#39;import tensorflow as tf; print(tf.__version__)&#39;</span></code></pre></div>
+</div>
+<pre class="example">
+
+Python 3.8.5
+2.3.0
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Session setup&#xa0;&#xa0;&#xa0;<span class="tags"><span>emacs</span></span>
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>
+The steps in this section relate to my setup with <a href="http://spacemacs.org/">Spacemacs</a>. </p>
+<ul>
+<li>
+<p>My configuration based on using Spacemacs can be found <a href="https://github.com/jaju/spacemacs-dot-d">here</a>.</p>
+</li>
+<li>
+<p>This document is written in org-mode with literate style, hence this section to keep a record of the steps required to get going.</p>
+</li>
+<li>
+<p>Here we use <code>pyvenv</code> to switch to the relevant <em>virtualenv</em> first.</p>
+</li>
+</ul>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+Python
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p>Evaluate the following <em>elisp</em> to switch the venv subsystem to <code>ml</code>.</p>
+<div class="src src-elisp">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">  (pyvenv-activate <span style="color:#e6db74">&#34;~/.venv/ml&#34;</span>)</code></pre></div>
+</div>
+<p>
+Quick system check to ensure we are in the right place, and also display version(s)</p>
+<div class="src src-python">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
+print(tf<span style="color:#f92672">.</span>__version__)</code></pre></div>
+</div>
+<pre class="example">
+2.3.0
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Clojure
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p>
+The Leiningen build file <em>project.clj</em> looks like this - the key part to focus on being the <code>:dependencies</code>, ignoring the other parts as mostly irrelevant to this note.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">defproject </span>machine-learning-notes <span style="color:#e6db74">&#34;0.1.0-SNAPSHOT&#34;</span>
+
+    <span style="color:#e6db74">:dependencies</span> [[org.clojure/clojure <span style="color:#e6db74">&#34;1.10.1&#34;</span>]
+                   [clj-python/libpython-clj <span style="color:#e6db74">&#34;1.46&#34;</span>]]
+
+    <span style="color:#e6db74">:min-lein-version</span> <span style="color:#e6db74">&#34;2.9.1&#34;</span>
+
+    <span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src&#34;</span>]
+
+    <span style="color:#e6db74">:repl-options</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">25092</span>})</code></pre></div>
+</div>
+<p>
+With the Leiningen project set up, you should simply be able to <code>cider-jack-in</code> away. Or, of course, use any other editor/IDE combination you are comfortable with.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+Hello Tensorflow&#xa0;&#xa0;&#xa0;<span class="tags"><span>python</span></span>
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<p>
+This example is from the official Tensorflow <a href="https://www.tensorflow.org/tutorials/quickstart/beginner">quickstart</a> tutorial, and running it successfully will ensure we have everything set up right.</p>
+<p>
+When accessed for the first time, the mnist dataset will be automatically downloaded.</p>
+<div class="src src-python">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> __future__ <span style="color:#f92672">import</span> absolute_import, division, print_function, unicode_literals
+<span style="color:#f92672">import</span> tensorflow <span style="color:#66d9ef">as</span> tf
+
+<span style="color:#75715e"># Let&#39;s load the MNIST dataset</span>
+mnist <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>datasets<span style="color:#f92672">.</span>mnist
+(x_train, y_train), (x_test, y_test) <span style="color:#f92672">=</span> mnist<span style="color:#f92672">.</span>load_data()
+x_train, x_test <span style="color:#f92672">=</span> x_train <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span>, x_test <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span></code></pre></div>
+</div>
+<p>
+y<sub>train</sub> is a vector of labels. Let&#39;s see what it looks like</p>
+<div class="src src-python">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y_train</code></pre></div>
+</div>
+<pre class="example">
+array([5, 0, 4, ..., 5, 6, 8], dtype=uint8)
+</pre>
+<p>
+Let&#39;s create the network</p>
+<div class="src src-python">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model <span style="color:#f92672">=</span> tf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>models<span style="color:#f92672">.</span>Sequential([
+    tf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Flatten(input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">28</span>)),
+    tf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">128</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;relu&#39;</span>),
+    tf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dropout(<span style="color:#ae81ff">0.2</span>),
+    tf<span style="color:#f92672">.</span>keras<span style="color:#f92672">.</span>layers<span style="color:#f92672">.</span>Dense(<span style="color:#ae81ff">10</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;softmax&#39;</span>)
+])
+
+model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;adam&#39;</span>,
+              loss<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sparse_categorical_crossentropy&#39;</span>,
+              metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;accuracy&#39;</span>])</code></pre></div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+Train
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>This next statement runs 5 rounds of the model fitting routines.</p>
+<div class="src src-python">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>fit(x_train, y_train, epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)</code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Evaluate
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>Like model fitting, the evaluation too is straightforward execution.</p>
+<div class="src src-python">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>evaluate(x_test, y_test, verbose<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)</code></pre></div>
+</div>
+<pre class="example">
+313/313 - 0s - loss: 0.0754 - accuracy: 0.9764
+[0.07540476322174072, 0.9764000177383423]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+Hello Tensorflow - Clojure Edition&#xa0;&#xa0;&#xa0;<span class="tags"><span>clojure</span></span>
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<p>
+Here&#39;s the equivalent version in Clojure leveraging the <em>libpython-clj</em> library. </p>
+<p>
+Note that it is assumed that the previously mentioned manual steps (or equivalent) have been executed, otherwise the code below will most likely not work.</p>
+<p>
+We first require some namespaces that we will use to configure <em>libpython-clj</em> to point to the right Python version/installation.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">ns </span>machine-learning-notes.hello-ml
+    (<span style="color:#e6db74">:require</span> [libpython-clj.python <span style="color:#e6db74">:as</span> py]
+              [libpython-clj.jna.base]))
+
+  <span style="color:#75715e">;; Depending on your Python version and virtualenv setup, change accordingly</span>
+  (<span style="color:#a6e22e">alter-var-root</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#39;libpython-clj.jna.base/*python-library*</span> (constantly <span style="color:#e6db74">&#34;python3.8m&#34;</span>))
+  (<span style="color:#a6e22e">py/initialize!</span> <span style="color:#e6db74">:python-executable</span> (str (<span style="color:#a6e22e">System/getenv</span> <span style="color:#e6db74">&#34;HOME&#34;</span>) <span style="color:#e6db74">&#34;/.venv/ml/bin/python&#34;</span>))</code></pre></div>
+</div>
+<p>
+These steps are required on my machine, and <em>YMMV</em>. But you get the idea, and should be able to tweak accordingly.</p>
+<p>
+Next, we <em>require</em> <code>require-python</code> and then use it liberally to pull in various python modules. The following should be executed <strong>only</strong> after the above <code>initialize!</code> sequence.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  <span style="color:#75715e">;; Note that the next require expression needs to come *after* the py/initialize! ebove</span>
+  (<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[libpython-clj.require <span style="color:#e6db74">:refer</span> [require-python]])
+  (<span style="color:#a6e22e">require-python</span> <span style="color:#f92672">&#39;</span>[tensorflow <span style="color:#e6db74">:as</span> tf]
+                  <span style="color:#f92672">&#39;</span>[tensorflow.keras.models <span style="color:#e6db74">:as</span> models]
+                  <span style="color:#f92672">&#39;</span>[tensorflow.keras.layers <span style="color:#e6db74">:as</span> layers]
+                  <span style="color:#f92672">&#39;</span>[tensorflow.keras.datasets.mnist <span style="color:#e6db74">:as</span> mnist]
+                  <span style="color:#f92672">&#39;</span>[numpy <span style="color:#e6db74">:as</span> numpy]
+                  <span style="color:#f92672">&#39;</span>[builtins <span style="color:#e6db74">:as</span> python])
+
+  <span style="color:#75715e">;; Helper</span>
+  (<span style="color:#66d9ef">let </span>[counter (<span style="color:#a6e22e">atom</span> <span style="color:#ae81ff">0</span>)]
+    (<span style="color:#66d9ef">defonce </span>show (<span style="color:#66d9ef">fn </span>[r] (println (str <span style="color:#f92672">@</span>counter <span style="color:#e6db74">&#34; --&gt; &#34;</span> r)) (<span style="color:#a6e22e">swap!</span> counter inc))))</code></pre></div>
+</div>
+<p>
+We&#39;re now set, and can move on to the implementation. What follows has pretty much a one-to-one correspondence with the Python version.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">defonce </span>mnist-data (<span style="color:#a6e22e">mnist/load_data</span>))
+
+  (<span style="color:#66d9ef">let </span>[[[x-train y-train] [x-test y-test]] mnist-data] <span style="color:#75715e">;; =&gt; 1</span>
+    (<span style="color:#66d9ef">def </span>x-train (<span style="color:#a6e22e">numpy/divide</span> x-train <span style="color:#ae81ff">255</span>)) <span style="color:#75715e">;; =&gt; 2</span>
+    (<span style="color:#66d9ef">def </span>y-train y-train)
+    (<span style="color:#66d9ef">def </span>x-test (<span style="color:#a6e22e">numpy/divide</span> x-test <span style="color:#ae81ff">255</span>))
+    (<span style="color:#66d9ef">def </span>y-test y-test))
+
+  (<span style="color:#66d9ef">defonce </span>model (<span style="color:#a6e22e">models/Sequential</span> [(<span style="color:#a6e22e">layers/Flatten</span> <span style="color:#e6db74">:input_shape</span> [<span style="color:#ae81ff">28</span> <span style="color:#ae81ff">28</span>]) <span style="color:#75715e">;; =&gt; 3</span>
+                                     (<span style="color:#a6e22e">layers/Dense</span> <span style="color:#ae81ff">128</span> <span style="color:#e6db74">:activation</span> <span style="color:#e6db74">&#34;relu&#34;</span>)
+                                     (<span style="color:#a6e22e">layers/Dropout</span> <span style="color:#ae81ff">0.2</span>)
+                                     (<span style="color:#a6e22e">layers/Dense</span> <span style="color:#ae81ff">10</span> <span style="color:#e6db74">:activation</span> <span style="color:#e6db74">&#34;softmax&#34;</span>)
+                                     ]))
+
+  (<span style="color:#a6e22e">py/py.</span> model compile <span style="color:#75715e">;; 4, 5</span>
+          <span style="color:#e6db74">:optimizer</span> <span style="color:#e6db74">&#34;adam&#34;</span>
+          <span style="color:#e6db74">:loss</span> <span style="color:#e6db74">&#34;sparse_categorical_crossentropy&#34;</span>
+          <span style="color:#e6db74">:metrics</span> (<span style="color:#a6e22e">python/list</span> [<span style="color:#e6db74">&#34;accuracy&#34;</span>])) <span style="color:#75715e">;; 6</span>
+  (<span style="color:#a6e22e">py/py.</span> model fit x-train y-train <span style="color:#e6db74">:epochs</span> <span style="color:#ae81ff">5</span>)</code></pre></div>
+</div>
+<p>
+A few notes</p>
+<dl>
+<dt>
+1
+</dt>
+<dd>
+<p>Destructuring over python datastructures feels absolutely native</p>
+</dd>
+<dt>
+2
+</dt>
+<dd>
+<p>While not as straightforward as Python, <code>numpy</code> comes to the rescue for the division. Note that <code>numpy</code> is already installed with <code>tensorflow</code>.</p>
+</dd>
+<dt>
+3
+</dt>
+<dd>
+<p>Use of named arguments in Python has a clean <code>kwarg</code> equivalent in Clojure</p>
+</dd>
+<dt>
+4
+</dt>
+<dd>
+<p>Notice the use of the <code>py.</code> macro. Furthermore, there are <code>py..</code> and <code>py.-</code> macros too. Do they remind you of the Javascript interop functions of Clojurescript? <em>Clever naming!</em></p>
+</dd>
+<dt>
+5
+</dt>
+<dd>
+<p>Calling a method on <code>model</code> is via the <code>py/py.</code> macro</p>
+</dd>
+<dt>
+6
+</dt>
+<dd>
+<p>Clojure vector doesn&#39;t cleanly translate into a Python list for the <code>metrics</code> named argument and needs to be wrapped in <code>python/list</code>.</p>
+</dd>
+</dl>
+<p>All of the above is pretty neat. Save for a few quirks, but which is easily forgiven for the resultant <em>Joy of Clojure</em>!</p>
+<p>
+Let&#39;s evaluate the model against the training dataset.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a6e22e">py/py.</span> model evaluate x-test y-test <span style="color:#e6db74">:verbose</span> <span style="color:#ae81ff">2</span>)</code></pre></div>
+</div>
+<pre class="example">
+313/313 - 0s - loss: 0.0698 - accuracy: 0.9779
+</pre>
+<p>
+The numbers match up with those of the Python version above - which probably means that the Clojure-Python bridge, and the operations on the data have worked as expected.</p>
+<p>
+We can also visualize the model, using in-built support in Tensorflow. For the rendering, we&#39;ll need to install two more Python packages - <em>pydot</em> and <em>graphviz</em>.</p>
+<div class="src src-bash">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Make sure it&#39;s in the same virtualenv</span>
+pip install pydot graphviz</code></pre></div>
+</div>
+<pre class="example">
+
+Collecting pydot
+  Using cached pydot-1.4.1-py2.py3-none-any.whl (19 kB)
+Collecting graphviz
+  Using cached graphviz-0.14-py2.py3-none-any.whl (18 kB)
+=2.1.4
+  Using cached pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+Installing collected packages: pyparsing, pydot, graphviz
+Successfully installed graphviz-0.14 pydot-1.4.1 pyparsing-2.4.7
+</pre>
+<p>
+Calling Python again in the straightforward manner that <em>libpython-clj</em> offers.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a6e22e">require-python</span> <span style="color:#e6db74">&#39;tensorflow.keras.utils</span>)
+  (<span style="color:#a6e22e">tensorflow.keras.utils/plot_model</span>
+   model
+   <span style="color:#e6db74">:to_file</span> <span style="color:#e6db74">&#34;model.png&#34;</span>
+   <span style="color:#e6db74">:show_shapes</span> true
+   <span style="color:#e6db74">:show_layer_names</span> true
+   <span style="color:#e6db74">:rankdir</span> <span style="color:#e6db74">&#34;TB&#34;</span>
+   <span style="color:#e6db74">:expand_nested</span> false
+   <span style="color:#e6db74">:dpi</span> <span style="color:#ae81ff">96</span>)</code></pre></div>
+</div>
+<p><img src="model.png" alt="model.png" title="model.png" /></p>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+A Few More Tips
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>Another very satisfying - <em>nay</em>, exciting aspect is the <em>autocomplete</em> from the python &#34;namespaces&#34;!
+<img src="numpy-autocomplete.png" alt="numpy-autocomplete.png" title="numpy-autocomplete.png" /></p>
+<p>
+Or, even seeing documentation of Python functions
+<img src="list-doc.png" alt="list-doc.png" title="list-doc.png" /></p>
+<p>
+Now, at some point you&#39;d want to write your own Python code and use it from Clojure. And very likely, as you develop it in parallel, you will want to reload it whenever you update your Python code.</p>
+<p>
+Before the following, we also ensure that <em>bert</em>, <em>transformers</em> and <em>torch</em> are <em>pip</em>-installed.</p>
+<div class="src src-bash">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install bert transformers torch</code></pre></div>
+</div>
+<pre class="example">
+Processing /Users/jaju/Library/Caches/pip/wheels/65/11/40/6439aef2635f7f0137a79c4defb4c4e65dd051ec0198429e3b/bert-2.2.0-py3-none-any.whl
+Collecting transformers
+  Using cached transformers-2.10.0-py3-none-any.whl (660 kB)
+Collecting torch
+  Using cached torch-1.5.0-cp38-none-macosx_10_9_x86_64.whl (80.6 MB)
+Processing /Users/jaju/Library/Caches/pip/wheels/ee/c9/a6/41a81618e939b746a3151700565d191bca832b6c345ea9b87a/erlastic-2.0.0-py3-none-any.whl
+Collecting tokenizers==0.7.0
+  Using cached tokenizers-0.7.0-cp38-cp38-macosx_10_10_x86_64.whl (1.2 MB)
+Requirement already satisfied: requests in ./python3.8/site-packages (from transformers) (2.23.0)
+Collecting sentencepiece
+  Using cached sentencepiece-0.1.91-cp38-cp38-macosx_10_6_x86_64.whl (1.0 MB)
+Requirement already satisfied: numpy in ./python3.8/site-packages (from transformers) (1.18.4)
+Collecting filelock
+  Using cached filelock-3.0.12-py3-none-any.whl (7.6 kB)
+=4.27
+  Using cached tqdm-4.46.0-py2.py3-none-any.whl (63 kB)
+Processing /Users/jaju/Library/Caches/pip/wheels/11/17/00/2a4439eeb3a42a66b3649af2ef52ead483766361dc65b31498/regex-2020.5.14-cp38-cp38-macosx_10_15_x86_64.whl
+Processing /Users/jaju/Library/Caches/pip/wheels/7b/78/f4/27d43a65043e1b75dbddaa421b573eddc67e712be4b1c80677/sacremoses-0.0.43-py3-none-any.whl
+Processing /Users/jaju/Library/Caches/pip/wheels/8e/70/28/3d6ccd6e315f65f245da085482a2e1c7d14b90b30f239e2cf4/future-0.18.2-py3-none-any.whl
+=1.21.1 in ./python3.8/site-packages (from requests-&gt;transformers) (1.25.9)
+=2.5 in ./python3.8/site-packages (from requests-&gt;transformers) (2.9)
+=3.0.2 in ./python3.8/site-packages (from requests-&gt;transformers) (3.0.4)
+=2017.4.17 in ./python3.8/site-packages (from requests-&gt;transformers) (2020.4.5.1)
+transformers) (1.15.0)
+Collecting click
+  Using cached click-7.1.2-py2.py3-none-any.whl (82 kB)
+Collecting joblib
+  Using cached joblib-0.15.1-py3-none-any.whl (298 kB)
+Installing collected packages: erlastic, bert, tokenizers, sentencepiece, filelock, tqdm, regex, click, joblib, sacremoses, transformers, future, torch
+Successfully installed bert-2.2.0 click-7.1.2 erlastic-2.0.0 filelock-3.0.12 future-0.18.2 joblib-0.15.1 regex-2020.5.14 sacremoses-0.0.43 sentencepiece-0.1.91 tokenizers-0.7.0 torch-1.5.0 tqdm-4.46.0 transformers-2.10.0
+</pre>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  <span style="color:#75715e">;; Suppose you have a &#34;python/&#34; directory in the CWD. Add it to the load path</span>
+  (<span style="color:#a6e22e">py/import-as</span> sys sys)
+  (<span style="color:#a6e22e">py/$a</span> (<span style="color:#a6e22e">py/py.-</span> sys path) append <span style="color:#e6db74">&#34;python&#34;</span>)
+
+  <span style="color:#75715e">;; Load &#34;python/hello.py&#34;</span>
+  (<span style="color:#a6e22e">py/import-as</span> hello hello)
+  <span style="color:#75715e">;; Use it</span>
+  (<span style="color:#a6e22e">show</span> ((<span style="color:#a6e22e">py/$.</span> hello fib) <span style="color:#ae81ff">10</span>))
+
+  <span style="color:#75715e">;; Another way</span>
+  (<span style="color:#a6e22e">py/from-import</span> hello fib fib2)
+  (<span style="color:#a6e22e">show</span> (<span style="color:#a6e22e">fib2</span> <span style="color:#ae81ff">6</span>))
+
+  <span style="color:#75715e">;; And one more</span>
+  (<span style="color:#a6e22e">require-python</span> <span style="color:#f92672">&#39;</span>[hello])
+  (<span style="color:#a6e22e">show</span> (<span style="color:#a6e22e">hello/fib</span> <span style="color:#ae81ff">10</span>))
+
+  <span style="color:#75715e">;; When reloading</span>
+  (<span style="color:#a6e22e">require-python</span> <span style="color:#f92672">&#39;</span>[importlib])
+  (<span style="color:#a6e22e">importlib/reload</span> hello)
+
+  (<span style="color:#a6e22e">py/import-as</span> hello_bert hello-bert)
+  (<span style="color:#a6e22e">show</span> ((<span style="color:#a6e22e">py/$.</span> hello-bert doit2)))</code></pre></div>
+</div>
+<pre class="example">
+0 --&gt; 89
+1 --&gt; 13
+2 --&gt; 89
+henson
+3 --&gt; 
+INFO:transformers.tokenization_utils:loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /Users/jaju/.cache/torch/transformers/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+INFO:transformers.configuration_utils:loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at /Users/jaju/.cache/torch/transformers/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.7156163d5fdc189c3016baca0775ffce230789d7fa2a42ef516483e4ca884517
+INFO:transformers.configuration_utils:Model config BertConfig {
+  &#34;architectures&#34;: [
+    &#34;BertForMaskedLM&#34;
+  ],
+  &#34;attention_probs_dropout_prob&#34;: 0.1,
+  &#34;hidden_act&#34;: &#34;gelu&#34;,
+  &#34;hidden_dropout_prob&#34;: 0.1,
+  &#34;hidden_size&#34;: 768,
+  &#34;initializer_range&#34;: 0.02,
+  &#34;intermediate_size&#34;: 3072,
+  &#34;layer_norm_eps&#34;: 1e-12,
+  &#34;max_position_embeddings&#34;: 512,
+  &#34;model_type&#34;: &#34;bert&#34;,
+  &#34;num_attention_heads&#34;: 12,
+  &#34;num_hidden_layers&#34;: 12,
+  &#34;pad_token_id&#34;: 0,
+  &#34;type_vocab_size&#34;: 2,
+  &#34;vocab_size&#34;: 30522
+}
+
+INFO:transformers.modeling_utils:loading weights file https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin from cache at /Users/jaju/.cache/torch/transformers/f2ee78bdd635b758cc0a12352586868bef80e47401abe4c4fcc3832421e7338b.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+INFO:transformers.configuration_utils:loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-config.json from cache at /Users/jaju/.cache/torch/transformers/4dad0251492946e18ac39290fcfe91b89d370fee250efe9521476438fe8ca185.7156163d5fdc189c3016baca0775ffce230789d7fa2a42ef516483e4ca884517
+INFO:transformers.configuration_utils:Model config BertConfig {
+  &#34;architectures&#34;: [
+    &#34;BertForMaskedLM&#34;
+  ],
+  &#34;attention_probs_dropout_prob&#34;: 0.1,
+  &#34;hidden_act&#34;: &#34;gelu&#34;,
+  &#34;hidden_dropout_prob&#34;: 0.1,
+  &#34;hidden_size&#34;: 768,
+  &#34;initializer_range&#34;: 0.02,
+  &#34;intermediate_size&#34;: 3072,
+  &#34;layer_norm_eps&#34;: 1e-12,
+  &#34;max_position_embeddings&#34;: 512,
+  &#34;model_type&#34;: &#34;bert&#34;,
+  &#34;num_attention_heads&#34;: 12,
+  &#34;num_hidden_layers&#34;: 12,
+  &#34;pad_token_id&#34;: 0,
+  &#34;type_vocab_size&#34;: 2,
+  &#34;vocab_size&#34;: 30522
+}
+
+INFO:transformers.modeling_utils:loading weights file https://cdn.huggingface.co/bert-base-uncased-pytorch_model.bin from cache at /Users/jaju/.cache/torch/transformers/f2ee78bdd635b758cc0a12352586868bef80e47401abe4c4fcc3832421e7338b.36ca03ab34a1a5d5fa7bc3d03d55c4fa650fed07220e2eeebc06ce58d0e9a157
+INFO:transformers.modeling_utils:Weights of BertForMaskedLM not initialized from pretrained model: [&#39;cls.predictions.decoder.bias&#39;]
+INFO:transformers.modeling_utils:Weights from pretrained model not used in BertForMaskedLM: [&#39;cls.seq_relationship.weight&#39;, &#39;cls.seq_relationship.bias&#39;]
+</pre>
+<p>
+This brings us to a logical checkpoint - our setup looks good and we should now be able to move on to the next parts.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-2">
+<h2 id="headline-11">
+Huggingface Tokenizers      
+</h2>
+<div id="outline-text-headline-11" class="outline-text-2">
+<p>
+<strong>Note</strong> This section is WIP.</p>
+<p>
+Install some prerequisites</p>
+<div class="src src-shell">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pip install tokenizers transformers
+
+<span style="color:#75715e"># If the version is not the most recent (0.7.0 as of writing this)</span>
+pip install --upgrade tokenizers</code></pre></div>
+</div>
+<p>
+Moving on to the Clojure bits. It&#39;s not too different from what you&#39;d expect.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a6e22e">require-python</span> <span style="color:#f92672">&#39;</span>[tokenizers
+                    <span style="color:#e6db74">:refer</span> [BertWordPieceTokenizer
+                            SentencePieceBPETokenizer
+                            CharBPETokenizer
+                            ByteLevelBPETokenizer]])
+  (<span style="color:#a6e22e">require-python</span> <span style="color:#f92672">&#39;</span>[transformers
+                    <span style="color:#e6db74">:refer</span> [BertTokenizer]])
+
+  <span style="color:#75715e">;; Files downloaded from</span>
+  <span style="color:#75715e">;; https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-vocab.json</span>
+  <span style="color:#75715e">;; https://s3.amazonaws.com/models.huggingface.co/bert/gpt2-merges.txt</span>
+
+  (<span style="color:#66d9ef">def </span>tokenizer (<span style="color:#a6e22e">ByteLevelBPETokenizer</span> <span style="color:#e6db74">&#34;gpt2-vocab.json&#34;</span> <span style="color:#e6db74">&#34;gpt2-merges.txt&#34;</span>))
+
+  (<span style="color:#66d9ef">def </span>encoded (<span style="color:#a6e22e">py/a$</span> tokenizer encode <span style="color:#e6db74">&#34;I can feel the magic, can you?&#34;</span>))
+
+  (<span style="color:#a6e22e">py/py.-</span> encoded <span style="color:#f92672">#</span>_type_ids <span style="color:#f92672">#</span>_tokens offsets)</code></pre></div>
+</div>
+</div>
+</div>
+
+  </main>
+
+</article>
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="hide-for-small-only float-left">
+  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2021</span>
+</div>
+
+<div class="social-media-list float-right">
+
+  <span class="social-media-item">
+    <a href="https://github.com/jaju">
+      <span class="svg-social-icon icon--github">
+        <svg viewBox="0 0 16 16">
+          <path fill="#828282"
+                d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+        </svg>
+      </span>
+      <span class="username">jaju</span>
+    </a>
+  </span>
+  <span class="social-media-item">
+    <a href="https://twitter.com/jaju">
+      <span class="svg-social-icon icon--twitter">
+        <svg viewBox="0 0 16 16">
+          <path fill="#828282"
+                d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+        </svg>
+      </span>
+      <span class="username">jaju</span>
+    </a>
+  </span>
+
+</div>
+
+</footer>
+<script src="/js/bundle.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1397428-5', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

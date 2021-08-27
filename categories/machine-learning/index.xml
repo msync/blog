@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine-learning on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/categories/machine-learning/</link>
+    <description>Recent content in machine-learning on Sync&#39;ing from Memory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Feb 2020 16:34:55 +0530</lastBuildDate><atom:link href="https://msync.org/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ML in Clojure via Python</title>
+      <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
+      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/ml-in-clojure-via-python/</guid>
+      <description>Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj</description>
+    </item>
+    
+    <item>
+      <title>Text Learning - Pointers</title>
+      <link>https://msync.org/notes/text-learning-pointers/</link>
+      <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/text-learning-pointers/</guid>
+      <description>Pointers for DL for text</description>
+    </item>
+    
+  </channel>
+</rss>

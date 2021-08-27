@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>neural-networks, on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/tags/neural-networks/</link>
+    <description>Recent content in neural-networks, on Sync&#39;ing from Memory</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 19:23:10 +0530</lastBuildDate><atom:link href="https://msync.org/tags/neural-networks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes for Deep Learning with Python</title>
+      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
+      <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+    </item>
+    
+    <item>
+      <title>ML in Clojure via Python</title>
+      <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
+      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/ml-in-clojure-via-python/</guid>
+      <description>Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj</description>
+    </item>
+    
+    <item>
+      <title>A Neural Network Primer</title>
+      <link>https://msync.org/notes/a-neural-network-primer/</link>
+      <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/a-neural-network-primer/</guid>
+      <description>Preface/Purpose  I chanced upon this primer from the 90s, on artificial neural networks, and thought it might be a good idea to write something similar.
+  It&amp;#39;s just a function…  A neuron is a computing unit &amp;amp;mdash; a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line neurons to consume as their input.</description>
+    </item>
+    
+  </channel>
+</rss>
