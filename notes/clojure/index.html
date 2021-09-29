@@ -1,6 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
-<head>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1397428-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-1397428-5');
+    </script>
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -20,10 +28,10 @@
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
 
-</head>
-<body>
-<header>
-    <div class="content">
+  </head>
+  <body>
+    <header>
+      <div class="content">
   <a class="title" href="https://msync.org/">Sync&#39;ing from Memory</a>
   <nav>
     
@@ -34,21 +42,21 @@
   </nav>
 </div>
 
-</header>
-<div id="main-wrapper">
-    <div class="grid-x">
+    </header>
+    <div id="main-wrapper">
+      <div class="grid-x">
         <div class="cell medium-offset-1 medium-10 small-offset-1 small-10">
-            <div id="main">
-                
+          <div id="main">
+            
 
 <div id="toc" class="cell hide-for-small-only">
   <div><nav id="TableOfContents">
 <ul>
-<li><a href="#headline-1">Synopsis</a>
+<li><a href="#headline-1">Introduction</a>
 </li>
 <li><a href="#headline-2">Interesting Styles</a>
 <ul>
-<li><a href="#headline-3">Optional data in maps?</a>
+<li><a href="#headline-3">Optional data</a>
 </li>
 <li><a href="#headline-4">Splitting a namespace across files</a>
 </li>
@@ -92,6 +100,8 @@
 </li>
 </ul>
 </li>
+<li><a href="#headline-19">Monads</a>
+</li>
 </ul>
 </nav></div>
 </div>
@@ -112,11 +122,11 @@
       </time>
 
       
-      <time datetime="2021-08-03 09:42:07 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+      <time datetime="2021-09-14 23:29:40 &#43;0530 IST" itemprop="datePublished" class="pubdate">
         Last updated:
         <span class="weekday">Tue</span>,
-        <span class="day">3</span>
-        <span class="month">Aug</span>,
+        <span class="day">14</span>
+        <span class="month">Sep</span>,
         <span class="year">2021</span>
       </time>
       
@@ -131,10 +141,10 @@
     
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
-Synopsis
+Introduction
 </h2>
 <div id="outline-text-headline-1" class="outline-text-2">
-<p>Notes on <em>Clojure</em> that I find useful to come back to. These are captured from the wild (#Clojurians Slack, blogs, #Twitter etc.) or sometimes based on my own experiences.</p>
+<p>Interesting code/styles I&#39;ve found in various Clojure open-source codebases.</p>
 </div>
 </div>
 <div id="outline-container-headline-2" class="outline-2">
@@ -142,10 +152,9 @@ Synopsis
 Interesting Styles&#xa0;&#xa0;&#xa0;<span class="tags"><span>style</span></span>
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
-<p>Clojure is so much joy, you can easily forgive the lack of types. But it&#39;s not always smooth, and a combination of discipline and some smart exploitation of language features can ease the pain substantially.</p>
 <div id="outline-container-headline-3" class="outline-3">
 <h3 id="headline-3">
-Optional data in maps?
+Optional data
 </h3>
 <div id="outline-text-headline-3" class="outline-text-3">
 <p>This is from the <a href="https://github.com/ptaoussanis/sente">Sente</a> library by <a href="https://www.taoensso.com/">Peter Taoussanis</a>.
@@ -168,9 +177,6 @@ For example, take the <code>clojure.core</code> namespace, which is split across
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  <span style="color:#75715e">;; In core.clj</span>
   (load <span style="color:#e6db74">&#34;core_print&#34;</span>)</code></pre></div>
 </div>
-<pre class="example">
-class java.io.FileNotFoundException
-</pre>
 <p>
 Inside <code>core_print.clj</code>, use the <code>in-ns</code> directive to tell the clojure reader/compiler how to treat the code in here.</p>
 <div class="src src-clojure">
@@ -189,7 +195,6 @@ Inside <code>core_print.clj</code>, use the <code>in-ns</code> directive to tell
 Smart Tricks&#xa0;&#xa0;&#xa0;<span class="tags"><span>snippets</span></span>
 </h2>
 <div id="outline-text-headline-5" class="outline-text-2">
-<p>A useful collection of short snippets of Clojure code I&#39;ve come across. Again, no original stuff here.</p>
 <div id="outline-container-headline-6" class="outline-3">
 <h3 id="headline-6">
 Convert a map (keyed by integers) into a correspondingly ordered vector
@@ -205,12 +210,12 @@ Convert a map (keyed by integers) into a correspondingly ordered vector
   (when (seq m)
     (<span style="color:#a6e22e">reduce</span>
      (<span style="color:#66d9ef">fn </span>[result [k v]] (assoc result k v))   <span style="color:#75715e">;; 1</span>
-     (<span style="color:#a6e22e">vec</span> (repeat (apply max (keys m))  nil)) <span style="color:#75715e">;; 2</span>
+     (<span style="color:#a6e22e">vec</span> (repeat (apply max (keys m)) nil)) <span style="color:#75715e">;; 2</span>
      m)))
 
 (<span style="color:#66d9ef">def </span>m {<span style="color:#ae81ff">0</span> <span style="color:#e6db74">:A</span> <span style="color:#ae81ff">2</span> <span style="color:#e6db74">:C</span> <span style="color:#ae81ff">9</span> <span style="color:#e6db74">:J</span>})
 (<span style="color:#a6e22e">vectorize</span> m)
-  <span style="color:#75715e">;; Output #&#39;user/vectorize[:A nil :C nil nil nil nil nil nil :J]</span></code></pre></div>
+<span style="color:#75715e">;; Output #&#39;user/vectorize[:A nil :C nil nil nil nil nil nil :J]</span></code></pre></div>
 </div>
 <table>
 <tbody>
@@ -622,17 +627,81 @@ Gotchas
 </div>
 </div>
 </div>
+<div id="outline-container-headline-19" class="outline-2">
+<h2 id="headline-19">
+Monads
+</h2>
+<div id="outline-text-headline-19" class="outline-text-2">
+<p>Since no article is complete without an attempt at monads, we refer to Monads for completeness&#39; sake.</p>
+<p>
+This is only a re-run of <a href="https://github.com/leonoel/cloroutine/blob/master/doc/05-monads.md">05-monads</a>.</p>
+<p>
+Monads refer to a category of values associated with a pair of functions</p>
+<ol>
+<li>
+<p><code>unit</code></p>
+</li>
+<li>
+<p><code>bind</code></p>
+</li>
+</ol>
+<p>which have certain properties, as described below.</p>
+<p>
+First, let us introduce some terminology and symbols</p>
+<dl>
+<dt>
+<code>Category</code>
+</dt>
+<dd>
+<p><strong>The</strong> category to which our monads belong.</p>
+</dd>
+<dt>
+x
+</dt>
+<dd>
+<p>Any value</p>
+</dd>
+<dt>
+m
+</dt>
+<dd>
+<p>A value belonging to the <code>Category</code></p>
+</dd>
+<dt>
+f
+</dt>
+<dd>
+<p>An arbitrary function, that returns a value belonging to the <code>Category</code></p>
+</dd>
+<dt>
+?
+</dt>
+<dd>
+<p><code>(unit x)</code> results in a value that belongs to this category, given any <code>x</code></p>
+</dd>
+<dt>
+?
+</dt>
+<dd>
+<p><code>(bind f m)</code> returns a value in the said category</p>
+</dd>
+</dl>
+<div class="src src-clojure">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"></code></pre></div>
+</div>
+</div>
+</div>
 
   </main>
 
 </article>
 
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<footer>
-    <div class="hide-for-small-only float-left">
+    <footer>
+      <div class="hide-for-small-only float-left">
   <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2021</span>
 </div>
 
@@ -663,23 +732,23 @@ Gotchas
 
 </div>
 
-</footer>
-<script src="/js/bundle.js"></script>
-<script>hljs.highlightAll();</script>
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-1397428-5', 'auto');
-    ga('send', 'pageview');
-</script>
-</body>
+    </footer>
+    <script src="/js/bundle.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+              i['GoogleAnalyticsObject'] = r;
+              i[r] = i[r] || function () {
+                      (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+              a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+              a.async = 1;
+              a.src = g;
+              m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-1397428-5', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
 </html>
