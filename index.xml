@@ -26,15 +26,6 @@
     </item>
     
     <item>
-      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
-      <link>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</link>
-      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</guid>
-      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
-    </item>
-    
-    <item>
       <title>ML in Clojure via Python</title>
       <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
       <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>

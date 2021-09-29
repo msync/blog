@@ -60,27 +60,35 @@
 </li>
 <li><a href="#headline-7">Temporarily descending into mutable-land.</a>
 </li>
-</ul>
-</li>
-<li><a href="#headline-8">Uncommon Stuff</a>
-<ul>
-<li><a href="#headline-9"><code>deftype</code> and Mutable Members</a>
-</li>
-<li><a href="#headline-10"><code>&amp;env</code> in Macros</a>
+<li><a href="#headline-8">Control Flow</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-11">Leiningen</a>
+<li><a href="#headline-9">Uncommon Stuff</a>
 <ul>
-<li><a href="#headline-12">It&#39;s macro-land, after all</a>
+<li><a href="#headline-10"><code>deftype</code> and Mutable Members</a>
 </li>
-<li><a href="#headline-13">The eval-reader for dynamism</a>
+<li><a href="#headline-11"><code>&amp;env</code> in Macros</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-14">Gotchas</a>
+<li><a href="#headline-12">Java Interop</a>
 <ul>
-<li><a href="#headline-15"><code>with-redefs</code></a>
+<li><a href="#headline-13">Some useful libraries</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-14">Leiningen</a>
+<ul>
+<li><a href="#headline-15">It&#39;s macro-land, after all</a>
+</li>
+<li><a href="#headline-16">The eval-reader for dynamism</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-17">Gotchas</a>
+<ul>
+<li><a href="#headline-18"><code>with-redefs</code></a>
 </li>
 </ul>
 </li>
@@ -104,11 +112,11 @@
       </time>
 
       
-      <time datetime="2021-07-27 20:28:01 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+      <time datetime="2021-08-03 09:42:07 &#43;0530 IST" itemprop="datePublished" class="pubdate">
         Last updated:
         <span class="weekday">Tue</span>,
-        <span class="day">27</span>
-        <span class="month">Jul</span>,
+        <span class="day">3</span>
+        <span class="month">Aug</span>,
         <span class="year">2021</span>
       </time>
       
@@ -218,7 +226,7 @@ Convert a map (keyed by integers) into a correspondingly ordered vector
 </tbody>
 </table>
 <p>
-On line <em>2</em>, you initialize a vector of the required length with <code>nil</code>-s, using <code>max</code></p>
+On line marked <em>2</em>, you initialize a vector of the required length with <code>nil</code>-s, using <code>max</code></p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (apply max (keys m))</code></pre></div>
 </div>
@@ -226,7 +234,7 @@ On line <em>2</em>, you initialize a vector of the required length with <code>ni
 9
 </pre>
 <p>
-And reduce <em>m</em> with the function defined on <em>1</em> into this vector.</p>
+And reduce <code>m</code> with the function defined on line marked <em>1</em> into this vector.</p>
 </div>
 </div>
 <div id="outline-container-headline-7" class="outline-3">
@@ -255,18 +263,26 @@ Temporarily descending into mutable-land.&#xa0;&#xa0;&#xa0;<span class="tags"><s
 And finally, the collection is made persistent with <code>persistent!</code>.</p>
 </div>
 </div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Control Flow
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>An interesting discussion can be found at <a href="https://clojureverse.org/t/how-are-clojurians-handling-control-flow-on-their-projects/7868">How are clojurians handling control flow on their projects?</a></p>
 </div>
 </div>
-<div id="outline-container-headline-8" class="outline-2">
-<h2 id="headline-8">
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
 Uncommon Stuff
 </h2>
-<div id="outline-text-headline-8" class="outline-text-2">
-<div id="outline-container-headline-9" class="outline-3">
-<h3 id="headline-9">
+<div id="outline-text-headline-9" class="outline-text-2">
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
 <code>deftype</code> and Mutable Members
 </h3>
-<div id="outline-text-headline-9" class="outline-text-3">
+<div id="outline-text-headline-10" class="outline-text-3">
 <p>
 <code>deftype</code> allows for the definition of mutable members using the <code>^:volatile-mutable</code> tag on a member.
 But they become private to the object, and we need to implement methods on them (via interfaces or protocols)
@@ -367,11 +383,11 @@ class clojure.lang.Compiler$CompilerException
 </pre>
 </div>
 </div>
-<div id="outline-container-headline-10" class="outline-3">
-<h3 id="headline-10">
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
 <code>&amp;env</code> in Macros
 </h3>
-<div id="outline-text-headline-10" class="outline-text-3">
+<div id="outline-text-headline-11" class="outline-text-3">
 <p>Inside of macros, you have access to the context in which you are being evaluated.</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defmacro </span>show-env []
@@ -516,18 +532,35 @@ As you can notice above, <span style="text-decoration: underline;">macros</span>
 </div>
 </div>
 </div>
-<div id="outline-container-headline-11" class="outline-2">
-<h2 id="headline-11">
+<div id="outline-container-headline-12" class="outline-2">
+<h2 id="headline-12">
+Java Interop
+</h2>
+<div id="outline-text-headline-12" class="outline-text-2">
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
+Some useful libraries
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
+<ul>
+<li>
+<p><a href="https://github.com/rschmitt/dynamic-object">Dynamic Object</a> - leverage Clojure datastructures from Java</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-2">
+<h2 id="headline-14">
 Leiningen
 </h2>
-<div id="outline-text-headline-11" class="outline-text-2">
-<p>Leinin-gun! Shoot your build problems with ease.
-With 20% effort as compared to learning any other build tool, solve 80% of your needs ever. Here are some uncommon tricks to inch above the 80%.</p>
-<div id="outline-container-headline-12" class="outline-3">
-<h3 id="headline-12">
+<div id="outline-text-headline-14" class="outline-text-2">
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
 It&#39;s macro-land, after all
 </h3>
-<div id="outline-text-headline-12" class="outline-text-3">
+<div id="outline-text-headline-15" class="outline-text-3">
 <p>If you&#39;d like to declare some constants at the top of your <em>project.clj</em> for reuse within <em>defproject</em></p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">def </span>my-version <span style="color:#e6db74">&#34;1.2.3&#34;</span>)
@@ -538,11 +571,11 @@ It&#39;s macro-land, after all
 </div>
 </div>
 </div>
-<div id="outline-container-headline-13" class="outline-3">
-<h3 id="headline-13">
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
 The eval-reader for dynamism
 </h3>
-<div id="outline-text-headline-13" class="outline-text-3">
+<div id="outline-text-headline-16" class="outline-text-3">
 <p>Some self-evident example code. Notice the use of the eval reader <em>#=</em>.</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#e6db74">:source-paths</span> [<span style="color:#f92672">#</span>=(eval (str (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;user.home&#34;</span>) <span style="color:#e6db74">&#34;/.lein/dev-srcs&#34;</span>))
@@ -553,16 +586,16 @@ The eval-reader for dynamism
 </div>
 </div>
 </div>
-<div id="outline-container-headline-14" class="outline-2">
-<h2 id="headline-14">
+<div id="outline-container-headline-17" class="outline-2">
+<h2 id="headline-17">
 Gotchas
 </h2>
-<div id="outline-text-headline-14" class="outline-text-2">
-<div id="outline-container-headline-15" class="outline-3">
-<h3 id="headline-15">
+<div id="outline-text-headline-17" class="outline-text-2">
+<div id="outline-container-headline-18" class="outline-3">
+<h3 id="headline-18">
 <code>with-redefs</code>
 </h3>
-<div id="outline-text-headline-15" class="outline-text-3">
+<div id="outline-text-headline-18" class="outline-text-3">
 <p><code>with-redefs</code> and <span style="text-decoration: underline;">inlined</span>-annotated vars  don&#39;t play well.</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#a6e22e">with-redefs</span> [+ -] (+ <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">30</span>))</code></pre></div>

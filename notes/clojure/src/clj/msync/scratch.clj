@@ -1,5 +1,5 @@
 (ns msync.scratch
-  (:require [clojure.string :refer [capitalize split join]]))
+  (:require [clojure.string :refer [capitalize split]]))
 
 (defn title-case-reduce [s]
   (->> s
@@ -67,3 +67,5 @@
        (map capitalize)
        (apply str)))
 (title-case-regex "\tThe lord of the    Rings   ")
+
+(count (filter #(= % \t) s))
