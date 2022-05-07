@@ -141,65 +141,45 @@ Loss Function
 <dd>
 <p>A function to measure the difference between the actual and the expected outputs</p>
 <ul>
-<li>
-<p>Synonyms - <strong>Objective Function</strong>, <strong>Cost Function</strong></p>
-</li>
+<li>Synonyms - <strong>Objective Function</strong>, <strong>Cost Function</strong></li>
 </ul>
 </dd>
 <dt>
 Optimizers
 </dt>
-<dd>
-<p>The algorithm that implements <strong>backpropagation</strong> to adjust weights with the purpose of reducing the loss functions.</p>
-</dd>
+<dd>The algorithm that implements <strong>backpropagation</strong> to adjust weights with the purpose of reducing the loss functions.</dd>
 <dt>
 Weights
 </dt>
-<dd>
-<p>Parameters of the various connections between the processing units (the <em>neurons</em>).</p>
-</dd>
+<dd>Parameters of the various connections between the processing units (the <em>neurons</em>).</dd>
 <dt>
 Kernel Function (SVM)
 </dt>
-<dd>
-<p>A computationally tractable function that maps any two points in the input space to their distance in the target representation space.</p>
-</dd>
+<dd>A computationally tractable function that maps any two points in the input space to their distance in the target representation space.</dd>
 <dt>
 Random Forests
 </dt>
-<dd>
-<p>Ensemble of specialized decision trees.</p>
-</dd>
+<dd>Ensemble of specialized decision trees.</dd>
 <dt>
 Gradient Boosting
 </dt>
-<dd>
-<p>Ensemble of weak prediction models that focuses on boosting the weaker of the contained models to improve prediction.</p>
-</dd>
+<dd>Ensemble of weak prediction models that focuses on boosting the weaker of the contained models to improve prediction.</dd>
 <dt>
 Feature Engineering
 </dt>
-<dd>
-<p>Transforming the input data (with mostly manual intervention) into forms that machine learning algorithms can consume. A step now greatly automated / made redundant with deep learning.</p>
-</dd>
+<dd>Transforming the input data (with mostly manual intervention) into forms that machine learning algorithms can consume. A step now greatly automated / made redundant with deep learning.</dd>
 <dt>
 <a href="https://developer.nvidia.com/about-cuda">CUDA</a>
 </dt>
-<dd>
-<p>A programming interface for Nvidia&#39;s GPUs. CUDA implementations for neural network matrix operations, started happening around 2011.</p>
-</dd>
+<dd>A programming interface for Nvidia&#39;s GPUs. CUDA implementations for neural network matrix operations, started happening around 2011.</dd>
 <dt>
 TPU
 </dt>
-<dd>
-<p>Google&#39;s Tensor Processing Unit chip project meant to be faster and more energy efficient than the GPUs for neural network matrix operations.</p>
-</dd>
+<dd>Google&#39;s Tensor Processing Unit chip project meant to be faster and more energy efficient than the GPUs for neural network matrix operations.</dd>
 <dt>
 Activation Functions
 </dt>
-<dd>
-<p>A class of functions that transform the input signal into a neuron into an output signal.</p>
-</dd>
+<dd>A class of functions that transform the input signal into a neuron into an output signal.</dd>
 </dl>
 </div>
 </div>
@@ -210,27 +190,15 @@ History
 <div id="outline-text-headline-3" class="outline-text-3">
 <p>Improvements in the gradient backpropagation algorithms were key in allowing faster training of more complex (deep) neural networks. Key aspects were</p>
 <ul>
-<li>
-<p>Newer types of <em>activation functions</em> being tried</p>
-</li>
-<li>
-<p>Better <em>weight initialization schemes</em></p>
-</li>
-<li>
-<p>Better <em>optimization schemes</em> like <strong>RMSProp</strong> and <strong>Adam</strong></p>
-</li>
+<li>Newer types of <em>activation functions</em> being tried</li>
+<li>Better <em>weight initialization schemes</em></li>
+<li>Better <em>optimization schemes</em> like <strong>RMSProp</strong> and <strong>Adam</strong></li>
 <li>
 <p>Better ways to help gradient propagation</p>
 <ul>
-<li>
-<p>Batch normalization</p>
-</li>
-<li>
-<p>Residual Connections</p>
-</li>
-<li>
-<p>Depth-wise separable convolutions</p>
-</li>
+<li>Batch normalization</li>
+<li>Residual Connections</li>
+<li>Depth-wise separable convolutions</li>
 </ul>
 </li>
 </ul>
@@ -252,39 +220,27 @@ Terms
 <dt>
 Tensor
 </dt>
-<dd>
-<p>Multi-dimensional arrays. Tensors are generalizations of arrays and matrices - rank-1 and rank-2 tensors themselves. By extensions, scalars are rank-0 tensors.</p>
-</dd>
+<dd>Multi-dimensional arrays. Tensors are generalizations of arrays and matrices - rank-1 and rank-2 tensors themselves. By extensions, scalars are rank-0 tensors.</dd>
 <dt>
 Differentiation
 </dt>
-<dd>
-<p>Yes. Calculus.</p>
-</dd>
+<dd>Yes. Calculus.</dd>
 <dt>
 Gradient Descent
 </dt>
-<dd>
-<p>Moving towards a (local) minima in search for the right fit parameters, guided by the loss function. Calculus.</p>
-</dd>
+<dd>Moving towards a (local) minima in search for the right fit parameters, guided by the loss function. Calculus.</dd>
 <dt>
 Overfitting
 </dt>
-<dd>
-<p>Learning too keenly from the training data, leading to a lower ability to generalize.</p>
-</dd>
+<dd>Learning too keenly from the training data, leading to a lower ability to generalize.</dd>
 <dt>
 Batch Axis
 </dt>
-<dd>
-<p>Also called <strong>Batch Dimension</strong>. In data samples, typically the <em>0</em>-th axis lists individual data items and batching happens on this collection. Batch Axis refers to the axis that lists the data items.</p>
-</dd>
+<dd>Also called <strong>Batch Dimension</strong>. In data samples, typically the <em>0</em>-th axis lists individual data items and batching happens on this collection. Batch Axis refers to the axis that lists the data items.</dd>
 <dt>
 Random initialization
 </dt>
-<dd>
-<p>The weight-matrices, when initialized, are filled with random values. That process.</p>
-</dd>
+<dd>The weight-matrices, when initialized, are filled with random values. That process.</dd>
 </dl>
 </div>
 </div>
@@ -297,27 +253,27 @@ Environment setup
 <p>
 Let&#39;s first <code>activate</code> the virtualenv infrastructure for Emacs.</p>
 <div class="src src-elisp">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(pyvenv-activate <span style="color:#e6db74">&#34;~/.venv/dl&#34;</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(pyvenv-activate <span style="color:#e6db74">&#34;~/.venv/dl&#34;</span>)</span></span></code></pre></div>
 </div>
 <p>
 Next, we install the requisite Python packages with <em>pip</em>.</p>
 <div class="src src-bash">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.venv/dl/bin/activate
-pip install tensorflow keras matplotlib</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.venv/dl/bin/activate
+</span></span><span style="display:flex;"><span>pip install tensorflow keras matplotlib</span></span></code></pre></div>
 </div>
 <div class="src src-bash">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python</span></span></code></pre></div>
 </div>
 <pre class="example">
 &#39; is not defined
 </pre>
 <div class="src src-python">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> keras.datasets <span style="color:#f92672">import</span> mnist
-(train_images, train_labels), (test_images, test_labels) <span style="color:#f92672">=</span> mnist<span style="color:#f92672">.</span>load_data()</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> keras.datasets <span style="color:#f92672">import</span> mnist
+</span></span><span style="display:flex;"><span>(train_images, train_labels), (test_images, test_labels) <span style="color:#f92672">=</span> mnist<span style="color:#f92672">.</span>load_data()</span></span></code></pre></div>
 </div>
 <div class="src src-python">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">print(train_labels[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>])
-print(test_labels[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>])</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_labels[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>])
+</span></span><span style="display:flex;"><span>print(test_labels[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>])</span></span></code></pre></div>
 </div>
 <p>
 With this setup, most of the code samples in the second chapter can be executed.</p>
@@ -333,57 +289,39 @@ Real-world examples of data tensors
 <dt>
 Vector data
 </dt>
-<dd>
-<p>Rank-2 tensors of shape <code>(samples, features)</code></p>
-</dd>
+<dd>Rank-2 tensors of shape <code>(samples, features)</code></dd>
 <dt>
 Timeseries/Sequence data
 </dt>
-<dd>
-<p>Rank-3 tensors of shape <code>(samples, timesteps, features)</code></p>
-</dd>
+<dd>Rank-3 tensors of shape <code>(samples, timesteps, features)</code></dd>
 <dt>
 Images
 </dt>
-<dd>
-<p>Rank-4 tensors of shape <code>(samples, height, width, channels)</code> or <code>(samples, channels, height, width)</code></p>
-</dd>
+<dd>Rank-4 tensors of shape <code>(samples, height, width, channels)</code> or <code>(samples, channels, height, width)</code></dd>
 <dt>
 Video
 </dt>
-<dd>
-<p>Rank-5 tensors of shape <code>(samples, frames, height, width, channels)</code> or <code>(samples, frames, channels, height, width)</code></p>
-</dd>
+<dd>Rank-5 tensors of shape <code>(samples, frames, height, width, channels)</code> or <code>(samples, frames, channels, height, width)</code></dd>
 <dt>
 Learning rate
 </dt>
-<dd>
-<p>A scalar factor that modulates the speed at which &#34;learning&#34; happens - in other words, it controls the rate at which the model converges to a steady state. Too fast, and the learning may be unstable and never converge. Too little, and you may need to wait a lifetime for the learning to finish.</p>
-</dd>
+<dd>A scalar factor that modulates the speed at which &#34;learning&#34; happens - in other words, it controls the rate at which the model converges to a steady state. Too fast, and the learning may be unstable and never converge. Too little, and you may need to wait a lifetime for the learning to finish.</dd>
 <dt>
 Gradient Descent
 </dt>
-<dd>
-<p>Descend down the gradient in search of stability.</p>
-</dd>
+<dd>Descend down the gradient in search of stability.</dd>
 <dt>
 Stochastic Gradient Descent
 </dt>
-<dd>
-<p>Random batch training, with varying batch sizes.</p>
-</dd>
+<dd>Random batch training, with varying batch sizes.</dd>
 <dt>
 Backpropagation algorithm
 </dt>
-<dd>
-<p>Applying chain rule to the computation of the gradient values.</p>
-</dd>
+<dd>Applying chain rule to the computation of the gradient values.</dd>
 <dt>
 Computation graph
 </dt>
-<dd>
-<p>A datastructure which forms the core of <em>Tensorflow</em>. It is a <em>directed acyclic graph</em> of tensor operations in the context of <em>Tensorflow</em>.</p>
-</dd>
+<dd>A datastructure which forms the core of <em>Tensorflow</em>. It is a <em>directed acyclic graph</em> of tensor operations in the context of <em>Tensorflow</em>.</dd>
 </dl>
 </div>
 </div>
@@ -393,18 +331,10 @@ Tensor operations
 </h3>
 <div id="outline-text-headline-8" class="outline-text-3">
 <ul>
-<li>
-<p>Element-wise operations</p>
-</li>
-<li>
-<p>Broadcasting</p>
-</li>
-<li>
-<p>Tensor product - Also called the <em>dot product</em></p>
-</li>
-<li>
-<p>Tensor reshaping</p>
-</li>
+<li>Element-wise operations</li>
+<li>Broadcasting</li>
+<li>Tensor product - Also called the <em>dot product</em></li>
+<li>Tensor reshaping</li>
 </ul>
 </div>
 </div>
@@ -417,18 +347,10 @@ Gradient-based optimization
 <p>
 Conceptually, the process will look like the following for neural networks</p>
 <ul>
-<li>
-<p>Take a batch of input data x<sub>1</sub> and the corresponding labels y-true<sub>1</sub></p>
-</li>
-<li>
-<p>Run the model on x<sub>1</sub> to obtain the predicted labels y-pred<sub>1</sub></p>
-</li>
-<li>
-<p>Compute the loss for this batch - which is a measure of the mismatch between y-true<sub>1</sub> and y-pred<sub>1</sub></p>
-</li>
-<li>
-<p>Update weights on the model slightly in a <em>direction</em> that slightly reduces the loss on this batch.</p>
-</li>
+<li>Take a batch of input data x<sub>1</sub> and the corresponding labels y-true<sub>1</sub></li>
+<li>Run the model on x<sub>1</sub> to obtain the predicted labels y-pred<sub>1</sub></li>
+<li>Compute the loss for this batch - which is a measure of the mismatch between y-true<sub>1</sub> and y-pred<sub>1</sub></li>
+<li>Update weights on the model slightly in a <em>direction</em> that slightly reduces the loss on this batch.</li>
 </ul>
 <div id="outline-container-headline-10" class="outline-4">
 <h4 id="headline-10">
@@ -442,12 +364,8 @@ There are multiple variants of SGD - focused on taking into account the previous
 <p>
 <em>Momentum</em> addresses two issues</p>
 <ul>
-<li>
-<p>Convergence speed</p>
-</li>
-<li>
-<p>Local minima</p>
-</li>
+<li>Convergence speed</li>
+<li>Local minima</li>
 </ul>
 <p>The intuition is that if the current learning velocity is large (high momentum), then if there is a local minima, the chances of descending and staying there are reduced as the momentum carries you <em>over</em> the local <em>hills</em>.</p>
 </div>

@@ -81,39 +81,39 @@ written in <em>Clojure</em>.</p>
 <p>
 A couple of small functions, placed in some <em>utils</em> namespace</p>
 <div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">ns </span>msync-blog.utils
-    (<span style="color:#e6db74">:require</span> [taoensso.timbre <span style="color:#e6db74">:as</span> timbre <span style="color:#e6db74">:refer</span> [log info debug error warn
-                                                  trace fatal report]]
-              [clojure.string <span style="color:#e6db74">:as</span> string]))
-
-  <span style="color:#75715e">;; https://groups.google.com/forum/#!topic/clojure/ORRhWgYd2Dk</span>
-  <span style="color:#75715e">;; Modified slightly since contribs has now changed forms (as of 1.7)</span>
-  (<span style="color:#66d9ef">defn </span>unmangle
-    <span style="color:#e6db74">&#34;Given the name of a class that implements a Clojure function,
-</span><span style="color:#e6db74">        returns the function&#39;s name in Clojure.
-</span><span style="color:#e6db74">        Note: If the true Clojure function name contains any underscores
-</span><span style="color:#e6db74">        (a rare occurrence), the unmangled name will contain hyphens
-</span><span style="color:#e6db74">        at those locations instead.&#34;</span>
-    [class-name]
-    (<span style="color:#a6e22e">.replace</span>
-     (<span style="color:#a6e22e">string/replace</span> class-name <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;^(.+)\$(.+)__\d+$&#34;</span> <span style="color:#e6db74">&#34;$1/$2&#34;</span>)
-     <span style="color:#e6db74">\_</span> <span style="color:#e6db74">\-</span>))
-
-  <span style="color:#75715e">;; https://gist.github.com/alexpw/2166820</span>
-  <span style="color:#75715e">;; And some minor modifications</span>
-  (<span style="color:#66d9ef">defmacro </span>try-catch [log-level <span style="color:#f92672">&amp;</span> body]
-    <span style="color:#f92672">`</span>(<span style="color:#a6e22e">try</span>
-       <span style="color:#f92672">~@</span>body
-       (<span style="color:#a6e22e">catch</span> Exception e#
-         (<span style="color:#f92672">~</span>log-level
-          (<span style="color:#a6e22e">timbre/color-str</span> <span style="color:#e6db74">:red</span> (str <span style="color:#e6db74">&#34;Exception thrown trying to execute &#39;&#34;</span>
-                                      (-&gt; e#
-                                          .getStackTrace
-                                          first
-                                          .getClassName
-                                          unmangle)
-                                      <span style="color:#e6db74">&#34;&#39; - Message/exception: &#34;</span>
-                                      e#))))))</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>  (<span style="color:#66d9ef">ns </span>msync-blog.utils
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">:require</span> [taoensso.timbre <span style="color:#e6db74">:as</span> timbre <span style="color:#e6db74">:refer</span> [log info debug error warn
+</span></span><span style="display:flex;"><span>                                                  trace fatal report]]
+</span></span><span style="display:flex;"><span>              [clojure.string <span style="color:#e6db74">:as</span> string]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; https://groups.google.com/forum/#!topic/clojure/ORRhWgYd2Dk</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; Modified slightly since contribs has now changed forms (as of 1.7)</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">defn </span>unmangle
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Given the name of a class that implements a Clojure function,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        returns the function&#39;s name in Clojure.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        Note: If the true Clojure function name contains any underscores
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        (a rare occurrence), the unmangled name will contain hyphens
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        at those locations instead.&#34;</span>
+</span></span><span style="display:flex;"><span>    [class-name]
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">.replace</span>
+</span></span><span style="display:flex;"><span>     (<span style="color:#a6e22e">string/replace</span> class-name <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;^(.+)\$(.+)__\d+$&#34;</span> <span style="color:#e6db74">&#34;$1/$2&#34;</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">\_</span> <span style="color:#e6db74">\-</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; https://gist.github.com/alexpw/2166820</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; And some minor modifications</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">defmacro </span>try-catch [log-level <span style="color:#f92672">&amp;</span> body]
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">`</span>(<span style="color:#a6e22e">try</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">~@</span>body
+</span></span><span style="display:flex;"><span>       (<span style="color:#a6e22e">catch</span> Exception e#
+</span></span><span style="display:flex;"><span>         (<span style="color:#f92672">~</span>log-level
+</span></span><span style="display:flex;"><span>          (<span style="color:#a6e22e">timbre/color-str</span> <span style="color:#e6db74">:red</span> (str <span style="color:#e6db74">&#34;Exception thrown trying to execute &#39;&#34;</span>
+</span></span><span style="display:flex;"><span>                                      (-&gt; e#
+</span></span><span style="display:flex;"><span>                                          .getStackTrace
+</span></span><span style="display:flex;"><span>                                          first
+</span></span><span style="display:flex;"><span>                                          .getClassName
+</span></span><span style="display:flex;"><span>                                          unmangle)
+</span></span><span style="display:flex;"><span>                                      <span style="color:#e6db74">&#34;&#39; - Message/exception: &#34;</span>
+</span></span><span style="display:flex;"><span>                                      e#))))))</span></span></code></pre></div>
 </div>
 
   </main>

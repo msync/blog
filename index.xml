@@ -6,7 +6,16 @@
     <description>Recent content on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2020 10:48:55 +0530</lastBuildDate><atom:link href="https://msync.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 09:43:11 +0530</lastBuildDate><atom:link href="https://msync.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reading List</title>
+      <link>https://msync.org/notes/reading-list/</link>
+      <pubDate>Sun, 10 Oct 2021 09:43:11 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/reading-list/</guid>
+      <description>An evolving list of useful papers and articles which are software agnostic (mostly)</description>
+    </item>
+    
     <item>
       <title>Emacs Productivity Notes For The Newbie</title>
       <link>https://msync.org/notes/emacs-productivity-notes-for-the-newbie/</link>
@@ -107,8 +116,7 @@
       
       <guid>https://msync.org/posts/2015/2015-05-16-interesting-java-in-clojure-core/</guid>
       <description>The Clojure language primarily targets the Java Virtual Machine, and so obviously, we have a topic.
-  Quick array creation from some items
-  // clojure.lang.Intrinsics private static Object[] oa(Object... arr) { return arr; }  </description>
+ Quick array creation from some items  // clojure.lang.Intrinsics private static Object[] oa(Object... arr) { return arr; }  </description>
     </item>
     
     <item>

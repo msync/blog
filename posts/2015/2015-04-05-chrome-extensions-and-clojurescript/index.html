@@ -84,79 +84,79 @@ with cross-domain scripting issues. For more details, see <a href="https://githu
 So, let&#39;s say you are creating an action with a <em>browser action</em> served using, say, <em>popup.html</em>. Then you&#39;d have the relevant
 part of your <em>manifest.json</em> thus</p>
 <div class="src src-json">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  <span style="color:#e6db74">&#34;browser_action&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-      <span style="color:#f92672">&#34;...&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>,
-      <span style="color:#f92672">&#34;default_popup&#34;</span>: <span style="color:#e6db74">&#34;popup.html&#34;</span>,
-      <span style="color:#f92672">&#34;...&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>
-  }</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;browser_action&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;...&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;default_popup&#34;</span>: <span style="color:#e6db74">&#34;popup.html&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;...&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></div>
 </div>
 <p>Additionally, you may want/have to expose your javascript files in the <code>web_accessible_resources</code> and <code>background</code> sections.</p>
 <p>
 The file <code>popup.html</code> would include your Javascript files, including that generated using Clojurescript. Let&#39;s say your
 Clojurescript code converts to a single file <code>cljs_out.js</code>, then you&#39;d have</p>
 <div class="src src-html">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- Other dependency JS files before --&gt;</span>
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cljs_out.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-<span style="color:#75715e">&lt;!-- Other dependent JS files afterwards --&gt;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Other dependency JS files before --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cljs_out.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- Other dependent JS files afterwards --&gt;</span></span></span></code></pre></div>
 </div>
 <p>
 For the sake of completeness, the relevant part of the <code>project.clj</code> file might look like the following, although the
 official sites of <code>piggieback</code> and <code>weasel</code> are the best sources for the latest/correct details.</p>
 <div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">defproject </span>my-extension <span style="color:#e6db74">&#34;0.0.1-SNAPSHOT&#34;</span>
-    <span style="color:#75715e">;; Stuff</span>
-    <span style="color:#e6db74">:dependencies</span> [<span style="color:#75715e">;; ...</span>
-                   [weasel <span style="color:#e6db74">&#34;0.7.0&#34;</span>]
-                   <span style="color:#75715e">;; ...</span>
-                   ]
-    <span style="color:#75715e">;; Other stuff</span>
-    <span style="color:#e6db74">:profiles</span> {<span style="color:#e6db74">:debug-value</span> {
-                             <span style="color:#e6db74">:plugins</span> [[lein-cljsbuild <span style="color:#e6db74">&#34;1.1.1&#34;</span>]]
-                             <span style="color:#e6db74">:dependencies</span> [[com.cemerick/piggieback <span style="color:#e6db74">&#34;0.2.1&#34;</span>]
-                                            [org.clojure/tools.nrepl <span style="color:#e6db74">&#34;0.2.12&#34;</span>]]
-                             <span style="color:#e6db74">:nrepl-options</span> {<span style="color:#e6db74">:nrepl-middleware</span> [cemerick.piggieback/wrap-cljs-repl]}
-                             <span style="color:#75715e">;; Good-to-have helpers - available in the Clojure REPL on ``lein repl&#39;&#39;</span>
-                             <span style="color:#e6db74">:injections</span> [(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[cemerick.piggieback <span style="color:#e6db74">:as</span> pb]
-                                                   <span style="color:#f92672">&#39;</span>[weasel.repl.websocket <span style="color:#e6db74">:as</span> ws])
-                                          (<span style="color:#66d9ef">defn </span>browser-repl []
-                                            (<span style="color:#a6e22e">pb/cljs-repl</span>
-                                             (<span style="color:#a6e22e">ws/repl-env</span> <span style="color:#e6db74">:ip</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span> <span style="color:#e6db74">:port</span> <span style="color:#ae81ff">11000</span>)))] <span style="color:#75715e">;; Choose your port</span>
-                             }
-               }
-    <span style="color:#e6db74">:cljsbuild</span> {<span style="color:#e6db74">:builds</span> [{<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;dev&#34;</span>
-                          <span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src&#34;</span>] <span style="color:#75715e">;; Assuming your cljs base package starts in src/</span>
-                          <span style="color:#e6db74">:compiler</span> {
-                                     <span style="color:#e6db74">:output-to</span> <span style="color:#e6db74">&#34;cljs_out.js&#34;</span>
-                                     <span style="color:#e6db74">:optimizations</span> <span style="color:#e6db74">:simple</span> <span style="color:#75715e">;; Keep it simple, developer. Optimize when releasing in production.</span>
-                                     <span style="color:#e6db74">:preamble</span> [<span style="color:#e6db74">&#34;path/to/some-external-library.js&#34;</span> <span style="color:#e6db74">&#34;path/to/another/external-library.js&#34;</span>]
-                                     <span style="color:#e6db74">:externs</span> [<span style="color:#e6db74">&#34;...&#34;</span>]
-                                     }
-                          }]}
-    <span style="color:#75715e">;; More other stuff</span>
-    )</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>  (<span style="color:#66d9ef">defproject </span>my-extension <span style="color:#e6db74">&#34;0.0.1-SNAPSHOT&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">;; Stuff</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">:dependencies</span> [<span style="color:#75715e">;; ...</span>
+</span></span><span style="display:flex;"><span>                   [weasel <span style="color:#e6db74">&#34;0.7.0&#34;</span>]
+</span></span><span style="display:flex;"><span>                   <span style="color:#75715e">;; ...</span>
+</span></span><span style="display:flex;"><span>                   ]
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">;; Other stuff</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">:profiles</span> {<span style="color:#e6db74">:debug-value</span> {
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">:plugins</span> [[lein-cljsbuild <span style="color:#e6db74">&#34;1.1.1&#34;</span>]]
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">:dependencies</span> [[com.cemerick/piggieback <span style="color:#e6db74">&#34;0.2.1&#34;</span>]
+</span></span><span style="display:flex;"><span>                                            [org.clojure/tools.nrepl <span style="color:#e6db74">&#34;0.2.12&#34;</span>]]
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">:nrepl-options</span> {<span style="color:#e6db74">:nrepl-middleware</span> [cemerick.piggieback/wrap-cljs-repl]}
+</span></span><span style="display:flex;"><span>                             <span style="color:#75715e">;; Good-to-have helpers - available in the Clojure REPL on ``lein repl&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>                             <span style="color:#e6db74">:injections</span> [(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[cemerick.piggieback <span style="color:#e6db74">:as</span> pb]
+</span></span><span style="display:flex;"><span>                                                   <span style="color:#f92672">&#39;</span>[weasel.repl.websocket <span style="color:#e6db74">:as</span> ws])
+</span></span><span style="display:flex;"><span>                                          (<span style="color:#66d9ef">defn </span>browser-repl []
+</span></span><span style="display:flex;"><span>                                            (<span style="color:#a6e22e">pb/cljs-repl</span>
+</span></span><span style="display:flex;"><span>                                             (<span style="color:#a6e22e">ws/repl-env</span> <span style="color:#e6db74">:ip</span> <span style="color:#e6db74">&#34;0.0.0.0&#34;</span> <span style="color:#e6db74">:port</span> <span style="color:#ae81ff">11000</span>)))] <span style="color:#75715e">;; Choose your port</span>
+</span></span><span style="display:flex;"><span>                             }
+</span></span><span style="display:flex;"><span>               }
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">:cljsbuild</span> {<span style="color:#e6db74">:builds</span> [{<span style="color:#e6db74">:id</span> <span style="color:#e6db74">&#34;dev&#34;</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src&#34;</span>] <span style="color:#75715e">;; Assuming your cljs base package starts in src/</span>
+</span></span><span style="display:flex;"><span>                          <span style="color:#e6db74">:compiler</span> {
+</span></span><span style="display:flex;"><span>                                     <span style="color:#e6db74">:output-to</span> <span style="color:#e6db74">&#34;cljs_out.js&#34;</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#e6db74">:optimizations</span> <span style="color:#e6db74">:simple</span> <span style="color:#75715e">;; Keep it simple, developer. Optimize when releasing in production.</span>
+</span></span><span style="display:flex;"><span>                                     <span style="color:#e6db74">:preamble</span> [<span style="color:#e6db74">&#34;path/to/some-external-library.js&#34;</span> <span style="color:#e6db74">&#34;path/to/another/external-library.js&#34;</span>]
+</span></span><span style="display:flex;"><span>                                     <span style="color:#e6db74">:externs</span> [<span style="color:#e6db74">&#34;...&#34;</span>]
+</span></span><span style="display:flex;"><span>                                     }
+</span></span><span style="display:flex;"><span>                          }]}
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">;; More other stuff</span>
+</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div>
 </div>
 <p>
 When you run <code>lein repl</code>, you should now have the function <code>browser-repl</code> available. Simply run it.</p>
 <div class="src src-shell">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">  user<span style="color:#f92672">=</span>&gt; <span style="color:#f92672">(</span>browser-repl<span style="color:#f92672">)</span>
-  <span style="color:#e6db74">&lt;&lt; started Weasel server on ws://0.0.0.0:11000 &gt;&gt;
-</span><span style="color:#e6db74">  &lt;&lt; waiting for client to connect ...
-</span><span style="color:#e6db74">  ;; You can not evaluate anything here until the browser connects to this insta</span>nce.
-  ;; See below <span style="color:#66d9ef">for</span> further steps</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  user<span style="color:#f92672">=</span>&gt; <span style="color:#f92672">(</span>browser-repl<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&lt;&lt; started Weasel server on ws://0.0.0.0:11000 &gt;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;&lt; waiting for client to connect ...
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  ;; You can not evaluate anything here until the browser connects to this insta</span>nce.
+</span></span><span style="display:flex;"><span>  ;; See below <span style="color:#66d9ef">for</span> further steps</span></span></code></pre></div>
 </div>
 <p>
 In your <em>clojurescript</em> code, you may want to have a helper function to initiate the websocket-based REPL connection.</p>
 <div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">  (<span style="color:#66d9ef">ns </span>my-extension.core
-    (<span style="color:#e6db74">:require</span> [<span style="color:#75715e">;; ...</span>
-               [weasel.repl]
-               <span style="color:#75715e">;; ...</span>
-               ]))
-  <span style="color:#75715e">;; ...</span>
-  (<span style="color:#66d9ef">defn </span><span style="color:#f92672">^</span><span style="color:#e6db74">:export</span> <span style="color:#75715e">;; You need the ^:export so that you can invoke this function from the browser console</span>
-    repl-connect []
-    (<span style="color:#a6e22e">weasel.repl/connect</span> <span style="color:#e6db74">&#34;ws://localhost:11000&#34;</span> <span style="color:#e6db74">:verbose</span> true)) <span style="color:#75715e">;; Remember to use the right port</span>
-  <span style="color:#75715e">;; ...</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>  (<span style="color:#66d9ef">ns </span>my-extension.core
+</span></span><span style="display:flex;"><span>    (<span style="color:#e6db74">:require</span> [<span style="color:#75715e">;; ...</span>
+</span></span><span style="display:flex;"><span>               [weasel.repl]
+</span></span><span style="display:flex;"><span>               <span style="color:#75715e">;; ...</span>
+</span></span><span style="display:flex;"><span>               ]))
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; ...</span>
+</span></span><span style="display:flex;"><span>  (<span style="color:#66d9ef">defn </span><span style="color:#f92672">^</span><span style="color:#e6db74">:export</span> <span style="color:#75715e">;; You need the ^:export so that you can invoke this function from the browser console</span>
+</span></span><span style="display:flex;"><span>    repl-connect []
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">weasel.repl/connect</span> <span style="color:#e6db74">&#34;ws://localhost:11000&#34;</span> <span style="color:#e6db74">:verbose</span> true)) <span style="color:#75715e">;; Remember to use the right port</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">;; ...</span></span></span></code></pre></div>
 </div>
 <p>
 That should be mostly it, as far as the setup is concerned. Compile your code.
@@ -169,20 +169,20 @@ causing heartburn.</p>
 <p>
 In the console, run</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">my_extension</span>.<span style="color:#a6e22e">core</span>.<span style="color:#a6e22e">repl_connect</span>();
-<span style="color:#75715e">// Note the change from dashes to underscores, and the namespacing.
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">my_extension</span>.<span style="color:#a6e22e">core</span>.<span style="color:#a6e22e">repl_connect</span>();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Note the change from dashes to underscores, and the namespacing.
+</span></span></span></code></pre></div>
 </div>
 <p>
 If you see a message stating that a websocket connection to port 11000 (or whatever you configured) has been
 established, you are all set. In the shell (where you&#39;ve run <code>lein repl</code> and then <code>(browser-repl)</code>), you&#39;ll see the following</p>
 <div class="src src-bash">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user<span style="color:#f92672">=</span>&gt; <span style="color:#f92672">(</span>browser-repl<span style="color:#f92672">)</span>
-<span style="color:#e6db74">&lt;&lt; started Weas</span>el server on ws://0.0.0.0:9001 &gt;&gt;
-&lt;&lt; waiting <span style="color:#66d9ef">for</span> client to connect ...  connected! &gt;&gt;
-To quit, type: :cljs/quit
-nil
-cljs.user<span style="color:#f92672">=</span>&gt;</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>user<span style="color:#f92672">=</span>&gt; <span style="color:#f92672">(</span>browser-repl<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;&lt; started Weas</span>el server on ws://0.0.0.0:9001 &gt;&gt;
+</span></span><span style="display:flex;"><span>&lt;&lt; waiting <span style="color:#66d9ef">for</span> client to connect ...  connected! &gt;&gt;
+</span></span><span style="display:flex;"><span>To quit, type: :cljs/quit
+</span></span><span style="display:flex;"><span>nil
+</span></span><span style="display:flex;"><span>cljs.user<span style="color:#f92672">=</span>&gt;</span></span></code></pre></div>
 </div>
 <p>
 Type <code>(.log js/console &#34;Hello there!&#34;)</code> - you should see that string logged in the browser&#39;s console.</p>

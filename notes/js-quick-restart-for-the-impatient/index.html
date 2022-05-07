@@ -178,12 +178,12 @@
       </time>
 
       
-      <time datetime="2021-07-24 21:34:23 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+      <time datetime="2022-05-07 17:12:15 &#43;0530 IST" itemprop="datePublished" class="pubdate">
         Last updated:
         <span class="weekday">Sat</span>,
-        <span class="day">24</span>
-        <span class="month">Jul</span>,
-        <span class="year">2021</span>
+        <span class="day">7</span>
+        <span class="month">May</span>,
+        <span class="year">2022</span>
       </time>
       
     </div>
@@ -209,21 +209,11 @@ Quick reminders
 </h3>
 <div id="outline-text-headline-2" class="outline-text-3">
 <ul>
-<li>
-<p>It&#39;s functional.</p>
-</li>
-<li>
-<p>It&#39;s imperative.</p>
-</li>
-<li>
-<p>It&#39;s object oriented.</p>
-</li>
-<li>
-<p>It&#39;s mutable all over the place. (This is a general remark, but an important reminder when coming from Clojure)</p>
-</li>
-<li>
-<p>It&#39;s class-oriented. Not!  </p>
-</li>
+<li>It&#39;s functional.</li>
+<li>It&#39;s imperative.</li>
+<li>It&#39;s object oriented.</li>
+<li>It&#39;s mutable all over the place. (This is a general remark, but an important reminder when coming from Clojure)</li>
+<li>It&#39;s class-oriented. Not!  </li>
 </ul>
 </div>
 </div>
@@ -246,50 +236,46 @@ Do <strong>not</strong> forget <span style="text-decoration: underline;">let</sp
 <div id="outline-text-headline-5" class="outline-text-4">
 <p>And you probably certainly want to use <span style="text-decoration: underline;">let</span>.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
-      <span style="color:#75715e">// Hoisted to the top!
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-
-      <span style="color:#75715e">// Safe-r
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">baz</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;The value of bar is &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">bar</span>);
-  }
-
-  <span style="color:#a6e22e">foo</span>();
-
-  <span style="color:#75715e">// 10. The bar is so low, you&#39;ll run into it here.
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;The bar outside is a low &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">bar</span>);
-
-  <span style="color:#75715e">// But, we can clean up!
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">bar</span>;</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Hoisted to the top!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Safe-r
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">baz</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;The value of bar is &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">bar</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 10. The bar is so low, you&#39;ll run into it here.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;The bar outside is a low &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">bar</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// But, we can clean up!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">bar</span>;</span></span></code></pre></div>
 </div>
 <pre class="example">
 The value of bar is 10
 The bar outside is a low 10
 </pre>
 <ul>
-<li>
-<p><em>var</em> is global scope, or if within a function, all of the function-scope.</p>
-</li>
-<li>
-<p><em>let</em> is safer. It&#39;s always block scope. And <em>let</em> is also not hoisted to the top of the block, unlike <em>var</em>.</p>
-</li>
+<li><em>var</em> is global scope, or if within a function, all of the function-scope.</li>
+<li><em>let</em> is safer. It&#39;s always block scope. And <em>let</em> is also not hoisted to the top of the block, unlike <em>var</em>.</li>
 </ul>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">noop</span>() {
-      <span style="color:#75715e">// ok, though undefined
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bar</span>);
-
-      <span style="color:#75715e">// blow up! ReferenceError
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">try</span> {
-          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">blow</span>);
-      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
-      }
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">blow</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  }
-<span style="color:#a6e22e">noop</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">noop</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// ok, though undefined
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bar</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// blow up! ReferenceError
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">blow</span>);
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">blow</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">noop</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 undefined
@@ -304,21 +290,21 @@ Prefer <em>const</em>
 <div id="outline-text-headline-6" class="outline-text-4">
 <p><span style="text-decoration: underline;">const</span> is nothing but <strong>immutable reference</strong>.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">some</span> <span style="color:#f92672">=</span> {};
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">some</span>);
-
-  <span style="color:#75715e">// Now you can NOT reassign some to anything else
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">try</span> {
-      <span style="color:#a6e22e">some</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;another&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>}; <span style="color:#75715e">// Assignment error!
-</span><span style="color:#75715e"></span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
-  }
-
-  <span style="color:#75715e">// But!
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">some</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hey there!&#34;</span>; <span style="color:#75715e">// ok
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// some is NOT immutable.
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">some</span>);</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">some</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">some</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Now you can NOT reassign some to anything else
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">some</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;another&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;object&#34;</span>}; <span style="color:#75715e">// Assignment error!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// But!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">some</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hey there!&#34;</span>; <span style="color:#75715e">// ok
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// some is NOT immutable.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">some</span>);</span></span></code></pre></div>
 </div>
 <pre class="example">
 {}
@@ -340,7 +326,7 @@ Arrays
 </h4>
 <div id="outline-text-headline-8" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;four&#39;</span>, <span style="color:#e6db74">&#39;five&#39;</span>]</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;four&#39;</span>, <span style="color:#e6db74">&#39;five&#39;</span>]</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -350,9 +336,9 @@ Strings
 </h4>
 <div id="outline-text-headline-9" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ram&#34;</span> <span style="color:#75715e">// String
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// interpolation
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ram&#34;</span> <span style="color:#75715e">// String
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// interpolation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greeting</span>)</span></span></code></pre></div>
 </div>
 <pre class="example">
 Hello, Ram
@@ -365,14 +351,14 @@ Basic types
 </h4>
 <div id="outline-text-headline-10" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">true</span>
-  <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">null</span>
-  <span style="color:#66d9ef">undefined</span>
-  <span style="color:#ae81ff">42</span>
-  <span style="color:#ae81ff">31.24</span>
-  <span style="color:#ae81ff">9911008195436579</span><span style="color:#a6e22e">n</span> <span style="color:#75715e">// BigInt
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">null</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">undefined</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">31.24</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">9911008195436579</span><span style="color:#a6e22e">n</span> <span style="color:#75715e">// BigInt
+</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -382,10 +368,10 @@ Regular Expressions
 </h4>
 <div id="outline-text-headline-11" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#e6db74">/^\d{5}-\d{4}$/</span>
-
-  <span style="color:#f92672">/^</span>[<span style="color:#a6e22e">a</span><span style="color:#f92672">-</span><span style="color:#a6e22e">z</span>]<span style="color:#f92672">/</span><span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;AbCdEf&#34;</span>) <span style="color:#75715e">// case-insensitive
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#e6db74">/^\d{5}-\d{4}$/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">/^</span>[<span style="color:#a6e22e">a</span><span style="color:#f92672">-</span><span style="color:#a6e22e">z</span>]<span style="color:#f92672">/</span><span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#34;AbCdEf&#34;</span>) <span style="color:#75715e">// case-insensitive
+</span></span></span></code></pre></div>
 </div>
 <p>
 There are five flags</p>
@@ -393,33 +379,23 @@ There are five flags</p>
 <dt>
 i
 </dt>
-<dd>
-<p>case-insensitive</p>
-</dd>
+<dd>case-insensitive</dd>
 <dt>
 g 
 </dt>
-<dd>
-<p>match all instances instead of just the first one</p>
-</dd>
+<dd>match all instances instead of just the first one</dd>
 <dt>
 m
 </dt>
-<dd>
-<p>match across multiple lines</p>
-</dd>
+<dd>match across multiple lines</dd>
 <dt>
 y
 </dt>
-<dd>
-<p>sticky-matching</p>
-</dd>
+<dd>sticky-matching</dd>
 <dt>
 u
 </dt>
-<dd>
-<p>enable the use of Unicode point escapes like so <code>\u{...}</code></p>
-</dd>
+<dd>enable the use of Unicode point escapes like so <code>\u{...}</code></dd>
 </dl>
 </div>
 </div>
@@ -437,21 +413,11 @@ Data Types
 </h4>
 <div id="outline-text-headline-13" class="outline-text-4">
 <ul>
-<li>
-<p><code>Boolean</code></p>
-</li>
-<li>
-<p><code>Number</code></p>
-</li>
-<li>
-<p><code>String</code></p>
-</li>
-<li>
-<p><code>BigInt</code></p>
-</li>
-<li>
-<p><code>Symbol</code></p>
-</li>
+<li><code>Boolean</code></li>
+<li><code>Number</code></li>
+<li><code>String</code></li>
+<li><code>BigInt</code></li>
+<li><code>Symbol</code></li>
 </ul>
 </div>
 </div>
@@ -461,27 +427,13 @@ Structural Types
 </h4>
 <div id="outline-text-headline-14" class="outline-text-4">
 <ul>
-<li>
-<p><code>Array</code></p>
-</li>
-<li>
-<p><code>Map</code></p>
-</li>
-<li>
-<p><code>Set</code></p>
-</li>
-<li>
-<p><code>WeakMap</code></p>
-</li>
-<li>
-<p><code>WeakSet</code></p>
-</li>
-<li>
-<p><code>Date</code></p>
-</li>
-<li>
-<p><code>Object</code> (!)</p>
-</li>
+<li><code>Array</code></li>
+<li><code>Map</code></li>
+<li><code>Set</code></li>
+<li><code>WeakMap</code></li>
+<li><code>WeakSet</code></li>
+<li><code>Date</code></li>
+<li><code>Object</code> (!)</li>
 </ul>
 </div>
 </div>
@@ -491,9 +443,7 @@ Others
 </h4>
 <div id="outline-text-headline-15" class="outline-text-4">
 <ul>
-<li>
-<p><code>Date</code></p>
-</li>
+<li><code>Date</code></li>
 </ul>
 </div>
 </div>
@@ -505,12 +455,12 @@ Default Arguments
 </h3>
 <div id="outline-text-headline-16" class="outline-text-3">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">greeting</span>, <span style="color:#a6e22e">entity</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;World&#34;</span>) {
-      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">greeting</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">entity</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>
-  }
-
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>))
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;नमस्ते&#34;</span>, <span style="color:#e6db74">&#34;ब्रम्हाण्ड&#34;</span>))</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">greeting</span>, <span style="color:#a6e22e">entity</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;World&#34;</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">greeting</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">entity</span><span style="color:#e6db74">}</span><span style="color:#e6db74">!`</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>))
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">greet</span>(<span style="color:#e6db74">&#34;नमस्ते&#34;</span>, <span style="color:#e6db74">&#34;ब्रम्हाण्ड&#34;</span>))</span></span></code></pre></div>
 </div>
 <pre class="example">
 Hello, World!
@@ -544,28 +494,28 @@ Part One
 </h4>
 <div id="outline-text-headline-20" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#75715e">// Helper - as array-methods mutate, we get fresh ones
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> () =&gt; [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>, <span style="color:#e6db74">&#34;Dragonfruit&#34;</span>];  
-
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">demo</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">array</span>, <span style="color:#a6e22e">op</span>) =&gt; {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Performing: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">. Array = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">array</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">retval</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">op</span>()
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Return value of op: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">retval</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`State of array after op: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">array</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;-----------------------&#34;</span>)
-  }
-
-  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
-  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Pop&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">pop</span>())
-
-  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
-  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Push&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;Mango&#34;</span>))
-
-  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
-  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Shift&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">shift</span>())
-
-  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
-  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Unshift&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#e6db74">&#34;Mango&#34;</span>))</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#75715e">// Helper - as array-methods mutate, we get fresh ones
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> () =&gt; [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>, <span style="color:#e6db74">&#34;Dragonfruit&#34;</span>];  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">demo</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">array</span>, <span style="color:#a6e22e">op</span>) =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Performing: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#e6db74">. Array = </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">array</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">retval</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">op</span>()
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Return value of op: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">retval</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`State of array after op: </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">array</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;-----------------------&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Pop&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">pop</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Push&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;Mango&#34;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Shift&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">shift</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">demo</span>(<span style="color:#e6db74">&#34;Unshift&#34;</span>, <span style="color:#a6e22e">a</span>, () =&gt; <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#e6db74">&#34;Mango&#34;</span>))</span></span></code></pre></div>
 </div>
 <pre class="example">
 Performing: Pop. Array = Apple,Banana,Cherry,Dragonfruit
@@ -594,22 +544,22 @@ Part Deux
 <div id="outline-text-headline-21" class="outline-text-4">
 <p>Find, remove, copy operations. I couldn&#39;t find an &#34;insert at arbitrary index&#34; method.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> () =&gt; [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>, <span style="color:#e6db74">&#34;Dragonfruit&#34;</span>];  
-
-  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
-  <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">slice</span>()
-
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The sliced array is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-  <span style="color:#75715e">// Finding an item index by the item&#39;s value
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Banana is at position </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-  <span style="color:#75715e">// Or, pass a function
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Banana is at position </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">findIndex</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">e</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;Banana&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-
-  <span style="color:#75715e">// Removing 2 items starting position 1 (0-based index)
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">removed</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`We removed </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">removed</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, and the remaining array is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The sliced after the above splice operation is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> () =&gt; [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>, <span style="color:#e6db74">&#34;Dragonfruit&#34;</span>];  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">slice</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The sliced array is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Finding an item index by the item&#39;s value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Banana is at position </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;Banana&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Or, pass a function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Banana is at position </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">findIndex</span>(<span style="color:#a6e22e">e</span> =&gt; <span style="color:#a6e22e">e</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;Banana&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Removing 2 items starting position 1 (0-based index)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">removed</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`We removed </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">removed</span><span style="color:#e6db74">}</span><span style="color:#e6db74">, and the remaining array is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The sliced after the above splice operation is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">b</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)</span></span></code></pre></div>
 </div>
 <pre class="example">
 The sliced array is Apple,Banana,Cherry,Dragonfruit
@@ -628,13 +578,13 @@ Operations over Array contents&#xa0;&#xa0;&#xa0;<span class="tags"><span>non</sp
 </h3>
 <div id="outline-text-headline-22" class="outline-text-3">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> () =&gt; [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>, <span style="color:#e6db74">&#34;Dragonfruit&#34;</span>];  
-
-  <span style="color:#75715e">// Find 6-lettered fruits
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
-  <span style="color:#a6e22e">selected</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">fruit</span> =&gt; <span style="color:#a6e22e">fruit</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">6</span>)
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The selected fruits are </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">selected</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The input array stands at </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> () =&gt; [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>, <span style="color:#e6db74">&#34;Cherry&#34;</span>, <span style="color:#e6db74">&#34;Dragonfruit&#34;</span>];  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Find 6-lettered fruits
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">selected</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">fruit</span> =&gt; <span style="color:#a6e22e">fruit</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The selected fruits are </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">selected</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`The input array stands at </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">a</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)</span></span></code></pre></div>
 </div>
 <pre class="example">
 The selected fruits are Banana,Cherry
@@ -643,34 +593,34 @@ The input array stands at Apple,Banana,Cherry,Dragonfruit
 <p>
 <code>Flatmap</code></p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">flatMap</span>(<span style="color:#a6e22e">f</span> =&gt; <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">toLowerCase</span>())</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">flatMap</span>(<span style="color:#a6e22e">f</span> =&gt; <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">toLowerCase</span>())</span></span></code></pre></div>
 </div>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[ <span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span> ]</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>[ <span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span> ]</span></span></code></pre></div>
 </div>
 <p>
 <code>map</code></p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span> =&gt; <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">toLowerCase</span>())</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">f</span> =&gt; <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">toLowerCase</span>())</span></span></code></pre></div>
 </div>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[ <span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span> ]</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>[ <span style="color:#e6db74">&#39;apple&#39;</span>, <span style="color:#e6db74">&#39;banana&#39;</span> ]</span></span></code></pre></div>
 </div>
 <p>
 <code>reduce</code></p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>)</span></span></code></pre></div>
 </div>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;AppleBanana&#39;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#39;AppleBanana&#39;</span></span></span></code></pre></div>
 </div>
 <p>
 <code>reduceRight</code></p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">reduceRight</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">return</span> [<span style="color:#e6db74">&#34;Apple&#34;</span>, <span style="color:#e6db74">&#34;Banana&#34;</span>].<span style="color:#a6e22e">reduceRight</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>)</span></span></code></pre></div>
 </div>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;BananaApple&#39;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#39;BananaApple&#39;</span></span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -694,22 +644,22 @@ Functions are objects too. And can be used as constructors
 </h4>
 <div id="outline-text-headline-25" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Foo</span>() {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>();
-  }
-
-  <span style="color:#75715e">// foo got no bar.
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Foo</span>();
-  <span style="color:#66d9ef">try</span> {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo1</span>.<span style="color:#a6e22e">bar</span>); <span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span>  } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span>) {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
-  }
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bar</span>); <span style="color:#75715e">// Global pollution!
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Foo</span>(); <span style="color:#75715e">// Note the new - constuctor invocation
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo2</span>.<span style="color:#a6e22e">bar</span>); <span style="color:#75715e">// foo2 is an object
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Foo</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// foo got no bar.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Foo</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo1</span>.<span style="color:#a6e22e">bar</span>); <span style="color:#75715e">// undefined
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  } <span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bar</span>); <span style="color:#75715e">// Global pollution!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Foo</span>(); <span style="color:#75715e">// Note the new - constuctor invocation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo2</span>.<span style="color:#a6e22e">bar</span>); <span style="color:#75715e">// foo2 is an object
+</span></span></span></code></pre></div>
 </div>
 <pre class="example">
 Error: Cannot read property &#39;bar&#39; of undefined
@@ -726,28 +676,28 @@ Modify Objects. The Formal Way
 </h4>
 <div id="outline-text-headline-26" class="outline-text-4">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Boring stuff
-</span><span style="color:#75715e">// But look up
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> {};
-
-Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">o</span>, <span style="color:#e6db74">&#39;immutableProperty&#39;</span>, {
-    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
-});
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">immutableProperty</span>); <span style="color:#75715e">// 10
-</span><span style="color:#75715e">// You can&#39;t assign a new value to
-</span><span style="color:#75715e">// o.immutableProperty. Yay!
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// For multiple properties
-</span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a6e22e">o</span>, {
-    <span style="color:#a6e22e">attribute1</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;I am a function - attribute1&#34;</span>}},
-    <span style="color:#a6e22e">attribute2</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;I am another attribute!&#34;</span>}
-});
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">attribute1</span>());
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">attribute2</span>);</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Boring stuff
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// But look up
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">o</span>, <span style="color:#e6db74">&#39;immutableProperty&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">immutableProperty</span>); <span style="color:#75715e">// 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// You can&#39;t assign a new value to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// o.immutableProperty. Yay!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// For multiple properties
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Object.<span style="color:#a6e22e">defineProperties</span>(<span style="color:#a6e22e">o</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attribute1</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;I am a function - attribute1&#34;</span>}},
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attribute2</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;I am another attribute!&#34;</span>}
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">attribute1</span>());
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">attribute2</span>);</span></span></code></pre></div>
 </div>
 <pre class="example">
 10
@@ -763,20 +713,20 @@ Accessor properties
 <div id="outline-text-headline-27" class="outline-text-4">
 <p>Make function call (getter/setter) appear like attribute access</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {
-      <span style="color:#ae81ff">_</span><span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`foo`</span>,
-      <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">val</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">val</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">val</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>; },
-      <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">val</span>(<span style="color:#a6e22e">new_val</span>) {
-          <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_val</span>;
-      }
-  }
-
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">val</span>);
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">val</span>); <span style="color:#75715e">// &#39;foo-foo&#39;
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">val</span>);
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">val</span>); <span style="color:#75715e">// &#39;bar-bar&#39;
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">_val</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`foo`</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">val</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_val</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_val</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>; },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">val</span>(<span style="color:#a6e22e">new_val</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">new_val</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">_val</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">val</span>); <span style="color:#75715e">// &#39;foo-foo&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">_val</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">val</span>); <span style="color:#75715e">// &#39;bar-bar&#39;
+</span></span></span></code></pre></div>
 </div>
 <pre class="example">
 foo
@@ -797,22 +747,18 @@ Gives you a nice way to ensure sanity checks before setting values.</p>
 <em>prototype</em> is typically available on objects like, well, <code class="verbatim">Object</code>, <code class="verbatim">Function</code>, <code class="verbatim">Array</code>, <code class="verbatim">Date</code> – that are used
 to set the <code>__proto__</code> objects on newly constructed <em>instances</em>. The correct way to access the prototype of any object are</p>
 <ul>
-<li>
-<p>Object.getPrototypeOf() / Reflect.getPrototypeOf(), and</p>
-</li>
-<li>
-<p>Object.setPrototypeOf() / Reflect.setPrototypeOf()</p>
-</li>
+<li>Object.getPrototypeOf() / Reflect.getPrototypeOf(), and</li>
+<li>Object.setPrototypeOf() / Reflect.setPrototypeOf()</li>
 </ul>
 <p>And the use of <code>__proto__</code> is discouraged in favour of the above - See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto">this</a>.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f&#34;</span> }
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">f</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">proto__</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span>); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getPrototypeOf</span>(<span style="color:#a6e22e">f</span>) <span style="color:#f92672">===</span> <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span>) <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getPrototypeOf</span>(<span style="color:#a6e22e">f</span>) <span style="color:#f92672">===</span> <span style="color:#a6e22e">f</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">proto__</span>) <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">prototype</span>) <span style="color:#75715e">// undefined
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;f&#34;</span> }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">F</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">__proto__</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span>); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getPrototypeOf</span>(<span style="color:#a6e22e">f</span>) <span style="color:#f92672">===</span> <span style="color:#a6e22e">F</span>.<span style="color:#a6e22e">prototype</span>) <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Object.<span style="color:#a6e22e">getPrototypeOf</span>(<span style="color:#a6e22e">f</span>) <span style="color:#f92672">===</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">__proto__</span>) <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">prototype</span>) <span style="color:#75715e">// undefined
+</span></span></span></code></pre></div>
 </div>
 <pre class="example">
 true
@@ -833,18 +779,18 @@ Classes
 <div id="outline-text-headline-29" class="outline-text-3">
 <p>JS supports the <code>class</code> keyword, and is used as follows.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Report</span> {  
-      <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">employee</span>, <span style="color:#a6e22e">manager</span>, <span style="color:#a6e22e">type</span>) {
-          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">employee</span>;
-          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manager</span>;
-          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">type</span>;
-      }
-      <span style="color:#a6e22e">send</span>() {
-          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Sending </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> report from </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> to </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>);
-      }
-  }
-
-  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Report</span>(<span style="color:#e6db74">&#34;Peter Gibbons&#34;</span>, <span style="color:#e6db74">&#34;Bill Lumbergh&#34;</span>, <span style="color:#e6db74">&#34;TPS&#34;</span>).<span style="color:#a6e22e">send</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Report</span> {  
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">employee</span>, <span style="color:#a6e22e">manager</span>, <span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">employee</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manager</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">type</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">send</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Sending </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> report from </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> to </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Report</span>(<span style="color:#e6db74">&#34;Peter Gibbons&#34;</span>, <span style="color:#e6db74">&#34;Bill Lumbergh&#34;</span>, <span style="color:#e6db74">&#34;TPS&#34;</span>).<span style="color:#a6e22e">send</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 Sending TPS report from Peter Gibbons to Bill Lumbergh.
@@ -852,17 +798,17 @@ Sending TPS report from Peter Gibbons to Bill Lumbergh.
 <p>
 The above is syntax-sugar for the following essentially</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Report</span>(<span style="color:#a6e22e">employee</span>, <span style="color:#a6e22e">manager</span>, <span style="color:#a6e22e">type</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">employee</span>;
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manager</span>;
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">type</span>;
-  }
-
-  <span style="color:#a6e22e">Report</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">send</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Sending </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> report from </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> to </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>);
-  }
-
-  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Report</span>(<span style="color:#e6db74">&#34;Peter Gibbons&#34;</span>, <span style="color:#e6db74">&#34;Bill Lumbergh&#34;</span>, <span style="color:#e6db74">&#34;TPS&#34;</span>).<span style="color:#a6e22e">send</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Report</span>(<span style="color:#a6e22e">employee</span>, <span style="color:#a6e22e">manager</span>, <span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">employee</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">manager</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">type</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Report</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">send</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Sending </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> report from </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">employee</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> to </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">manager</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.`</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Report</span>(<span style="color:#e6db74">&#34;Peter Gibbons&#34;</span>, <span style="color:#e6db74">&#34;Bill Lumbergh&#34;</span>, <span style="color:#e6db74">&#34;TPS&#34;</span>).<span style="color:#a6e22e">send</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 Sending TPS report from Peter Gibbons to Bill Lumbergh.
@@ -870,26 +816,26 @@ Sending TPS report from Peter Gibbons to Bill Lumbergh.
 <p>
 But of course, the <code>class</code> syntax allows for pretty easy to express domain setup. JS classes also support <code>static</code> members (attributes and methods), with a somewhat distinctive syntax.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PhoneNumber</span> {
-      <span style="color:#a6e22e">areaPrefix</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
-      <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
-      <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">countryCode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;+91&#39;</span>;
-
-      <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">areaPrefix</span>, <span style="color:#a6e22e">number</span>) {
-          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">areaPrefix</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">areaPrefix</span>;
-          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">number</span>;
-      }
-
-      <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">printable</span>() {
-          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">PhoneNumber</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">countryCode</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">areaPrefix</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span>);
-      }
-
-      <span style="color:#66d9ef">static</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">countryCode</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">number</span>) {
-          <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`(</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">countryCode</span><span style="color:#e6db74">}</span><span style="color:#e6db74">) </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">number</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-      }
-  }
-
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PhoneNumber</span>(<span style="color:#e6db74">&#34;20&#34;</span>, <span style="color:#e6db74">&#34;12345678&#34;</span>).<span style="color:#a6e22e">printable</span>);</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PhoneNumber</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">areaPrefix</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">countryCode</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;+91&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">areaPrefix</span>, <span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">areaPrefix</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">areaPrefix</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">number</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">printable</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">PhoneNumber</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">this</span>.<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">countryCode</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">areaPrefix</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">static</span> <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">countryCode</span>, <span style="color:#a6e22e">prefix</span>, <span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`(</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">countryCode</span><span style="color:#e6db74">}</span><span style="color:#e6db74">) </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">prefix</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">number</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PhoneNumber</span>(<span style="color:#e6db74">&#34;20&#34;</span>, <span style="color:#e6db74">&#34;12345678&#34;</span>).<span style="color:#a6e22e">printable</span>);</span></span></code></pre></div>
 </div>
 <pre class="example">
 (+91) 20-12345678
@@ -904,17 +850,11 @@ Prototype
 <p>Javascript uses <em>prototypal inheritance</em>.
 Object hierarchies chain up via the <code>__proto__</code> attribute - an attribute which should <strong>never</strong> be directly accessed. Use the inbuilt (obviously-named) static methods on <code>Object</code></p>
 <ul>
-<li>
-<p><code>Object.getPrototypeOf</code></p>
-</li>
-<li>
-<p><code>Object.setPrototypeOf</code></p>
-</li>
-<li>
-<p><code>Object.isPrototypeOf</code></p>
-<p>
-Prototypal inheritance is also described in terms of <a href="https://en.wikipedia.org/wiki/Differential_inheritance"><em>Differential Inheritance</em></a>. In JS, derived objects are linked to their parents and the lookup of properties is <strong>dynamic</strong>. Which means, if we modify the prototype of an object at <span style="text-decoration: underline;">runtime</span>, the effects are noticed on all objects that are linked to it. Which means - objects are linked, unlike class-based OO languages where characteristics are copied at creation time.</p>
-</li>
+<li><code>Object.getPrototypeOf</code></li>
+<li><code>Object.setPrototypeOf</code></li>
+<li><code>Object.isPrototypeOf</code>
+
+Prototypal inheritance is also described in terms of <a href="https://en.wikipedia.org/wiki/Differential_inheritance"><em>Differential Inheritance</em></a>. In JS, derived objects are linked to their parents and the lookup of properties is <strong>dynamic</strong>. Which means, if we modify the prototype of an object at <span style="text-decoration: underline;">runtime</span>, the effects are noticed on all objects that are linked to it. Which means - objects are linked, unlike class-based OO languages where characteristics are copied at creation time.</li>
 </ul>
 </div>
 </div>
@@ -926,26 +866,26 @@ Object.create - Prototypal Inheritance
 <p>
 We can use <em>proto</em> objects to create and extend new objects. Note below how we use a &#34;blueprint&#34; object - <code>stateless</code> - and create a new object using <code>Object.create</code> while adding more attributes.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stateless</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">someFunc</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">stateVar</span>);
-    }
-}
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">someInstance</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">stateless</span>, {
-    <span style="color:#e6db74">&#34;stateVar&#34;</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Full state honors&#34;</span>,
-        <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">// default
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">configurable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">// default
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">// depends
-</span><span style="color:#75715e"></span>    },
-    <span style="color:#e6db74">&#34;moarStateVars&#34;</span> <span style="color:#f92672">:</span> {
-        <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>    }
-});
-
-<span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span>()</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stateless</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">someFunc</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">stateVar</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">someInstance</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">stateless</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;stateVar&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Full state honors&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">writable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">// default
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">configurable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#75715e">// default
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">enumerable</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">// depends
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;moarStateVars&#34;</span> <span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span>()</span></span></code></pre></div>
 </div>
 <pre class="example">
 Full state honors
@@ -953,38 +893,38 @@ Full state honors
 <p>
 It gets more interesting. The &#34;blueprint&#34; can be dynamically updated and the derived objects get new data/behaviour. <em>Differential inheritance</em>.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stateless</span> <span style="color:#f92672">=</span> {
-      <span style="color:#a6e22e">someFunc</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">stateVar</span>);
-      }
-  }
-
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">someInstance</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">stateless</span>, {
-      <span style="color:#e6db74">&#34;stateVar&#34;</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Full state honors&#34;</span>
-      }
-  });
-
-  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span>();
-
-  <span style="color:#66d9ef">try</span> {
-      <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">anotherFunc</span>();
-  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
-  }
-
-  <span style="color:#a6e22e">stateless</span>.<span style="color:#a6e22e">anotherFunc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Another one here - &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">stateVar</span>);
-  }
-
-  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">anotherFunc</span>();
-
-  <span style="color:#75715e">// But wait, we can *shadow* too
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I refuse to honor the original contract!&#34;</span>);
-  }
-
-  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">stateless</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">someFunc</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">stateVar</span>);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">someInstance</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">stateless</span>, {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;stateVar&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Full state honors&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">anotherFunc</span>();
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stateless</span>.<span style="color:#a6e22e">anotherFunc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Another one here - &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">stateVar</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">anotherFunc</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// But wait, we can *shadow* too
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I refuse to honor the original contract!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">someInstance</span>.<span style="color:#a6e22e">someFunc</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 Full state honors
@@ -1000,35 +940,35 @@ Function based constructors
 </h3>
 <div id="outline-text-headline-32" class="outline-text-3">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">
-  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Contact</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">phone</span>) {
-      <span style="color:#66d9ef">return</span> {
-          <span style="color:#a6e22e">whatsYourName</span>() { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">name</span>; },
-          <span style="color:#a6e22e">call</span>() {
-              <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Calling &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; at &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">phone</span>);
-          }
-      }
-  }
-  <span style="color:#75715e">// The data in the above case is available in a closure.
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// But not for outside modification.
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Of course, the usual pass-by-reference/value semantics apply.
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Contact</span>(<span style="color:#e6db74">&#34;Veeru&#34;</span>, <span style="color:#ae81ff">108</span>).<span style="color:#a6e22e">call</span>();
-
-  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">EfficientContact</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">phone</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
-      <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">phone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">phone</span>;
-  }
-  <span style="color:#75715e">// Everyone has access to the name and phone.
-</span><span style="color:#75715e"></span>
-  <span style="color:#a6e22e">EfficientContact</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">whatsYourName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">name</span>;
-  }
-  <span style="color:#a6e22e">EfficientContact</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">call</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Efficiently calling &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; at &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">_</span><span style="color:#a6e22e">phone</span>);
-  }
-  <span style="color:#75715e">// But the above methods are shared across derived instances.
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EfficientContact</span>(<span style="color:#e6db74">&#39;Ram&#39;</span>, <span style="color:#ae81ff">108</span>).<span style="color:#a6e22e">call</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Contact</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">phone</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">whatsYourName</span>() { <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">name</span>; },
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">call</span>() {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Calling &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; at &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">phone</span>);
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// The data in the above case is available in a closure.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// But not for outside modification.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Of course, the usual pass-by-reference/value semantics apply.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Contact</span>(<span style="color:#e6db74">&#34;Veeru&#34;</span>, <span style="color:#ae81ff">108</span>).<span style="color:#a6e22e">call</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">EfficientContact</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">phone</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_phone</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">phone</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Everyone has access to the name and phone.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">EfficientContact</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">whatsYourName</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_name</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">EfficientContact</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">call</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Efficiently calling &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; at &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">_phone</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// But the above methods are shared across derived instances.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">EfficientContact</span>(<span style="color:#e6db74">&#39;Ram&#39;</span>, <span style="color:#ae81ff">108</span>).<span style="color:#a6e22e">call</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 Calling Veeru at 108
@@ -1042,14 +982,14 @@ The Object literal
 </h3>
 <div id="outline-text-headline-33" class="outline-text-3">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">attribute</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
-    <span style="color:#a6e22e">someFunction</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
-        <span style="color:#75715e">// Can access attributes
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;My attribute = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attribute</span>);
-    }
-}
-<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">someFunction</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">attribute</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">someFunction</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Can access attributes
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;My attribute = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">attribute</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">someFunction</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 My attribute = 10
@@ -1069,25 +1009,25 @@ The Module Pattern
 </h3>
 <div id="outline-text-headline-35" class="outline-text-3">
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myExternalArg</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someModule</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">arg</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">somePrivate</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">someOtherPrivateFunction</span>() {
-        <span style="color:#75715e">// I also have access to the arg, okay?
-</span><span style="color:#75715e"></span>    }
-    <span style="color:#75715e">// Possibly some initializer code
-</span><span style="color:#75715e"></span>
-    <span style="color:#66d9ef">return</span> {
-        <span style="color:#75715e">// An object that captures the results
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// of initialization, local variables in this
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// scope via the closure, as well as access
-</span><span style="color:#75715e"></span>        <span style="color:#75715e">// to the argument &#39;arg&#39;
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">f1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I know about arg = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">arg</span>) },
-        <span style="color:#a6e22e">f2</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I also have my private state = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">somePrivate</span>) }
-    };
-})(<span style="color:#a6e22e">myExternalArg</span>);
-<span style="color:#a6e22e">someModule</span>.<span style="color:#a6e22e">f1</span>();
-<span style="color:#a6e22e">someModule</span>.<span style="color:#a6e22e">f2</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myExternalArg</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">someModule</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">arg</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">somePrivate</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">someOtherPrivateFunction</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// I also have access to the arg, okay?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Possibly some initializer code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// An object that captures the results
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// of initialization, local variables in this
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// scope via the closure, as well as access
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// to the argument &#39;arg&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">f1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I know about arg = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">arg</span>) },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">f2</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I also have my private state = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">somePrivate</span>) }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>})(<span style="color:#a6e22e">myExternalArg</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">someModule</span>.<span style="color:#a6e22e">f1</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">someModule</span>.<span style="color:#a6e22e">f2</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 I know about arg = 10
@@ -1131,8 +1071,8 @@ the browser.
 ES2015 Modules
 </h3>
 <div id="outline-text-headline-39" class="outline-text-3">
-<p>Only mentioned here for the sake for completeness (as of this writing.) The <strong>Auth0</strong> article (mentioned in the reference)
-is a very good read.</p>
+<p>Only mentioned here for the sake of completeness (as of this writing.) The <strong>Auth0</strong> article (mentioned in the reference)
+is a very good read. And this is apparently the default one to use now as it subsumes and replaces the above types/patterns.</p>
 </div>
 </div>
 </div>
@@ -1144,16 +1084,16 @@ Bindings and Closures
 <div id="outline-text-headline-40" class="outline-text-2">
 <p>Dynamic bindings are a thing. The following is a window into the memory and execution models of JS.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>);
-  }
-  <span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// Hello, undefined!
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">context</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ram&#34;</span> };
-  <span style="color:#75715e">// We bind the &#39;this&#39; in foo to context
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">caller</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#a6e22e">context</span>);
-  <span style="color:#a6e22e">caller</span>(); <span style="color:#75715e">// Hello, Ram!
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// Hello, undefined!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">context</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Ram&#34;</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// We bind the &#39;this&#39; in foo to context
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">caller</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#a6e22e">context</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">caller</span>(); <span style="color:#75715e">// Hello, Ram!
+</span></span></span></code></pre></div>
 </div>
 <pre class="example">
 Hello, undefined!
@@ -1180,21 +1120,21 @@ But it has clear semantics about differentiating between success and error condi
 To make it a bit easy for you to consume asynchronous computation, there&#39;s a more complicated <em>async-await</em> route to structuring
 your code.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">slowIdentity</span> <span style="color:#f92672">=</span>
-        (<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">resolve</span> =&gt; {
-            <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
-                <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">x</span>);
-            }, <span style="color:#ae81ff">2500</span>);
-        });
-
-  <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">awaiter</span>() {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I&#39;ll wait...&#34;</span>);
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;And the value is - &#34;</span> <span style="color:#f92672">+</span>
-                  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">slowIdentity</span>(<span style="color:#ae81ff">5</span>));
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Ciao!&#34;</span>);
-  }
-
-  <span style="color:#a6e22e">awaiter</span>();</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">slowIdentity</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>        (<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#66d9ef">new</span> Promise(<span style="color:#a6e22e">resolve</span> =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>            }, <span style="color:#ae81ff">2500</span>);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">awaiter</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;I&#39;ll wait...&#34;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;And the value is - &#34;</span> <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">slowIdentity</span>(<span style="color:#ae81ff">5</span>));
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Ciao!&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">awaiter</span>();</span></span></code></pre></div>
 </div>
 <pre class="example">
 I&#39;ll wait...
@@ -1211,21 +1151,21 @@ Metaprogramming
 <p>A great reference at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming">MDN: Metaprogramming</a>.
 The following is a sample, reproduced from the above MDN site.</p>
 <div class="src src-js">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> {
-      <span style="color:#a6e22e">get</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">name</span>) {
-          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Attempting to get </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">retval</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">name</span>]
-          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">retval</span>) {
-              <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`\tDid not find </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-              <span style="color:#a6e22e">retval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>
-          }
-          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">retval</span>
-      }
-  }
-
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy({}, <span style="color:#a6e22e">handler</span>)
-  <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">b</span>)</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">handler</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">get</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">target</span>, <span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Attempting to get </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">retval</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span>[<span style="color:#a6e22e">name</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">retval</span>) {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`\tDid not find </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">retval</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">retval</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Proxy({}, <span style="color:#a6e22e">handler</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">b</span>)</span></span></code></pre></div>
 </div>
 <pre class="example">
 Attempting to get a
@@ -1244,35 +1184,18 @@ References
 <li>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript - MDN web docs</a></p>
 <ul>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object. APIs and more</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></p>
-</li>
-<li>
-<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async</a> function</p>
-</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object. APIs and more</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></li>
+<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">async</a> function</li>
 </ul>
 </li>
-<li>
-<p><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">Learning Javascript Design Patterns (Volume 1.7.0)</a></p>
-</li>
-<li>
-<p><a href="https://javascript.info/">Javascript.info</a></p>
-</li>
-<li>
-<p><a href="https://auth0.com/blog/javascript-module-systems-showdown/">CommonJS vs AMD vs ES2015</a> - Auth0</p>
-</li>
-<li>
-<p><a href="https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed">You Don&#39;t Know JS</a></p>
-</li>
-<li>
-<p><a href="https://livebook.manning.com/book/the-joy-of-javascript">The Joy of Javascript</a></p>
-</li>
-<li>
-<p><a href="https://livebook.manning.com/book/secrets-of-the-javascript-ninja-second-edition">Secrets of the Javascript Ninja</a></p>
-</li>
+<li><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/">Learning Javascript Design Patterns (Volume 1.7.0)</a></li>
+<li><a href="https://javascript.info/">Javascript.info</a></li>
+<li><a href="https://auth0.com/blog/javascript-module-systems-showdown/">CommonJS vs AMD vs ES2015</a> - Auth0</li>
+<li><a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">ES modules: A cartoon deep-dive</a></li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS/tree/2nd-ed">You Don&#39;t Know JS</a></li>
+<li><a href="https://livebook.manning.com/book/the-joy-of-javascript">The Joy of Javascript</a></li>
+<li><a href="https://livebook.manning.com/book/secrets-of-the-javascript-ninja-second-edition">Secrets of the Javascript Ninja</a></li>
 </ul>
 </div>
 </div>
