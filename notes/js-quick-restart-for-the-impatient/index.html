@@ -178,10 +178,10 @@
       </time>
 
       
-      <time datetime="2022-05-07 17:12:15 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+      <time datetime="2022-05-28 09:57:39 &#43;0530 IST" itemprop="datePublished" class="pubdate">
         Last updated:
         <span class="weekday">Sat</span>,
-        <span class="day">7</span>
+        <span class="day">28</span>
         <span class="month">May</span>,
         <span class="year">2022</span>
       </time>
@@ -201,7 +201,7 @@ Why this document?
 </h2>
 <div id="outline-text-headline-1" class="outline-text-2">
 <p>
-The intention is not to teach Javascript, or cover it completely. This is for programmers (like myself) who work in multiple languages, and after every break from a language (in this case, Javascript) want a quick refresher to get up to speed.
+The intention is not to teach Javascript, or cover it completely. This is for programmers (like myself) with fickle memories who work in multiple languages, and when coming back to a language, want a quick refresher to get up to speed.
 And, as of this writing, <a href="https://javascript.info/">Javascript.info</a> is a pretty handy collection of explanations and code. And so is <a href="https://developer.mozilla.org/en-US/">MDN</a>.</p>
 <div id="outline-container-headline-2" class="outline-3">
 <h3 id="headline-2">
@@ -212,7 +212,7 @@ Quick reminders
 <li>It&#39;s functional.</li>
 <li>It&#39;s imperative.</li>
 <li>It&#39;s object oriented.</li>
-<li>It&#39;s mutable all over the place. (This is a general remark, but an important reminder when coming from Clojure)</li>
+<li>It&#39;s mutable all over the place. (Useful reminder - especially when you wish to write FP-style code)</li>
 <li>It&#39;s class-oriented. Not!  </li>
 </ul>
 </div>
@@ -288,7 +288,7 @@ Error: Cannot access &#39;blow&#39; before initialization
 Prefer <em>const</em>
 </h4>
 <div id="outline-text-headline-6" class="outline-text-4">
-<p><span style="text-decoration: underline;">const</span> is nothing but <strong>immutable reference</strong>.</p>
+<p><span style="text-decoration: underline;">const</span> is nothing but <strong>immutable reference</strong>. Like, <span style="text-decoration: underline;">final</span> in Java.</p>
 <div class="src src-js">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">some</span> <span style="color:#f92672">=</span> {};
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">some</span>);
@@ -381,7 +381,7 @@ i
 </dt>
 <dd>case-insensitive</dd>
 <dt>
-g 
+g
 </dt>
 <dd>match all instances instead of just the first one</dd>
 <dt>
