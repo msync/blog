@@ -31,8 +31,7 @@
       <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
       
       <guid>https://msync.org/notes/a-neural-network-primer/</guid>
-      <description>Preface/Purpose  I chanced upon this primer from the 90s, on artificial neural networks, and thought it might be a good idea to write something similar.
-  It&amp;#39;s just a function…  A neuron is a computing unit &amp;amp;mdash; a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line neurons to consume as their input.</description>
+      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;.</description>
     </item>
     
   </channel>

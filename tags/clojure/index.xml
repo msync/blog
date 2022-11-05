@@ -40,8 +40,7 @@
       <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
       
       <guid>https://msync.org/notes/a-neural-network-primer/</guid>
-      <description>Preface/Purpose  I chanced upon this primer from the 90s, on artificial neural networks, and thought it might be a good idea to write something similar.
-  It&amp;#39;s just a function…  A neuron is a computing unit &amp;amp;mdash; a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line neurons to consume as their input.</description>
+      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;.</description>
     </item>
     
     <item>
@@ -69,7 +68,7 @@
       
       <guid>https://msync.org/posts/2015/2015-05-16-interesting-java-in-clojure-core/</guid>
       <description>The Clojure language primarily targets the Java Virtual Machine, and so obviously, we have a topic.
- Quick array creation from some items  // clojure.lang.Intrinsics private static Object[] oa(Object... arr) { return arr; }  </description>
+Quick array creation from some items // clojure.lang.Intrinsics private static Object[] oa(Object... arr) { return arr; } </description>
     </item>
     
     <item>
@@ -79,8 +78,8 @@
       
       <guid>https://msync.org/posts/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid>
       <description>TL;DR - Of course, you can use Clojurescript to develop Chrome Extensions. So, that&amp;#39;s not the topic of this post. I&amp;#39;ve only documented how you&amp;#39;d set up your project, using the latest versions (as of this post&amp;#39;s publishing) of piggieback and weasel.
- Why Weasel? Because, as its author explains
- A WebSocket transport is simple and avoids some of the thornier bugs caused by the CrossPageChannel transport, which is used in the standard ClojureScript browser REPL and Austin.</description>
+Why Weasel? Because, as its author explains
+A WebSocket transport is simple and avoids some of the thornier bugs caused by the CrossPageChannel transport, which is used in the standard ClojureScript browser REPL and Austin.</description>
     </item>
     
   </channel>

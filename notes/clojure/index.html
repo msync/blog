@@ -1,14 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1397428-5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-1397428-5');
-    </script>
+<head>
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -28,117 +21,122 @@
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
 
-  </head>
-  <body>
-    <header>
-      <div class="content">
-  <a class="title" href="https://msync.org/">Sync&#39;ing from Memory</a>
+</head>
+
+<body>
+<div class="h-screen">
+
+    <header id="site-header">
+        <div>
+  <a href="https://msync.org/">Sync&#39;ing from Memory</a>
   <nav>
     
-    <a class="link" href="https://msync.org/notes/">Notes</a>
+    <a href="https://msync.org/notes/">Notes</a>
     
-    <a class="link" href="https://msync.org/posts/">Posts</a>
+    <a href="https://msync.org/posts/">Posts</a>
     
   </nav>
 </div>
-
     </header>
-    <div id="main-wrapper">
-      <div class="grid-x">
-        <div class="cell medium-offset-1 medium-10 small-offset-1 small-10">
-          <div id="main">
-            
 
-<div id="toc" class="cell hide-for-small-only">
-  <div><nav id="TableOfContents">
+    <div id="main-wrapper">
+        
+<div class="content notes">
+
+    <div class="toc">
+        <nav id="TableOfContents">
 <ul>
 <li><a href="#headline-1">Introduction</a>
 </li>
-<li><a href="#headline-2">Interesting Styles</a>
+<li><a href="#headline-2">Exploring the <strong>Core</strong></a>
+</li>
+<li><a href="#headline-3">Interesting Styles</a>
 <ul>
-<li><a href="#headline-3">Optional data</a>
+<li><a href="#headline-4">Optional data</a>
 </li>
-<li><a href="#headline-4">Splitting a namespace across files</a>
+<li><a href="#headline-5">Splitting a namespace across files</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-5">Smart Tricks</a>
+<li><a href="#headline-6">Smart Tricks</a>
 <ul>
-<li><a href="#headline-6">Convert a map (keyed by integers) into a correspondingly ordered vector</a>
+<li><a href="#headline-7">Convert a map (keyed by integers) into a correspondingly ordered vector</a>
 </li>
-<li><a href="#headline-7">Temporarily descending into mutable-land.</a>
+<li><a href="#headline-8">Temporarily descending into mutable-land.</a>
 </li>
-<li><a href="#headline-8">Control Flow</a>
+<li><a href="#headline-9">Control Flow</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-9">Uncommon Stuff</a>
+<li><a href="#headline-10">Uncommon Stuff</a>
 <ul>
-<li><a href="#headline-10"><code>deftype</code> and Mutable Members</a>
+<li><a href="#headline-11"><code>deftype</code> and Mutable Members</a>
 </li>
-<li><a href="#headline-11"><code>&amp;env</code> in Macros</a>
+<li><a href="#headline-12"><code>&amp;env</code> in Macros</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-12">Java Interop</a>
+<li><a href="#headline-13">Java Interop</a>
 <ul>
-<li><a href="#headline-13">Some useful libraries</a>
+<li><a href="#headline-14">Some useful libraries</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-14">Leiningen</a>
+<li><a href="#headline-15">Leiningen</a>
 <ul>
-<li><a href="#headline-15">It&#39;s macro-land, after all</a>
+<li><a href="#headline-16">It&#39;s macro-land, after all</a>
 </li>
-<li><a href="#headline-16">The eval-reader for dynamism</a>
+<li><a href="#headline-17">The eval-reader for dynamism</a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-17">Gotchas</a>
+<li><a href="#headline-18">Gotchas</a>
 <ul>
-<li><a href="#headline-18"><code>with-redefs</code></a>
+<li><a href="#headline-19"><code>with-redefs</code></a>
 </li>
 </ul>
 </li>
-<li><a href="#headline-19">Monads</a>
+<li><a href="#headline-20">Monads</a>
 </li>
 </ul>
-</nav></div>
-</div>
-
-<article class="notes" itemscope itemtype="http://schema.org/CreativeWork">
-
-  <header class="header">
-    <h1 itemprop="name" class="title">Clojure</h1>
-    <div class="meta">
-      <span class="author-name" itemprop="author">
-        
-      </span>
-      <time datetime="2017-07-10 11:23:36 &#43;0530 IST" itemprop="datePublished" class="pubdate">
-        <span class="weekday">Mon</span>,
-        <span class="day">10</span>
-        <span class="month">Jul</span>,
-        <span class="year">2017</span>
-      </time>
-
-      
-      <time datetime="2021-10-10 14:46:15 &#43;0530 IST" itemprop="datePublished" class="pubdate">
-        Last updated:
-        <span class="weekday">Sun</span>,
-        <span class="day">10</span>
-        <span class="month">Oct</span>,
-        <span class="year">2021</span>
-      </time>
-      
+</nav>
     </div>
-  </header>
 
-  <summary>
-    Clojure Notes - An aimless dump of anything and everything interesting I find <em>and</em> manage to record.
-  </summary>
+    <article itemscope itemtype="http://schema.org/CreativeWork">
 
-  <main>
-    
+        <header>
+            <h1 itemprop="title">Clojure</h1>
+            <div class="meta">
+                <span class="author" itemprop="author">
+                  Ravindra R. Jaju
+                </span>
+                <div class="time">
+                <time datetime="2017-07-10 11:23:36 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+                    <span class="weekday">Mon</span>,
+                    <span class="day">10</span>
+                    <span class="month">Jul</span>,
+                    <span class="year">2017</span>
+                </time>
+
+                
+                <time datetime="2017-07-10 11:23:36 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+                    Updated:
+                    <span class="weekday">Mon</span>,
+                    <span class="day">10</span>
+                    <span class="month">Jul</span>,
+                    <span class="year">2017</span>
+                </time>
+                
+                </div>
+            </div>
+        </header>
+
+        <summary>
+            Clojure Notes - An aimless dump of anything and everything interesting I find <em>and</em> manage to record.
+        </summary>
+
+        <main>
+            
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
 Introduction
@@ -149,14 +147,31 @@ Introduction
 </div>
 <div id="outline-container-headline-2" class="outline-2">
 <h2 id="headline-2">
-Interesting Styles&#xa0;&#xa0;&#xa0;<span class="tags"><span>style</span></span>
+Exploring the <strong>Core</strong>
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
-<div id="outline-container-headline-3" class="outline-3">
-<h3 id="headline-3">
+<p>We&#39;ll use the built-in <code>clojure.repl</code> namespace for our explorations</p>
+<div class="src src-clojure">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>clojurexplore)
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clojure.repl <span style="color:#e6db74">:refer</span> [doc dir dir-fn]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">dir-fn</span> <span style="color:#e6db74">&#39;clojure.core</span>)</span></span></code></pre></div>
+</div>
+<pre class="example">
+(* *&#39; *1 *2 *3 *agent* *allow-unresolved-vars* *assert* *clojure-version* *command-line-args* *compile-files* *compile-path* *compiler-options* *data-readers* *default-data-reader-fn* *e *err* *file* *flush-on-newline* *fn-loader* *in* *math-context* *ns* *out* *print-dup* *print-length* *print-level* *print-meta* *print-namespace-maps* *print-readably* *read-eval* *reader-resolver* *source-path* *suppress-read* *unchecked-math* *use-context-classloader* *verbose-defrecords* *warn-on-reflection* + +&#39; - -&#39; -&gt; -&gt;&gt; -&gt;ArrayChunk -&gt;Eduction -&gt;Vec -&gt;VecNode -&gt;VecSeq -cache-protocol-fn -reset-methods .. / &lt; &lt;= = == &gt; &gt;= EMPTY-NODE Inst NaN? PrintWriter-on StackTraceElement-&gt;vec Throwable-&gt;map abs accessor aclone add-classpath add-tap add-watch agent agent-error agent-errors aget alength alias all-ns alter alter-meta! alter-var-root amap ancestors and any? apply areduce array-map as-&gt; aset aset-boolean aset-byte aset-char aset-double aset-float aset-int aset-long aset-short assert assoc assoc! assoc-in associative? atom await await-for await1 bases bean bigdec bigint biginteger binding bit-and bit-and-not bit-clear bit-flip bit-not bit-or bit-set bit-shift-left bit-shift-right bit-test bit-xor boolean boolean-array boolean? booleans bound-fn bound-fn* bound? bounded-count butlast byte byte-array bytes bytes? case cast cat char char-array char-escape-string char-name-string char? chars chunk chunk-append chunk-buffer chunk-cons chunk-first chunk-next chunk-rest chunked-seq? class class? clear-agent-errors clojure-version coll? comment commute comp comparator compare compare-and-set! compile complement completing concat cond cond-&gt; cond-&gt;&gt; condp conj conj! cons constantly construct-proxy contains? count counted? create-ns create-struct cycle dec dec&#39; decimal? declare dedupe default-data-readers definline definterface defmacro defmethod defmulti defn defn- defonce defprotocol defrecord defstruct deftype delay delay? deliver denominator deref derive descendants destructure disj disj! dissoc dissoc! distinct distinct? doall dorun doseq dosync dotimes doto double double-array double? doubles drop drop-last drop-while eduction empty empty? ensure ensure-reduced enumeration-seq error-handler error-mode eval even? every-pred every? ex-cause ex-data ex-info ex-message extend extend-protocol extend-type extenders extends? false? ffirst file-seq filter filterv find find-keyword find-ns find-protocol-impl find-protocol-method find-var first flatten float float-array float? floats flush fn fn? fnext f for force format frequencies future future-call future-cancel future-cancelled? future-done? future? gen-class gen-interface gensym get get-in get-method get-proxy-class get-thread-bindings get-validator group-by halt-when hash hash-combine hash-map hash-ordered-coll hash-set hash-unordered-coll ident? identical? identity if-let if-not if-some ifn? import in-ns inc inc&#39; indexed? infinite? init-proxy inst-ms inst-ms* inst? instance? int int-array int? integer? interleave intern interpose into into-array ints io! isa? iterate iteration iterator-seq juxt keep keep-indexed key keys keyword keyword? last lazy-cat lazy-seq let letfn line-seq list list* list? load load-file load-reader load-string loaded-libs locking long long-array longs loop macroexpand macroexpand-1 make-array make-hierarchy map map-entry? map-indexed map? mapcat mapv max max-key memfn memoize merge merge-with meta method-sig methods min min-key mix-collection-hash mod munge name namespace namespace-munge nat-int? neg-int? neg? newline next nfirst ? nnext not not-any? not-empty not-every? not= ns ns-aliases ns-imports ns-interns ns-map ns-name ns-publics ns-refers ns-resolve ns-unalias ns-unmap nth nthnext nthrest num number? numerator object-array odd? or parents parse-boolean parse-double parse-long parse-uuid partial partition partition-all partition-by pcalls peek persistent! pmap pop pop! pop-thread-bindings pos-int? pos? pr pr-str prefer-method prefers primitives-classnames print print-ctor print-dup print-method print-simple print-str printf println println-str prn prn-str promise proxy proxy-call-with-super proxy-mappings proxy-name proxy-super push-thread-bindings pvalues qualified-ident? qualified-keyword? qualified-symbol? quot rand rand-int rand-nth random-sample random-uuid range ratio? rational? rationalize re-find re-groups re-matcher re-matches re-pattern re-seq read read+string read-line read-string reader-conditional reader-conditional? realized? record? reduce reduce-kv reduced reduced? reductions ref ref-history-count ref-max-history ref-min-history ref-set refer refer-clojure reify release-pending-sends rem remove remove-all-methods remove-method remove-ns remove-tap remove-watch repeat repeatedly replace replicate require requiring-resolve reset! reset-meta! reset-vals! resolve rest restart-agent resultset-seq reverse reversible? rseq rsubseq run! satisfies? second select-keys send send-off send-via seq seq-to-map-for-destructuring seq? seqable? seque sequence sequential? set set-agent-send-executor! set-agent-send-off-executor! set-error-handler! set-error-mode! set-validator! set? short short-array shorts shuffle shutdown-agents simple-ident? simple-keyword? simple-symbol? slurp some some-&gt; some-&gt;&gt; some-fn some? sort sort-by sorted-map sorted-map-by sorted-set sorted-set-by sorted? special-symbol? spit split-at split-with str string? struct struct-map subs subseq subvec supers swap! swap-vals! symbol symbol? sync tagged-literal tagged-literal? take take-last take-nth take-while tap&gt; test the-ns thread-bound? time to-array to-array-2d trampoline transduce transient tree-seq true? type unchecked-add unchecked-add-int unchecked-byte unchecked-char unchecked-dec unchecked-dec-int unchecked-divide-int unchecked-double unchecked-float unchecked-inc unchecked-inc-int unchecked-int unchecked-long unchecked-multiply unchecked-multiply-int unchecked-negate unchecked-negate-int unchecked-remainder-int unchecked-short unchecked-subtract unchecked-subtract-int underive unquote unquote-splicing unreduced unsigned-bit-shift-right update update-in update-keys update-proxy update-vals uri? use uuid? val vals var-get var-set var? vary-meta vec vector vector-of vector? volatile! volatile? vreset! vswap! when when-first when-let when-not when-some while with-bindings with-bindings* with-in-str with-loading-context with-local-vars with-meta with-open with-out-str with-precision with-redefs with-redefs-fn xml-seq zero? zipmap)
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Interesting Styles&#xa0;&#xa0;&#xa0;<span class="tags"><span>style</span></span>
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
 Optional data
 </h3>
-<div id="outline-text-headline-3" class="outline-text-3">
+<div id="outline-text-headline-4" class="outline-text-3">
 <p>This is from the <a href="https://github.com/ptaoussanis/sente">Sente</a> library by <a href="https://www.taoensso.com/">Peter Taoussanis</a>.
 Taking an example from <em>sente</em> itself - a server event message is a map expected to have multiple keys, as below. Since we are in Lisp-land, almost every character on the keyboard is available for identifiers.</p>
 <div class="src src-clojure">
@@ -166,11 +181,11 @@ Taking an example from <em>sente</em> itself - a server event message is a map e
 So, keys <code>?data</code> and <code>?reply-fn</code> represent optional entries in the map.</p>
 </div>
 </div>
-<div id="outline-container-headline-4" class="outline-3">
-<h3 id="headline-4">
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
 Splitting a namespace across files
 </h3>
-<div id="outline-text-headline-4" class="outline-text-3">
+<div id="outline-text-headline-5" class="outline-text-3">
 <p>When your namespace is growing too large for a single file, you can split it across multiple files.
 For example, take the <code>clojure.core</code> namespace, which is split across multiple files. As a more concrete piece, <code>core_print.clj</code> contains some <code>clojure.core</code> functions. Here&#39;s how it is done - notice that the base file-name, without the <code>.clj</code> suffix, is used.</p>
 <div class="src src-clojure">
@@ -190,16 +205,16 @@ Inside <code>core_print.clj</code>, use the <code>in-ns</code> directive to tell
 </div>
 </div>
 </div>
-<div id="outline-container-headline-5" class="outline-2">
-<h2 id="headline-5">
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
 Smart Tricks&#xa0;&#xa0;&#xa0;<span class="tags"><span>snippets</span></span>
 </h2>
-<div id="outline-text-headline-5" class="outline-text-2">
-<div id="outline-container-headline-6" class="outline-3">
-<h3 id="headline-6">
+<div id="outline-text-headline-6" class="outline-text-2">
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
 Convert a map (keyed by integers) into a correspondingly ordered vector
 </h3>
-<div id="outline-text-headline-6" class="outline-text-3">
+<div id="outline-text-headline-7" class="outline-text-3">
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span><span style="color:#75715e">;; From clojure.edn.data</span>
 </span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">ns </span>user)
@@ -242,11 +257,11 @@ On line marked <em>2</em>, you initialize a vector of the required length with <
 And reduce <code>m</code> with the function defined on line marked <em>1</em> into this vector.</p>
 </div>
 </div>
-<div id="outline-container-headline-7" class="outline-3">
-<h3 id="headline-7">
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
 Temporarily descending into mutable-land.&#xa0;&#xa0;&#xa0;<span class="tags"><span>performance</span></span>
 </h3>
-<div id="outline-text-headline-7" class="outline-text-3">
+<div id="outline-text-headline-8" class="outline-text-3">
 <p>Immutability is great, but it&#39;s okay to mutate within the confines</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>  (<span style="color:#66d9ef">defn </span>filterv
@@ -268,26 +283,26 @@ Temporarily descending into mutable-land.&#xa0;&#xa0;&#xa0;<span class="tags"><s
 And finally, the collection is made persistent with <code>persistent!</code>.</p>
 </div>
 </div>
-<div id="outline-container-headline-8" class="outline-3">
-<h3 id="headline-8">
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
 Control Flow
 </h3>
-<div id="outline-text-headline-8" class="outline-text-3">
+<div id="outline-text-headline-9" class="outline-text-3">
 <p>An interesting discussion can be found at <a href="https://clojureverse.org/t/how-are-clojurians-handling-control-flow-on-their-projects/7868">How are clojurians handling control flow on their projects?</a></p>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-headline-9" class="outline-2">
-<h2 id="headline-9">
+<div id="outline-container-headline-10" class="outline-2">
+<h2 id="headline-10">
 Uncommon Stuff
 </h2>
-<div id="outline-text-headline-9" class="outline-text-2">
-<div id="outline-container-headline-10" class="outline-3">
-<h3 id="headline-10">
+<div id="outline-text-headline-10" class="outline-text-2">
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
 <code>deftype</code> and Mutable Members
 </h3>
-<div id="outline-text-headline-10" class="outline-text-3">
+<div id="outline-text-headline-11" class="outline-text-3">
 <p>
 <code>deftype</code> allows for the definition of mutable members using the <code>^:volatile-mutable</code> tag on a member.
 But they become private to the object, and we need to implement methods on them (via interfaces or protocols)
@@ -388,11 +403,11 @@ class clojure.lang.Compiler$CompilerException
 </pre>
 </div>
 </div>
-<div id="outline-container-headline-11" class="outline-3">
-<h3 id="headline-11">
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
 <code>&amp;env</code> in Macros
 </h3>
-<div id="outline-text-headline-11" class="outline-text-3">
+<div id="outline-text-headline-12" class="outline-text-3">
 <p>Inside of macros, you have access to the context in which you are being evaluated.</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defmacro </span>show-env []
@@ -537,16 +552,16 @@ As you can notice above, <span style="text-decoration: underline;">macros</span>
 </div>
 </div>
 </div>
-<div id="outline-container-headline-12" class="outline-2">
-<h2 id="headline-12">
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
 Java Interop
 </h2>
-<div id="outline-text-headline-12" class="outline-text-2">
-<div id="outline-container-headline-13" class="outline-3">
-<h3 id="headline-13">
+<div id="outline-text-headline-13" class="outline-text-2">
+<div id="outline-container-headline-14" class="outline-3">
+<h3 id="headline-14">
 Some useful libraries
 </h3>
-<div id="outline-text-headline-13" class="outline-text-3">
+<div id="outline-text-headline-14" class="outline-text-3">
 <ul>
 <li><a href="https://github.com/rschmitt/dynamic-object">Dynamic Object</a> - leverage Clojure datastructures from Java</li>
 </ul>
@@ -554,16 +569,16 @@ Some useful libraries
 </div>
 </div>
 </div>
-<div id="outline-container-headline-14" class="outline-2">
-<h2 id="headline-14">
+<div id="outline-container-headline-15" class="outline-2">
+<h2 id="headline-15">
 Leiningen
 </h2>
-<div id="outline-text-headline-14" class="outline-text-2">
-<div id="outline-container-headline-15" class="outline-3">
-<h3 id="headline-15">
+<div id="outline-text-headline-15" class="outline-text-2">
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
 It&#39;s macro-land, after all
 </h3>
-<div id="outline-text-headline-15" class="outline-text-3">
+<div id="outline-text-headline-16" class="outline-text-3">
 <p>If you&#39;d like to declare some constants at the top of your <em>project.clj</em> for reuse within <em>defproject</em></p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">def </span>my-version <span style="color:#e6db74">&#34;1.2.3&#34;</span>)
@@ -574,11 +589,11 @@ It&#39;s macro-land, after all
 </div>
 </div>
 </div>
-<div id="outline-container-headline-16" class="outline-3">
-<h3 id="headline-16">
+<div id="outline-container-headline-17" class="outline-3">
+<h3 id="headline-17">
 The eval-reader for dynamism
 </h3>
-<div id="outline-text-headline-16" class="outline-text-3">
+<div id="outline-text-headline-17" class="outline-text-3">
 <p>Some self-evident example code. Notice the use of the eval reader <em>#=</em>.</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span><span style="color:#e6db74">:source-paths</span> [<span style="color:#f92672">#</span>=(eval (str (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;user.home&#34;</span>) <span style="color:#e6db74">&#34;/.lein/dev-srcs&#34;</span>))
@@ -589,16 +604,16 @@ The eval-reader for dynamism
 </div>
 </div>
 </div>
-<div id="outline-container-headline-17" class="outline-2">
-<h2 id="headline-17">
+<div id="outline-container-headline-18" class="outline-2">
+<h2 id="headline-18">
 Gotchas
 </h2>
-<div id="outline-text-headline-17" class="outline-text-2">
-<div id="outline-container-headline-18" class="outline-3">
-<h3 id="headline-18">
+<div id="outline-text-headline-18" class="outline-text-2">
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
 <code>with-redefs</code>
 </h3>
-<div id="outline-text-headline-18" class="outline-text-3">
+<div id="outline-text-headline-19" class="outline-text-3">
 <p><code>with-redefs</code> and <span style="text-decoration: underline;">inlined</span>-annotated vars  don&#39;t play well.</p>
 <div class="src src-clojure">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>  (<span style="color:#a6e22e">with-redefs</span> [+ -] (+ <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">30</span>))</span></span></code></pre></div>
@@ -625,11 +640,11 @@ Gotchas
 </div>
 </div>
 </div>
-<div id="outline-container-headline-19" class="outline-2">
-<h2 id="headline-19">
+<div id="outline-container-headline-20" class="outline-2">
+<h2 id="headline-20">
 Monads
 </h2>
-<div id="outline-text-headline-19" class="outline-text-2">
+<div id="outline-text-headline-20" class="outline-text-2">
 <p>Since no article is complete without an attempt at monads, we refer to Monads for completeness&#39; sake.</p>
 <p>
 This is only a re-run of <a href="https://github.com/leonoel/cloroutine/blob/master/doc/05-monads.md">05-monads</a>.</p>
@@ -674,17 +689,17 @@ f
 </div>
 </div>
 
-  </main>
+        </main>
 
-</article>
+    </article>
 
-          </div>
-        </div>
-      </div>
+</div>
+
     </div>
-    <footer>
-      <div class="hide-for-small-only float-left">
-  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2021</span>
+
+    <footer id="site-footer">
+        <div class="hide-for-small-only float-left author">
+  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2022</span>
 </div>
 
 <div class="social-media-list float-right">
@@ -713,24 +728,35 @@ f
   </span>
 
 </div>
-
     </footer>
-    <script src="/js/bundle.js"></script>
-    <script>hljs.highlightAll();</script>
-    <script>
-      (function (i, s, o, g, r, a, m) {
-              i['GoogleAnalyticsObject'] = r;
-              i[r] = i[r] || function () {
-                      (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
-              a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-              a.async = 1;
-              a.src = g;
-              m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-1397428-5', 'auto');
-      ga('send', 'pageview');
-    </script>
-  </body>
+
+</div>
+
+<script src="/js/bundle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1397428-5"></script>
+<script>
+    hljs.highlightAll();
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-1397428-5');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1397428-5', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
 </html>

@@ -14,8 +14,8 @@
       
       <guid>https://msync.org/posts/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid>
       <description>TL;DR - Of course, you can use Clojurescript to develop Chrome Extensions. So, that&amp;#39;s not the topic of this post. I&amp;#39;ve only documented how you&amp;#39;d set up your project, using the latest versions (as of this post&amp;#39;s publishing) of piggieback and weasel.
- Why Weasel? Because, as its author explains
- A WebSocket transport is simple and avoids some of the thornier bugs caused by the CrossPageChannel transport, which is used in the standard ClojureScript browser REPL and Austin.</description>
+Why Weasel? Because, as its author explains
+A WebSocket transport is simple and avoids some of the thornier bugs caused by the CrossPageChannel transport, which is used in the standard ClojureScript browser REPL and Austin.</description>
     </item>
     
   </channel>
