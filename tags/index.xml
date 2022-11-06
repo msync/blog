@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>emacs,</title>
+      <title>emacs</title>
       <link>https://msync.org/tags/emacs/</link>
       <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>org-mode,</title>
+      <title>org mode</title>
       <link>https://msync.org/tags/org-mode/</link>
       <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
       
@@ -35,7 +35,16 @@
     </item>
     
     <item>
-      <title>machine-learning,</title>
+      <title>javascript</title>
+      <link>https://msync.org/tags/javascript/</link>
+      <pubDate>Sat, 05 Sep 2020 23:22:55 +0530</pubDate>
+      
+      <guid>https://msync.org/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
       <link>https://msync.org/tags/machine-learning/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       
@@ -44,7 +53,7 @@
     </item>
     
     <item>
-      <title>neural-networks,</title>
+      <title>neural networks</title>
       <link>https://msync.org/tags/neural-networks/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       
@@ -53,7 +62,7 @@
     </item>
     
     <item>
-      <title>python,</title>
+      <title>python</title>
       <link>https://msync.org/tags/python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       
@@ -64,18 +73,45 @@
     <item>
       <title>virtualenv</title>
       <link>https://msync.org/tags/virtualenv/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       
       <guid>https://msync.org/tags/virtualenv/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>javascript</title>
-      <link>https://msync.org/tags/javascript/</link>
-      <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
+      <title>grammar of graphics</title>
+      <link>https://msync.org/tags/grammar-of-graphics/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
       
-      <guid>https://msync.org/tags/javascript/</guid>
+      <guid>https://msync.org/tags/grammar-of-graphics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oz</title>
+      <link>https://msync.org/tags/oz/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/tags/oz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vega</title>
+      <link>https://msync.org/tags/vega/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/tags/vega/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vega-lite</title>
+      <link>https://msync.org/tags/vega-lite/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/tags/vega-lite/</guid>
       <description></description>
     </item>
     
@@ -103,6 +139,15 @@
       <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
       
       <guid>https://msync.org/tags/text-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://msync.org/tags/programming/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      
+      <guid>https://msync.org/tags/programming/</guid>
       <description></description>
     </item>
     

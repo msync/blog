@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>neural-networks, on Sync&#39;ing from Memory</title>
+    <title>neural networks on Sync&#39;ing from Memory</title>
     <link>https://msync.org/tags/neural-networks/</link>
-    <description>Recent content in neural-networks, on Sync&#39;ing from Memory</description>
+    <description>Recent content in neural networks on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Jun 2020 19:23:10 +0530</lastBuildDate><atom:link href="https://msync.org/tags/neural-networks/index.xml" rel="self" type="application/rss+xml" />
@@ -31,7 +31,7 @@
       <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
       
       <guid>https://msync.org/notes/a-neural-network-primer/</guid>
-      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;.</description>
+      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;</description>
     </item>
     
   </channel>

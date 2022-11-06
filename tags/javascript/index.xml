@@ -6,7 +6,16 @@
     <description>Recent content in javascript on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jan 2018 14:43:59 +0530</lastBuildDate><atom:link href="https://msync.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Sep 2020 23:22:55 +0530</lastBuildDate><atom:link href="https://msync.org/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript - Protecting Your Data</title>
+      <link>https://msync.org/notes/javascript-protecting-your-data/</link>
+      <pubDate>Sat, 05 Sep 2020 23:22:55 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/javascript-protecting-your-data/</guid>
+      <description>Some uncommon but useful techniques for your javascript</description>
+    </item>
+    
     <item>
       <title>JS Quick Restart for the Impatient</title>
       <link>https://msync.org/notes/js-quick-restart-for-the-impatient/</link>

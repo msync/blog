@@ -26,12 +26,30 @@
     </item>
     
     <item>
+      <title>Javascript - Protecting Your Data</title>
+      <link>https://msync.org/notes/javascript-protecting-your-data/</link>
+      <pubDate>Sat, 05 Sep 2020 23:22:55 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/javascript-protecting-your-data/</guid>
+      <description>Some uncommon but useful techniques for your javascript</description>
+    </item>
+    
+    <item>
       <title>Notes for Deep Learning with Python</title>
       <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       
       <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
       <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+    </item>
+    
+    <item>
+      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
+      <link>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</guid>
+      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
     </item>
     
     <item>
@@ -58,7 +76,7 @@
       <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
       
       <guid>https://msync.org/notes/a-neural-network-primer/</guid>
-      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;.</description>
+      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;</description>
     </item>
     
     <item>

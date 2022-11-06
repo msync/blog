@@ -437,119 +437,115 @@ video {
 .inline-flex{
   display: inline-flex;
 }
-.h-screen{
-  height: 100vh;
-}
 .capitalize{
   text-transform: capitalize;
 }
-body{
-  display: grid;
-  grid-auto-flow: row;
-  grid-auto-rows: max-content;
+#body {
+  padding-top: 56px;
+  padding-bottom: 72px;
 }
 
 #site-header{
   position: fixed;
   left: 0px;
   right: 0px;
+  top: 0px;
   z-index: 50;
   height: 36px;
   background-color: #4f4f4f;
   border-bottom: 3px solid orange;
 }
-#site-header div{
+#site-header div.content{
   width: 100%;
 }
 @media (min-width: 480px){
-  #site-header div{
+  #site-header div.content{
     max-width: 480px;
   }
 }
 @media (min-width: 640px){
-  #site-header div{
+  #site-header div.content{
     max-width: 640px;
   }
 }
 @media (min-width: 976px){
-  #site-header div{
+  #site-header div.content{
     max-width: 976px;
   }
 }
-#site-header div{
+#site-header div.content{
   margin-left: auto;
   margin-right: auto;
 }
 @media (min-width: 640px){
-  #site-header div{
+  #site-header div.content{
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
   }
 }
-#site-header div {
+#site-header div.content {
   height: 45px;
-  box-shadow: 2px 2px 7px orange;
+  box-shadow: 0 2px 5px orange;
   background-color: inherit;
   max-width: calc(900px - (1.2rem * 2));
   padding-right: 2.4rem;
   padding-left: 2.4rem;
 }
-#site-header div > a{
+#site-header div.content > a{
   float: left;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 @media (min-width: 640px){
-  #site-header div > a{
+  #site-header div.content > a{
     font-size: 1.5rem;
     line-height: 2rem;
   }
 }
 @media (min-width: 976px){
-  #site-header div > a{
+  #site-header div.content > a{
     font-size: 3rem;
     line-height: 1;
   }
 }
-#site-header div > a {
+#site-header div.content > a {
   text-shadow: 1px 1px 9px #000;
   line-height: 36px;
   color: #cfcfcf;
 }
-#site-header div nav{
+#site-header div.content nav{
   float: right;
 }
-#site-header div nav a{
+#site-header div.content nav a{
   font-size: 0.75rem;
   line-height: 1rem;
 }
 @media (min-width: 640px){
-  #site-header div nav a{
+  #site-header div.content nav a{
     font-size: 1.5rem;
     line-height: 2rem;
   }
 }
-#site-header div nav a {
+#site-header div.content nav a {
   color: #cfcfcf;
   line-height: 36px;
   font-weight: 800;
   text-shadow: 1px 2px 3px #000;
 }
-#site-header div nav a:not(:first-child) {
+#site-header div.content nav a:not(:first-child) {
   margin-left: 20px;
 }
 
 #main-wrapper{
-  overflow-y: scroll;
-  margin-top: calc(36px + 1rem);
-  padding-bottom: calc(36px + 1rem);
+  margin-top: 1.25rem;
+  flex-grow: 1;
 }
 
 #site-footer{
   position: fixed;
-  bottom: 0px;
   left: 0px;
   right: 0px;
+  bottom: 0px;
   background-color: #f9f9f9;
   width: 100%;
   height: 36px;
@@ -593,43 +589,52 @@ body{
   text-align: center;
 }
 
-ul.notes-list li.notes, ul.notes-list li.posts, ul.posts-list li.notes, ul.posts-list li.posts, ul.list li.notes, ul.list li.posts{
-  position: relative;
-  margin-top: 2rem;
+ul.notes-list, ul.posts-list{
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 72px;
+}
+ul.notes-list li.notes, ul.notes-list li.posts, ul.posts-list li.notes, ul.posts-list li.posts {
+  margin-top: 5rem;
   padding: 0 0 0 1rem;
   border: 1px solid #eee;
   border-radius: 5px 5px 5px 5px;
   background-color: whitesmoke;
 }
-ul.notes-list li.notes:not(:first-child), ul.notes-list li.posts:not(:first-child), ul.posts-list li.notes:not(:first-child), ul.posts-list li.posts:not(:first-child), ul.list li.notes:not(:first-child), ul.list li.posts:not(:first-child) {
-  margin-top: 3rem;
+ul.notes-list li.notes:not(:first-child), ul.notes-list li.posts:not(:first-child), ul.posts-list li.notes:not(:first-child), ul.posts-list li.posts:not(:first-child) {
+  margin-top: 7rem;
 }
-ul.notes-list li.notes:hover, ul.notes-list li.posts:hover, ul.posts-list li.notes:hover, ul.posts-list li.posts:hover, ul.list li.notes:hover, ul.list li.posts:hover {
+ul.notes-list li.notes:hover, ul.notes-list li.posts:hover, ul.posts-list li.notes:hover, ul.posts-list li.posts:hover {
   background-color: #ffffeb;
   border: 1px solid white;
 }
-ul.notes-list li.notes:hover article div.title, ul.notes-list li.posts:hover article div.title, ul.posts-list li.notes:hover article div.title, ul.posts-list li.posts:hover article div.title, ul.list li.notes:hover article div.title, ul.list li.posts:hover article div.title {
+ul.notes-list li.notes:hover article div.title, ul.notes-list li.posts:hover article div.title, ul.posts-list li.notes:hover article div.title, ul.posts-list li.posts:hover article div.title {
   color: #1a1a1a;
   text-decoration: underline;
   text-decoration-color: orange;
 }
-ul.notes-list li.notes article, ul.notes-list li.posts article, ul.posts-list li.notes article, ul.posts-list li.posts article, ul.list li.notes article, ul.list li.posts article {
-  margin-top: 2.5rem;
-  padding: 0 0.5rem 0.2rem 0;
+ul.notes-list li.notes article, ul.notes-list li.posts article, ul.posts-list li.notes article, ul.posts-list li.posts article{
+  position: relative;
+  margin-top: 1.2rem;
+  padding: 1rem 0.5rem 0.2rem 0;
 }
-ul.notes-list li.notes article div.title, ul.notes-list li.posts article div.title, ul.posts-list li.notes article div.title, ul.posts-list li.posts article div.title, ul.list li.notes article div.title, ul.list li.posts article div.title {
+ul.notes-list li.notes article div.title, ul.notes-list li.posts article div.title, ul.posts-list li.notes article div.title, ul.posts-list li.posts article div.title {
   font-size: 1.65rem;
   text-shadow: 2px 2px 4px #bbb;
   font-weight: 500;
   color: darkblue;
 }
-ul.notes-list li.notes article div.summary, ul.notes-list li.posts article div.summary, ul.posts-list li.notes article div.summary, ul.posts-list li.posts article div.summary, ul.list li.notes article div.summary, ul.list li.posts article div.summary {
+ul.notes-list li.notes article div.summary, ul.notes-list li.posts article div.summary, ul.posts-list li.notes article div.summary, ul.posts-list li.posts article div.summary {
   max-width: 90%;
   font-size: 1rem;
   line-height: 1.4em;
   margin: 0.8em 0 0.4rem 0;
 }
-ul.notes-list li.notes article div.tags > a, ul.notes-list li.posts article div.tags > a, ul.posts-list li.notes article div.tags > a, ul.posts-list li.posts article div.tags > a, ul.list li.notes article div.tags > a, ul.list li.posts article div.tags > a{
+ul.notes-list li.notes article div.tags > a, ul.notes-list li.posts article div.tags > a, ul.posts-list li.notes article div.tags > a, ul.posts-list li.posts article div.tags > a{
   position: relative;
   float: right;
   font-size: 16px;
@@ -637,6 +642,10 @@ ul.notes-list li.notes article div.tags > a, ul.notes-list li.posts article div.
   margin: 0 0.4rem 0 0;
   padding: 0 0.5rem 0 0.5rem;
   border-radius: 0.2rem;
+}
+
+div.pagination{
+  padding-top: 2.5rem;
 }
 
 div.content.posts article > header {
@@ -785,20 +794,20 @@ div.content.posts article main aside {
 }
 
 div.content.notes{
-  position: relative;
-  display: flex;
   display: grid;
   height: 100vh;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 3rem;
+}
+div.content.notes > div.toc, div.content.notes article{
+  overflow-y: scroll;
+  padding-bottom: 100px;
 }
 div.content.notes a {
   color: #4d717d;
   text-decoration: underline;
 }
 div.content.notes div.toc{
-  top: 0px;
-  bottom: 0px;
   float: left;
   display: none;
 }
@@ -814,9 +823,7 @@ div.content.notes div.toc{
   }
 }
 div.content.notes div.toc {
-  background-color: #fafaf9;
   font-size: 1.2rem;
-  padding-top: calc(36px + 1rem);
   padding-right: 1rem;
 }
 div.content.notes div.toc #TableOfContents > ul {
@@ -836,8 +843,6 @@ div.content.notes div.toc #TableOfContents > ul > li > ul > li > ul {
 }
 div.content.notes article{
   grid-column: span 12 / span 12;
-  overflow: hidden;
-  overflow-y: scroll;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -869,7 +874,7 @@ div.content.notes article > header .meta div.time time{
   box-shadow: 0 1px 2px orange;
 }
 div.content.notes article > summary{
-  margin-top: 0.75rem;
+  margin: 0.75rem;
   margin-bottom: 1.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(254 243 199 / var(--tw-bg-opacity));
@@ -881,7 +886,7 @@ div.content.notes article > summary{
   display: block;
   font-weight: 300;
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 div.content.notes article > main{
   padding-top: 0.75rem;
@@ -911,8 +916,18 @@ div.content.notes article > main div.comment-block {
 div.content.notes article > main div.center-block > p {
   font-weight: 500;
 }
-div.content.notes article > main .outline-2 {
-  margin-top: 2rem;
+div.content.notes article > main .outline-1{
+  padding-left: 0.25rem;
+}
+div.content.notes article > main .outline-2{
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+div.content.notes article > main .outline-3{
+  padding-left: 0.75rem;
+}
+div.content.notes article > main .outline-4{
+  padding-left: 1rem;
 }
 div.content.notes article > main h2{
   position: sticky;
@@ -1050,7 +1065,7 @@ div.content.notes article > main div + pre.example:hover {
 
 .date-as-calendar {
   position: absolute;
-  top: -1.2rem;
+  top: -2.2rem;
   right: 0;
   vertical-align: top;
   background: white;
