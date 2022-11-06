@@ -537,6 +537,7 @@ video {
 }
 
 #main-wrapper{
+  position: fixed;
   margin-top: 1.25rem;
   flex-grow: 1;
 }
