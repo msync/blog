@@ -429,17 +429,11 @@ video {
 .capitalize{
   text-transform: capitalize;
 }
-#body {
-  padding-top: 56px;
-  padding-bottom: 72px;
-}
-
 #site-header{
-  position: fixed;
-  left: 0px;
-  right: 0px;
+  position: sticky;
   top: 0px;
-  z-index: 50;
+  z-index: 40;
+  width: 100%;
   height: 36px;
   background-color: #4f4f4f;
   border-bottom: 3px solid orange;
@@ -551,10 +545,9 @@ video {
 }
 
 #site-footer{
-  position: fixed;
-  left: 0px;
-  right: 0px;
+  position: sticky;
   bottom: 0px;
+  z-index: 40;
   background-color: #f9f9f9;
   width: 100%;
   height: 36px;
@@ -802,11 +795,6 @@ div.content.posts article main aside {
   padding-right: 15px;
 }
 
-div.content.notes{
-  height: 100vh;
-  max-height: 100%;
-}
-
 @media (min-width: 976px){
   div.content.notes{
     display: grid;
@@ -814,9 +802,12 @@ div.content.notes{
     gap: 0.75rem;
   }
 }
+
+div.content.notes {
+  height: calc(100vh - 36px - 36px);
+}
 div.content.notes > div.toc, div.content.notes article{
   overflow-y: scroll;
-  padding-bottom: 48px;
 }
 div.content.notes a {
   color: #4d717d;
