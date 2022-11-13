@@ -3,16 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://msync.org/notes/</loc>
-    <lastmod>2022-11-06T12:09:49+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/notes/reading-list/</loc>
     <lastmod>2021-10-10T09:43:15+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/</loc>
-    <lastmod>2022-11-06T12:09:49+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/categories/</loc>
-    <lastmod>2022-11-06T12:09:49+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/clojure/</loc>
     <lastmod>2022-11-06T12:09:49+05:30</lastmod>
@@ -30,54 +30,33 @@
     <lastmod>2022-11-06T12:09:49+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/</loc>
-    <lastmod>2022-11-06T12:09:49+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/javascript/</loc>
-    <lastmod>2022-05-28T18:17:47+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/categories/javascript/</loc>
-    <lastmod>2022-05-28T18:17:47+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/notes/javascript-protecting-your-data/</loc>
-    <lastmod>2020-09-05T23:22:55+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/categories/programming/</loc>
-    <lastmod>2022-05-28T18:17:47+05:30</lastmod>
+    <lastmod>2022-11-13T16:46:32+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/machine-learning/</loc>
-    <lastmod>2022-06-12T00:00:00+05:30</lastmod>
+    <lastmod>2020-05-30T18:35:35+05:30</lastmod>
+  </url><url>
+    <loc>https://msync.org/notes/ml-in-clojure-via-python/</loc>
+    <lastmod>2020-05-30T18:35:35+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/neural-networks/</loc>
     <lastmod>2022-11-06T12:09:18+05:30</lastmod>
   </url><url>
-    <loc>https://msync.org/notes/notes-for-deep-learning-with-python/</loc>
-    <lastmod>2022-06-12T00:00:00+05:30</lastmod>
-  </url><url>
     <loc>https://msync.org/tags/python/</loc>
-    <lastmod>2022-06-12T00:00:00+05:30</lastmod>
+    <lastmod>2020-05-30T18:35:35+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/virtualenv/</loc>
-    <lastmod>2022-06-12T00:00:00+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/categories/data/</loc>
-    <lastmod>2020-03-22T10:46:59+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/grammar-of-graphics/</loc>
-    <lastmod>2020-03-22T10:46:59+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</loc>
-    <lastmod>2020-03-22T10:46:59+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/oz/</loc>
-    <lastmod>2020-03-22T10:46:59+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/vega/</loc>
-    <lastmod>2020-03-22T10:46:59+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/vega-lite/</loc>
-    <lastmod>2020-03-22T10:46:59+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/ml-in-clojure-via-python/</loc>
     <lastmod>2020-05-30T18:35:35+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/posts/</loc>

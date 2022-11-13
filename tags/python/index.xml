@@ -6,16 +6,7 @@
     <description>Recent content in python on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Jun 2020 19:23:10 +0530</lastBuildDate><atom:link href="https://msync.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Notes for Deep Learning with Python</title>
-      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
-      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
-      <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 02 Feb 2020 16:34:55 +0530</lastBuildDate><atom:link href="https://msync.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ML in Clojure via Python</title>
       <link>https://msync.org/notes/ml-in-clojure-via-python/</link>

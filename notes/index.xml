@@ -35,24 +35,6 @@
     </item>
     
     <item>
-      <title>Notes for Deep Learning with Python</title>
-      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
-      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
-      <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
-    </item>
-    
-    <item>
-      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
-      <link>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</link>
-      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</guid>
-      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
-    </item>
-    
-    <item>
       <title>ML in Clojure via Python</title>
       <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
       <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>

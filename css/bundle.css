@@ -990,6 +990,7 @@ div.content.notes article > main h2{
   text-decoration: underline;
   text-decoration-color: #d8d8d8;
   font-size: 1.8rem;
+  scroll-margin-top: 36px;
 }
 div.content.notes article > main h2 > p {
   margin-top: 1rem;
@@ -1005,6 +1006,7 @@ div.content.notes article > main h3 {
   text-decoration: underline;
   text-decoration-color: #f8a8d8;
   text-shadow: 2px 2px 7px #aaa;
+  scroll-margin-top: 72px;
 }
 div.content.notes article > main h4 {
   text-decoration: underline;
