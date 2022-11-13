@@ -811,8 +811,8 @@ div.content.notes {
 }
 div.content.notes > div.toc, div.content.notes article{
   overflow-y: scroll;
-  height: calc(100vh - 36px - 36px);
-  padding-top: 39.6px;
+  height: 100vh;
+  padding-top: 36px;
 }
 div.content.notes a {
   color: #4d717d;
