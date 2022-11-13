@@ -519,25 +519,29 @@ video {
   margin-left: 20px;
 }
 
+#main-wrapper{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  #main-wrapper{
+    max-width: 640px;
+  }
+}
+
 @media (min-width: 976px){
   #main-wrapper{
-    width: 100%;
+    max-width: 976px;
   }
-  @media (min-width: 640px){
-    #main-wrapper{
-      max-width: 640px;
-    }
+}
+
+@media (min-width: 1280px){
+  #main-wrapper{
+    max-width: 1280px;
   }
-  @media (min-width: 976px){
-    #main-wrapper{
-      max-width: 976px;
-    }
-  }
-  @media (min-width: 1280px){
-    #main-wrapper{
-      max-width: 1280px;
-    }
-  }
+}
+
+@media (min-width: 976px){
   #main-wrapper{
     margin-left: auto;
     margin-right: auto;
@@ -807,6 +811,8 @@ div.content.notes {
 }
 div.content.notes > div.toc, div.content.notes article{
   overflow-y: scroll;
+  height: calc(100vh - 36px - 36px);
+  padding-top: 39.6px;
 }
 div.content.notes a {
   color: #4d717d;
@@ -860,13 +866,22 @@ div.content.notes article > header .meta{
 }
 div.content.notes article > header .meta div.time{
   position: absolute;
-  right: 0px;
-  display: inline-block;
+}
+@media (min-width: 640px){
+  div.content.notes article > header .meta div.time{
+    display: block;
+  }
+}
+@media (min-width: 976px){
+  div.content.notes article > header .meta div.time{
+    right: 0px;
+    display: inline-block;
+  }
+}
+div.content.notes article > header .meta div.time {
   font-size: 0.9rem;
 }
 div.content.notes article > header .meta div.time time{
-  margin-left: 1.5rem;
-  margin-top: 0.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   display: inline-block;
@@ -920,13 +935,17 @@ div.content.notes article > main .outline-1{
 }
 div.content.notes article > main .outline-2{
   margin-top: 0.5rem;
-  padding-left: 0.5rem;
 }
-div.content.notes article > main .outline-3{
-  padding-left: 0.75rem;
-}
-div.content.notes article > main .outline-4{
-  padding-left: 1rem;
+@media (min-width: 976px){
+  div.content.notes article > main .outline-2{
+    padding-left: 0.5rem;
+  }
+  div.content.notes article > main .outline-3{
+    padding-left: 0.75rem;
+  }
+  div.content.notes article > main .outline-4{
+    padding-left: 1rem;
+  }
 }
 div.content.notes article > main h2{
   position: sticky;
