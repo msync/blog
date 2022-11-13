@@ -42,17 +42,37 @@
     <div class="toc">
         <nav id="TableOfContents">
 <ul>
-<li><a href="#headline-1">Let&#39;s get started…</a>
+<li><a href="#headline-1">What is Machine Learning?</a>
 </li>
-<li><a href="#headline-2">It&#39;s just a function…</a>
+<li><a href="#headline-2">Generalizing the implementation</a>
 </li>
-<li><a href="#headline-3">Getting somewhat bit real</a>
+<li><a href="#headline-3">There&#39;s a thin line between…</a>
+<ul>
+<li><a href="#headline-4">OR</a>
 </li>
-<li><a href="#headline-4">And, the neural network?</a>
+<li><a href="#headline-5">AND</a>
 </li>
-<li><a href="#headline-5">References</a>
+</ul>
 </li>
-<li><a href="#headline-6">Preface/Purpose</a>
+<li><a href="#headline-6">Wait. Where is the <strong>learning</strong>?</a>
+<ul>
+<li><a href="#headline-7">The generalised version…</a>
+</li>
+<li><a href="#headline-8">And the learning…</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-9">Perceptrons (Neurons)</a>
+<ul>
+<li><a href="#headline-10">It&#39;s just a function…</a>
+</li>
+<li><a href="#headline-11">Getting somewhat bit real</a>
+</li>
+</ul>
+</li>
+<li><a href="#headline-12">And, the neural network?</a>
+</li>
+<li><a href="#headline-13">References</a>
 </li>
 </ul>
 </nav>
@@ -75,10 +95,10 @@
                 </time>
 
                 
-                <time datetime="2022-11-06 12:09:18 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+                <time datetime="2022-11-14 00:06:16 &#43;0530 IST" itemprop="datePublished" class="pubdate">
                     Updated:
-                    <span class="weekday">Sun</span>,
-                    <span class="day">6</span>
+                    <span class="weekday">Mon</span>,
+                    <span class="day">14</span>
                     <span class="month">Nov</span>,
                     <span class="year">2022</span>
                 </time>
@@ -99,84 +119,168 @@ Neural networks are a fascinating topic. And it&#39;s meta, because we as biolog
 While this article uses neural networks as the primary topic to focus on, much of the article applies to the topic of machine learning too.</p>
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
-Let&#39;s get started…
+What is Machine Learning?
 </h2>
 <div id="outline-text-headline-1" class="outline-text-2">
 <p>
-How would you explain machine learning in very simple terms? It&#39;s not hard, but it will help to first clarify what exactly do we mean by machine learning. It&#39;s about humans attempting to make machines mimic human behaviour. But, that&#39;s still quite broad.</p>
-<p>
-How do we answer the following questions?</p>
+Machine learning is, simply put</p>
 <ul>
-<li>What is 2 + 2?</li>
+<li>Learning</li>
+<li>Using what was &#34;learned&#34;</li>
 </ul>
-<p>The answer to &#34;2 + 2&#34; is easy for a machine provided the machine is custom-built for arithmetic and the input is cleanly fed into the machine. (Calculators, anyone?)
-But, the same question fed into a general purpose machine would need a lot more machinery to give you the right answer - <strong>4</strong> in this case.</p>
+<p>Learning is modeled as a function implementation, but done in two steps. The first step is explicitly programmed in a generic manner, and the second step is the creation of a bespoke version for specific use-cases. Simple statement, but loaded.</p>
+<p>
+Consider a function <strong>ƒ</strong> such that</p>
+<table>
+<tbody>
+<tr>
+<td>ƒ(0, 0) = 0</td>
+</tr>
+<tr>
+<td>ƒ(1, 0) = 0</td>
+</tr>
+<tr>
+<td>ƒ(0, 1) = 0</td>
+</tr>
+<tr>
+<td>ƒ(1, 1) = 1</td>
+</tr>
+</tbody>
+</table>
+<p>
+Now comes the interesting bit - something that is so simple that once can miss the point completely.
+Let&#39;s posit ƒ as our machine learning function in the sense described above. On the premises introduced initially, ƒ is implemented in the following two steps</p>
+<ul>
+<li>A programmatic implementation that is capable of being <span style="text-decoration: underline;">configured</span> for a class of use-cases</li>
+<li>A learning phase that learns the above table and can answer questions that follow this known <span style="text-decoration: underline;">pattern</span>.</li>
+</ul>
+<p>But, but - what does the term &#34;programmatic implementation&#34; signify, you ask?</p>
+<p>
+Here&#39;s <strong>one</strong> example of ƒ that can satisfy the above, in our favourite language</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x, y):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span></span></span></code></pre></div>
+</div>
+<p>
+We have an implementation, <strong>and</strong> it already satisfies the table above. Bummer - we have a new-born function that has already passed grade 10. Doesn&#39;t need no school!</p>
+<p>
+Let&#39;s ride further. How about the following table?</p>
+<table>
+<tbody>
+<tr>
+<td>ƒ(0, 0) = 0</td>
+</tr>
+<tr>
+<td>ƒ(1, 0) = 1</td>
+</tr>
+<tr>
+<td>ƒ(0, 1) = 1</td>
+</tr>
+<tr>
+<td>ƒ(1, 1) = 1</td>
+</tr>
+</tbody>
+</table>
+<p>
+ƒ is now attending junior college, and realises that there&#39;s more to the world than just the <strong>AND</strong> table. <strong>OR</strong>, does it?</p>
 </div>
 </div>
 <div id="outline-container-headline-2" class="outline-2">
 <h2 id="headline-2">
-It&#39;s just a function…
+Generalizing the implementation
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
-<p>A function is loosely something that transforms an input (the domain) into an output (the range).</p>
+<p>Our ƒ doesn&#39;t solve for the <strong>OR</strong> table with the previous implementation. So, here&#39;s a naïve implementation - something that we want to discard immediately after presenting for its stupidity!</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">or</span>(x, y):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span></span></span></code></pre></div>
+</div>
 <p>
-We&#39;ll</p>
-<p>
-A neuron is a computing unit – a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line neurons to consume as <em>their</em> input. (I&#39;m obviously simplifying here…)</p>
-<p>
-That&#39;s akin to a simple function which outputs either a <strong>0</strong> or a <strong>1</strong>.</p>
-<p>
-So, let&#39;s consider the following table, where <strong>x</strong> and <strong>y</strong> are inputs, and <strong>z</strong> is the output.
-<strong>f(x, y) = z</strong></p>
-<table>
-<thead>
-<tr>
-<th class="align-right">x</th>
-<th class="align-right">y</th>
-<th>z</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="align-right">0</td>
-<td class="align-right">0</td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td class="align-right">0</td>
-<td class="align-right">1</td>
-<td><strong>1</strong></td>
-</tr>
-<tr>
-<td class="align-right">1</td>
-<td class="align-right">0</td>
-<td><strong>1</strong></td>
-</tr>
-<tr>
-<td class="align-right">1</td>
-<td class="align-right">1</td>
-<td><strong>1</strong></td>
-</tr>
-</tbody>
-</table>
-<p>
-This is an <strong>OR</strong> table. We didn&#39;t need much time to recognize that, did we? But, how did we exactly recognize the pattern so quickly? It turns out to
-be a simple question with a very non-trivial answer. But a simple view is that we we invoke contextual memory (&#34;Ah, look. Boolean values!&#34;), then
-recall some rules (happens to be the <strong>OR</strong> operation on two binary values), and then <em>apply</em> those rules.</p>
-<p>
-<em>OR</em>, <em>AND</em>, <em>NOT</em>, <em>XOR</em> &amp;mdash; we can deal with those naturally, as programmers or people who have studied logic.
-Let&#39;s take this forward.</p>
+Presenting a better idea after stupid makes it seem brilliant, right?</p>
 </div>
 </div>
 <div id="outline-container-headline-3" class="outline-2">
 <h2 id="headline-3">
-Getting somewhat bit real
+There&#39;s a thin line between…
 </h2>
 <div id="outline-text-headline-3" class="outline-text-2">
-<p>While we stick to the popular binary operations just yet, let&#39;s consider what the implementation of these operations <em>might</em> look like
-in algebraic equation terms of inputs <em>x</em> and <em>y</em>, where we allow x and y to be real numbers. Here&#39;s an educated guess.</p>
+<p>What&#39;s the better idea?
+Literally - there&#39;s a thin line between the 0&#39;s and the 1&#39;s. We&#39;re looking for discrete 0/1 answers. How about considering <strong>x</strong> and <strong>y</strong> as points in 2-D space separated into 2 half-planes by a straight line - each part representing either of the 0 and the 1 exclusively?</p>
 <div class="src src-haskell">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">z</span> <span style="color:#66d9ef">:=</span> (<span style="color:#ae81ff">1.5</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.5</span> <span style="color:#f92672">*</span> y <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1.0</span>)</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">z</span> <span style="color:#66d9ef">:=</span> sign(ax <span style="color:#f92672">+</span> by <span style="color:#f92672">+</span> c)</span></span></code></pre></div>
+</div>
+<p>
+z ∈ {0, 1}</p>
+<p>
+If you already see it, great! If not, consider the fact that now we have an equation in <strong>a</strong> and <strong>b</strong> that can be applied to some combinations of (<strong>x</strong>, <strong>y</strong>) output a single value in the set {0, 1}</p>
+<p>
+For two distinct combination pairs of (<strong>a</strong>, <strong>b</strong>), we can have the same <span style="text-decoration: underline;">function</span> implementation solve for both <strong>AND</strong> and <strong>OR</strong>. Our choices of (<strong>a</strong>, <strong>b</strong>) pairs simply moves and/or rotates the partitioning line.</p>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+OR
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p><strong>OR</strong> has a lower threshold for a positive outcome. Here&#39;s one solution that will work. (<strong>Note</strong>: We consider the sign of <strong>0</strong> as positive - so, sign(<strong>0</strong>) = 1. But if it does not convince you, consider replacing 1 with 0.99)</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">z</span> <span style="color:#66d9ef">:=</span> sign(x <span style="color:#f92672">+</span> y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)</span></span></code></pre></div>
+</div>
+<table>
+<thead>
+<tr>
+<th class="align-right">x</th>
+<th class="align-right">y</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="align-right">0</td>
+<td class="align-right">0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td class="align-right">1</td>
+<td class="align-right">0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td class="align-right">0</td>
+<td class="align-right">1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td class="align-right">1</td>
+<td class="align-right">1</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>
+Below is a visual representation of another solution that works. The greenish-yellow portion represents <strong>0</strong>.</p>
+<p>
+<img src="or.png" alt="or.png" title="or.png" /></p>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+AND
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p><strong>AND</strong> has a higher threshold. One solution that works is presented below.</p>
+<div class="src src-haskell">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">z</span> <span style="color:#66d9ef">:=</span> sign(x <span style="color:#f92672">+</span> y <span style="color:#f92672">-</span> <span style="color:#ae81ff">1.5</span>)</span></span></code></pre></div>
 </div>
 <table>
 <thead>
@@ -210,43 +314,84 @@ in algebraic equation terms of inputs <em>x</em> and <em>y</em>, where we allow 
 </tbody>
 </table>
 <p>
-How about a similar guess for <strong>AND</strong>?</p>
-<div class="src src-haskell">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">z</span> <span style="color:#66d9ef">:=</span> (<span style="color:#ae81ff">0.75</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.75</span> <span style="color:#f92672">*</span> y <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1.0</span>)</span></span></code></pre></div>
-</div>
-<p>
-You&#39;ll notice without any prodding how similar the two linear equations are for <strong>OR</strong> and <strong>AND</strong>.
-In fact, let&#39;s look at another configuration for <strong>OR</strong></p>
-<div class="src src-haskell">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">z</span> <span style="color:#66d9ef">:=</span> (<span style="color:#ae81ff">0.75</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.75</span> <span style="color:#f92672">*</span> y <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0.74</span>)</span></span></code></pre></div>
-</div>
-<p>
-So, <strong>AND</strong> and <strong>OR</strong> are almost the same, except for the <strong>discriminant</strong> &amp;mdash; the straight line that is described by the equation &amp;mdash; in the chosen formulation above.</p>
-<blockquote>
-<p>It&#39;s a straight line in 2-D. By extension, will be a 2-D plane-surface in 3-D. And so on. Some boundary that divides the space it is embedded in into two disjoint spaces.</p>
-</blockquote>
-<p>
-The insight here is that both the functions are similar and map their inputs to opposite sides of some discriminant. Only that the discriminants are
-translated, while sharing the same slope. Here&#39;s how the 0 and 1 classes would be separated, if drawn on a graph.</p>
-<blockquote>
-<p>Having the same slope is just incidental given our arbitrary choice of representation. The slopes can very well be different, and depend on multiple factors including what example datasets we work with.</p>
-</blockquote>
-<p>
-<img src="or.png" alt="or.png" title="or.png" />
+Visually, another solution that works.
 <img src="and.png" alt="and.png" title="and.png" /></p>
-<blockquote>
-<p>The different-colored backgrounds correspond to the two values of <strong>z</strong></p>
-</blockquote>
+<p>
+There are multiple combinations of (<strong>a</strong>, <strong>b</strong>) that satisfy both. We can pick any that we like as long as they satisfy our thresholds. Our example is simplified on purpose - and shows that the <strong>discriminant</strong> lines for both cases are just laterally translated lines with the same slope. Obviously, there&#39;s no constraint on the slope as long as the line is not parallel to any of the axes.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+Wait. Where is the <strong>learning</strong>?
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<p>Smart question. Let me guess - you are also going to ask</p>
+<ul>
+<li>What about the <strong>two</strong> steps mentioned above? What is the explicitly programmed &#34;generic&#34; version?</li>
+<li>And where are the bespoke versions for <strong>AND</strong> and <strong>OR</strong>?</li>
+</ul>
+<p>Kidding - you, dear reader, are smart enough to have noticed the bespoke implementations above. We only have to show the first step, first, and we are all set. Mostly…</p>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+The generalised version…
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>… is the straight line - the discriminant - with variables <strong>a</strong>, <strong>b</strong> and <strong>c</strong>. That - <strong>that</strong> is the parameterized implementation.</p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+And the learning…
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>… is the act of finding combinations of (<strong>a</strong>, <strong>b</strong>, <strong>c</strong>) that satisfy our constraints. Note that even for our <strong>OR</strong> and <strong>AND</strong> tables, infinitely many combinations of (<strong>a</strong>, <strong>b</strong>, <strong>c</strong>) are possible. You can arrive at <strong>any</strong> correct combination and live with it happily. Unless you don&#39;t… and we will address that too in a bit.</p>
+<p>
+We are now descending into numerical computing territory to find our &#34;model parameters.&#34; But do appreciate the fact that the same equation can solve for both <strong>AND</strong> and <strong>OR</strong> with just different value combinations for (<strong>a</strong>, <strong>b</strong>, <strong>c</strong>).</p>
+<p>
+And thus, we segue into…</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+Perceptrons (Neurons)
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<p>
+A perceptron is a computational model of the biological neuron - and for our purposes, we will use both interchangeably post this clarification.</p>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+It&#39;s just a function…
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>
+A perceptron is a computing unit – a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line perceptron to consume as <em>their</em> input. (I&#39;m obviously simplifying here…)</p>
+<p>
+That&#39;s akin to a simple function which outputs either a <strong>0</strong> or a <strong>1</strong>. Geddit?</p>
+<p>
+What we had above - the discriminant function - was but a perceptron, but presented differently. And it works very well for the simple use-cases of <strong>AND</strong> and <strong>OR</strong> where the outputs are two classes that are <strong>linearly separable</strong>.</p>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Getting somewhat bit real
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
 <p>
 Advancing our observation further - you&#39;ll notice that with the above decision functions, our inputs need not be just the binary values <strong>0</strong> and <strong>1</strong>, but can take up some fuzziness and be real values. As long as they
 stay within some acceptable ranges, passing them to the above functions will give us outcomes we will fuzzily agree with. The outcome is either <code>class 0</code> or <code>class 1</code>.</p>
 </div>
 </div>
-<div id="outline-container-headline-4" class="outline-2">
-<h2 id="headline-4">
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-2">
+<h2 id="headline-12">
 And, the neural network?
 </h2>
-<div id="outline-text-headline-4" class="outline-text-2">
+<div id="outline-text-headline-12" class="outline-text-2">
 <p>
 The <strong>and</strong> and <strong>or</strong> functions <em>classify</em> their inputs into two groups. What we have above is an absolutely naïve <em>classifier</em> &amp;mdash; a classifier that we understand the internals of
 enough to represent them as those equations above. We encoded what we already knew into those functions.</p>
@@ -274,22 +419,14 @@ Which can again be re-written more generally as</p>
 Where <strong>W</strong> and <strong>X</strong> are the weight and input matrices respectively. So, we could imagine this single neuron that</p>
 </div>
 </div>
-<div id="outline-container-headline-5" class="outline-2">
-<h2 id="headline-5">
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
 References
 </h2>
-<div id="outline-text-headline-5" class="outline-text-2">
+<div id="outline-text-headline-13" class="outline-text-2">
 <ul>
 <li><a href="https://www.croftpress.com/david/archives/academic/ann.html">A Neural Network Primer</a> - by David W. Croft</li>
 </ul>
-</div>
-</div>
-<div id="outline-container-headline-6" class="outline-2">
-<h2 id="headline-6">
-Preface/Purpose
-</h2>
-<div id="outline-text-headline-6" class="outline-text-2">
-<p>I chanced upon <a href="https://www.croftpress.com/david/archives/academic/ann.html">this primer</a> from the 90s, on artificial neural networks, and thought it might be a good idea to write something similar.</p>
 </div>
 </div>
 
