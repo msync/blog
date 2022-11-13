@@ -592,10 +592,11 @@ video {
 }
 
 .list {
-  padding-top: 72px;
+  padding-top: 108px;
   padding-bottom: 72px;
 }
 .list li.card{
+  margin-top: 2.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -832,7 +833,7 @@ div.content.notes {
 div.content.notes > div.toc, div.content.notes article{
   overflow-y: scroll;
   height: 100vh;
-  padding-top: 36px;
+  padding-bottom: 72px;
 }
 div.content.notes a {
   color: #4d717d;
@@ -850,6 +851,7 @@ div.content.notes div.toc{
 div.content.notes div.toc {
   font-size: 1.2rem;
   padding-right: 1rem;
+  padding-top: 72px;
 }
 div.content.notes div.toc #TableOfContents > ul {
   margin-left: 15px;
@@ -876,7 +878,7 @@ div.content.notes article{
   }
 }
 div.content.notes article {
-  padding-bottom: 36px;
+  padding-top: 36px;
 }
 div.content.notes article > header{
   margin-bottom: 2.5rem;
