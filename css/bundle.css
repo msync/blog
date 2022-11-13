@@ -409,22 +409,11 @@ video {
 .float-left{
   float: left;
 }
-.mx-auto{
-  margin-left: auto;
-  margin-right: auto;
-}
 .block{
   display: block;
 }
 .inline-flex{
   display: inline-flex;
-}
-.grow{
-  flex-grow: 1;
-}
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .capitalize{
   text-transform: capitalize;
@@ -590,53 +579,86 @@ video {
   text-align: center;
 }
 
-ul.notes-list, ul.posts-list{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  height: 100vh;
-  overflow-y: scroll;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.list{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 976px){
+  .list{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+}
+
+.list {
+  padding-top: 72px;
   padding-bottom: 72px;
 }
-ul.notes-list li.notes, ul.notes-list li.posts, ul.posts-list li.notes, ul.posts-list li.posts {
-  margin-top: 5rem;
-  padding: 0 0 0 1rem;
+.list li.card{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 976px){
+  .list li.card{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+.list li.card {
   border: 1px solid #eee;
   border-radius: 5px 5px 5px 5px;
   background-color: whitesmoke;
 }
-ul.notes-list li.notes:not(:first-child), ul.notes-list li.posts:not(:first-child), ul.posts-list li.notes:not(:first-child), ul.posts-list li.posts:not(:first-child) {
+.list li.card:not(:first-child) {
   margin-top: 7rem;
 }
-ul.notes-list li.notes:hover, ul.notes-list li.posts:hover, ul.posts-list li.notes:hover, ul.posts-list li.posts:hover {
+.list li.card:hover {
   background-color: #ffffeb;
   border: 1px solid white;
 }
-ul.notes-list li.notes:hover article div.title, ul.notes-list li.posts:hover article div.title, ul.posts-list li.notes:hover article div.title, ul.posts-list li.posts:hover article div.title {
+.list li.card:hover article div.title {
   color: #1a1a1a;
   text-decoration: underline;
   text-decoration-color: orange;
 }
-ul.notes-list li.notes article, ul.notes-list li.posts article, ul.posts-list li.notes article, ul.posts-list li.posts article{
+.list li.card article{
   position: relative;
-  margin-top: 1.2rem;
+  width: 100%;
+}
+@media (min-width: 640px){
+  .list li.card article{
+    max-width: 640px;
+  }
+}
+@media (min-width: 976px){
+  .list li.card article{
+    max-width: 976px;
+  }
+}
+@media (min-width: 1280px){
+  .list li.card article{
+    max-width: 1280px;
+  }
+}
+.list li.card article{
+  margin-left: auto;
+  margin-right: auto;
   padding: 1rem 0.5rem 0.2rem 0;
 }
-ul.notes-list li.notes article div.title, ul.notes-list li.posts article div.title, ul.posts-list li.notes article div.title, ul.posts-list li.posts article div.title {
+.list li.card article div.title {
   font-size: 1.65rem;
   text-shadow: 2px 2px 4px #bbb;
   font-weight: 500;
   color: darkblue;
 }
-ul.notes-list li.notes article div.summary, ul.notes-list li.posts article div.summary, ul.posts-list li.notes article div.summary, ul.posts-list li.posts article div.summary {
+.list li.card article div.summary {
   max-width: 90%;
   font-size: 1rem;
   line-height: 1.4em;
   margin: 0.8em 0 0.4rem 0;
 }
-ul.notes-list li.notes article div.tags > a, ul.notes-list li.posts article div.tags > a, ul.posts-list li.notes article div.tags > a, ul.posts-list li.posts article div.tags > a{
-  position: relative;
+.list li.card article div.tags > a{
   float: right;
   font-size: 16px;
   background-color: #dcb;
@@ -645,8 +667,10 @@ ul.notes-list li.notes article div.tags > a, ul.notes-list li.posts article div.
   border-radius: 0.2rem;
 }
 
-div.pagination{
-  padding-top: 2.5rem;
+div.pagination {
+  padding-top: 72px;
+  margin-top: 2.5rem;
+  padding-top: 5rem;
 }
 
 div.content.posts article > header {
@@ -850,6 +874,9 @@ div.content.notes article{
   div.content.notes article{
     grid-column: span 7 / span 7;
   }
+}
+div.content.notes article {
+  padding-bottom: 36px;
 }
 div.content.notes article > header{
   margin-bottom: 2.5rem;
@@ -1083,7 +1110,7 @@ div.content.notes article > main div + pre.example:hover {
 
 .date-as-calendar {
   position: absolute;
-  top: -2.2rem;
+  top: -2.7rem;
   right: 0;
   vertical-align: top;
   background: white;
@@ -1115,7 +1142,6 @@ div.content.notes article > main div + pre.example:hover {
 .inline-flex .month,
 .inline-flex .year {
   flex: 1 1 auto;
-  margin-bottom: 3px;
 }
 .inline-flex .year {
   order: 1;
