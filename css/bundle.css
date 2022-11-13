@@ -519,29 +519,25 @@ video {
   margin-left: 20px;
 }
 
-#main-wrapper{
-  width: 100%;
-}
-
-@media (min-width: 640px){
-  #main-wrapper{
-    max-width: 640px;
-  }
-}
-
 @media (min-width: 976px){
   #main-wrapper{
-    max-width: 976px;
+    width: 100%;
   }
-}
-
-@media (min-width: 1280px){
-  #main-wrapper{
-    max-width: 1280px;
+  @media (min-width: 640px){
+    #main-wrapper{
+      max-width: 640px;
+    }
   }
-}
-
-@media (min-width: 976px){
+  @media (min-width: 976px){
+    #main-wrapper{
+      max-width: 976px;
+    }
+  }
+  @media (min-width: 1280px){
+    #main-wrapper{
+      max-width: 1280px;
+    }
+  }
   #main-wrapper{
     margin-left: auto;
     margin-right: auto;
@@ -847,7 +843,6 @@ div.content.notes div.toc #TableOfContents > ul > li > ul > li > ul {
   display: none;
 }
 div.content.notes article{
-  grid-column: span 9 / span 9;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -856,8 +851,17 @@ div.content.notes article{
     grid-column: span 7 / span 7;
   }
 }
+div.content.notes article > header{
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+@media (min-width: 976px){
+  div.content.notes article > header{
+    padding-top: 5rem;
+  }
+}
 div.content.notes article > header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   background-image: linear-gradient(to right, lightyellow, rgba(220, 220, 220, 0.5), lightyellow);
   background-color: #939393;
 }
@@ -889,7 +893,6 @@ div.content.notes article > header .meta div.time time{
 }
 div.content.notes article > summary{
   margin: 0.75rem;
-  margin-bottom: 1.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(254 243 199 / var(--tw-bg-opacity));
   padding-left: 1.25rem;
@@ -984,7 +987,7 @@ div.content.notes article > main li > p {
   color: #4f4f4f;
 }
 div.content.notes article > main p {
-  margin-top: 0.6rem;
+  margin-top: 2rem;
   color: #4f4f4f;
 }
 div.content.notes article > main table {
@@ -1021,23 +1024,21 @@ div.content.notes article > main li.unchecked:before {
 div.content.notes article > main li.unchecked p {
   display: inline-block;
 }
-div.content.notes article > main p {
-  margin-top: 2rem;
+div.content.notes article > main div.src{
+  overflow-x: scroll;
 }
 div.content.notes article > main li > p {
   margin-bottom: 0;
 }
-div.content.notes article > main div pre {
-  overflow-x: scroll;
-  width: 900px;
+div.content.notes article > main pre.example {
   transition: width 0.25s ease-in-out;
   margin-bottom: 1.5em;
 }
-div.content.notes article > main div pre:hover {
-  width: 1200px;
+div.content.notes article > main pre.example:hover{
+  overflow-x: scroll;
   transition: width 0.25s ease-in-out;
 }
-div.content.notes article > main div pre code {
+div.content.notes article > main pre.example code {
   border: 1px solid #aaa;
   font-family: "Bitstream Vera Sans Mono", Consolas, monospace;
   background-color: inherit;
@@ -1049,7 +1050,7 @@ div.content.notes article > main div pre code {
   max-width: 100%;
   display: block;
 }
-div.content.notes article > main div pre code.language-text, div.content.notes article > main div pre code.language-plaintext {
+div.content.notes article > main pre.example code.language-text, div.content.notes article > main pre.example code.language-plaintext {
   border-left: 1px solid #999;
   font-family: "Bitstream Vera Sans Mono", Consolas, monospace;
   padding-left: 1.5em;
@@ -1062,7 +1063,7 @@ div.content.notes article > main div pre code.language-text, div.content.notes a
   color: black;
   font-weight: bolder;
 }
-div.content.notes article > main div pre code.language-text:hover, div.content.notes article > main div pre code.language-plaintext:hover {
+div.content.notes article > main pre.example code.language-text:hover, div.content.notes article > main pre.example code.language-plaintext:hover {
   width: 1100px;
   transition: width 0.3s ease-in-out;
 }
@@ -1071,7 +1072,6 @@ div.content.notes article > main div + pre.example {
   border-left: 1px solid #999;
   padding: 1rem 0 1rem 1.5rem;
   background-color: #eee;
-  width: 900px;
   max-height: 20em;
   overflow-y: scroll;
   margin: 1em 0 1.5em;
