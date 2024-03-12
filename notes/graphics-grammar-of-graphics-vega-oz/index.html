@@ -17,6 +17,10 @@
 
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 </head>
 
 <body>
@@ -41,22 +45,23 @@
 
     <div class="toc">
         <nav id="TableOfContents">
-<ul>
-<li><a href="#headline-1">The Grammar of Graphics</a>
-<ul>
-<li><a href="#headline-2">Building Blocks</a>
-</li>
-</ul>
-</li>
-<li><a href="#headline-3">Vega-Lite</a>
-<ul>
-<li><a href="#headline-4">Design</a>
-</li>
-<li><a href="#headline-5">Using</a>
-</li>
-</ul>
-</li>
-</ul>
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#the-grammar-of-graphics">The Grammar of Graphics</a>
+          <ol>
+            <li><a href="#building-blocks">Building Blocks</a></li>
+          </ol>
+        </li>
+        <li><a href="#vega-lite">Vega-Lite</a>
+          <ol>
+            <li><a href="#design">Design</a></li>
+            <li><a href="#using">Using</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
 </nav>
     </div>
 
@@ -64,10 +69,11 @@
 
         <header>
             <h1 itemprop="title">Graphics: Grammar of Graphics, Vega, Oz</h1>
+            <summary>
+                Quickstart notes for being productive with graphics libraries. In the browser.
+            </summary>
             <div class="meta">
-                <span class="author" itemprop="author">
-                  Ravindra R. Jaju
-                </span>
+                
                 <div class="time">
                 <time datetime="2020-03-22 10:46:59 &#43;0530 IST" itemprop="datePublished" class="pubdate">
                     <span class="weekday">Sun</span>,
@@ -77,40 +83,29 @@
                 </time>
 
                 
-                <time datetime="2020-03-22 10:46:59 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+                <time datetime="2024-03-09 11:45:38 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Sun</span>,
-                    <span class="day">22</span>
+                    <span class="weekday">Sat</span>,
+                    <span class="day">9</span>
                     <span class="month">Mar</span>,
-                    <span class="year">2020</span>
+                    <span class="year">2024</span>
                 </time>
                 
                 </div>
             </div>
         </header>
 
-        <summary>
-            Quickstart notes for being productive with graphics libraries. In the browser.
-        </summary>
-
         <main>
-            
-<div id="outline-container-headline-1" class="outline-2">
-<h2 id="headline-1">
-The Grammar of Graphics
-</h2>
-<div id="outline-text-headline-1" class="outline-text-2">
-<div id="outline-container-headline-2" class="outline-3">
-<h3 id="headline-2">
-Building Blocks
-</h3>
-<div id="outline-text-headline-2" class="outline-text-3">
+            <h2 id="the-grammar-of-graphics">The Grammar of Graphics</h2>
+<h3 id="building-blocks">Building Blocks</h3>
 <table>
-<tbody>
+<thead>
 <tr>
-<td>Data</td>
-<td>Input data source to visualize</td>
+<th>Data</th>
+<th>Input data source to visualize</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>Transform</td>
 <td>Filter, aggregation, binning etc.</td>
@@ -133,44 +128,22 @@ Building Blocks
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-3" class="outline-2">
-<h2 id="headline-3">
-Vega-Lite
-</h2>
-<div id="outline-text-headline-3" class="outline-text-2">
+<h2 id="vega-lite">Vega-Lite</h2>
 <p>Vega-Lite is inspired by `ggplot` and `Tableau`. In the words of the authors</p>
 <blockquote>
 <p>Vega-Lite: a Grammar of <strong>Interactive</strong> Multi-View Graphics</p>
 </blockquote>
-<div id="outline-container-headline-4" class="outline-3">
-<h3 id="headline-4">
-Design
-</h3>
-<div id="outline-text-headline-4" class="outline-text-3">
+<h3 id="design">Design</h3>
 <ul>
 <li><strong>Single View</strong> specification</li>
 <li><strong>Layered</strong> and <strong>Multi-View</strong> Composition</li>
 <li><strong>Interaction</strong> with Selections</li>
 </ul>
-</div>
-</div>
-<div id="outline-container-headline-5" class="outline-3">
-<h3 id="headline-5">
-Using
-</h3>
-<div id="outline-text-headline-5" class="outline-text-3">
+<h3 id="using">Using</h3>
 <ul>
 <li><strong>Programming</strong></li>
 <li>Higher-level <strong>Tools</strong> and <strong>Recommendations</strong></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
 
         </main>
 
@@ -182,7 +155,7 @@ Using
 
     <footer id="site-footer">
         <div class="hide-for-small-only float-left author">
-  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2022</span>
+  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
 </div>
 
 <div class="social-media-list float-right">
@@ -211,13 +184,15 @@ Using
   </span>
 
 </div>
+
     </footer>
 </div>
 
 <script src="/js/bundle.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1397428-5"></script>
 <script>
-    hljs.highlightAll();
+    window.hljs.highlightAll();
 
     window.dataLayer = window.dataLayer || [];
     function gtag() {

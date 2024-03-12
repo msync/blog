@@ -1,0 +1,285 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Probability and Statistics | Sync&#39;ing from Memory</title>
+<meta property="og:title" content="Probability and Statistics"/>
+
+<meta property="og:description" content="Probably definitely incomplete notes on probability, statistics."/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@jaju"/>
+<meta name="twitter:creator" content="@jaju"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
+<link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+<body>
+
+<div id="body">
+    <header id="site-header">
+        <div class="content">
+  <a href="https://msync.org/">Sync&#39;ing from Memory</a>
+  <nav>
+    
+    <a href="https://msync.org/notes/">Notes</a>
+    
+    <a href="https://msync.org/posts/">Posts</a>
+    
+  </nav>
+</div>
+    </header>
+
+    <div id="main-wrapper">
+        
+<div class="content notes">
+
+    <div class="toc">
+        <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#terms">Terms</a></li>
+        <li><a href="#topics-and-tools-you-should-definitely-know">Topics and Tools You Should Definitely Know</a></li>
+        <li><a href="#probability-loosely-speaking">Probability, Loosely Speaking</a>
+          <ol>
+            <li><a href="#conditional-probabilities">Conditional Probabilities</a></li>
+            <li><a href="#independence">Independence</a></li>
+            <li><a href="#bayes-formula">Bayes&rsquo; Formula</a></li>
+          </ol>
+        </li>
+        <li><a href="#random-variables">Random Variables</a>
+          <ol>
+            <li><a href="#computing-a-random-variable-example-2-dot-5">Computing a random variable - Example 2.5 <span class="tag"><span class="problem">problem</span></span></a></li>
+          </ol>
+        </li>
+        <li><a href="#references">References</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </div>
+
+    <article itemscope itemtype="http://schema.org/CreativeWork">
+
+        <header>
+            <h1 itemprop="title">Probability and Statistics</h1>
+            <summary>
+                Probably definitely incomplete notes on probability, statistics.
+            </summary>
+            <div class="meta">
+                
+                <div class="time">
+                <time datetime="2024-03-05 17:29:37 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+                    <span class="weekday">Tue</span>,
+                    <span class="day">5</span>
+                    <span class="month">Mar</span>,
+                    <span class="year">2024</span>
+                </time>
+
+                
+                <time datetime="2024-03-12 13:06:07 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                    Updated:
+                    <span class="weekday">Tue</span>,
+                    <span class="day">12</span>
+                    <span class="month">Mar</span>,
+                    <span class="year">2024</span>
+                </time>
+                
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h2 id="terms">Terms</h2>
+<dl>
+<dt>Sample Space \(S\)</dt>
+<dd>The set of all possible outcomes</dd>
+<dt>Event \(E\)</dt>
+<dd>A subset of the sample space \(S\).</dd>
+<dt>Probability</dt>
+<dd>The likelihood. Probabilities are associated with events.
+  <details>
+  <div class="details">
+<ul>
+<li>\(P(S) = 1\)</li>
+<li>\(0 \le{} P(E) \le{} 1\)</li>
+<li>\(P(\cup_{n=1}^\infty{}E_n) = \Sigma{}_{n=1}^\infty{}P(E_n)\) &ndash; for mutually exclusive events.</li>
+</ul>
+  </div>
+  </details>
+</dd>
+<dt>Random Variables</dt>
+<dd>Real-valued functions defined on the sample space. These are <strong>not</strong> events.</dd>
+</dl>
+<h2 id="topics-and-tools-you-should-definitely-know">Topics and Tools You Should Definitely Know</h2>
+<p>These are some of the topics you should definitely know of with a good enough understanding to make understanding the theory of probability more accessible.</p>
+<dl>
+<dt>Combinatorics</dt>
+<dd>The science and the art of counting.</dd>
+</dl>
+<h2 id="probability-loosely-speaking">Probability, Loosely Speaking</h2>
+<p>If \(E\) is an event in \(S\) with a defined probability \(P(E)\), then the probability of the complement event set \(P(E^c)\) is \((1 - P(E))\).</p>
+<p>Remember - Events are subsets. So, the \(\cup{}E\) is the entire \(S\). And also, not all events are mutually exclusive. So, \(\Sigma{}P(E), \forall{} E\) is &gt; 1, because you end up double+ counting. Which brings us to the following for a simple case of events \(E\) and \(F\).</p>
+<p>\[P(E \cup F) = P(E) + P(F) - P(EF)\]</p>
+<p>The notation \(EF\) conveys the intersection of the sets \(E\) and \(F\). It&rsquo;s also written as \(P(E \cap F)\).</p>
+<p>The generalised form is</p>
+<p>\[P(E_1 \cup E_2 \ldots{} \cup E_n) = \Sigma_i{}P(E_i) - \Sigma_{i \lt j}P(E_i E_j) + \Sigma_{i \lt j \lt k}P(E_i E_j E_k) \ldots{} + (-1)^{n+1}P(E_1 E_2 \ldots{} E_n)\]</p>
+<p>In words, the probability of the union of \(n\) events is equal to the sum of the probabilities of each event, minus the sum of the probabilities of the events taken two at a time, plus the sum of the probabilities of the events taken three at a time, and so on.</p>
+<h3 id="conditional-probabilities">Conditional Probabilities</h3>
+<p>This is expressed as \(P(E|F)\). Intuitively, \(P(EF)\) is both of \(P(E)\cdot{}P(F|E)\) and \(P(F)\cdot{}P(E|F)\). \(F\) has a chance \(P(F)\) of occurring, and once that has happened, \(P(E|F)\) now informs you about \(P(EF)\).</p>
+<h3 id="independence">Independence</h3>
+<p>Understanding independence is important, because correlation/causation are important to get right when dealing with data. When dealing with the probability of two independent events \(E\) and \(F\), \(P(EF) = P(E) \cdot{} P(F)\).</p>
+<details>
+<summary>Thought experiment: How does one go about to infer the independence of two events, given we are allowed to run an experiment as many times as we wish?</summary>
+<div class="details">
+<p>Let the events be \(A\) and \(B\), with probabilities of occurrences being \(P(A)\) and \(P(B)\) respectively. One idea to explore would be to consider all the events \(A\) that occurred over multiple runs of the experiment, while also recording the \(B\) events. Consider the set of all the occurrences of \(A\) as a new sample space, and within that sample space, compute the probability of \(B\) occurring. If \(A\) and \(B\) are truly independent, then over a large number of experiments, the computed probability of \(B\) in the sub-sample will equal the probability \(P(B)\) over the original sample space.</p>
+</div>
+</details>
+<h3 id="bayes-formula">Bayes&rsquo; Formula</h3>
+<p>\[E = EF \cup EF^c\]</p>
+<p>Both \(EF\) and \(EF^c\) are mutually exclusive. How do we express \(P(E)\) if we have prior information about \(EF\) and \(EF^c\)?</p>
+<p>\[P(E) = P(EF) + P(EF^c) = P(E|F)\cdot{}P(F) + P(E|F^c)\cdot{}P(F^c)\]</p>
+<p>Simplified, another way to write it is</p>
+<p>\[P(E) = P(E|F)\cdot{}P(F) + P(E|F^c|\cdot{}(1 - P(F)))\]</p>
+<details>
+<summary><b>Example 1.5.2</b> from Book 2. Suppose urn #1 has 3 red and 2 blue balls, and urn #2 has 4 red and 7 blue balls. One urn, and then one ball, are randomly picked, and found to be blue. What is the probability that the ball came from urn #2?</summary>
+<div class="details">
+<p>There are two stages - the selection of an urn, and then the selection of a ball. Let \(A\) denote the event of urn #2 being picked, and \(B\) denote the event that a blue ball is selected.</p>
+<p>\begin{align}
+P(A|B) &amp;= \frac{P(A)}{P(B)}P(B|A) \\
+&amp;= \frac{\frac{1}{2}}{\frac{1}{2}\frac{2}{5} + \frac{1}{2}\frac{7}{11}} \frac{7}{11} \\
+&amp;= \frac{35}{57}
+\end{align}</p>
+<p>There&rsquo;s another way of arriving at the above, intuitively speaking. The probability of urn #2 being chosen, given we have a blue ball, is the probability of choosing a blue ball from urn #2, divided by the overall probability of choosing a blue ball. Which is,</p>
+<p>\[ \frac{\frac{7}{11}}{\frac{2}{5} + \frac{7}{11}} \]</p>
+<p><strong>But</strong>, this can be deceiving, because it holds in the simple case where the probability of choosing either of the urns is equal - which, hence, cancels out in the numerator and the denominator. But the intuition is not wrong, just not too obvious for the general case.</p>
+</div>
+</details>
+<h2 id="random-variables">Random Variables</h2>
+<p>To recall, random variables are real-valued functions defined on the sample space \(S\).</p>
+<p>For example, when rolling two dice, the sum \(X\) of the values of the top faces could be called as a random variable. Random variables will have their own associated probabilities, counted in terms of the underlying event probabilities. For the two dice example, here are a few</p>
+<ul>
+<li>\(P\{X = 2\} = P\{(1, 2)\} = \frac{1}{36}\)</li>
+<li>\(P\{X = 5\} = P\{(1, 4), (2, 3), (3, 2), (4, 1)\} = \frac{4}{36} = \frac{1}{9}\)</li>
+</ul>
+<p>In this example, the random variable \(X\) can take any value from 2 through 12.</p>
+<details>
+<summary>The sum of all probabilities of the random variable \(N\), the number of flips of a coin required until the first head appears, is <b>1</b>.</summary>
+<div class="details">
+<p>Suppose the probability of getting a head is \(p\). Then,
+\[P\{N = n\} = P\{(T, T, T, \ldots{}, T, H)\} = (1 - p)^{n - 1}\cdot{}p\]</p>
+<p>\begin{align}
+P(\cup_{n = 1}^{\infty}\{N = n\}) &amp;= \Sigma_{n = 1}^{\infty} P\{N = n\} \\
+&amp;= p \Sigma_{n = 1}^{\infty}(1 - p)^{n - 1} \\
+&amp;= \frac{p}{1 - (1 - p)} \\
+&amp;= 1
+\end{align}</p>
+</div>
+</details>
+<h3 id="computing-a-random-variable-example-2-dot-5">Computing a random variable - Example 2.5 <span class="tag"><span class="problem">problem</span></span></h3>
+<p>Working through this example, and spending time to grok it, should be helpful in grasping the idea of random variables better.</p>
+<blockquote>
+<p>Suppose that independent trials, each of which results in any of m possible outcomes with respective probabilities \(p_1, p_2, \ldots{}, p_m\), \(\Sigma_{i = 1}^m p_i = 1\), are continually performed. Let \(X\) denote the number of trials needed until each outcome has occurred at least once.</p>
+</blockquote>
+<p>The goal is to find a closed form solution for \(X\). Thinking of \(X = n\) feels somewhat out of grasp. The example presents a technique to compute the probability of the condition that at least one of the outcomes has not occurred after \(n\) trials, expressed as \(P\{X &gt; n\}\).</p>
+<p>\begin{align}
+P\{X &gt; n\} &amp;= P(\cup_{i = 1}^m A_i) \\
+&amp;= \Sigma_{i=1}^mP(A_i) - \Sigma\Sigma_{i&lt;j}P(A_i \cdot A_j) + \Sigma\Sigma\Sigma_{i&lt;j&lt;k}P(A_iA_jA_k) - \ldots + (-1)^{m+1}P(A_1A_2 \ldots A_m)
+\end{align}</p>
+<p>\(P(A_i)\) is the probability that each of the first \(n\) trials results in a non-\(i\) outcome. As each trial is independent,</p>
+<p>\[P(A_i) = (1 - p_i)^n\]</p>
+<p>Similarly,</p>
+<p>\[P(A_iA_j) = (1 - p_i - p_j)^n\]</p>
+<p>All other probabilities are similar. So, we can extend the above equation as</p>
+<p>\[P\{X &gt; n\} = \Sigma_{i=1}^m(1 - p_i)^n - \Sigma\Sigma_{i &lt; j}(1 - p_i - p_j)^n + \Sigma\Sigma\Sigma_{i&lt;j&lt;k}(1 - p_i - p_j - p_k)^n - \ldots\]</p>
+<p>Now comes the following key observation.</p>
+<p>\[P\{X = n\} = P\{X &gt; n - 1\} - P\{X &gt; n\}\]</p>
+<h2 id="references">References</h2>
+<p>Probably definitely incomplete notes from the following</p>
+<ul>
+<li><strong>Introduction to Probability Models</strong> by <a href="https://en.wikipedia.org/wiki/Sheldon_M._Ross">Sheldon M. Ros</a>.</li>
+<li><a href="https://www.utstat.toronto.edu/mikevans/jeffrosenthal/"><strong>Probability and Statistics - The Science of Uncertainty</strong></a>, by <a href="http://www.utstat.utoronto.ca/mikevans">Michael Evans</a> and <a href="http://probability.ca/jeff/">Jeffrey S. Rosenthal</a>.</li>
+</ul>
+
+        </main>
+
+    </article>
+
+</div>
+
+    </div>
+
+    <footer id="site-footer">
+        <div class="hide-for-small-only float-left author">
+  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
+</div>
+
+<div class="social-media-list float-right">
+
+  <span class="social-media-item">
+    <a href="https://github.com/jaju">
+      <span class="svg-social-icon icon--github">
+        <svg viewBox="0 0 16 16">
+          <path fill="#828282"
+                d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+        </svg>
+      </span>
+      <span class="username">jaju</span>
+    </a>
+  </span>
+  <span class="social-media-item">
+    <a href="https://twitter.com/jaju">
+      <span class="svg-social-icon icon--twitter">
+        <svg viewBox="0 0 16 16">
+          <path fill="#828282"
+                d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+        </svg>
+      </span>
+      <span class="username">jaju</span>
+    </a>
+  </span>
+
+</div>
+
+    </footer>
+</div>
+
+<script src="/js/bundle.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1397428-5"></script>
+<script>
+    window.hljs.highlightAll();
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-1397428-5');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-1397428-5', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+</html>

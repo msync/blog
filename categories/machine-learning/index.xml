@@ -1,56 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>machine learning on Sync&#39;ing from Memory</title>
+    <title>Machine-Learning on Sync&#39;ing from Memory</title>
     <link>https://msync.org/categories/machine-learning/</link>
-    <description>Recent content in machine learning on Sync&#39;ing from Memory</description>
+    <description>Recent content in Machine-Learning on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2020 10:48:55 +0530</lastBuildDate><atom:link href="https://msync.org/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 11:45:48 +0530</lastBuildDate>
+    <atom:link href="https://msync.org/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Emacs Productivity Notes For The Newbie</title>
-      <link>https://msync.org/notes/emacs-productivity-notes-for-the-newbie/</link>
-      <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/emacs-productivity-notes-for-the-newbie/</guid>
-      <description>Packages and config about Emacs that I tend to forget, so here are my reminders</description>
+      <title>Notes for Deep Learning with Python</title>
+      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
+      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
+      <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
-    
-    <item>
-      <title>ML in Clojure via Python</title>
-      <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/ml-in-clojure-via-python/</guid>
-      <description>Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj</description>
-    </item>
-    
-    <item>
-      <title>A Neural Network Primer</title>
-      <link>https://msync.org/notes/a-neural-network-primer/</link>
-      <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/a-neural-network-primer/</guid>
-      <description>An article inspired by the article - &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>Text Learning - Pointers</title>
-      <link>https://msync.org/notes/text-learning-pointers/</link>
-      <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/text-learning-pointers/</guid>
-      <description>Pointers for DL for text</description>
-    </item>
-    
-    <item>
-      <title>Clojure</title>
-      <link>https://msync.org/notes/clojure/</link>
-      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/clojure/</guid>
-      <description>Clojure Notes - An aimless dump of anything and everything interesting I find &amp;lt;em&amp;gt;and&amp;lt;/em&amp;gt; manage to record.</description>
-    </item>
-    
   </channel>
 </rss>

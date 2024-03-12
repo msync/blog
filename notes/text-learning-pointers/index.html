@@ -17,6 +17,10 @@
 
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 </head>
 
 <body>
@@ -41,50 +45,35 @@
 
     <div class="toc">
         <nav id="TableOfContents">
-<ul>
-<li><a href="#headline-1">Synopsis</a>
-</li>
-<li><a href="#headline-2">Problems</a>
-</li>
-<li><a href="#headline-3">Approaches</a>
-<ul>
-<li><a href="#headline-4">NLP</a>
-<ul>
-<li><a href="#headline-5">Parsing</a>
-</li>
-<li><a href="#headline-6">Named Entities - Recognition, Disambiguation, Linking</a>
-</li>
-<li><a href="#headline-7">References</a>
-</li>
-</ul>
-</li>
-<li><a href="#headline-8">Dictionary</a>
-</li>
-<li><a href="#headline-9">Statistical (Machine Learning)</a>
-</li>
-</ul>
-</li>
-<li><a href="#headline-10">Useful reads</a>
-<ul>
-<li><a href="#headline-11">General reads</a>
-</li>
-<li><a href="#headline-12">Compilations</a>
-</li>
-<li><a href="#headline-13">Word sense disambiguation</a>
-</li>
-</ul>
-</li>
-<li><a href="#headline-14">Some publicly available trained word2vec datasets</a>
-<ul>
-<li><a href="#headline-15">Processed datasets</a>
-</li>
-<li><a href="#headline-16">Text datasets</a>
-</li>
-</ul>
-</li>
-<li><a href="#headline-17">Other datasets to build upon</a>
-</li>
-</ul>
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#synopsis">Synopsis</a></li>
+        <li><a href="#problems">Problems</a></li>
+        <li><a href="#approaches">Approaches</a>
+          <ol>
+            <li><a href="#nlp">NLP</a></li>
+            <li><a href="#dictionary">Dictionary</a></li>
+            <li><a href="#statistical--machine-learning">Statistical (Machine Learning)</a></li>
+          </ol>
+        </li>
+        <li><a href="#useful-reads">Useful reads</a>
+          <ol>
+            <li><a href="#general-reads">General reads</a></li>
+            <li><a href="#compilations">Compilations</a></li>
+            <li><a href="#word-sense-disambiguation">Word sense disambiguation</a></li>
+          </ol>
+        </li>
+        <li><a href="#some-publicly-available-trained-word2vec-datasets">Some publicly available trained word2vec datasets</a>
+          <ol>
+            <li><a href="#processed-datasets">Processed datasets</a></li>
+            <li><a href="#text-datasets">Text datasets</a></li>
+          </ol>
+        </li>
+        <li><a href="#other-datasets-to-build-upon">Other datasets to build upon</a></li>
+      </ol>
+    </li>
+  </ol>
 </nav>
     </div>
 
@@ -92,10 +81,18 @@
 
         <header>
             <h1 itemprop="title">Text Learning - Pointers</h1>
+            <summary>
+                Pointers for DL for text
+            </summary>
             <div class="meta">
+                
                 <span class="author" itemprop="author">
-                  Ravindra R. Jaju
+                    
+                          &#34;Ravindra R. Jaju&#34;
+  
+                    
                 </span>
+                
                 <div class="time">
                 <time datetime="2017-09-16 10:20:58 &#43;0530 IST" itemprop="datePublished" class="pubdate">
                     <span class="weekday">Sat</span>,
@@ -105,32 +102,22 @@
                 </time>
 
                 
-                <time datetime="2017-10-09 12:42:15 &#43;0530 IST" itemprop="datePublished" class="pubdate">
+                <time datetime="2024-03-09 08:53:18 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Mon</span>,
+                    <span class="weekday">Sat</span>,
                     <span class="day">9</span>
-                    <span class="month">Oct</span>,
-                    <span class="year">2017</span>
+                    <span class="month">Mar</span>,
+                    <span class="year">2024</span>
                 </time>
                 
                 </div>
             </div>
         </header>
 
-        <summary>
-            Pointers for DL for text
-        </summary>
-
         <main>
-            
-<div id="outline-container-headline-1" class="outline-2">
-<h2 id="headline-1">
-Synopsis
-</h2>
-<div id="outline-text-headline-1" class="outline-text-2">
-<p>Text learning combines various disciplines. Of course, that&#39;s true for all domains in which machine learning will be applied. But text is special because that defines humans in very special and unique ways, and with speech, is our primary form of knowledge encoding, storing, and communication.</p>
-<p>
-Non-exhaustively, and probably haphazardly, I have the following in my mind for this document.</p>
+            <h2 id="synopsis">Synopsis</h2>
+<p>Text learning combines various disciplines. Of course, that&rsquo;s true for all domains in which machine learning will be applied. But text is special because that defines humans in very special and unique ways, and with speech, is our primary form of knowledge encoding, storing, and communication.</p>
+<p>Non-exhaustively, and probably haphazardly, I have the following in my mind for this document.</p>
 <ul>
 <li>Good corpus. Bad corpus.</li>
 <li>NLP. Statistics. Dictionaries. Knowledge-bases.</li>
@@ -139,54 +126,26 @@ Non-exhaustively, and probably haphazardly, I have the following in my mind for 
 <li>The <em>whats</em> and the <em>whys</em>, and pointers to the <em>hows</em>.</li>
 </ul>
 <p>Primarily my notes for reference.</p>
-</div>
-</div>
-<div id="outline-container-headline-2" class="outline-2">
-<h2 id="headline-2">
-Problems
-</h2>
-<div id="outline-text-headline-2" class="outline-text-2">
+<h2 id="problems">Problems</h2>
 <p>The most obvious ones are the ones many researchers and tools have taken care of very well. In other words, they are not much
 of a problem.</p>
-<p>
-User generated content (<strong>UGC</strong>) on various social media sites present most of the challenge. No editors to supervise quality of
+<p>User generated content (<strong>UGC</strong>) on various social media sites present most of the challenge. No editors to supervise quality of
 the text (facts - or <em>fact free</em> - is an orthogonal concern.) Grammar and spelling errors. Incomplete sentences. #HashtagsMadeUpOfWordsYouCantFindBoundariesOfToTagBetter.</p>
-<p>
-There&#39;s this inherent, <em>embedded</em> challenge. And then there&#39;s the extraneous challenge - that neither do we have much standard
+<p>There&rsquo;s this inherent, <em>embedded</em> challenge. And then there&rsquo;s the extraneous challenge - that neither do we have much standard
 corpus of <strong>UGC</strong>, nor do we find any that are labelled. Any attempt to create a standard corpus will face the risk of being
 obsolete by the time it becomes a standard. Social-media-text evolves much too rapidly, and new words are created and discarded
 without any regard to, well, anything.</p>
-<p>
-So, naïve statistics is bound to fail for reasons of finding too little of everything, to generalize from. <em>Noise</em>! And so is standard NLP.
-Then there are styles influenced by the platforms that host content. <code>@NameTagging</code> and <code>#hashtags</code>, for example. And we don&#39;t know
-how the recent migration (for some, for now) to the 280-character limit by Twitter will affect styles and content. It&#39;s generally
+<p>So, naïve statistics is bound to fail for reasons of finding too little of everything, to generalize from. <em>Noise</em>! And so is standard NLP.
+Then there are styles influenced by the platforms that host content. <code>@NameTagging</code> and <code>#hashtags</code>, for example. And we don&rsquo;t know
+how the recent migration (for some, for now) to the 280-character limit by Twitter will affect styles and content. It&rsquo;s generally
 hard to predict about anything, and especially the future.</p>
-</div>
-</div>
-<div id="outline-container-headline-3" class="outline-2">
-<h2 id="headline-3">
-Approaches
-</h2>
-<div id="outline-text-headline-3" class="outline-text-2">
-<div id="outline-container-headline-4" class="outline-3">
-<h3 id="headline-4">
-NLP
-</h3>
-<div id="outline-text-headline-4" class="outline-text-3">
-<p>
-<a href="https://spacy.io/">SpaCy</a> is one tool that gets you started very quickly, and is fast. The accuracy and performance claims make it a very compelling choice.
+<h2 id="approaches">Approaches</h2>
+<h3 id="nlp">NLP</h3>
+<p><a href="https://spacy.io/">SpaCy</a> is one tool that gets you started very quickly, and is fast. The accuracy and performance claims make it a very compelling choice.
 And my personal experience around the responsiveness while reporting a <a href="https://github.com/explosion/spaCy/issues/1336">bug</a> on the the 2-alpha branch left me impressed.
 SpaCy is Python based. Which is a plus, given the ecosystem.</p>
-<div id="outline-container-headline-5" class="outline-4">
-<h4 id="headline-5">
-Parsing
-</h4>
-</div>
-<div id="outline-container-headline-6" class="outline-4">
-<h4 id="headline-6">
-Named Entities - Recognition, Disambiguation, Linking
-</h4>
-<div id="outline-text-headline-6" class="outline-text-4">
+<h4 id="parsing">Parsing</h4>
+<h4 id="named-entities-recognition-disambiguation-linking">Named Entities - Recognition, Disambiguation, Linking</h4>
 <p>Some key terms</p>
 <ul>
 <li>Named Entity</li>
@@ -194,101 +153,44 @@ Named Entities - Recognition, Disambiguation, Linking
 <li>Mention</li>
 <li>Named Entity Recognition (<strong>NER</strong>)</li>
 </ul>
-</div>
-</div>
-<div id="outline-container-headline-7" class="outline-4">
-<h4 id="headline-7">
-References
-</h4>
-<div id="outline-text-headline-7" class="outline-text-4">
+<h4 id="references">References</h4>
 <ul>
 <li><a href="https://spacy.io/">SpaCy</a></li>
 <li><a href="http://scidok.sulb.uni-saarland.de/volltexte/2016/6370/pdf/mamir_dissertation_with_reviewers.pdf">U-AIDA: a Customizable System for Named Entity Recognition, Classification, and Disambiguation {AIDA:Dissertaion}</a></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-8" class="outline-3">
-<h3 id="headline-8">
-Dictionary
-</h3>
-<div id="outline-text-headline-8" class="outline-text-3">
+<h3 id="dictionary">Dictionary</h3>
 <p>Nobody got fired for relying on <a href="https://wordnet.princeton.edu/">WordNet</a>. English-focused, but you can extend using their framework. Of course, the effort is all yours to make.</p>
-</div>
-</div>
-<div id="outline-container-headline-9" class="outline-3">
-<h3 id="headline-9">
-Statistical (Machine Learning)
-</h3>
-<div id="outline-text-headline-9" class="outline-text-3">
+<h3 id="statistical--machine-learning">Statistical (Machine Learning)</h3>
 <p>Given any dataset, statistical analyses are your best bet given no other help to gain insights.</p>
-<p>
-Combined with language-domain expertise (NLP, dictionaries, ontologies etc.), statistics give you higher accuracy at speed and scale.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-10" class="outline-2">
-<h2 id="headline-10">
-Useful reads
-</h2>
-<div id="outline-text-headline-10" class="outline-text-2">
-<div id="outline-container-headline-11" class="outline-3">
-<h3 id="headline-11">
-General reads
-</h3>
-<div id="outline-text-headline-11" class="outline-text-3">
+<p>Combined with language-domain expertise (NLP, dictionaries, ontologies etc.), statistics give you higher accuracy at speed and scale.</p>
+<h2 id="useful-reads">Useful reads</h2>
+<h3 id="general-reads">General reads</h3>
 <ul>
 <li><a href="https://nlp.stanford.edu/pubs/glove.pdf">The GloVe paper</a></li>
 <li><a href="https://code.google.com/archive/p/word2vec/">Google word2vec</a> archive site</li>
 <li><a href="https://rare-technologies.com/making-sense-of-word2vec/">Making sense of word2vec</a> - a blog post discussing word2vec vis-a-vis GloVe</li>
 </ul>
-</div>
-</div>
-<div id="outline-container-headline-12" class="outline-3">
-<h3 id="headline-12">
-Compilations
-</h3>
-<div id="outline-text-headline-12" class="outline-text-3">
+<h3 id="compilations">Compilations</h3>
 <ul>
 <li><a href="https://medium.com/towards-data-science/how-to-get-started-in-nlp-6a62aa4eaeff">How to get started in NLP</a></li>
 </ul>
-</div>
-</div>
-<div id="outline-container-headline-13" class="outline-3">
-<h3 id="headline-13">
-Word sense disambiguation
-</h3>
-<div id="outline-text-headline-13" class="outline-text-3">
+<h3 id="word-sense-disambiguation">Word sense disambiguation</h3>
 <ul>
-<li><a href="https://arxiv.org/pdf/1511.06388.pdf">Sense2vec - A fast and accurate method… neural word embeddings</a></li>
+<li><a href="https://arxiv.org/pdf/1511.06388.pdf">Sense2vec - A fast and accurate method&hellip; neural word embeddings</a></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-14" class="outline-2">
-<h2 id="headline-14">
-Some publicly available trained word2vec datasets
-</h2>
-<div id="outline-text-headline-14" class="outline-text-2">
+<h2 id="some-publicly-available-trained-word2vec-datasets">Some publicly available trained word2vec datasets</h2>
 <ul>
 <li><a href="https://github.com/3Top/word2vec-api#where-to-get-a-pretrained-model">https://github.com/3Top/word2vec-api#where-to-get-a-pretrained-model</a> appears to be a good list that I could quickly reach via a G-search.</li>
-<li><a href="https://code.google.com/archive/p/word2vec/">Google&#39;s (archived?) word2vec code site</a></li>
+<li><a href="https://code.google.com/archive/p/word2vec/">Google&rsquo;s (archived?) word2vec code site</a></li>
 <li><a href="https://github.com/idio/wiki2vec">Utilities + Processed models for some Wikipedia data</a></li>
 </ul>
 <p>Reproducing a few of the ones here just in case.</p>
-<div id="outline-container-headline-15" class="outline-3">
-<h3 id="headline-15">
-Processed datasets
-</h3>
-<div id="outline-text-headline-15" class="outline-text-3">
+<h3 id="processed-datasets">Processed datasets</h3>
 <table>
 <thead>
 <tr>
 <th>Dataset name</th>
-<th class="align-right">Dimensions</th>
+<th>Dimensions</th>
 <th>Corpus size</th>
 <th>Vocabulary size</th>
 <th>Author</th>
@@ -297,34 +199,28 @@ Processed datasets
 <tbody>
 <tr>
 <td><a href="https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/">Google News</a></td>
-<td class="align-right">300</td>
+<td>300</td>
 <td>100B</td>
 <td>3M</td>
 <td>Google</td>
 </tr>
 <tr>
 <td><a href="https://docs.google.com/file/d/0B7XkCwpI5KDYaDBDQm1tZGNDRHc/edit?usp=sharing">Freebase IDs</a></td>
-<td class="align-right">1000</td>
+<td>1000</td>
 <td>100B (Google News)</td>
 <td>1.4M</td>
 <td>Google</td>
 </tr>
 <tr>
 <td><a href="https://docs.google.com/file/d/0B7XkCwpI5KDYeFdmcVltWkhtbmM/edit?usp=sharing">Freebase Names</a></td>
-<td class="align-right">1000</td>
+<td>1000</td>
 <td>100B (Google News)</td>
 <td>1.4M</td>
 <td>Google</td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div id="outline-container-headline-16" class="outline-3">
-<h3 id="headline-16">
-Text datasets
-</h3>
-<div id="outline-text-headline-16" class="outline-text-3">
+<h3 id="text-datasets">Text datasets</h3>
 <table>
 <thead>
 <tr>
@@ -337,7 +233,7 @@ Text datasets
 <tr>
 <td><a href="http://mattmahoney.net/dc/enwik9.zip">First billion Wikipedia words</a></td>
 <td>1B words</td>
-<td>Use the pre-processing perl script from the bottom of <a href="http://mattmahoney.net/dc/textdata.html">Matt Mahoney&#39;s page</a></td>
+<td>Use the pre-processing perl script from the bottom of <a href="http://mattmahoney.net/dc/textdata.html">Matt Mahoney&rsquo;s page</a></td>
 </tr>
 <tr>
 <td><a href="http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2">Latest Wikipedia dump</a></td>
@@ -345,7 +241,7 @@ Text datasets
 <td>Use the same script as above</td>
 </tr>
 <tr>
-<td><a href="http://www.statmt.org/lm-benchmark/1-billion-word-language-modeling-benchmark-r13output.tar.gz">Dataset from &#34;One Billion Word Language Modeling Benchmark&#34;</a></td>
+<td><a href="http://www.statmt.org/lm-benchmark/1-billion-word-language-modeling-benchmark-r13output.tar.gz">Dataset from &ldquo;One Billion Word Language Modeling Benchmark&rdquo;</a></td>
 <td>1B words</td>
 <td>Already pre-processed</td>
 </tr>
@@ -356,20 +252,10 @@ Text datasets
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-17" class="outline-2">
-<h2 id="headline-17">
-Other datasets to build upon
-</h2>
-<div id="outline-text-headline-17" class="outline-text-2">
+<h2 id="other-datasets-to-build-upon">Other datasets to build upon</h2>
 <ul>
-<li><a href="https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/">&#34;YAGO: A High-Quality Knowledge Base&#34;</a> - It is a <span style="text-decoration: underline;">semantic knowledgebase</span> derived from <a href="https://en.wikipedia.org/">Wikipedia</a>, <a href="http://wordnet.princeton.edu/">WordNet</a> and <a href="http://www.geonames.org/">GeoNames</a>. Contains 10+ million entities, and 100+ million facts about them.</li>
+<li><a href="https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/">&ldquo;YAGO: A High-Quality Knowledge Base&rdquo;</a> - It is a <span class="underline">semantic knowledgebase</span> derived from <a href="https://en.wikipedia.org/">Wikipedia</a>, <a href="http://wordnet.princeton.edu/">WordNet</a> and <a href="http://www.geonames.org/">GeoNames</a>. Contains 10+ million entities, and 100+ million facts about them.</li>
 </ul>
-</div>
-</div>
 
         </main>
 
@@ -381,7 +267,7 @@ Other datasets to build upon
 
     <footer id="site-footer">
         <div class="hide-for-small-only float-left author">
-  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2022</span>
+  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
 </div>
 
 <div class="social-media-list float-right">
@@ -410,13 +296,15 @@ Other datasets to build upon
   </span>
 
 </div>
+
     </footer>
 </div>
 
 <script src="/js/bundle.js"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1397428-5"></script>
 <script>
-    hljs.highlightAll();
+    window.hljs.highlightAll();
 
     window.dataLayer = window.dataLayer || [];
     function gtag() {

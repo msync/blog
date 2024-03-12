@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>machine learning on Sync&#39;ing from Memory</title>
+    <title>Machine Learning on Sync&#39;ing from Memory</title>
     <link>https://msync.org/tags/machine-learning/</link>
-    <description>Recent content in machine learning on Sync&#39;ing from Memory</description>
+    <description>Recent content in Machine Learning on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 16:34:55 +0530</lastBuildDate><atom:link href="https://msync.org/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 11:45:48 +0530</lastBuildDate>
+    <atom:link href="https://msync.org/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ML in Clojure via Python</title>
-      <link>https://msync.org/notes/ml-in-clojure-via-python/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
-      
-      <guid>https://msync.org/notes/ml-in-clojure-via-python/</guid>
-      <description>Notes around ongoing experiments with doing ML with Python libraries via Clojure using libpython-clj</description>
+      <title>Notes for Deep Learning with Python</title>
+      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
+      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
+      <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
-    
   </channel>
 </rss>

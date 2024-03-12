@@ -6,65 +6,42 @@
     <description>Recent content in Posts on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jan 2020 16:54:50 +0530</lastBuildDate><atom:link href="https://msync.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Mar 2024 23:42:52 +0530</lastBuildDate>
+    <atom:link href="https://msync.org/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Fallacy of the Full-stackist</title>
-      <link>https://msync.org/posts/2020/the-fallacy-of-the-full-stack/</link>
+      <link>https://msync.org/posts/2020/01/the-fallacy-of-the-full-stackist/</link>
       <pubDate>Sat, 04 Jan 2020 16:54:50 +0530</pubDate>
-      
-      <guid>https://msync.org/posts/2020/the-fallacy-of-the-full-stack/</guid>
-      <description>It&amp;#39;s not easy to know everything.
-And the previous statement easily counts as one of the best understatements that can ever be made. But, it&amp;#39;s not a lie. Even if it does not convey the truth very well. But, we&amp;#39;re in the age of super-hyper competition, misinformation, and #kill-your-cognitive-abilities-with-information-overload. So, the above just works fine without being called out for lying.
-10x Idiot? Of course, as we are not incorrect, let&amp;#39;s take it further.</description>
+      <guid>https://msync.org/posts/2020/01/the-fallacy-of-the-full-stackist/</guid>
+      <description>The distinction between being a full-stack developer and the perception of being one can be big.</description>
     </item>
-    
     <item>
       <title>Useful Clojure Asides - Logging and Exceptions</title>
-      <link>https://msync.org/posts/2015/2015-06-08-clojure-useful-asides/</link>
+      <link>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      
-      <guid>https://msync.org/posts/2015/2015-06-08-clojure-useful-asides/</guid>
-      <description>Logging and exception handling are such core requirements in any application which are rarely, if ever, discussed. At least in the initial phases of any application. But as any developer would vouch (when asked, not voluntarily, I think), logging right is a very crucial aspect of any application. Not only does it help you understand the (then-) current state of the application, they also help folks trace causes of various problems when done right.</description>
+      <guid>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</guid>
+      <description>It&amp;rsquo;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description>
     </item>
-    
-    <item>
-      <title>Interesting Java in &lt;em&gt;clojure.core&lt;/em&gt;</title>
-      <link>https://msync.org/posts/2015/2015-05-16-interesting-java-in-clojure-core/</link>
-      <pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate>
-      
-      <guid>https://msync.org/posts/2015/2015-05-16-interesting-java-in-clojure-core/</guid>
-      <description>The Clojure language primarily targets the Java Virtual Machine, and so obviously, we have a topic.
-Quick array creation from some items // clojure.lang.Intrinsics private static Object[] oa(Object... arr) { return arr; } </description>
-    </item>
-    
     <item>
       <title>Developing Chrome Extensions using Clojurescript</title>
-      <link>https://msync.org/posts/2015/2015-04-05-chrome-extensions-and-clojurescript/</link>
+      <link>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</link>
       <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      
-      <guid>https://msync.org/posts/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid>
-      <description>TL;DR - Of course, you can use Clojurescript to develop Chrome Extensions. So, that&amp;#39;s not the topic of this post. I&amp;#39;ve only documented how you&amp;#39;d set up your project, using the latest versions (as of this post&amp;#39;s publishing) of piggieback and weasel.
-Why Weasel? Because, as its author explains
-A WebSocket transport is simple and avoids some of the thornier bugs caused by the CrossPageChannel transport, which is used in the standard ClojureScript browser REPL and Austin.</description>
+      <guid>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</guid>
+      <description>How you may set up your clojurescript project for developing chrome extensions - an example</description>
     </item>
-    
     <item>
       <title>On The &#39;Decay&#39; Of Small Organizations into Large Organizations</title>
-      <link>https://msync.org/posts/2015/2015-04-01-large-and-small-organizations/</link>
+      <link>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      
-      <guid>https://msync.org/posts/2015/2015-04-01-large-and-small-organizations/</guid>
-      <description>Size is just a number. Unless you stop using a number and qualify with adjectives like large and small. Implicitly, when speaking of companies/organizations, we somehow associate young and old with small and large respectively. We associate the term start up with a young and small company. But more accurately. there&amp;#39;s a sub-conscious association of various characteristics with such a company - agile, ad hoc, tech-savvy, dynamic and lively, top-notch folks.</description>
+      <guid>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</guid>
+      <description>Some observations on challenges in managing quality and talent in organizations of different sizes.</description>
     </item>
-    
     <item>
       <title>Welcome to the All New M&#39;Sync Blog</title>
-      <link>https://msync.org/posts/2015/2015-03-31-welcome/</link>
+      <link>https://msync.org/posts/2015/03/welcome-to-the-all-new-msync-blog/</link>
       <pubDate>Tue, 31 Mar 2015 20:45:00 +0530</pubDate>
-      
-      <guid>https://msync.org/posts/2015/2015-03-31-welcome/</guid>
-      <description>Matters of the mind matter. As time flies, or crawls, or stops, and as water flows (or doesn’t) under some zillion bridges, I (d)evolve until I don’t. But being the megalomaniac that I am, the world needs to know how I have been living, thinking, existing, and degenerating. So, in this randomly chosen (lucky) year, I’ve decided to blog again. A few unlucky years passed by, but we’ll let that pass.</description>
+      <guid>https://msync.org/posts/2015/03/welcome-to-the-all-new-msync-blog/</guid>
+      <description>Mandatory introductory post.</description>
     </item>
-    
   </channel>
 </rss>

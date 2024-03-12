@@ -6,186 +6,133 @@
     <description>Recent content in Tags on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2020 10:48:55 +0530</lastBuildDate><atom:link href="https://msync.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 11:45:48 +0530</lastBuildDate>
+    <atom:link href="https://msync.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>clojure</title>
+      <title>Clojure</title>
       <link>https://msync.org/tags/clojure/</link>
-      <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
-      
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/tags/clojure/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>emacs</title>
-      <link>https://msync.org/tags/emacs/</link>
-      <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>org mode</title>
-      <link>https://msync.org/tags/org-mode/</link>
-      <pubDate>Sun, 13 Sep 2020 10:48:55 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/org-mode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://msync.org/tags/javascript/</link>
-      <pubDate>Sat, 05 Sep 2020 23:22:55 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine learning</title>
+      <title>Machine Learning</title>
       <link>https://msync.org/tags/machine-learning/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
-      
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/tags/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>neural networks</title>
+      <title>Neural Networks</title>
       <link>https://msync.org/tags/neural-networks/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
-      
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/tags/neural-networks/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
+      <title>Python</title>
       <link>https://msync.org/tags/python/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
-      
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>virtualenv</title>
+      <title>Virtualenv</title>
       <link>https://msync.org/tags/virtualenv/</link>
-      <pubDate>Sun, 02 Feb 2020 16:34:55 +0530</pubDate>
-      
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/tags/virtualenv/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nodejs</title>
+      <title>Grammar of Graphics</title>
+      <link>https://msync.org/tags/grammar-of-graphics/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      <guid>https://msync.org/tags/grammar-of-graphics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oz</title>
+      <link>https://msync.org/tags/oz/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      <guid>https://msync.org/tags/oz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vega</title>
+      <link>https://msync.org/tags/vega/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      <guid>https://msync.org/tags/vega/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vega-Lite</title>
+      <link>https://msync.org/tags/vega-lite/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      <guid>https://msync.org/tags/vega-lite/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Javascript</title>
+      <link>https://msync.org/tags/javascript/</link>
+      <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
+      <guid>https://msync.org/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nodejs</title>
       <link>https://msync.org/tags/nodejs/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
-      
       <guid>https://msync.org/tags/nodejs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>deep-learning</title>
-      <link>https://msync.org/tags/deep-learning/</link>
-      <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/deep-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>text-learning</title>
-      <link>https://msync.org/tags/text-learning/</link>
-      <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/text-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://msync.org/tags/programming/</link>
-      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>exception-handling</title>
+      <title>Exception-Handling</title>
       <link>https://msync.org/tags/exception-handling/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/exception-handling/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>logging</title>
+      <title>Logging</title>
       <link>https://msync.org/tags/logging/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/logging/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>java</title>
-      <link>https://msync.org/tags/java/</link>
-      <pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate>
-      
-      <guid>https://msync.org/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chrome</title>
+      <title>Chrome</title>
       <link>https://msync.org/tags/chrome/</link>
       <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/chrome/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>clojurescript</title>
+      <title>Clojurescript</title>
       <link>https://msync.org/tags/clojurescript/</link>
       <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/clojurescript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>agile</title>
+      <title>Agile</title>
       <link>https://msync.org/tags/agile/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/agile/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>coaching</title>
+      <title>Coaching</title>
       <link>https://msync.org/tags/coaching/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/coaching/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>culture</title>
+      <title>Culture</title>
       <link>https://msync.org/tags/culture/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      
       <guid>https://msync.org/tags/culture/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
