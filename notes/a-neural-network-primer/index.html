@@ -94,10 +94,10 @@
                 </time>
 
                 
-                <time datetime="2024-03-09 11:44:58 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-03-12 13:26:17 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Sat</span>,
-                    <span class="day">9</span>
+                    <span class="weekday">Tue</span>,
+                    <span class="day">12</span>
                     <span class="month">Mar</span>,
                     <span class="year">2024</span>
                 </time>
@@ -115,46 +115,40 @@
 <li><span class="underline">Learning</span></li>
 <li><span class="underline">Using</span> what was learned</li>
 </ul>
-<details>
-<summary>This is my summary</summary>
-<div class="details">
-<p>And this is the detail.</p>
-</div>
-</details>
 <p>Learning is modeled as a function implementation, but done in <strong>two parts</strong> - <span class="underline">strategy</span> and <span class="underline">tactic</span>, to give a somewhat amusing  analogy.</p>
 <p>Strategy, in more words, is the algorithm chosen - it is akin to a formula/equation in a symbolic form. Tactic is when we substitute some specific values for the &ldquo;parameters&rdquo; (and, not for the variables).</p>
 <p>When we say</p>
-<img src="/ltximg/readme_a4c36029bef4a8f74219c819def48610843f5813.png" alt="readme_a4c36029bef4a8f74219c819def48610843f5813.png" />
+<p>\(ax + by = c\)</p>
 <p>The &ldquo;parameters&rdquo; are <strong>a</strong>, <strong>b</strong> and <strong>c</strong>, while <strong>x</strong> and <strong>y</strong> are the variables. The strategy in this case is the <span class="underline">linear equation</span>. The tactic is some particular choices of a, b and c.</p>
 <p>Coming back</p>
 <hr>
-<p>Consider a function <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" alt="readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" /> such that</p>
+<p>Consider a function \(f\) such that</p>
 <table>
 <thead>
 <tr>
-<th><img src="/ltximg/readme_1c6a1d14054d263ccf5814edbd803caab116fcfb.png" alt="readme_1c6a1d14054d263ccf5814edbd803caab116fcfb.png" /></th>
+<th>\(f(0, 0) = 0\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img src="/ltximg/readme_1fa756b667adb4e2fbf919906d185a150cd9c0f4.png" alt="readme_1fa756b667adb4e2fbf919906d185a150cd9c0f4.png" /></td>
+<td>\(f(1, 0) = 0\)</td>
 </tr>
 <tr>
-<td><img src="/ltximg/readme_db118b924274842aeeef130d6ee2021d3b093c51.png" alt="readme_db118b924274842aeeef130d6ee2021d3b093c51.png" /></td>
+<td>\(f(0, 1) = 0\)</td>
 </tr>
 <tr>
-<td><img src="/ltximg/readme_3d260a43db8eccec819c6bcdc85af399c4a6f992.png" alt="readme_3d260a43db8eccec819c6bcdc85af399c4a6f992.png" /></td>
+<td>\(f{}(1, 1) = 1\)</td>
 </tr>
 </tbody>
 </table>
 <p>Now comes the interesting bit - something that is so simple that once can miss the point completely.
-Let&rsquo;s posit <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" alt="readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" /> as our machine learning function in the sense described above. On the premises introduced initially, <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" alt="readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" /> is implemented in the following two steps</p>
+Let&rsquo;s posit \(f\) as our machine learning function in the sense described above. On the premises introduced initially, \(f\) is implemented in the following two steps</p>
 <ul>
 <li>A programmatic implementation that is capable of being <span class="underline">configured</span> for a class of use-cases</li>
 <li>A learning phase that learns the above table and can answer questions that follow this known <span class="underline">pattern</span>.</li>
 </ul>
 <p>But, but - what does the term &ldquo;programmatic implementation&rdquo; signify, you ask?</p>
-<p>Here&rsquo;s <strong>one</strong> example of <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" alt="readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" /> that can satisfy the above, in our favourite language</p>
+<p>Here&rsquo;s <strong>one</strong> example of \(f\) that can satisfy the above, in our favourite language</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x, y):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
@@ -168,24 +162,24 @@ Let&rsquo;s posit <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af240
 <table>
 <thead>
 <tr>
-<th><img src="/ltximg/readme_1c6a1d14054d263ccf5814edbd803caab116fcfb.png" alt="readme_1c6a1d14054d263ccf5814edbd803caab116fcfb.png" /></th>
+<th>\(f(0, 0) = 0\)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img src="/ltximg/readme_1d30d554a5ab31d5d8c0dc77243fc4bf4d3cb4ff.png" alt="readme_1d30d554a5ab31d5d8c0dc77243fc4bf4d3cb4ff.png" /></td>
+<td>\(f{}(1, 0) = 1\)</td>
 </tr>
 <tr>
-<td><img src="/ltximg/readme_5c7318d8e5afbcdc3ac92a363c43cbc2c36c01d4.png" alt="readme_5c7318d8e5afbcdc3ac92a363c43cbc2c36c01d4.png" /></td>
+<td>\(f{}(0, 1) = 1\)</td>
 </tr>
 <tr>
-<td><img src="/ltximg/readme_3d260a43db8eccec819c6bcdc85af399c4a6f992.png" alt="readme_3d260a43db8eccec819c6bcdc85af399c4a6f992.png" /></td>
+<td>\(f{}(1, 1) = 1\)</td>
 </tr>
 </tbody>
 </table>
-<p><img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" alt="readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" /> is now attending junior college, and realises that there&rsquo;s more to the world than just the <strong>AND</strong> table. <strong>OR</strong>, does it?</p>
+<p>\(f\) is now attending junior college, and realises that there&rsquo;s more to the world than just the <strong>AND</strong> table. <strong>OR</strong>, does it?</p>
 <h2 id="generalizing-the-implementation">Generalizing the implementation</h2>
-<p>Our <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" alt="readme_1f7bb8461fb2a548f2a8bd94a76e1219af24087b.png" /> doesn&rsquo;t solve for the <strong>OR</strong> table with the previous implementation. So, here&rsquo;s a naïve implementation - something that we want to discard immediately after presenting for its stupidity!</p>
+<p>Our \(f\) doesn&rsquo;t solve for the <strong>OR</strong> table with the previous implementation. So, here&rsquo;s a naïve implementation - something that we want to discard immediately after presenting for its stupidity!</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">or</span>(x, y):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">and</span> y <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
@@ -198,13 +192,13 @@ Let&rsquo;s posit <img src="/ltximg/readme_1f7bb8461fb2a548f2a8bd94a76e1219af240
 <h2 id="there-s-a-thin-line-between-dot-dot-dot">There&rsquo;s a thin line between&hellip;</h2>
 <p>What&rsquo;s the better idea?
 Literally - there&rsquo;s a thin line between the 0&rsquo;s and the 1&rsquo;s. We&rsquo;re looking for discrete 0/1 answers. How about considering <strong>x</strong> and <strong>y</strong> as points in 2-D space separated into 2 half-planes by a straight line - each part representing either of the 0 and the 1 exclusively?</p>
-<img src="/ltximg/readme_ad8421464503d9c45b7ddb602be3f3624aaec24a.png" alt="readme_ad8421464503d9c45b7ddb602be3f3624aaec24a.png" />
-<img src="/ltximg/readme_812edb4ad674b7fe9ffa64da36ec54a17678c0de.png" alt="readme_812edb4ad674b7fe9ffa64da36ec54a17678c0de.png" />
+<p>\(z = \text{sgn}(ax + by + c)\)</p>
+<p>\(z \in{} {0, 1}\)</p>
 <p>If you already see it, great! If not, consider the fact that now we have an equation in <strong>a</strong> and <strong>b</strong> that can be applied to some combinations of (<strong>x</strong>, <strong>y</strong>) output a single value in the set {0, 1}</p>
 <p>For two distinct combination pairs of (<strong>a</strong>, <strong>b</strong>), we can have the same <span class="underline">function</span> implementation solve for both <strong>AND</strong> and <strong>OR</strong>. Our choices of (<strong>a</strong>, <strong>b</strong>) pairs simply moves and/or rotates the partitioning line.</p>
 <h3 id="or">OR</h3>
 <p><strong>OR</strong> has a lower threshold for a positive outcome. Here&rsquo;s one solution that will work. (<strong>Note</strong>: We consider the sign of <strong>0</strong> as positive - so, sign(<strong>0</strong>) = 1. But if it does not convince you, consider replacing 1 with 0.99)</p>
-<img src="/ltximg/readme_c4002aa1b9f7b41f6571962d7bdfab6756a3bb37.png" alt="readme_c4002aa1b9f7b41f6571962d7bdfab6756a3bb37.png" />
+<p>\(z = \text{sgn}(x + y - 1)\)</p>
 <table>
 <thead>
 <tr>
@@ -242,7 +236,7 @@ Literally - there&rsquo;s a thin line between the 0&rsquo;s and the 1&rsquo;s. W
 
 <h3 id="and">AND</h3>
 <p><strong>AND</strong> has a higher threshold. One solution that works is presented below.</p>
-<img src="/ltximg/readme_3b09213a3579c6cfe716148a69a3a56edff8d366.png" alt="readme_3b09213a3579c6cfe716148a69a3a56edff8d366.png" />
+<p>\(z = \text{sgn}(x + y - 1.5)\)</p>
 <table>
 <thead>
 <tr>
@@ -310,11 +304,11 @@ for the small size of the <span class="underline">training dataset</span> we hav
 unforeseen input values that are different from the training data by wider margins.</p>
 <p>As a first step towards creating such an entity, we can approximate the <em>black box</em> as a <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a>. And training it as an activity of solving this linear
 regression. The general equation looks as follows, for the two input-signal scenario</p>
-<img src="/ltximg/readme_cc55a61ee22a205d80004c2f195b0a66d58cb3ae.png" alt="readme_cc55a61ee22a205d80004c2f195b0a66d58cb3ae.png" />
+<p>\(z = (w_{0} x + w_{1} y &gt;= c)\)</p>
 <p>Or, making it somewhat more general and rearranging terms to be one one side</p>
-<img src="/ltximg/readme_67b88c5c3c663fc2c7cf5003780cc8e562e3f758.png" alt="readme_67b88c5c3c663fc2c7cf5003780cc8e562e3f758.png" />
+<p>\(z = (c + \Sigma{}w_{i}\cdot{}x_{i} &gt;= 0)\)</p>
 <p>Which can again be re-written more generally as</p>
-<img src="/ltximg/readme_882a4a973a534c42e4e9823c3ef32e3ecbd3f79a.png" alt="readme_882a4a973a534c42e4e9823c3ef32e3ecbd3f79a.png" />
+<p>\[Z = (c + W^{T} \cdot X &gt;= 0)\]</p>
 <p>Where <strong>W</strong> and <strong>X</strong> are the weight and input matrices respectively. So, we could imagine this single neuron that</p>
 <h2 id="references">References</h2>
 <ul>
