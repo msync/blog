@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2024 11:45:48 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2024 17:16:41 +0530</lastBuildDate>
     <atom:link href="https://msync.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math</title>
+      <link>https://msync.org/tags/math/</link>
+      <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
+      <guid>https://msync.org/tags/math/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ml</title>
+      <link>https://msync.org/tags/ml/</link>
+      <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
+      <guid>https://msync.org/tags/ml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Probability</title>
+      <link>https://msync.org/tags/probability/</link>
+      <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
+      <guid>https://msync.org/tags/probability/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Clojure</title>
       <link>https://msync.org/tags/clojure/</link>
