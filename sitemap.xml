@@ -3,34 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://msync.org/categories/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/math/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/categories/math/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/ml/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/notes/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/probability/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
-    <loc>https://msync.org/notes/probability-and-statistics/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <loc>https://msync.org/notes/probability/</loc>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/</loc>
-    <lastmod>2024-03-12T17:16:41+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/javascript-protecting-your-data/</loc>
-    <lastmod>2024-03-09T11:45:21+05:30</lastmod>
+    <lastmod>2024-03-13T17:20:56+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/clojure/</loc>
     <lastmod>2024-03-09T11:45:48+05:30</lastmod>
@@ -53,24 +47,6 @@
     <loc>https://msync.org/tags/virtualenv/</loc>
     <lastmod>2024-03-09T11:45:48+05:30</lastmod>
   </url><url>
-    <loc>https://msync.org/categories/data/</loc>
-    <lastmod>2024-03-09T11:45:38+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/grammar-of-graphics/</loc>
-    <lastmod>2024-03-09T11:45:38+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</loc>
-    <lastmod>2024-03-09T11:45:38+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/oz/</loc>
-    <lastmod>2024-03-09T11:45:38+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/vega/</loc>
-    <lastmod>2024-03-09T11:45:38+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/tags/vega-lite/</loc>
-    <lastmod>2024-03-09T11:45:38+05:30</lastmod>
-  </url><url>
     <loc>https://msync.org/posts/</loc>
     <lastmod>2024-03-08T23:42:52+05:30</lastmod>
   </url><url>
@@ -78,31 +54,22 @@
     <lastmod>2024-03-08T23:42:52+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/javascript/</loc>
-    <lastmod>2024-03-09T11:45:29+05:30</lastmod>
+    <lastmod>2024-03-12T18:38:08+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/categories/javascript/</loc>
-    <lastmod>2024-03-09T11:45:29+05:30</lastmod>
+    <lastmod>2024-03-12T18:38:08+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/notes/js-quick-restart-for-the-impatient/</loc>
-    <lastmod>2024-03-09T11:45:29+05:30</lastmod>
+    <lastmod>2024-03-12T18:38:08+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/nodejs/</loc>
-    <lastmod>2024-03-09T11:45:29+05:30</lastmod>
+    <lastmod>2024-03-12T18:38:08+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/categories/programming/</loc>
-    <lastmod>2024-03-09T11:45:29+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/a-neural-network-primer/</loc>
-    <lastmod>2024-03-12T15:59:40+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/text-learning-pointers/</loc>
-    <lastmod>2024-03-09T08:53:18+05:30</lastmod>
-  </url><url>
-    <loc>https://msync.org/notes/clojure/</loc>
-    <lastmod>2024-03-09T11:45:57+05:30</lastmod>
+    <lastmod>2024-03-12T18:38:08+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/notes/org-mode-quick-guide/</loc>
-    <lastmod>2024-03-10T14:54:58+05:30</lastmod>
+    <lastmod>2024-03-12T18:39:06+05:30</lastmod>
   </url><url>
     <loc>https://msync.org/tags/exception-handling/</loc>
     <lastmod>2024-03-08T23:40:44+05:30</lastmod>

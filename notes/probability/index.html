@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Probability and Statistics | Sync&#39;ing from Memory</title>
-<meta property="og:title" content="Probability and Statistics"/>
+<title>Probability | Sync&#39;ing from Memory</title>
+<meta property="og:title" content="Probability"/>
 
-<meta property="og:description" content="Probably definitely incomplete notes on probability, statistics."/>
+<meta property="og:description" content="Probably definitely incomplete notes on probability."/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@jaju"/>
@@ -59,6 +59,7 @@
         </li>
         <li><a href="#random-variables">Random Variables</a>
           <ol>
+            <li><a href="#distributions">Distributions</a></li>
             <li><a href="#computing-a-random-variable-example-2-dot-5">Computing a random variable - Example 2.5 <span class="tag"><span class="problem">problem</span></span></a></li>
           </ol>
         </li>
@@ -72,9 +73,9 @@
     <article itemscope itemtype="http://schema.org/CreativeWork">
 
         <header>
-            <h1 itemprop="title">Probability and Statistics</h1>
+            <h1 itemprop="title">Probability</h1>
             <summary>
-                Probably definitely incomplete notes on probability, statistics.
+                Probably definitely incomplete notes on probability.
             </summary>
             <div class="meta">
                 
@@ -87,10 +88,10 @@
                 </time>
 
                 
-                <time datetime="2024-03-12 17:16:41 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-03-13 17:20:56 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Tue</span>,
-                    <span class="day">12</span>
+                    <span class="weekday">Wed</span>,
+                    <span class="day">13</span>
                     <span class="month">Mar</span>,
                     <span class="year">2024</span>
                 </time>
@@ -129,7 +130,7 @@
 </dl>
 <h2 id="probability-loosely-speaking">Probability, Loosely Speaking</h2>
 <p>If \(E\) is an event in \(S\) with a defined probability \(P(E)\), then the probability of the complement event set \(P(E^c)\) is \((1 - P(E))\).</p>
-<p>Remember - Events are subsets. So, the \(\cup{}E\) is the entire \(S\). And also, not all events are mutually exclusive. So, \(\Sigma{}P(E), \forall{} E\) is &gt; 1, because you end up double+ counting. Which brings us to the following for a simple case of events \(E\) and \(F\).</p>
+<p>Events are subsets. So, \(\cup{}E\) is the entire \(S\). And also, not all events are mutually exclusive. So, \(\Sigma{}P(E), \forall{} E\) is \(\ge\) 1, because you end up double+ counting. Which brings us to the following for a simple case of events \(E\) and \(F\).</p>
 <p>\[P(E \cup F) = P(E) + P(F) - P(EF)\]</p>
 <p>The notation \(EF\) conveys the intersection of the sets \(E\) and \(F\). It&rsquo;s also written as \(P(E \cap F)\).</p>
 <p>The generalised form is</p>
@@ -171,7 +172,7 @@ P(A|B) &amp;= \frac{P(A)}{P(B)}P(B|A) \\
 <p>To recall, random variables are real-valued functions defined on the sample space \(S\).</p>
 <p>For example, when rolling two dice, the sum \(X\) of the values of the top faces could be called as a random variable. Random variables will have their own associated probabilities, counted in terms of the underlying event probabilities. For the two dice example, here are a few</p>
 <ul>
-<li>\(P\{X = 2\} = P\{(1, 2)\} = \frac{1}{36}\)</li>
+<li>\(P\{X = 2\} = P\{(1, 1)\} = \frac{1}{36}\)</li>
 <li>\(P\{X = 5\} = P\{(1, 4), (2, 3), (3, 2), (4, 1)\} = \frac{4}{36} = \frac{1}{9}\)</li>
 </ul>
 <p>In this example, the random variable \(X\) can take any value from 2 through 12.</p>
@@ -188,6 +189,28 @@ P(\cup_{n = 1}^{\infty}\{N = n\}) &amp;= \Sigma_{n = 1}^{\infty} P\{N = n\} \\
 \end{align}</p>
 </div>
 </details>
+<h3 id="distributions">Distributions</h3>
+<p>Random variables \(X\) are real-valued functions of outcomes \(s\) over the sample space \(S\). As \(s\) is random, the random variable associated with it is random as well.</p>
+<p>If, say, \(B\) is a subset of the real values set that \(X\) can take, then</p>
+<p>\(P\{X \in B\} = P\{s \in S : X(s) \in B\}\)</p>
+<div class="definition">
+<p>If \(X\) is a random variable, then the distribution of \(X\) is the collection of probabilities \(P(X \in B)\) for all subsets \(B\) of the real numbers.</p>
+</div>
+<h4 id="discrete-distributions">Discrete Distributions</h4>
+<p>For many random variables \(X\), we have \(P(X = x) &gt; 0\) for certain \(x\) values. If \(\Sigma_{x \in R^1}P(X = x) = 1\), then the random variable X is <em>discrete</em>. Because, we can enumerate all the $x$s for which the probabilities of the corresponding random variable is known.</p>
+<p>But the above does <strong>not</strong> hold for continuous distributions.</p>
+<!--list-separator-->
+<ul>
+<li>
+<p>The Binomial Distribution</p>
+<p>Consider flipping <em>n</em> coins, each of which has a probability \(\theta\) of coming up heads, and hence a probability \(1 - \theta\) of coming up tails. \(0 &lt; \theta &lt; 1\). Let \(X\) be the total number of heads showing. Then, for \(x = 0, 1, 2, \ldots n\),</p>
+<p>\begin{align}
+p_X(x) &amp;= P(X = x) \\
+&amp;= \binom nk \theta^x(1 - \theta)^{n - x} \\
+&amp;= \frac{n!}{x!(n - x)!}\theta^x(1 - \theta)^{n -x}
+\end{align}</p>
+</li>
+</ul>
 <h3 id="computing-a-random-variable-example-2-dot-5">Computing a random variable - Example 2.5 <span class="tag"><span class="problem">problem</span></span></h3>
 <p>Working through this example, and spending time to grok it, should be helpful in grasping the idea of random variables better.</p>
 <blockquote>

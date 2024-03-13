@@ -16,13 +16,6 @@
       <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
     <item>
-      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
-      <link>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</link>
-      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
-      <guid>https://msync.org/notes/graphics-grammar-of-graphics-vega-oz/</guid>
-      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
-    </item>
-    <item>
       <title>Useful Clojure Asides - Logging and Exceptions</title>
       <link>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>

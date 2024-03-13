@@ -751,6 +751,8 @@ div.content.notes {
 }
 
 div.content.notes div.MathJax_Display {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
   padding: .5rem;
   overflow-x: scroll;
 }
@@ -997,9 +999,9 @@ div.content.notes article > main li > p {
   margin-bottom: 0;
 }
 
-div.content.notes article > main p {
+div.content.notes article > main > p {
   color: #4f4f4f;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 div.content.notes article > main table {
@@ -1108,16 +1110,14 @@ div.content.notes article > main div + pre.example:hover {
 div.content.notes article details {
   --tw-bg-opacity: 1;
   background-color: rgb(254 243 199 / var(--tw-bg-opacity));
-  margin-top: 1rem;
-  padding-bottom: .25rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  margin-top: .5rem;
+  padding: 1rem;
 }
 
 div.content.notes article details summary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 251 235 / var(--tw-bg-opacity));
-  padding: .5rem 1.25rem;
+  margin-bottom: 2.5rem;
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 500;
@@ -1126,9 +1126,22 @@ div.content.notes article details summary {
 
 div.content.notes blockquote {
   --tw-bg-opacity: 1;
-  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
-  padding: .25rem 1.25rem;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  margin: 1rem;
+  padding: .25rem 2rem;
   font-family: Roboto Mono, Consolas, monospace;
+}
+
+div.content.notes div.definition {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
+  --tw-gradient-to: #f3f4f6 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  border-width: 2px;
+  margin: 1.25rem .5rem;
+  padding: .25rem 1.25rem;
+  font-family: Open Sans, sans-serif;
+  font-weight: 600;
 }
 
 .date-as-calendar {
