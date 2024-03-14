@@ -750,13 +750,6 @@ div.content.notes {
   height: calc(100vh - 63px);
 }
 
-div.content.notes div.MathJax_Display {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-  padding: .5rem;
-  overflow-x: scroll;
-}
-
 div.content.notes > div.toc, div.content.notes article {
   height: 100vh;
   padding-bottom: 54px;
@@ -898,42 +891,28 @@ div.content.notes article > main {
   }
 }
 
-div.content.notes article > main .outline-1 {
-  padding-left: .25rem;
-}
-
-div.content.notes article > main .outline-2 {
-  margin-top: .5rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article > main .outline-2 {
-    padding-left: .5rem;
-  }
-
-  div.content.notes article > main .outline-3 {
-    padding-left: .75rem;
-  }
-
-  div.content.notes article > main .outline-4 {
-    padding-left: 1rem;
-  }
+div.content.notes article > main div.MathJax_Display {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  padding: .5rem;
+  overflow-x: scroll;
 }
 
 div.content.notes article > main h2 {
   z-index: 10;
   --tw-text-opacity: 1;
-  color: rgb(146 64 14 / var(--tw-text-opacity));
-  background-image: -webkit-linear-gradient(to right, #f5faff, #dcdcdc80, #f5faff);
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  background-image: -webkit-linear-gradient(to right, #eee, #dcdcdc80, #eee);
   text-shadow: 3px 3px 10px #aaa;
-  background-color: #fff;
-  background-image: linear-gradient(to right, #f5faff, #dcdcdc80, #f5faff);
+  background-color: #d3d3d3;
+  background-image: linear-gradient(to right, #eee, #dcdcdc80, #eee);
   margin-bottom: 1rem;
   padding-top: 1rem;
-  padding-bottom: .25rem;
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
   scroll-margin-top: 36px;
-  font-size: 1.8rem;
-  text-decoration: underline #d8d8d8;
+  font-size: 1.95rem;
+  text-decoration-color: #d8d8d8;
   position: sticky;
   top: 0;
 }
@@ -953,6 +932,7 @@ div.content.notes article > main h3 {
   background-color: #fff;
   padding-top: 18px;
   scroll-margin-top: 72px;
+  font-size: 1.8rem;
   text-decoration: underline #f8a8d8;
 }
 
@@ -1024,15 +1004,27 @@ div.content.notes article > main img {
 }
 
 div.content.notes article > main dl dt {
-  background-color: #ffffe0;
+  padding-left: .75rem;
+  padding-right: .75rem;
   font-weight: 600;
-  display: block;
+  display: inline !important;
+}
+
+div.content.notes article > main dl dt:after {
+  content: ": ";
 }
 
 div.content.notes article > main dl dd {
-  margin-top: 0;
-  margin-bottom: .5rem;
-  margin-left: 1.5rem;
+  display: inline;
+}
+
+div.content.notes article > main dl dd:after {
+  content: "\a ";
+  white-space: pre;
+}
+
+div.content.notes article > main dl dd > ul, div.content.notes article > main dl dd ol {
+  margin-left: 2.5rem;
 }
 
 div.content.notes article > main li.unchecked:before {
@@ -1108,16 +1100,22 @@ div.content.notes article > main div + pre.example:hover {
 }
 
 div.content.notes article details {
+  border-width: 0;
+  padding-bottom: .75rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+
+div.content.notes article details[open] {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 243 199 / var(--tw-bg-opacity));
-  margin-top: .5rem;
-  padding: 1rem;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  border-width: 2px;
 }
 
 div.content.notes article details summary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 251 235 / var(--tw-bg-opacity));
-  margin-bottom: 2.5rem;
+  margin-bottom: .75rem;
   font-size: 1.25rem;
   font-style: italic;
   font-weight: 500;
@@ -1127,8 +1125,9 @@ div.content.notes article details summary {
 div.content.notes blockquote {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-  margin: 1rem;
-  padding: .25rem 2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  padding: .75rem;
   font-family: Roboto Mono, Consolas, monospace;
 }
 
@@ -1142,6 +1141,12 @@ div.content.notes div.definition {
   padding: .25rem 1.25rem;
   font-family: Open Sans, sans-serif;
   font-weight: 600;
+}
+
+div.content.notes div.note {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+  font-family: Roboto Thin, serif;
 }
 
 .date-as-calendar {

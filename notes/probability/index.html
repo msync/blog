@@ -50,13 +50,10 @@
       <ol>
         <li><a href="#terms">Terms</a></li>
         <li><a href="#topics-and-tools-you-should-definitely-know">Topics and Tools You Should Definitely Know</a></li>
-        <li><a href="#probability-loosely-speaking">Probability, Loosely Speaking</a>
-          <ol>
-            <li><a href="#conditional-probabilities">Conditional Probabilities</a></li>
-            <li><a href="#independence">Independence</a></li>
-            <li><a href="#bayes-formula">Bayes&rsquo; Formula</a></li>
-          </ol>
-        </li>
+        <li><a href="#probability-loosely-speaking">Probability, Loosely Speaking</a></li>
+        <li><a href="#conditional-probabilities">Conditional Probabilities</a></li>
+        <li><a href="#independence">Independence</a></li>
+        <li><a href="#bayes-formula">Bayes&rsquo; Formula</a></li>
         <li><a href="#random-variables">Random Variables</a>
           <ol>
             <li><a href="#distributions">Distributions</a></li>
@@ -88,10 +85,10 @@
                 </time>
 
                 
-                <time datetime="2024-03-13 17:20:56 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-03-14 06:46:44 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Wed</span>,
-                    <span class="day">13</span>
+                    <span class="weekday">Thu</span>,
+                    <span class="day">14</span>
                     <span class="month">Mar</span>,
                     <span class="year">2024</span>
                 </time>
@@ -109,15 +106,11 @@
 <dd>A subset of the sample space \(S\).</dd>
 <dt>Probability</dt>
 <dd>The likelihood. Probabilities are associated with events.
-  <details>
-  <div class="details">
 <ul>
 <li>\(P(S) = 1\)</li>
 <li>\(0 \le{} P(E) \le{} 1\)</li>
 <li>\(P(\cup_{n=1}^\infty{}E_n) = \Sigma{}_{n=1}^\infty{}P(E_n)\) &ndash; for mutually exclusive events.</li>
 </ul>
-  </div>
-  </details>
 </dd>
 <dt>Random Variables</dt>
 <dd>Real-valued functions defined on the sample space. These are <strong>not</strong> events.</dd>
@@ -136,9 +129,9 @@
 <p>The generalised form is</p>
 <p>\[P(E_1 \cup E_2 \ldots{} \cup E_n) = \Sigma_i{}P(E_i) - \Sigma_{i \lt j}P(E_i E_j) + \Sigma_{i \lt j \lt k}P(E_i E_j E_k) \ldots{} + (-1)^{n+1}P(E_1 E_2 \ldots{} E_n)\]</p>
 <p>In words, the probability of the union of \(n\) events is equal to the sum of the probabilities of each event, minus the sum of the probabilities of the events taken two at a time, plus the sum of the probabilities of the events taken three at a time, and so on.</p>
-<h3 id="conditional-probabilities">Conditional Probabilities</h3>
+<h2 id="conditional-probabilities">Conditional Probabilities</h2>
 <p>This is expressed as \(P(E|F)\). Intuitively, \(P(EF)\) is both of \(P(E)\cdot{}P(F|E)\) and \(P(F)\cdot{}P(E|F)\). \(F\) has a chance \(P(F)\) of occurring, and once that has happened, \(P(E|F)\) now informs you about \(P(EF)\).</p>
-<h3 id="independence">Independence</h3>
+<h2 id="independence">Independence</h2>
 <p>Understanding independence is important, because correlation/causation are important to get right when dealing with data. When dealing with the probability of two independent events \(E\) and \(F\), \(P(EF) = P(E) \cdot{} P(F)\).</p>
 <p>The generalization for \(n\) independent events is
 \[ P(A_1 \cap A_2 \cap \ldots \cap A_n) = P(A_1)P(A_2)\ldots{}P(A_n)\]</p>
@@ -148,7 +141,7 @@
 <p>Let the events be \(A\) and \(B\), with probabilities of occurrences being \(P(A)\) and \(P(B)\) respectively. One idea to explore would be to consider all the events \(A\) that occurred over multiple runs of the experiment, while also recording the \(B\) events. Consider the set of all the occurrences of \(A\) as a new sample space, and within that sample space, compute the probability of \(B\) occurring. If \(A\) and \(B\) are truly independent, then over a large number of experiments, the computed probability of \(B\) in the sub-sample will equal the probability \(P(B)\) over the original sample space.</p>
 </div>
 </details>
-<h3 id="bayes-formula">Bayes&rsquo; Formula</h3>
+<h2 id="bayes-formula">Bayes&rsquo; Formula</h2>
 <p>\[E = EF \cup EF^c\]</p>
 <p>Both \(EF\) and \(EF^c\) are mutually exclusive. How do we express \(P(E)\) if we have prior information about \(EF\) and \(EF^c\)?</p>
 <p>\[P(E) = P(EF) + P(EF^c) = P(E|F)\cdot{}P(F) + P(E|F^c)\cdot{}P(F^c)\]</p>
@@ -199,18 +192,17 @@ P(\cup_{n = 1}^{\infty}\{N = n\}) &amp;= \Sigma_{n = 1}^{\infty} P\{N = n\} \\
 <h4 id="discrete-distributions">Discrete Distributions</h4>
 <p>For many random variables \(X\), we have \(P(X = x) &gt; 0\) for certain \(x\) values. If \(\Sigma_{x \in R^1}P(X = x) = 1\), then the random variable X is <em>discrete</em>. Because, we can enumerate all the $x$s for which the probabilities of the corresponding random variable is known.</p>
 <p>But the above does <strong>not</strong> hold for continuous distributions.</p>
-<!--list-separator-->
-<ul>
-<li>
-<p>The Binomial Distribution</p>
+<h4 id="the-binomial-distribution">The Binomial Distribution</h4>
 <p>Consider flipping <em>n</em> coins, each of which has a probability \(\theta\) of coming up heads, and hence a probability \(1 - \theta\) of coming up tails. \(0 &lt; \theta &lt; 1\). Let \(X\) be the total number of heads showing. Then, for \(x = 0, 1, 2, \ldots n\),</p>
 <p>\begin{align}
 p_X(x) &amp;= P(X = x) \\
-&amp;= \binom nk \theta^x(1 - \theta)^{n - x} \\
+&amp;= \binom nx \theta^x(1 - \theta)^{n - x} \\
 &amp;= \frac{n!}{x!(n - x)!}\theta^x(1 - \theta)^{n -x}
 \end{align}</p>
-</li>
-</ul>
+<p>The random variable \(X\) is said to have the Binomial(x, \(\theta\)) distribution, also written as \(X \sim Binomial(x, \theta)\).</p>
+<blockquote>
+<p>The binomial distribution is applicable to any situation involving <em>n</em> independent performances of a random system; for each performance, we are recording whether a particular event has occurred, called a <em>success</em>, or has not occurred, called a <em>failure</em>.</p>
+</blockquote>
 <h3 id="computing-a-random-variable-example-2-dot-5">Computing a random variable - Example 2.5 <span class="tag"><span class="problem">problem</span></span></h3>
 <p>Working through this example, and spending time to grok it, should be helpful in grasping the idea of random variables better.</p>
 <blockquote>
