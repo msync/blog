@@ -89,7 +89,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-15 21:23:26 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-15 22:22:43 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Mon</span>,
                     <span class="day">15</span>
@@ -237,7 +237,34 @@
 </span></span><span style="display:flex;"><span>[(&#39;ocean&#39;, 0.8386560678482056), (&#39;waters&#39;, 0.8161073327064514), (&#39;seas&#39;, 0.7600178122520447), (&#39;mediterranean&#39;, 0.725997805595398), (&#39;arctic&#39;, 0.6975978016853333)]
 </span></span><span style="display:flex;"><span>Words similar to &#39;dark&#39;
 </span></span><span style="display:flex;"><span>[(&#39;bright&#39;, 0.7659975290298462), (&#39;gray&#39;, 0.7474402189254761), (&#39;black&#39;, 0.7343376278877258), (&#39;darker&#39;, 0.7261934280395508), (&#39;light&#39;, 0.7222751975059509)]
-</span></span></code></pre></div><h3 id="llm-model-embeddings">LLM Model Embeddings</h3>
+</span></span></code></pre></div><p>Let&rsquo;s try to plot the above. Note that this is a completely made up representation as we have no way to faithfully represent a 100-D vector. So, we downcast it to 2-D, using a technique called the <strong>Principal Component Analysis (PCA)</strong>. As always, there&rsquo;s a Python package to do that.
+Code sample adapted from <a href="https://web.stanford.edu/class/cs224n/materials/Gensim%20word%20vector%20visualization.html">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;ggplot&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display_pca_scatterplot</span>(model,words<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>,sample<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> words <span style="color:#f92672">==</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> sample <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            words <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>choice(list(model<span style="color:#f92672">.</span>vocab<span style="color:#f92672">.</span>keys()),sample)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            words <span style="color:#f92672">=</span> [word <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> model<span style="color:#f92672">.</span>vocab]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    word_vectors <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([model[w] <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> words])
+</span></span><span style="display:flex;"><span>    twodim <span style="color:#f92672">=</span> PCA()<span style="color:#f92672">.</span>fit_transform(word_vectors)[:,:<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>scatter(twodim[:,<span style="color:#ae81ff">0</span>], twodim[:,<span style="color:#ae81ff">1</span>], edgecolors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>, c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> word, (x,y) <span style="color:#f92672">in</span> zip(words, twodim):
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>text(x<span style="color:#f92672">+</span><span style="color:#ae81ff">0.05</span>, y<span style="color:#f92672">+</span><span style="color:#ae81ff">0.05</span>, word)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>display_pca_scatterplot(model, [<span style="color:#e6db74">&#34;sea&#34;</span>, <span style="color:#e6db74">&#34;waters&#34;</span>, <span style="color:#e6db74">&#34;mediterranean&#34;</span>, <span style="color:#e6db74">&#34;arctic&#34;</span>, <span style="color:#e6db74">&#34;tea&#34;</span>, <span style="color:#e6db74">&#34;giant&#34;</span>, <span style="color:#e6db74">&#34;lion&#34;</span>, <span style="color:#e6db74">&#34;hockey&#34;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;gensim-word-similarities.png&#34;</span>)
+</span></span></code></pre></div><figure><img src="/ox-hugo/gensim-word-similarities.png">
+</figure>
+
+<h3 id="llm-model-embeddings">LLM Model Embeddings</h3>
 <p>Word embeddings are great for human consumption, and then some more. But there are far too many words, and many words enter a language over time. Plus there are new Proper Nouns that get invented over time. And then, there are misspellings. Word embeddings miss out on these.</p>
 <p>When looking to train more advanced networks using embeddings, we want our embeddings that capture further lower-level nuances of the language in question. Let&rsquo;s take an example. Which of the following (currently non-existent in my knowledge) words are likely to be considered okay in a new piece of text you encounter?</p>
 <ul>
