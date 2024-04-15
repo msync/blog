@@ -6,7 +6,7 @@
     <description>Recent content in Clojure on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2024 11:45:48 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 13 Apr 2024 17:31:17 +0530</lastBuildDate>
     <atom:link href="https://msync.org/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Notes for Deep Learning with Python</title>
@@ -14,6 +14,13 @@
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
       <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+    </item>
+    <item>
+      <title>Clojure</title>
+      <link>https://msync.org/notes/clojure/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      <guid>https://msync.org/notes/clojure/</guid>
+      <description>Clojure Notes - An aimless dump of anything and everything interesting I find &lt;em&gt;and&lt;/em&gt; manage to record.</description>
     </item>
     <item>
       <title>Useful Clojure Asides - Logging and Exceptions</title>

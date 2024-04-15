@@ -88,10 +88,10 @@
                 </time>
 
                 
-                <time datetime="2024-03-09 11:45:48 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-03-29 14:26:50 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Sat</span>,
-                    <span class="day">9</span>
+                    <span class="weekday">Fri</span>,
+                    <span class="day">29</span>
                     <span class="month">Mar</span>,
                     <span class="year">2024</span>
                 </time>
@@ -188,7 +188,7 @@
 <dt>Learning rate</dt>
 <dd>A scalar factor that modulates the speed at which &ldquo;learning&rdquo; happens - in other words, it controls the rate at which the model converges to a steady state. Too fast, and the learning may be unstable and never converge. Too little, and you may need to wait a lifetime for the learning to finish.</dd>
 <dt>Gradient Descent</dt>
-<dd>Descend down the gradient in search of stability.</dd>
+<dd>Descend the gradient in search of stability.</dd>
 <dt>Stochastic Gradient Descent</dt>
 <dd>Random batch training, with varying batch sizes.</dd>
 <dt>Backpropagation algorithm</dt>
@@ -207,8 +207,8 @@
 <p>If the loss-function - a function of the weights of the neural network amongst other parameters - represents a hyperplane for various values of the weight-matrices, traversing in a direction that reduces the value for our inputs (training samples) is akin to descending down the hyperplane towards some (local) minima. That is gradient-descent, or gradient-based optimization.</p>
 <p>Conceptually, the process will look like the following for neural networks</p>
 <ul>
-<li>Take a batch of input data x<sub>1</sub> and the corresponding labels y-true<sub>1</sub></li>
-<li>Run the model on x<sub>1</sub> to obtain the predicted labels y-pred<sub>1</sub></li>
+<li>Take a batch of input data <img src="/ltximg/readme_c6a227bc95a80b586570a597d8d17fa216d43a5f.png" alt="readme_c6a227bc95a80b586570a597d8d17fa216d43a5f.png" /> and the corresponding labels <img src="/ltximg/readme_6bc57b6a2cb1a89460ab6b28182f683e39e0d39f.png" alt="readme_6bc57b6a2cb1a89460ab6b28182f683e39e0d39f.png" /></li>
+<li>Run the model on x<sub>1</sub> to obtain the predicted labels y_pred<sub>1</sub></li>
 <li>Compute the loss for this batch - which is a measure of the mismatch between y-true<sub>1</sub> and y-pred<sub>1</sub></li>
 <li>Update weights on the model slightly in a <em>direction</em> that slightly reduces the loss on this batch.</li>
 </ul>
@@ -226,7 +226,7 @@ When done in batches of sub-sets, this is called the <em>mini-batch stochastic g
 <p>This algorithm leverages the <em>chain rule</em> of derivatives.</p>
 <style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
 <div class="org-center">
-<p>∂(f)/= ∂(f)/· /</p>
+<img src="/ltximg/readme_da87f48cea135794635ca67d1dec457be295ff97.png" alt="readme_da87f48cea135794635ca67d1dec457be295ff97.png" />
 </div>
 <p>Applying the chain rule to the computation of the gradient values is what the Backpropagation algorithm is about.</p>
 <!--list-separator-->

@@ -88,6 +88,7 @@ button, input, optgroup, select, textarea {
   font-size: 100%;
   font-weight: inherit;
   line-height: inherit;
+  letter-spacing: inherit;
   color: inherit;
   margin: 0;
   padding: 0;
@@ -97,7 +98,7 @@ button, select {
   text-transform: none;
 }
 
-button, [type="button"], [type="reset"], [type="submit"] {
+button, input:where([type="button"]), input:where([type="reset"]), input:where([type="submit"]) {
   -webkit-appearance: button;
   background-color: #0000;
   background-image: none;
@@ -243,6 +244,10 @@ img, video {
   --tw-backdrop-opacity: ;
   --tw-backdrop-saturate: ;
   --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 .float-right {
@@ -277,12 +282,271 @@ img, video {
   text-decoration-line: underline;
 }
 
+@media (width >= 640px) {
+  #site-header div.content {
+    max-width: 640px;
+  }
+}
+
+@media (width >= 976px) {
+  #site-header div.content {
+    max-width: 976px;
+  }
+}
+
+@media (width >= 1280px) {
+  #site-header div.content {
+    max-width: 1280px;
+  }
+}
+
+@media (width >= 976px) {
+  #site-header div.content {
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+  }
+
+  #site-header div.content > a {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (width >= 1280px) {
+  #site-header div.content > a {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (width >= 976px) {
+  #site-header div.content nav a {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  #main-wrapper {
+    width: 100%;
+  }
+
+  @media (width >= 640px) {
+    #main-wrapper {
+      max-width: 640px;
+    }
+  }
+
+  @media (width >= 976px) {
+    #main-wrapper {
+      max-width: 976px;
+    }
+  }
+
+  @media (width >= 1280px) {
+    #main-wrapper {
+      max-width: 1280px;
+    }
+  }
+}
+
+@media (width >= 640px) {
+  .list {
+    max-width: 640px;
+  }
+}
+
+@media (width >= 976px) {
+  .list {
+    max-width: 976px;
+  }
+}
+
+@media (width >= 1280px) {
+  .list {
+    max-width: 1280px;
+  }
+}
+
+@media (width >= 976px) {
+  .list {
+    padding: 5rem;
+  }
+
+  .list li.card {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+div.content.posts article > header {
+  margin-bottom: 3rem;
+}
+
+div.content.posts article > header h1 {
+  background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
+  background-color: #fefefe;
+  background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
+  min-width: 70%;
+  max-width: 100%;
+  padding: 20px 10px 15px;
+  font-weight: 600;
+  box-shadow: 1px 2px 3px #999;
+}
+
+div.content.posts article > header div.meta time {
+  background-color: #efe9e2;
+  margin-right: 15px;
+  padding: 0 5px;
+  font-size: 19.2px;
+  box-shadow: 1px 1px 1px #666;
+}
+
+div.content.posts article > summary {
+  background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
+  background-color: #f2f2f2;
+  background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
+  border-left: none;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  padding: 1em;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 500;
+  display: block;
+}
+
+div.content.posts article main {
+  background-color: #fffffa;
+  margin-bottom: 1.2rem;
+  padding-left: 25px;
+  padding-right: 15px;
+  font-size: 1.2rem;
+}
+
+div.content.posts article main h1, div.content.posts article main h2, div.content.posts article main h3 {
+  min-width: 70%;
+  max-width: 100%;
+}
+
+div.content.posts article main div pre {
+  width: 900px;
+  margin-bottom: 1.5em;
+  transition: width .25s ease-in-out;
+  overflow-x: scroll;
+}
+
+div.content.posts article main div pre:hover {
+  width: 1200px;
+  transition: width .25s ease-in-out;
+}
+
+div.content.posts article main div pre code {
+  background-color: inherit;
+  border: 1px solid #aaa;
+  max-width: 100%;
+  margin: .5em;
+  padding: 0 10px 10px 0;
+  font-size: 24px;
+  line-height: 1.6rem;
+  overflow-x: scroll;
+}
+
+div.content.posts article main div pre code.language-plaintext:before {
+  content: "=> ";
+}
+
+div.content.posts article main div + pre.example {
+  background-color: #eee;
+  border-left: 1px solid #999;
+  width: 900px;
+  margin: 1em 0;
+  padding-left: 1.5em;
+  font-family: Bitstream Vera Sans Mono, Consolas, monospace;
+}
+
+div.content.posts article main div + pre.example:hover {
+  width: 1100px;
+  transition: width .3s ease-in-out;
+}
+
+div.content.posts article main table {
+  width: auto;
+  margin: auto;
+}
+
+div.content.posts article main table thead tr th {
+  border-bottom: 1px solid #444;
+  min-width: 150px;
+}
+
+div.content.posts article main table tbody tr td, div.content.posts article main table tbody tr th {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+div.content.posts article main table tbody tr td:first-child {
+  font-weight: bold;
+}
+
+div.content.posts article main blockquote.description {
+  padding-top: 15px;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+div.content.posts article main blockquote.description > :last-child, div.content.posts article main li > ul, div.content.posts article main li > ol {
+  margin-bottom: 0;
+}
+
+div.content.posts article main a {
+  text-decoration: none;
+}
+
+div.content.posts article main a:hover {
+  text-decoration: underline;
+}
+
+div.content.posts article main em {
+  font-weight: 400;
+  display: inline-block;
+}
+
+div.content.posts article main .verse-block {
+  font-size: 1.2em;
+  font-weight: 500;
+  display: inline-block;
+}
+
+div.content.posts article main code.verbatim {
+  letter-spacing: normal;
+  background-color: #ffffb8;
+  border: none;
+  font-family: Raleway, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+div.content.posts article main > p {
+  line-height: 1.8em;
+}
+
+div.content.posts article main > p code {
+  padding: 0 2px;
+  font-weight: 600;
+}
+
+div.content.posts article main aside {
+  background-color: #eee;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: .7em;
+}
+
 #site-header {
   z-index: 40;
   background-color: #4f4f4f;
   border-bottom: 3px solid orange;
   width: 100%;
-  height: 36px;
+  height: 48px;
   position: fixed;
   top: 0;
 }
@@ -324,7 +588,7 @@ img, video {
 #site-header div.content {
   background-color: inherit;
   max-width: calc(900px - 2.4rem);
-  height: 45px;
+  height: 57px;
   padding-left: 2.4rem;
   padding-right: 2.4rem;
   box-shadow: 0 2px 5px orange;
@@ -353,7 +617,7 @@ img, video {
 #site-header div.content > a {
   text-shadow: 1px 1px 9px #000;
   color: #cfcfcf;
-  line-height: 36px;
+  line-height: 48px;
 }
 
 #site-header div.content nav {
@@ -376,7 +640,7 @@ img, video {
   color: #cfcfcf;
   text-shadow: 1px 2px 3px #000;
   font-weight: 800;
-  line-height: 36px;
+  line-height: 48px;
 }
 
 #site-header div.content nav a:not(:first-child) {
@@ -417,7 +681,7 @@ img, video {
   background-color: #f9f9f9;
   border-top: 1px solid #cfcfcf;
   width: 100%;
-  height: 27px;
+  height: 36px;
   padding: 0 10px;
   position: fixed;
   bottom: 0;
@@ -435,21 +699,19 @@ img, video {
   border-left: 1px solid;
 }
 
-.author {
-  font-family: Truculenta, san-serif, cursive;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.svg-social-icon > svg {
+#site-footer .svg-social-icon > svg {
   vertical-align: middle;
   width: 16px;
   height: 16px;
   display: inline-block;
 }
 
-.svg-social-icon > svg path {
+#site-footer .svg-social-icon > svg path {
   fill: #828282;
+}
+
+.author {
+  font-family: Truculenta, san-serif, cursive;
 }
 
 .video-embed iframe {
@@ -496,8 +758,8 @@ img, video {
 }
 
 .list {
-  padding-top: 108px;
-  padding-bottom: 54px;
+  padding-top: 144px;
+  padding-bottom: 72px;
 }
 
 .list li.card {
@@ -541,14 +803,14 @@ img, video {
 .list li.card article div.title {
   text-shadow: 2px 2px 4px #bbb;
   color: #00008b;
-  font-size: 1.5rem;
+  font-size: 28.8px;
   font-weight: 500;
 }
 
 .list li.card article div.summary {
   max-width: 90%;
   margin: .8em 0 .4rem;
-  font-size: .8rem;
+  font-size: 19.2px;
   line-height: 1.4em;
 }
 
@@ -558,7 +820,7 @@ img, video {
   padding-left: .5rem;
   padding-right: .5rem;
   font-family: Manrope, sans-serif;
-  font-size: .8rem;
+  font-size: 19.2px;
 }
 
 div.pagination {
@@ -570,174 +832,6 @@ h2 ~ h2 {
   margin-top: 2.5rem;
 }
 
-div.content.posts article > header {
-  margin-bottom: 3rem;
-}
-
-div.content.posts article > header h1 {
-  background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
-  background-color: #fefefe;
-  background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
-  min-width: 70%;
-  max-width: 100%;
-  padding: 20px 10px 15px;
-  font-weight: 600;
-  box-shadow: 1px 2px 3px #999;
-}
-
-div.content.posts article > header div.meta time {
-  background-color: #efe9e2;
-  margin-right: 15px;
-  padding: 0 5px;
-  font-size: .8rem;
-  box-shadow: 1px 1px 1px #666;
-}
-
-div.content.posts article > summary {
-  background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
-  background-color: #f2f2f2;
-  background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
-  border-left: none;
-  max-width: 100%;
-  margin-bottom: 2rem;
-  padding: 1em;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 500;
-  display: block;
-}
-
-div.content.posts article main {
-  background-color: #fffffa;
-  margin-bottom: 1.2rem;
-  padding-left: 25px;
-  padding-right: 15px;
-  font-size: 1.2rem;
-}
-
-div.content.posts article main h1, div.content.posts article main h2, div.content.posts article main h3 {
-  min-width: 70%;
-  max-width: 100%;
-}
-
-div.content.posts article main div pre {
-  width: 900px;
-  margin-bottom: 1.5em;
-  transition: width .25s ease-in-out;
-  overflow-x: scroll;
-}
-
-div.content.posts article main div pre:hover {
-  width: 1200px;
-  transition: width .25s ease-in-out;
-}
-
-div.content.posts article main div pre code {
-  background-color: inherit;
-  border: 1px solid #aaa;
-  max-width: 100%;
-  margin: .5em;
-  padding: 0 10px 10px 0;
-  font-size: 1rem;
-  line-height: 1.6rem;
-  overflow-x: scroll;
-}
-
-div.content.posts article main div pre code.language-plaintext:before {
-  content: "=> ";
-}
-
-div.content.posts article main div + pre.example {
-  background-color: #eee;
-  border-left: 1px solid #999;
-  width: 900px;
-  margin: 1em 0;
-  padding-left: 1.5em;
-  font-family: Bitstream Vera Sans Mono, Consolas, monospace;
-}
-
-div.content.posts article main div + pre.example:hover {
-  width: 1100px;
-  transition: width .3s ease-in-out;
-}
-
-div.content.posts article main table {
-  width: auto;
-  margin: auto;
-}
-
-div.content.posts article main table thead tr th {
-  border-bottom: 1px solid #444;
-  min-width: 150px;
-}
-
-div.content.posts article main table tbody tr td, div.content.posts article main table tbody tr th {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-div.content.posts article main table tbody tr td:first-child {
-  font-weight: bold;
-}
-
-div.content.posts article main blockquote.description {
-  padding-top: 15px;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 400;
-}
-
-div.content.posts article main blockquote.description > :last-child, div.content.posts article main li > ul, div.content.posts article main li > ol {
-  margin-bottom: 0;
-}
-
-div.content.posts article main a {
-  text-decoration: none;
-}
-
-div.content.posts article main a:visited {
-  color: #0c2d37;
-}
-
-div.content.posts article main a:hover {
-  text-decoration: underline;
-}
-
-div.content.posts article main em {
-  font-weight: 400;
-  display: inline-block;
-}
-
-div.content.posts article main .verse-block {
-  font-size: 1.2em;
-  font-weight: 500;
-  display: inline-block;
-}
-
-div.content.posts article main code.verbatim {
-  letter-spacing: normal;
-  background-color: #ffffb8;
-  border: none;
-  font-family: Raleway, Roboto, Helvetica, Arial, sans-serif;
-  font-weight: lighter;
-}
-
-div.content.posts article main > p {
-  line-height: 1.8em;
-}
-
-div.content.posts article main > p code {
-  padding: 0 2px;
-  font-weight: 600;
-}
-
-div.content.posts article main aside {
-  background-color: #eee;
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size: .7em;
-}
-
 @media (width >= 976px) {
   div.content.notes {
     grid-template-columns: repeat(9, minmax(0, 1fr));
@@ -747,18 +841,13 @@ div.content.posts article main aside {
 }
 
 div.content.notes {
-  height: calc(100vh - 63px);
+  height: calc(100vh - 84px);
 }
 
 div.content.notes > div.toc, div.content.notes article {
   height: 100vh;
-  padding-bottom: 54px;
+  padding-bottom: 72px;
   overflow: clip scroll;
-}
-
-div.content.notes a {
-  color: #4d717d;
-  text-decoration: underline;
 }
 
 div.content.notes div.toc {
@@ -774,8 +863,17 @@ div.content.notes div.toc {
 }
 
 div.content.notes div.toc {
-  padding-top: 72px;
-  font-size: 1rem;
+  padding-top: 144px;
+  font-size: 1.6rem;
+}
+
+div.content.notes div.toc a {
+  color: #483d8b;
+  border-bottom: 1px dotted orange;
+}
+
+div.content.notes div.toc span.tag {
+  display: none;
 }
 
 div.content.notes div.toc #TableOfContents > ul, div.content.notes div.toc #TableOfContents ol {
@@ -785,7 +883,7 @@ div.content.notes div.toc #TableOfContents > ul, div.content.notes div.toc #Tabl
 }
 
 div.content.notes div.toc #TableOfContents > ul > li, div.content.notes div.toc #TableOfContents ol > li {
-  margin-bottom: .5rem;
+  margin-bottom: .6rem;
 }
 
 div.content.notes div.toc #TableOfContents > ul > li > ul, div.content.notes div.toc #TableOfContents > ul > li ol, div.content.notes div.toc #TableOfContents ol > li > ul, div.content.notes div.toc #TableOfContents ol > li ol {
@@ -809,7 +907,18 @@ div.content.notes article {
 }
 
 div.content.notes article {
-  padding-top: 36px;
+  padding-top: 48px;
+  padding-bottom: 36px;
+}
+
+div.content.notes article a {
+  color: #483d8b;
+  border-bottom: 2px dotted orange;
+}
+
+div.content.notes article a:hover {
+  background-color: #ffffe0;
+  border-bottom: 2px solid orange;
 }
 
 div.content.notes article > header {
@@ -825,32 +934,21 @@ div.content.notes article > header {
 
 div.content.notes article > header h1 {
   background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
+  text-shadow: 5px 5px 7px #999;
   background-color: #939393;
   background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 div.content.notes article > header > summary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
-  --tw-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  margin-left: .5rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
   font-size: 1rem;
-  font-style: italic;
   font-weight: 300;
   display: block;
 }
 
 div.content.notes article > header .meta {
+  float: right;
   position: relative;
-}
-
-div.content.notes article > header .meta div.time {
-  position: absolute;
 }
 
 @media (width >= 640px) {
@@ -862,7 +960,6 @@ div.content.notes article > header .meta div.time {
 @media (width >= 976px) {
   div.content.notes article > header .meta div.time {
     display: inline-block;
-    right: 0;
   }
 }
 
@@ -873,22 +970,14 @@ div.content.notes article > header .meta div.time {
 div.content.notes article > header .meta div.time time {
   padding-left: .75rem;
   padding-right: .75rem;
+  font-size: .7rem;
   display: inline-block;
-  box-shadow: 0 1px 2px orange;
+  box-shadow: 0 1px 1px orange;
 }
 
 div.content.notes article > main {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article > main {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
+  font-size: 1.4rem;
+  line-height: 2.3rem;
 }
 
 div.content.notes article > main div.MathJax_Display {
@@ -902,37 +991,35 @@ div.content.notes article > main h2 {
   z-index: 10;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-  background-image: -webkit-linear-gradient(to right, #eee, #dcdcdc80, #eee);
-  text-shadow: 3px 3px 10px #aaa;
-  background-color: #d3d3d3;
-  background-image: linear-gradient(to right, #eee, #dcdcdc80, #eee);
-  margin-bottom: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1.25rem;
-  scroll-margin-top: 36px;
-  font-size: 1.95rem;
+  text-shadow: 5px 5px 7px #999;
+  background-color: #f3f3f3;
+  padding-top: .75rem;
+  scroll-margin-top: 48px;
+  font-size: 28.8px;
   text-decoration-color: #d8d8d8;
   position: sticky;
   top: 0;
+  box-shadow: 0 1px 1px orange;
 }
 
-div.content.notes article > main h2 > p {
-  margin-top: 1rem;
+div.content.notes article > main h2 > span.tag {
+  float: right;
+  font-size: 1rem;
 }
 
-@media screen and (width <= 39.9988em) {
-  div.content.notes article > main h2 {
-    padding-top: 25px;
-  }
+div.content.notes article > main h2 > span.tag > span {
+  background-color: #dcb;
+  border-radius: 2px;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 div.content.notes article > main h3 {
   text-shadow: 2px 2px 7px #aaa;
   background-color: #fff;
-  padding-top: 18px;
-  scroll-margin-top: 72px;
-  font-size: 1.8rem;
+  padding-top: 24px;
+  scroll-margin-top: 96px;
+  font-size: 24px;
   text-decoration: underline #f8a8d8;
 }
 
@@ -952,7 +1039,6 @@ div.content.notes article > main span.tags {
   border: 1px solid #cfcfcf;
   border-radius: 2px;
   padding: 2px 5px;
-  font-size: 1rem;
 }
 
 div.content.notes article > main span.todo {
@@ -1035,12 +1121,32 @@ div.content.notes article > main li.unchecked p {
   display: inline-block;
 }
 
-div.content.notes article > main div.highlight {
+div.content.notes article > main li > p {
+  margin-bottom: 0;
+}
+
+div.content.notes article > main div.highlight > pre {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  border-width: 2px;
+  width: 100%;
+  max-height: 20em;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  font-family: Bitstream Vera Sans Mono, Consolas, monospace;
+  font-size: .75rem;
+  line-height: 1rem;
+  display: block;
   overflow-x: scroll;
 }
 
-div.content.notes article > main li > p {
-  margin-bottom: 0;
+div.content.notes article > main div.highlight > pre:hover {
+  width: 150ch;
+  transition: width .3s ease-in-out;
+}
+
+div.content.notes article > main div.highlight > pre code.language-text, div.content.notes article > main div.highlight > pre code.language-plaintext {
+  background-color: #d3d3d3;
 }
 
 div.content.notes article > main pre.example {
@@ -1051,52 +1157,6 @@ div.content.notes article > main pre.example {
 div.content.notes article > main pre.example:hover {
   transition: width .25s ease-in-out;
   overflow-x: scroll;
-}
-
-div.content.notes article > main pre.example code {
-  background-color: inherit;
-  border: 1px solid #aaa;
-  max-width: 100%;
-  margin: .2rem;
-  padding: .5rem 1rem;
-  font-family: Bitstream Vera Sans Mono, Consolas, monospace;
-  font-size: 1rem;
-  line-height: 1.6rem;
-  display: block;
-  overflow-x: scroll;
-}
-
-div.content.notes article > main pre.example code.language-text, div.content.notes article > main pre.example code.language-plaintext {
-  color: #000;
-  background-color: #d3d3d3;
-  border-left: 1px solid #999;
-  width: 900px;
-  max-height: 20em;
-  padding-left: 1.5em;
-  font-family: Bitstream Vera Sans Mono, Consolas, monospace;
-  font-weight: bolder;
-  display: block;
-  overflow: hidden scroll;
-}
-
-div.content.notes article > main pre.example code.language-text:hover, div.content.notes article > main pre.example code.language-plaintext:hover {
-  width: 1100px;
-  transition: width .3s ease-in-out;
-}
-
-div.content.notes article > main div + pre.example {
-  background-color: #eee;
-  border-left: 1px solid #999;
-  max-height: 20em;
-  margin: 1em 0 1.5em;
-  padding: 1rem 0 1rem 1.5rem;
-  font-family: Bitstream Vera Sans Mono, Consolas, monospace;
-  overflow-y: scroll;
-}
-
-div.content.notes article > main div + pre.example:hover {
-  width: 1100px;
-  transition: width .3s ease-in-out;
 }
 
 div.content.notes article details {

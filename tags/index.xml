@@ -6,13 +6,34 @@
     <description>Recent content in Tags on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Mar 2024 06:46:44 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 15 Apr 2024 12:46:58 +0530</lastBuildDate>
     <atom:link href="https://msync.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning</title>
+      <link>https://msync.org/tags/machine-learning/</link>
+      <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
+      <guid>https://msync.org/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Neural Networks</title>
+      <link>https://msync.org/tags/neural-networks/</link>
+      <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
+      <guid>https://msync.org/tags/neural-networks/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Math</title>
       <link>https://msync.org/tags/math/</link>
-      <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
+      <pubDate>Fri, 05 Apr 2024 09:36:15 +0530</pubDate>
       <guid>https://msync.org/tags/math/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://msync.org/tags/python/</link>
+      <pubDate>Fri, 05 Apr 2024 09:36:15 +0530</pubDate>
+      <guid>https://msync.org/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -27,27 +48,6 @@
       <link>https://msync.org/tags/clojure/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
       <guid>https://msync.org/tags/clojure/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Machine Learning</title>
-      <link>https://msync.org/tags/machine-learning/</link>
-      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>https://msync.org/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Neural Networks</title>
-      <link>https://msync.org/tags/neural-networks/</link>
-      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>https://msync.org/tags/neural-networks/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://msync.org/tags/python/</link>
-      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>https://msync.org/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -69,6 +69,13 @@
       <link>https://msync.org/tags/nodejs/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
       <guid>https://msync.org/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://msync.org/tags/programming/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      <guid>https://msync.org/tags/programming/</guid>
       <description></description>
     </item>
     <item>

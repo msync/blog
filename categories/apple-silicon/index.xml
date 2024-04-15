@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Math on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/tags/math/</link>
-    <description>Recent content in Math on Sync&#39;ing from Memory</description>
+    <title>Apple-Silicon on Sync&#39;ing from Memory</title>
+    <link>https://msync.org/categories/apple-silicon/</link>
+    <description>Recent content in Apple-Silicon on Sync&#39;ing from Memory</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Apr 2024 21:25:59 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://msync.org/categories/apple-silicon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MLX</title>
       <link>https://msync.org/notes/mlx/</link>
       <pubDate>Fri, 05 Apr 2024 09:36:15 +0530</pubDate>
       <guid>https://msync.org/notes/mlx/</guid>
       <description>MLX 20/80. With 20% effort, hope to get 80% covered on MLX&amp;rsquo;s offerings. And, I don&amp;rsquo;t stand by this claim.</description>
-    </item>
-    <item>
-      <title>Probability</title>
-      <link>https://msync.org/notes/probability/</link>
-      <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
-      <guid>https://msync.org/notes/probability/</guid>
-      <description>Probably definitely incomplete notes on probability.</description>
     </item>
   </channel>
 </rss>
