@@ -911,6 +911,17 @@ div.content.notes article {
   padding-bottom: 36px;
 }
 
+div.content.notes article .org-center {
+  margin: 1rem;
+}
+
+div.content.notes article .org-center p {
+  text-align: justify;
+  text-underline-offset: 5px;
+  font-family: Manrope, sans-serif;
+  text-decoration: underline orange;
+}
+
 div.content.notes article a {
   color: #483d8b;
   border-bottom: 2px dotted orange;
