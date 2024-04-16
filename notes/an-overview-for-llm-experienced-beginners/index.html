@@ -48,6 +48,12 @@
   <ol>
     <li>
       <ol>
+        <li><a href="#purpose">Purpose</a>
+          <ol>
+            <li><a href="#assumptions">Assumptions</a></li>
+            <li><a href="#outcomes">Outcomes</a></li>
+          </ol>
+        </li>
         <li><a href="#background-and-caution">Background and Caution</a>
           <ol>
             <li><a href="#general-structure">General Structure</a></li>
@@ -66,6 +72,10 @@
         </li>
         <li><a href="#wip-reminder">WIP Reminder</a></li>
         <li><a href="#references">References</a></li>
+      </ol>
+    </li>
+    <li><a href="#table-of-contents">Table of Contents</a>
+      <ol>
         <li><a href="#supporting-code">Supporting Code</a>
           <ol>
             <li><a href="#utils">Utils</a></li>
@@ -95,7 +105,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-16 06:57:53 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-16 09:36:53 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Tue</span>,
                     <span class="day">16</span>
@@ -108,7 +118,23 @@
         </header>
 
         <main>
-            <h2 id="background-and-caution">Background and Caution</h2>
+            <h2 id="purpose">Purpose</h2>
+<h3 id="assumptions">Assumptions</h3>
+<ul>
+<li>You, the reader, are generally experienced and have a reasonable background in computer science.</li>
+<li>You are not lost when hearing in on discussions involving Linear Algebra, Probability/Statistics, text-processing, <span class="underline">even if you are not contributing</span>.</li>
+</ul>
+<h3 id="outcomes">Outcomes</h3>
+<ul>
+<li>A good intuitive understanding of the LLM space.
+<ul>
+<li>Identifying general terms (both common ones and some key Proper Nouns) better with their purposes. (Eg: BERT, GloVe, GPT etc.)</li>
+</ul>
+</li>
+<li>Better familiarity of the software tools that exist in this space</li>
+<li>Awareness of community efforts at collating datasets, open models and such.</li>
+</ul>
+<h2 id="background-and-caution">Background and Caution</h2>
 <p>The goal is not to be rigorous, but to be mostly accurate and express the key ideas well.</p>
 <style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
 <div class="org-center">
@@ -123,7 +149,7 @@
 <dt>[Optionally] Dip Your Toes</dt>
 <dd>Code samples that enable some grounding of the overview theory</dd>
 <dt>[Optionally] Further Reading</dt>
-<dd>Materials that go deeper. Typically when I feel the summary overview does not do justice.</dd>
+<dd>Materials that go deeper on the topic of the current section. Typically when I feel the summary overview does not do justice. But reading it would not be necessary to follow the remaining of this article.</dd>
 </dl>
 <h2 id="tokenization">Tokenization</h2>
 <p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
@@ -255,10 +281,10 @@
 </span></span><span style="display:flex;"><span>    word_vectors <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([model[w] <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> words])
 </span></span><span style="display:flex;"><span>    twodim <span style="color:#f92672">=</span> PCA()<span style="color:#f92672">.</span>fit_transform(word_vectors)[:,:<span style="color:#ae81ff">2</span>]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">6</span>))
 </span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>scatter(twodim[:,<span style="color:#ae81ff">0</span>], twodim[:,<span style="color:#ae81ff">1</span>], edgecolors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>, c<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> word, (x,y) <span style="color:#f92672">in</span> zip(words, twodim):
-</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>text(x<span style="color:#f92672">+</span><span style="color:#ae81ff">0.05</span>, y<span style="color:#f92672">+</span><span style="color:#ae81ff">0.05</span>, word)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> word, (x, y) <span style="color:#f92672">in</span> zip(words, twodim):
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>text(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.05</span>, y <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.05</span>, word)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>display_pca_scatterplot(model, [<span style="color:#e6db74">&#34;sea&#34;</span>, <span style="color:#e6db74">&#34;waters&#34;</span>, <span style="color:#e6db74">&#34;mediterranean&#34;</span>, <span style="color:#e6db74">&#34;arctic&#34;</span>, <span style="color:#e6db74">&#34;tea&#34;</span>, <span style="color:#e6db74">&#34;giant&#34;</span>, <span style="color:#e6db74">&#34;lion&#34;</span>, <span style="color:#e6db74">&#34;hockey&#34;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;gensim-word-similarities.png&#34;</span>)
@@ -281,7 +307,13 @@
 <p>This section will update (to reduce in size) - until it goes away completely. When the article is complete.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=3iZ7jwbAwF8">Inside the LLM: Visualizing the Embeddings Layer of Mistral-7B and Gemma-2B</a></li>
+<li>
+<h1 id="table-of-contents">Table of Contents</h1>
+<p><a href="https://youtu.be/3iZ7jwbAwF8"><img src="https://img.youtube.com/vi/3iZ7jwbAwF8/0.jpg" alt="img"></a> <a href="https://youtu.be/3iZ7jwbAwF8">Inside the LLM: Visualizing the Embeddings Layer of Mistral-7B and Gemma-2B</a></p>
+<ul>
+<li>The <a href="https://github.com/chrishayuk/embeddings">code repository</a> that goes along side the above video.</li>
+</ul>
+</li>
 </ul>
 <h2 id="supporting-code">Supporting Code</h2>
 <p>The supporting code not found in the snippets above can be found below.</p>
