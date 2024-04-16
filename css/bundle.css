@@ -844,15 +844,11 @@ div.content.notes {
   height: calc(100vh - 84px);
 }
 
-div.content.notes > div.toc, div.content.notes article {
-  height: 100vh;
-  padding-bottom: 72px;
-  overflow: clip scroll;
-}
-
 div.content.notes div.toc {
+  height: 100vh;
   padding-right: 1rem;
   display: none;
+  overflow: clip scroll;
 }
 
 @media (width >= 976px) {
@@ -864,6 +860,7 @@ div.content.notes div.toc {
 
 div.content.notes div.toc {
   padding-top: 144px;
+  padding-bottom: 72px;
   font-size: 1.6rem;
 }
 
@@ -896,6 +893,7 @@ div.content.notes div.toc #TableOfContents > ul > li > ul > li > ul, div.content
 }
 
 div.content.notes article {
+  height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -908,7 +906,8 @@ div.content.notes article {
 
 div.content.notes article {
   padding-top: 48px;
-  padding-bottom: 36px;
+  padding-bottom: 72px;
+  overflow: clip scroll;
 }
 
 div.content.notes article .org-center {

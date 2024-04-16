@@ -56,6 +56,7 @@
         </li>
         <li><a href="#background-and-caution">Background and Caution</a>
           <ol>
+            <li><a href="#credits">Credits</a></li>
             <li><a href="#general-structure">General Structure</a></li>
           </ol>
         </li>
@@ -72,10 +73,6 @@
         </li>
         <li><a href="#wip-reminder">WIP Reminder</a></li>
         <li><a href="#references">References</a></li>
-      </ol>
-    </li>
-    <li><a href="#table-of-contents">Table of Contents</a>
-      <ol>
         <li><a href="#supporting-code">Supporting Code</a>
           <ol>
             <li><a href="#utils">Utils</a></li>
@@ -105,7 +102,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-16 09:40:08 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-16 11:50:43 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Tue</span>,
                     <span class="day">16</span>
@@ -140,7 +137,8 @@
 <div class="org-center">
 <p>A <em>good intuition</em> of math (especially <span class="underline">Linear Algebra</span> and <span class="underline">basic calculus</span>) will go a long way in helping to appreciate the field. You just need the intuition - although rigor will take you much further.</p>
 </div>
-<p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them.</p>
+<h3 id="credits">Credits</h3>
+<p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them. I&rsquo;ve liberally used material from the references pointed to.</p>
 <h3 id="general-structure">General Structure</h3>
 <p>Each section is roughly structured as follows</p>
 <dl>
@@ -269,7 +267,7 @@
 </span></span><span style="display:flex;"><span>[(&#39;ocean&#39;, 0.8386560678482056), (&#39;waters&#39;, 0.8161073327064514), (&#39;seas&#39;, 0.7600178122520447), (&#39;mediterranean&#39;, 0.725997805595398), (&#39;arctic&#39;, 0.6975978016853333)]
 </span></span><span style="display:flex;"><span>Words similar to &#39;dark&#39;
 </span></span><span style="display:flex;"><span>[(&#39;bright&#39;, 0.7659975290298462), (&#39;gray&#39;, 0.7474402189254761), (&#39;black&#39;, 0.7343376278877258), (&#39;darker&#39;, 0.7261934280395508), (&#39;light&#39;, 0.7222751975059509)]
-</span></span></code></pre></div><p>Let&rsquo;s try to plot the above. There is no easy way to visualize a 100-D space in which the embeddings lie, so we use a technique called the <strong>Principal Component Analysis (PCA)</strong> to identify a transformed sub-space where the dimensions faithfully capture (within the limitation of the reduced dimensionality) the key distance metrics between our points of interest in the projected space.</p>
+</span></span></code></pre></div><p>Let&rsquo;s try to plot the above. There is no easy way to visualize a 100-D space in which the embeddings lie, so we use a technique called the <strong>Principal Component Analysis (PCA)</strong> to identify a transformed sub-space where the dimensions faithfully capture (within the limitation of the reduced dimensionality) the key distance metrics between our points of interest in the projected space. Unsurprisingly, words that occur in similar contexts show up closer.</p>
 <p>As always, there&rsquo;s a Python package to do that. The code to plot is adapted from <a href="https://web.stanford.edu/class/cs224n/materials/Gensim%20word%20vector%20visualization.html">here</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
@@ -291,25 +289,28 @@
 </span></span></code></pre></div><figure><img src="/ox-hugo/gensim-word-similarities.png">
 </figure>
 
+<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
+<div class="org-center">
+<p>It&rsquo;s important to note that this representation is <strong>learnt</strong> from the training dataset. That the training dataset matches our expectations is purely an artifact of the fact that the training dataset is a generic, domain-independent dataset. But if we were to choose a different, custom dataset, the embeddings can be expected to be placed differently.</p>
+</div>
 <h3 id="llm-model-embeddings">LLM Model Embeddings</h3>
 <p>Word embeddings are great for human consumption, and then some more. But there are far too many words, and many words enter a language over time. Plus there are new Proper Nouns that get invented over time. And then, there are misspellings. Word embeddings miss out on these.</p>
 <p>When looking to train more advanced networks using embeddings, we want our embeddings that capture further lower-level nuances of the language in question. Let&rsquo;s take an example. Which of the following (currently non-existent in my knowledge) words are likely to be considered okay in a new piece of text you encounter?</p>
 <ul>
-<li>Zbwklttwq</li>
-<li>Queprayent</li>
+<li><strong>Zbwklttwq</strong></li>
+<li><strong>Queprayent</strong></li>
 </ul>
-<p>I&rsquo;d guess you agree it&rsquo;s <strong>Queprayent</strong>. Why? There&rsquo;s something about our languages that makes us conclude so. We have no rules to explain, but one (of multiple) possible explanations is how the vowels make the word pronounceable and hence more palatable to us. With techniques like subword tokenization or byte-pair encoding, it&rsquo;s possible to capture such nuances of a language.</p>
+<p>I&rsquo;d guess you agree it&rsquo;s <span class="underline">Queprayent</span>. Why? There&rsquo;s something about our languages that makes us conclude so. We have no rules to explain, but one (of multiple) possible explanations is how the vowels make the word pronounceable and hence more palatable to us. With techniques like subword tokenization or byte-pair encoding, it&rsquo;s possible to capture such nuances of a language.</p>
 <p>When training LLMs, we could use the word embeddings. But if we trained our LLM on an embeddings model that captures further lower-level language nuances, we can hope to train networks better and also hope to get better outcomes for the various tasks we imagine using the LLMs for. That&rsquo;s where using subword or byte-pair-encoded tokens come in.</p>
 <p>LLM models have their own embeddings that are distinct from embeddings created from more human-understandable semantic entities like dictionary words. In other words, <strong>each</strong> LLM gets to decide its own embeddings model to use and train on. When working with the model data, the embeddings model will be part of the distribution and only that can and will be used. (Use any other embedding model to encode before you feed to the model and don&rsquo;t be surprised to get garbage as output!)</p>
 <h2 id="wip-reminder">WIP Reminder</h2>
 <p>This section exists only to remind you, the unsuspecting reader, that this article is not complete.</p>
-<p>Currently, it is very very incomplete.</p>
-<p>This section will update (to reduce in size) - until it goes away completely. When the article is complete.</p>
+<p>Currently, it is very very <del>very</del> incomplete.</p>
+<p>This section will keep updating - until it goes away completely. When the article is complete.</p>
 <h2 id="references">References</h2>
 <ul>
-<li>
-<h1 id="table-of-contents">Table of Contents</h1>
-<p><a href="https://youtu.be/3iZ7jwbAwF8"><img src="https://img.youtube.com/vi/3iZ7jwbAwF8/0.jpg" alt="img"></a> <a href="https://youtu.be/3iZ7jwbAwF8">Inside the LLM: Visualizing the Embeddings Layer of Mistral-7B and Gemma-2B</a></p>
+<li><a href="https://youtube.com/watch?v=kCc8FmEb1nY">Let&rsquo;s build GPT: from scratch, in code, spelled out.</a></li>
+<li><a href="https://youtube.com/watch?v=3iZ7jwbAwF8">Inside the LLM: Visualizing the Embeddings Layer of Mistral-7B and Gemma-2B</a>
 <ul>
 <li>The <a href="https://github.com/chrishayuk/embeddings">code repository</a> that goes along side the above video.</li>
 </ul>
