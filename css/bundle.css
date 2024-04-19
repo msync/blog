@@ -324,27 +324,78 @@ img, video {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+}
 
-  #main-wrapper {
-    width: 100%;
+@media (width >= 640px) {
+  .list {
+    max-width: 640px;
+  }
+}
+
+@media (width >= 976px) {
+  .list {
+    max-width: 976px;
+  }
+}
+
+@media (width >= 1280px) {
+  .list {
+    max-width: 1280px;
+  }
+}
+
+@media (width >= 976px) {
+  .list {
+    padding: 5rem;
   }
 
-  @media (width >= 640px) {
-    #main-wrapper {
-      max-width: 640px;
-    }
+  .list li.card {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (width >= 640px) {
+  #site-header div.content {
+    max-width: 640px;
+  }
+}
+
+@media (width >= 976px) {
+  #site-header div.content {
+    max-width: 976px;
+  }
+}
+
+@media (width >= 1280px) {
+  #site-header div.content {
+    max-width: 1280px;
+  }
+}
+
+@media (width >= 976px) {
+  #site-header div.content {
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
   }
 
-  @media (width >= 976px) {
-    #main-wrapper {
-      max-width: 976px;
-    }
+  #site-header div.content > a {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
+}
 
-  @media (width >= 1280px) {
-    #main-wrapper {
-      max-width: 1280px;
-    }
+@media (width >= 1280px) {
+  #site-header div.content > a {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (width >= 976px) {
+  #site-header div.content nav a {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -396,7 +447,7 @@ div.content.posts article > header div.meta time {
   background-color: #efe9e2;
   margin-right: 15px;
   padding: 0 5px;
-  font-size: 19.2px;
+  font-size: 18px;
   box-shadow: 1px 1px 1px #666;
 }
 
@@ -408,7 +459,6 @@ div.content.posts article > summary {
   max-width: 100%;
   margin-bottom: 2rem;
   padding: 1em;
-  font-size: 24px;
   font-style: italic;
   font-weight: 500;
   display: block;
@@ -445,7 +495,6 @@ div.content.posts article main div pre code {
   max-width: 100%;
   margin: .5em;
   padding: 0 10px 10px 0;
-  font-size: 24px;
   line-height: 1.6rem;
   overflow-x: scroll;
 }
@@ -489,7 +538,6 @@ div.content.posts article main table tbody tr td:first-child {
 
 div.content.posts article main blockquote.description {
   padding-top: 15px;
-  font-size: 24px;
   font-style: italic;
   font-weight: 400;
 }
@@ -648,32 +696,7 @@ div.content.posts article main aside {
 }
 
 #main-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (width >= 976px) {
-  #main-wrapper {
-    width: 100%;
-  }
-
-  @media (width >= 640px) {
-    #main-wrapper {
-      max-width: 640px;
-    }
-  }
-
-  @media (width >= 976px) {
-    #main-wrapper {
-      max-width: 976px;
-    }
-  }
-
-  @media (width >= 1280px) {
-    #main-wrapper {
-      max-width: 1280px;
-    }
-  }
+  width: 100vw;
 }
 
 #site-footer {
@@ -803,14 +826,14 @@ div.content.posts article main aside {
 .list li.card article div.title {
   text-shadow: 2px 2px 4px #bbb;
   color: #00008b;
-  font-size: 28.8px;
+  font-size: 27px;
   font-weight: 500;
 }
 
 .list li.card article div.summary {
   max-width: 90%;
   margin: .8em 0 .4rem;
-  font-size: 19.2px;
+  font-size: 18px;
   line-height: 1.4em;
 }
 
@@ -820,7 +843,7 @@ div.content.posts article main aside {
   padding-left: .5rem;
   padding-right: .5rem;
   font-family: Manrope, sans-serif;
-  font-size: 19.2px;
+  font-size: 18px;
 }
 
 div.pagination {
@@ -830,28 +853,6 @@ div.pagination {
 
 h2 ~ h2 {
   margin-top: 2.5rem;
-}
-
-div.content.notes {
-  width: 100%;
-}
-
-@media (width >= 640px) {
-  div.content.notes {
-    max-width: 640px;
-  }
-}
-
-@media (width >= 976px) {
-  div.content.notes {
-    max-width: 976px;
-  }
-}
-
-@media (width >= 1280px) {
-  div.content.notes {
-    max-width: 1280px;
-  }
 }
 
 @media (width >= 976px) {
@@ -867,10 +868,9 @@ div.content.notes {
 }
 
 div.content.notes div.toc {
-  height: 100vh;
+  padding-left: 2rem;
   padding-right: 1rem;
   display: none;
-  overflow: clip scroll;
 }
 
 @media (width >= 976px) {
@@ -881,9 +881,10 @@ div.content.notes div.toc {
 }
 
 div.content.notes div.toc {
+  height: 100vh;
   padding-top: 144px;
   padding-bottom: 72px;
-  font-size: 1.6rem;
+  overflow: clip scroll;
 }
 
 div.content.notes div.toc a {
@@ -895,34 +896,39 @@ div.content.notes div.toc span.tag {
   display: none;
 }
 
+div.content.notes div.toc #TableOfContents {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 div.content.notes div.toc #TableOfContents > ul, div.content.notes div.toc #TableOfContents ol {
-  margin-left: 15px;
+  margin-bottom: .8rem;
   font-weight: 500;
   list-style: none;
 }
 
-div.content.notes div.toc #TableOfContents > ul > li, div.content.notes div.toc #TableOfContents ol > li {
-  margin-bottom: .6rem;
-}
-
 div.content.notes div.toc #TableOfContents > ul > li > ul, div.content.notes div.toc #TableOfContents > ul > li ol, div.content.notes div.toc #TableOfContents ol > li > ul, div.content.notes div.toc #TableOfContents ol > li ol {
-  font-size: 90%;
+  font-size: 80%;
   font-weight: 400;
 }
 
 div.content.notes div.toc #TableOfContents > ul > li > ul > li > ul, div.content.notes div.toc #TableOfContents > ul > li > ul > li ol, div.content.notes div.toc #TableOfContents > ul > li ol > li > ul, div.content.notes div.toc #TableOfContents > ul > li ol > li ol, div.content.notes div.toc #TableOfContents ol > li > ul > li > ul, div.content.notes div.toc #TableOfContents ol > li > ul > li ol, div.content.notes div.toc #TableOfContents ol > li ol > li > ul, div.content.notes div.toc #TableOfContents ol > li ol > li ol {
-  display: none;
+  margin-left: 1rem;
 }
 
 div.content.notes article {
   height: 100vh;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-size: 1.875rem;
+  line-height: 1.625;
 }
 
 @media (width >= 976px) {
   div.content.notes article {
     grid-column: span 10 / span 10;
+    font-size: 1.125rem;
+    line-height: 2;
   }
 }
 
@@ -938,8 +944,15 @@ div.content.notes article h1, div.content.notes article h2, div.content.notes ar
 }
 
 div.content.notes article h1 {
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (width >= 976px) {
+  div.content.notes article h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 div.content.notes article h2 {
@@ -999,7 +1012,7 @@ div.content.notes article > header h1 {
 div.content.notes article > header > summary {
   font-size: 1rem;
   font-weight: 300;
-  display: block;
+  display: none;
 }
 
 div.content.notes article > header .meta {
@@ -1029,11 +1042,6 @@ div.content.notes article > header .meta div.time time {
   font-size: .7rem;
   display: inline-block;
   box-shadow: 0 1px 1px orange;
-}
-
-div.content.notes article > main {
-  font-size: 1.4rem;
-  line-height: 2.3rem;
 }
 
 div.content.notes article > main div.MathJax_Display {
@@ -1236,7 +1244,7 @@ div.content.notes article details summary {
   line-height: 1.75rem;
 }
 
-div.content.notes blockquote {
+div.content.notes article blockquote {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
   margin-top: .5rem;
@@ -1245,7 +1253,7 @@ div.content.notes blockquote {
   font-family: Roboto Mono, Consolas, monospace;
 }
 
-div.content.notes div.definition {
+div.content.notes article div.definition {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: #f9fafb var(--tw-gradient-from-position);
   --tw-gradient-to: #f3f4f6 var(--tw-gradient-to-position);
@@ -1257,7 +1265,7 @@ div.content.notes div.definition {
   font-weight: 600;
 }
 
-div.content.notes div.note {
+div.content.notes article div.note {
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
   font-family: Roboto Thin, serif;
