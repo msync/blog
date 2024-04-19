@@ -57,9 +57,13 @@
         <li><a href="#preface">Preface</a>
           <ol>
             <li><a href="#credits">Credits</a></li>
-            <li><a href="#terms-nouns-you-will-hear">Terms/Nouns You Will Hear</a></li>
             <li><a href="#general-structure">General Structure</a></li>
-            <li><a href="#some-things-to-know">Some Things to Know</a></li>
+          </ol>
+        </li>
+        <li><a href="#important-background">Important Background</a>
+          <ol>
+            <li><a href="#quick-supporting-glossary">Quick Supporting Glossary</a></li>
+            <li><a href="#terms-resources-tools">Terms, Resources, Tools</a></li>
           </ol>
         </li>
         <li><a href="#tokenization">Tokenization</a>
@@ -105,10 +109,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-17 13:11:04 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-19 10:54:31 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Wed</span>,
-                    <span class="day">17</span>
+                    <span class="weekday">Fri</span>,
+                    <span class="day">19</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -147,7 +151,18 @@
 </div>
 <h3 id="credits">Credits</h3>
 <p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them. I&rsquo;ve liberally used material from the references pointed to.</p>
-<h3 id="terms-nouns-you-will-hear">Terms/Nouns You Will Hear</h3>
+<h3 id="general-structure">General Structure</h3>
+<p>In each section, we will have roughly the following order.</p>
+<dl>
+<dt>Summary Overview</dt>
+<dd>Not exactly a summary, but nowhere close to being an article in itself.</dd>
+<dt>Optionally, Dip Your Toes</dt>
+<dd>Code samples that enable some grounding of the overview theory</dd>
+<dt>Optionally, Further Reading</dt>
+<dd>Materials that go deeper on the topic of the current section. Typically when I feel the summary overview does not do justice. But reading it would not be necessary to follow the remaining of this article.</dd>
+</dl>
+<h2 id="important-background">Important Background</h2>
+<h3 id="quick-supporting-glossary">Quick Supporting Glossary</h3>
 <dl>
 <dt>Python</dt>
 <dd>Needs no explanation. Most of ML you do these days are accessible easily through Python</dd>
@@ -162,32 +177,32 @@
 </ul>
 </dd>
 </dl>
-<h3 id="general-structure">General Structure</h3>
-<p>In each section, we will have roughly the following order.</p>
-<dl>
-<dt>Summary Overview</dt>
-<dd>Not exactly a summary, but nowhere close to being an article in itself.</dd>
-<dt>Optionally, Dip Your Toes</dt>
-<dd>Code samples that enable some grounding of the overview theory</dd>
-<dt>Optionally, Further Reading</dt>
-<dd>Materials that go deeper on the topic of the current section. Typically when I feel the summary overview does not do justice. But reading it would not be necessary to follow the remaining of this article.</dd>
-</dl>
-<h3 id="some-things-to-know">Some Things to Know</h3>
-<p>When we refer to a model as <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>, it points to the organization plus model repository on Huggingface.</p>
+<h3 id="terms-resources-tools">Terms, Resources, Tools</h3>
+<p>When we refer to a model using an <span class="underline">&lt;org-id/model-name&gt;</span> convention - example, <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>. This points to the organization <span class="underline">mistralai</span>&rsquo;s <span class="underline">Mistral 7B v0.1</span> model repository on Huggingface.</p>
 <p>Models are generally very large in size, and you do <span class="underline">not</span> want to download them again. More often than not, libraries aware of Huggingface manage downloading (and caching) model files from Huggingface and it&rsquo;s only the first time you access a model do you see output on your screens showing transfers in progress. The second time onwards, locally cached data is used. Cached files are typically under <span class="underline">$HOME/.cache/huggingface</span>.</p>
 <p>If you&rsquo;d like to manage your own downloads and caching, you can use the official Huggingface tools like</p>
 <ul>
 <li><a href="https://huggingface.co/docs/huggingface_hub/index">huggingface_hub</a></li>
 <li><a href="https://huggingface.co/docs/huggingface_hub/en/guides/cli">huggingface-cli</a></li>
 </ul>
+<p>Generally preferred (and referred to models) in this write-up are</p>
+<ul>
+<li><a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a></li>
+<li><a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a></li>
+<li><a href="https://huggingface.co/google/gemma-2b">google/gemma-2b</a></li>
+</ul>
 <h2 id="tokenization">Tokenization</h2>
 <p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
-<p>It&rsquo;s a tunable choice.</p>
+<details>
+<summary>Tokenization is an important tunable part of the entire process. Tokenization choices will deeply impact the sizes of the network and the quality of the outcomes.</summary>
+<div class="details">
 <ul>
 <li>On the one hand, your dictionary consists of the least number of tokens if you choose character-level tokenization, and on ther other hand, the dictionary can grow unreasonably large</li>
 <li>On the one hand, you lose larger structures and patterns, while on the other, you capture more of them</li>
 <li>Again, you go from being able to deal with every input never seen before, to not being able to handle well tokens/inputs never seen before.</li>
 </ul>
+</div>
+</details>
 <p>In general, depending on your downstream architecture and resource budgets, you choose how further to go.</p>
 <h3 id="dip-your-toes">Dip Your Toes</h3>
 <p>Let&rsquo;s look at the tokenization of a model <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>. (<strong>Note</strong> - when you see text like this, in reference to some model, that&rsquo;s a sort-of standard identifier pointing to <a href="https://huggingface.co/">huggingface.co</a> where the relevant data can be found. If it is not linked, you can specifically search for it on <strong>huggingface</strong>.)</p>
