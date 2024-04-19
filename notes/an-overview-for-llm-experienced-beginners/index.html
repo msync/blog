@@ -68,7 +68,7 @@
         </li>
         <li><a href="#tokenization">Tokenization</a>
           <ol>
-            <li><a href="#dip-your-toes">Dip Your Toes</a></li>
+            <li><a href="#exploring-tokenization-in-code">Exploring Tokenization in Code</a></li>
           </ol>
         </li>
         <li><a href="#embeddings">Embeddings</a>
@@ -109,7 +109,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-19 10:54:31 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-19 12:21:36 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Fri</span>,
                     <span class="day">19</span>
@@ -204,14 +204,19 @@
 </div>
 </details>
 <p>In general, depending on your downstream architecture and resource budgets, you choose how further to go.</p>
-<h3 id="dip-your-toes">Dip Your Toes</h3>
-<p>Let&rsquo;s look at the tokenization of a model <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>. (<strong>Note</strong> - when you see text like this, in reference to some model, that&rsquo;s a sort-of standard identifier pointing to <a href="https://huggingface.co/">huggingface.co</a> where the relevant data can be found. If it is not linked, you can specifically search for it on <strong>huggingface</strong>.)</p>
+<h3 id="exploring-tokenization-in-code">Exploring Tokenization in Code</h3>
+<p>Let&rsquo;s look at the tokenization of a model <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>.</p>
+<p>We use the <em>transformers</em> library from Huggingface. It has some pretty nifty <em>Auto*</em> classes that can infer the format without any effort.</p>
+<p>Also note that we use the model name as is while passing to the <em>Auto*</em> methods, because the models are self-contained - they include the token vocabulary, the embeddings architecture, apart from the trained parameters for the language tasks.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> AutoTokenizer
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> print_tokens
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistralai/Mistral-7B-v0.1&#34;</span>
+</span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistralai/Mistral-7B-v0.1&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(tokenizer_name)
+</span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(model_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The vocabulary size is </span><span style="color:#e6db74">{</span>len(tokenizer)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>inputs <span style="color:#f92672">=</span> tokenizer(<span style="color:#e6db74">&#34;Who is Pani Puri?&#34;</span>, return_tensors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pt&#34;</span>)
 </span></span><span style="display:flex;"><span>input_ids <span style="color:#f92672">=</span> inputs[<span style="color:#e6db74">&#34;input_ids&#34;</span>]
 </span></span><span style="display:flex;"><span>print_tokens(tokenizer, input_ids)
@@ -219,7 +224,8 @@
 </span></span><span style="display:flex;"><span>inputs <span style="color:#f92672">=</span> tokenizer(<span style="color:#e6db74">&#34;Who is Katy Perry?&#34;</span>, return_tensors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pt&#34;</span>)
 </span></span><span style="display:flex;"><span>input_ids <span style="color:#f92672">=</span> inputs[<span style="color:#e6db74">&#34;input_ids&#34;</span>]
 </span></span><span style="display:flex;"><span>print_tokens(tokenizer, input_ids)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>==============================
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>The vocabulary size is 32000
+</span></span><span style="display:flex;"><span>==============================
 </span></span><span style="display:flex;"><span>     Tokens and their IDs
 </span></span><span style="display:flex;"><span>==============================
 </span></span><span style="display:flex;"><span>Token      | ID
@@ -246,17 +252,27 @@
 </span></span><span style="display:flex;"><span>Perry      | 24150
 </span></span><span style="display:flex;"><span>?          | 28804
 </span></span><span style="display:flex;"><span>==============================
-</span></span></code></pre></div><h2 id="embeddings">Embeddings</h2>
+</span></span></code></pre></div><p>Look at the tokens closely. Familiar word-level tokens are only incidental - depending on how Mistral chose the size of the vocabulary and the strategy, the tokens have been generated. You can observe the token vocabulary size - it&rsquo;s a round number. And that was a choice made ahead of time.</p>
+<h2 id="embeddings">Embeddings</h2>
 <p>Tokens are only a preprocessing step. There are too many of them, and while we can certainly feed them as &ldquo;features&rdquo; to the neural network, we probably can do better by converting them into a representation that captures better semantic relationships.</p>
 <p>The better the information content of the training data, the more you will be able to get from any machine learning effort, for the same architecture.</p>
-<p>Imagine a generalized problem where given a set of tokens occuring together - say, in a sequence - we&rsquo;d like to train a network that can predict the next token. Remember that we are talking tokens - not words. Also, remember that words are tokens, but tokens need not be words.</p>
-<p>Given a corpus of text, and tokens that form the vocabulary of that text, by training a neural network that can predict the next token well, we get a network that intrinsically captures relationships between them. It&rsquo;s quite pertinent to note that if these tokens are sub-words or byte-pair encoded tokens, we can train a network that can capture deeper structures of the language - how characters combine to form larger and larger structures. These can indirectly encapsulate patterns represent notions like grammar, or how words form, and thus allow the network to even deal with new words not seen before, and even misspellings!</p>
-<p>Thus, we can convert tokens into a vector form by passing them to this trained model, and what we hope to get is a vector that maps tokens into a space that captures notions of semantic similarities in that space. What&rsquo;s more, this space is much more compact as compared to the representation of the tokens. So, we get a higher signal density with a lower representation cost.</p>
+<p>Imagine a generalized problem where given a set of tokens occuring together - say, in a sequence - we&rsquo;d like to train a network that can predict the next token. Remember that we are talking tokens - not words. <span class="underline">Also, remember that words can be tokens, but tokens need not be words.</span></p>
+<p>Given a corpus of text, and tokens that form the vocabulary of that text, by training a neural network that can predict the next token well, we get a network that intrinsically captures relationships between them.</p>
+<p>It&rsquo;s interesting to note that if these tokens are sub-words or byte-pair encoded tokens, we can train a network that can capture deeper structures of the language - how characters combine to form larger and larger structures. These can indirectly encapsulate patterns represent notions like grammar, or how words form, and thus allow the network to even deal with new words not seen before, and even misspellings!</p>
+<p>Thus, we can convert tokens into a vector form by passing them to this trained model, and what we hope to get is a vector that maps tokens into a space that captures notions of semantic and structural similarities in that space. What&rsquo;s more, this space is much more compact as compared to the representation of the tokens. So, we get a higher signal density with a lower representation cost.</p>
 <p>When this new representation - that we call <strong>embeddings</strong> - is used as an input for the next phase of machine learning in this journey, we immediately see benefits of getting to deal with smaller networks, if compared with what we&rsquo;d have to use if we used the raw tokens as vectors.</p>
+<p>Before starting the next section, reiterating again would help - tokens are a superset of words. Embeddings can be created from a token vocabulary of valid language words as well as smaller tokens that by themselves do not carry any meaning in the languages they are created from.</p>
 <h3 id="word-embeddings">Word Embeddings</h3>
-<p>Looking at an effort to represent words as <strong>embeddings</strong> (in contrast with sub-words or byte-pair encodings), a confident guess is that these embeddings will represent human-relatable information. Indeed, as we can see in this example below, using a Python library called <a href="https://github.com/piskvorky/gensim">gensim</a>.</p>
+<p>In this section, we are going to look at embeddings created from <span class="underline">word tokens</span>. This is to understand how the embeddings capture the essense of the input text from a human&rsquo;s point of view. You can then extrapolate to other embeddings, as the process for creating them is the same.</p>
+<p>Looking at an effort to represent words as <strong>embeddings</strong> (in contrast with sub-words or byte-pair encodings), a confident guess is that these embeddings will represent human-relatable information. Indeed, as we can see in this example below, using a Python library called <a href="https://github.com/piskvorky/gensim">gensim</a>. In this code sample, we use the in-built model data downloader that gensim provides.</p>
 <p>The similarity score you see is the dot-product of the normalized vectors for the embeddings representing the corresponding words.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> gensim <span style="color:#f92672">import</span> downloader
+<p>Pay attention to</p>
+<ul>
+<li>The vocabulary size. It is a round-figure - an indication that this is a choice made by the group working on computing this specific model-data.</li>
+<li>The dimensions of the embeddings vectors. This is another parameter chosen by the working group - to represent a very high-dimensional, sparse dataset in a lower-dimensional, more information-dense representation.</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> gensim <span style="color:#f92672">import</span> downloader <span style="color:#75715e"># Gensim has its own downloader</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;glove-wiki-gigaword-100&#34;</span>
 </span></span><span style="display:flex;"><span>
@@ -313,7 +329,8 @@
 </span></span><span style="display:flex;"><span>[(&#39;ocean&#39;, 0.8386560678482056), (&#39;waters&#39;, 0.8161073327064514), (&#39;seas&#39;, 0.7600178122520447), (&#39;mediterranean&#39;, 0.725997805595398), (&#39;arctic&#39;, 0.6975978016853333)]
 </span></span><span style="display:flex;"><span>Words similar to &#39;dark&#39;
 </span></span><span style="display:flex;"><span>[(&#39;bright&#39;, 0.7659975290298462), (&#39;gray&#39;, 0.7474402189254761), (&#39;black&#39;, 0.7343376278877258), (&#39;darker&#39;, 0.7261934280395508), (&#39;light&#39;, 0.7222751975059509)]
-</span></span></code></pre></div><p>Let&rsquo;s try to plot the above. There is no easy way to visualize a 100-D space in which the embeddings lie, so we use a technique called the <strong>Principal Component Analysis (PCA)</strong> to identify a transformed sub-space where the dimensions faithfully capture (within the limitation of the reduced dimensionality) the key distance metrics between our points of interest in the projected space. Unsurprisingly, words that occur in similar contexts show up closer.</p>
+</span></span></code></pre></div><h4 id="visualizing-the-embeddings">Visualizing the Embeddings</h4>
+<p>Let&rsquo;s try to plot the above. There is no easy way to visualize a 100-D space in which the embeddings lie, so we use a technique called the <strong>Principal Component Analysis (PCA)</strong> to identify a transformed sub-space where the dimensions faithfully capture (within the limitation of the reduced dimensionality) the key distance metrics between our points of interest in the projected space. Unsurprisingly, words that occur in similar contexts show up closer.</p>
 <p>As always, there&rsquo;s a Python package to do that. The code to plot is adapted from <a href="https://web.stanford.edu/class/cs224n/materials/Gensim%20word%20vector%20visualization.html">here</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
