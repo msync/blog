@@ -16,9 +16,6 @@
 
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
 <link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
-<script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 </head>
 
@@ -47,7 +44,7 @@
   <li class="card">
     <article>
 
-    <time datetime="2024-04-19 12:21:36 &#43;0530 IST" itemprop="datePublished" class="date-as-calendar inline-flex">
+    <time datetime="2024-04-19 22:27:09 &#43;0530 IST" itemprop="datePublished" class="date-as-calendar inline-flex">
         <span class="weekday">Sat</span>
         <span class="day">13</span>
         <span class="month">Apr</span>
@@ -109,7 +106,8 @@
 
     <footer id="site-footer">
         <div class="hide-for-small-only float-left author">
-  <span>&copy; <span class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
+    <span>&copy; <span
+            class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
 </div>
 
 <div class="social-media-list float-right">
@@ -125,7 +123,7 @@
       <span class="username">jaju</span>
     </a>
   </span>
-  <span class="social-media-item">
+    <span class="social-media-item">
     <a href="https://twitter.com/jaju">
       <span class="svg-social-icon icon--twitter">
         <svg viewBox="0 0 16 16">
@@ -136,6 +134,23 @@
       <span class="username">jaju</span>
     </a>
   </span>
+    <script>
+        document.querySelectorAll('pre > code').forEach(function (codeBlock) {
+            var button = document.createElement('button');
+            button.className = 'copy-code-button';
+            button.type = 'button';
+            button.innerText = 'Copy';
+
+            var pre = codeBlock.parentNode;
+            if (pre.parentNode.classList.contains('highlight')) {
+                var highlight = pre.parentNode;
+                highlight.parentNode.insertBefore(button, highlight);
+            } else {
+                pre.parentNode.insertBefore(button, pre);
+            }
+            console.log(codeBlock);
+        });
+    </script>
 
 </div>
 
@@ -143,6 +158,9 @@
 </div>
 
 <script src="/js/bundle.js"></script>
+<script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYE506V9R8"></script>
