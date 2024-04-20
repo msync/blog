@@ -61,6 +61,7 @@
           <ol>
             <li><a href="#quick-supporting-glossary">Quick Supporting Glossary</a></li>
             <li><a href="#terms-resources-tools">Terms, Resources, Tools</a></li>
+            <li><a href="#code-constants">Code Constants</a></li>
           </ol>
         </li>
         <li><a href="#tokenization">Tokenization</a>
@@ -106,10 +107,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-19 22:27:09 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-20 07:00:45 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Fri</span>,
-                    <span class="day">19</span>
+                    <span class="weekday">Sat</span>,
+                    <span class="day">20</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -190,7 +191,14 @@
 <li><a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a></li>
 <li><a href="https://huggingface.co/google/gemma-2b">google/gemma-2b</a></li>
 </ul>
-<h2 id="tokenization">Tokenization</h2>
+<h3 id="code-constants">Code Constants</h3>
+<p>Some constants we will use throughout. The names should be self-explanatory, so you don&rsquo;t need to refer to this section again while reading.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mistral_model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistralai/Mistral-7B-v0.1&#34;</span>
+</span></span><span style="display:flex;"><span>mistral_model_embeddings_extract_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistral-embeddings.pth&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>llama3_model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama/Meta-Llama-3-8B&#34;</span>
+</span></span><span style="display:flex;"><span>llama3_model_embeddings_extract_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama-3-embeddings.pth&#34;</span>
+</span></span></code></pre></div><h2 id="tokenization">Tokenization</h2>
 <p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
 <details>
 <summary>Tokenization is an important tunable part of the entire process. Tokenization choices will deeply impact the sizes of the network and the quality of the outcomes.</summary>
@@ -463,30 +471,33 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_embeddings</span>(model_name, embeddings_filename):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#tokenizer.add_special_tokens({&#34;pad_token&#34;: &#34;[PAD]&#34;})</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> AutoModel<span style="color:#f92672">.</span>from_pretrained(model_name)
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_input_embeddings()
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Extracted embeddings layer for </span><span style="color:#e6db74">{</span>model_name<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>embeddings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    torch<span style="color:#f92672">.</span>save(embeddings<span style="color:#f92672">.</span>state_dict(), embeddings_filename)
 </span></span></code></pre></div><p>Sanity check</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> utils
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistralai/Mistral-7B-v0.1&#34;</span>
-</span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> tokenizer_name
-</span></span><span style="display:flex;"><span>model_embeddings_extract_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistral-embeddings.pth&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(tokenizer_name, model_name, model_embeddings_extract_file)
+</span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(mistral_model_name, mistral_model_embeddings_extract_file)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Loading checkpoint shards:   0% 0/2 [00:00&lt;?, ?it/s]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards:  50% 1/2 [00:24&lt;00:24, 24.09s/it]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 2/2 [00:40&lt;00:00, 19.37s/it]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 2/2 [00:40&lt;00:00, 20.07s/it]
+</span></span><span style="display:flex;"><span>Extracted embeddings layer for mistralai/Mistral-7B-v0.1: Embedding(32000, 4096)
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> utils
+</span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(llama3_model_name, llama3_model_embeddings_extract_file)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+</span></span><span style="display:flex;"><span>To disable this warning, you can either:
+</span></span><span style="display:flex;"><span>	- Avoid using `tokenizers` before the fork if possible
+</span></span><span style="display:flex;"><span>	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama/Meta-Llama-3-8B&#34;</span>
-</span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> tokenizer_name
-</span></span><span style="display:flex;"><span>model_embeddings_extract_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama-3-embeddings.pth&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(tokenizer_name, model_name, model_embeddings_extract_file)
+</span></span><span style="display:flex;"><span>Loading checkpoint shards:   0% 0/4 [00:00&lt;?, ?it/s]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards:  25% 1/4 [00:11&lt;00:35, 11.77s/it]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards:  50% 2/4 [00:28&lt;00:29, 14.76s/it]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards:  75% 3/4 [00:50&lt;00:18, 18.06s/it]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 4/4 [00:51&lt;00:00, 11.28s/it]
+</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 4/4 [00:51&lt;00:00, 12.88s/it]
+</span></span><span style="display:flex;"><span>Extracted embeddings layer for meta-llama/Meta-Llama-3-8B: Embedding(128256, 4096)
 </span></span></code></pre></div>
         </main>
 
@@ -526,24 +537,7 @@
       <span class="username">jaju</span>
     </a>
   </span>
-    <script>
-        document.querySelectorAll('pre > code').forEach(function (codeBlock) {
-            var button = document.createElement('button');
-            button.className = 'copy-code-button';
-            button.type = 'button';
-            button.innerText = 'Copy';
-
-            var pre = codeBlock.parentNode;
-            if (pre.parentNode.classList.contains('highlight')) {
-                var highlight = pre.parentNode;
-                highlight.parentNode.insertBefore(button, highlight);
-            } else {
-                pre.parentNode.insertBefore(button, pre);
-            }
-            console.log(codeBlock);
-        });
-    </script>
-
+    
 </div>
 
     </footer>
