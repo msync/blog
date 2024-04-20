@@ -76,7 +76,11 @@
           </ol>
         </li>
         <li><a href="#wip-reminder">WIP Reminder</a></li>
-        <li><a href="#references">References</a></li>
+        <li><a href="#references">References</a>
+          <ol>
+            <li><a href="#unordered-papers">Unordered papers</a></li>
+          </ol>
+        </li>
         <li><a href="#supporting-code">Supporting Code</a>
           <ol>
             <li><a href="#pyproject-dot-toml">pyproject.toml</a></li>
@@ -107,7 +111,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-20 07:00:45 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-20 08:44:06 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Sat</span>,
                     <span class="day">20</span>
@@ -417,7 +421,8 @@
 <p>I&rsquo;d guess you agree it&rsquo;s <span class="underline">Queprayent</span>. Why? There&rsquo;s something about our languages that makes us conclude so. We have no rules to explain, but one (of multiple) possible explanations is how the vowels make the word pronounceable and hence more palatable to us. With techniques like subword tokenization or byte-pair encoding, it&rsquo;s possible to capture such nuances of a language.</p>
 <p>When training LLMs, we could use the word embeddings. But if we trained our LLM on an embeddings model that captures further lower-level language nuances, we can hope to train networks better and also hope to get better outcomes for the various tasks we imagine using the LLMs for. That&rsquo;s where using subword or byte-pair-encoded tokens come in.</p>
 <p>LLM models have their own embeddings that are distinct from embeddings created from more human-understandable semantic entities like dictionary words. In other words, <strong>each</strong> LLM gets to decide its own embeddings model to use and train on. When working with the model data, the embeddings model will be part of the distribution and only that can and will be used. (Use any other embedding model to encode before you feed to the model and don&rsquo;t be surprised to get garbage as output!)</p>
-<h2 id="wip-reminder">WIP Reminder</h2>
+<p>Let us look at an example embedding computed by <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><h2 id="wip-reminder">WIP Reminder</h2>
 <p>This section exists only to remind you, the unsuspecting reader, that this article is not complete.</p>
 <p>Currently, it is very very <del>very</del> incomplete.</p>
 <p>This section will keep updating - until it goes away completely. When the article is complete.</p>
@@ -429,6 +434,10 @@
 <li>The <a href="https://github.com/chrishayuk/embeddings">code repository</a> that goes along side the above video.</li>
 </ul>
 </li>
+</ul>
+<h3 id="unordered-papers">Unordered papers</h3>
+<ul>
+<li><a href="https://arxiv.org/abs/2401.06066"> DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models</a></li>
 </ul>
 <h2 id="supporting-code">Supporting Code</h2>
 <p>The supporting code not found in the snippets above can be found below.</p>
@@ -454,7 +463,17 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">build-backend</span> = <span style="color:#e6db74">&#34;poetry.core.masonry.api&#34;</span>
 </span></span></code></pre></div><h3 id="utils">Utils</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> cache
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> AutoTokenizer, AutoModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmbeddingModel</span>(nn<span style="color:#f92672">.</span>Module):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, vocab_size, embedding_dim):
+</span></span><span style="display:flex;"><span>        super(EmbeddingModel, self)<span style="color:#f92672">.</span>__init__()
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>embedding <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Embedding(num_embeddings<span style="color:#f92672">=</span>vocab_size, embedding_dim<span style="color:#f92672">=</span>embedding_dim)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, input_ids):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>embedding(input_ids)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_tokens</span>(tokenizer, input_ids_tensor):
 </span></span><span style="display:flex;"><span>    token_texts <span style="color:#f92672">=</span> [tokenizer<span style="color:#f92672">.</span>decode([token_id], skip_special_tokens<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">for</span> token_id <span style="color:#f92672">in</span> input_ids_tensor[<span style="color:#ae81ff">0</span>]]
@@ -475,6 +494,19 @@
 </span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_input_embeddings()
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Extracted embeddings layer for </span><span style="color:#e6db74">{</span>model_name<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>embeddings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    torch<span style="color:#f92672">.</span>save(embeddings<span style="color:#f92672">.</span>state_dict(), embeddings_filename)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Optimizing on load times for REPL-workflows - we cache</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@cache</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_embeddings</span>(embeddings_filename):
+</span></span><span style="display:flex;"><span>    embeddings_data <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>load(embeddings_filename)
+</span></span><span style="display:flex;"><span>    weights <span style="color:#f92672">=</span> embeddings_data[<span style="color:#e6db74">&#34;weight&#34;</span>]
+</span></span><span style="display:flex;"><span>    vocab_size, dimensions <span style="color:#f92672">=</span> weights<span style="color:#f92672">.</span>size()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> EmbeddingModel(vocab_size, dimensions)
+</span></span><span style="display:flex;"><span>    embeddings<span style="color:#f92672">.</span>embedding<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> weights
+</span></span><span style="display:flex;"><span>    embeddings<span style="color:#f92672">.</span>eval()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> embeddings
 </span></span></code></pre></div><p>Sanity check</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> utils
 </span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(mistral_model_name, mistral_model_embeddings_extract_file)
@@ -486,11 +518,7 @@
 </span></span><span style="display:flex;"><span>Extracted embeddings layer for mistralai/Mistral-7B-v0.1: Embedding(32000, 4096)
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> utils
 </span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(llama3_model_name, llama3_model_embeddings_extract_file)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-</span></span><span style="display:flex;"><span>To disable this warning, you can either:
-</span></span><span style="display:flex;"><span>	- Avoid using `tokenizers` before the fork if possible
-</span></span><span style="display:flex;"><span>	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-</span></span><span style="display:flex;"><span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Loading checkpoint shards:   0% 0/4 [00:00&lt;?, ?it/s]
 </span></span><span style="display:flex;"><span>Loading checkpoint shards:  25% 1/4 [00:11&lt;00:35, 11.77s/it]
 </span></span><span style="display:flex;"><span>Loading checkpoint shards:  50% 2/4 [00:28&lt;00:29, 14.76s/it]
@@ -498,6 +526,14 @@
 </span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 4/4 [00:51&lt;00:00, 11.28s/it]
 </span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 4/4 [00:51&lt;00:00, 12.88s/it]
 </span></span><span style="display:flex;"><span>Extracted embeddings layer for meta-llama/Meta-Llama-3-8B: Embedding(128256, 4096)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>embeddings <span style="color:#f92672">=</span> load_embeddings(llama3_model_embeddings_extract_file)
+</span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(llama3_model_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(tokenizer(<span style="color:#e6db74">&#34;Hello, world!&#34;</span>))
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+</span></span><span style="display:flex;"><span>{&#39;input_ids&#39;: [9906, 11, 1917, 0], &#39;attention_mask&#39;: [1, 1, 1, 1]}
 </span></span></code></pre></div>
         </main>
 
@@ -537,7 +573,7 @@
       <span class="username">jaju</span>
     </a>
   </span>
-    
+
 </div>
 
     </footer>
