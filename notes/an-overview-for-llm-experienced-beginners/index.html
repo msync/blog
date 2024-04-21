@@ -62,6 +62,7 @@
             <li><a href="#quick-supporting-glossary">Quick Supporting Glossary</a></li>
             <li><a href="#terms-resources-tools">Terms, Resources, Tools</a></li>
             <li><a href="#code-constants">Code Constants</a></li>
+            <li><a href="#code-preamble">Code Preamble</a></li>
           </ol>
         </li>
         <li><a href="#tokenization">Tokenization</a>
@@ -85,6 +86,7 @@
           <ol>
             <li><a href="#pyproject-dot-toml">pyproject.toml</a></li>
             <li><a href="#utils">Utils</a></li>
+            <li><a href="#code-files">Code Files</a></li>
           </ol>
         </li>
       </ol>
@@ -111,10 +113,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-20 08:44:06 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-21 23:01:32 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Sat</span>,
-                    <span class="day">20</span>
+                    <span class="weekday">Sun</span>,
+                    <span class="day">21</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -202,6 +204,23 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>llama3_model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama/Meta-Llama-3-8B&#34;</span>
 </span></span><span style="display:flex;"><span>llama3_model_embeddings_extract_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama-3-embeddings.pth&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>glove_model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;glove-wiki-gigaword-100&#34;</span>
+</span></span></code></pre></div><h3 id="code-preamble">Code Preamble</h3>
+<p>To keep out noise, below are all imports and some setup code for the data used later.</p>
+<h4 id="imports">Imports</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> constants <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> AutoTokenizer
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> gensim <span style="color:#f92672">import</span> downloader <span style="color:#75715e"># Gensim has its own downloader</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA
+</span></span></code></pre></div><h4 id="data-prep">Data prep</h4>
+<p>Please wait until reading the <strong>Embeddings</strong> section to understand what is happening in the following code section.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>extract_embeddings(mistral_model_name, mistral_model_embeddings_extract_file)
+</span></span><span style="display:flex;"><span>extract_embeddings(llama3_model_name, llama3_model_embeddings_extract_file)
 </span></span></code></pre></div><h2 id="tokenization">Tokenization</h2>
 <p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
 <details>
@@ -219,12 +238,7 @@
 <p>Let&rsquo;s look at the tokenization of a model <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>.</p>
 <p>We use the <em>transformers</em> library from Huggingface. It has some pretty nifty <em>Auto*</em> classes that can infer the format without any effort.</p>
 <p>Also note that we use the model name as is while passing to the <em>Auto*</em> methods, because the models are self-contained - they include the token vocabulary, the embeddings architecture, apart from the trained parameters for the language tasks.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> AutoTokenizer
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> print_tokens
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mistralai/Mistral-7B-v0.1&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(model_name)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(mistral_model_name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The vocabulary size is </span><span style="color:#e6db74">{</span>len(tokenizer)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
@@ -265,12 +279,7 @@
 </span></span><span style="display:flex;"><span>==============================
 </span></span></code></pre></div><p>Look at the tokens closely. Familiar word-level tokens are only incidental - depending on how Mistral chose the size of the vocabulary and the strategy, the tokens have been generated. You can observe the token vocabulary size - it&rsquo;s a round number. And that was a choice made ahead of time.</p>
 <p>Let&rsquo;s run the above with the <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a> as well, for a comparison. What differences do you notice?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> AutoTokenizer
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> print_tokens
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;meta-llama/Meta-Llama-3-8B&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(model_name)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(llama3_model_name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The vocabulary size is </span><span style="color:#e6db74">{</span>len(tokenizer)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
@@ -327,29 +336,26 @@
 <li>The dimensions of the embeddings vectors. This is another parameter chosen by the working group - to represent a very high-dimensional, sparse dataset in a lower-dimensional, more information-dense representation.</li>
 </ul>
 <!--listend-->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> gensim <span style="color:#f92672">import</span> downloader <span style="color:#75715e"># Gensim has its own downloader</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>model_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;glove-wiki-gigaword-100&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> downloader<span style="color:#f92672">.</span>load(model_name)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>glove_model <span style="color:#f92672">=</span> downloader<span style="color:#f92672">.</span>load(glove_model_name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>example_word <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tower&#34;</span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Vector representation of the word </span><span style="color:#e6db74">{</span>example_word<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Vector is of size </span><span style="color:#e6db74">{</span>len(model[example_word])<span style="color:#e6db74">}</span><span style="color:#e6db74"> x 1&#34;</span>)
-</span></span><span style="display:flex;"><span>print(model[example_word])
+</span></span><span style="display:flex;"><span>print(glove_model[example_word])
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>vocabulary_size <span style="color:#f92672">=</span> len(model<span style="color:#f92672">.</span>index_to_key)
+</span></span><span style="display:flex;"><span>vocabulary_size <span style="color:#f92672">=</span> len(glove_model<span style="color:#f92672">.</span>index_to_key)
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;First 10 words found in the model out of </span><span style="color:#e6db74">{</span>vocabulary_size<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> index, word <span style="color:#f92672">in</span> enumerate(model<span style="color:#f92672">.</span>index_to_key):
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> index, word <span style="color:#f92672">in</span> enumerate(glove_model<span style="color:#f92672">.</span>index_to_key):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> index <span style="color:#f92672">==</span> <span style="color:#ae81ff">10</span>:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;word </span><span style="color:#e6db74">{</span>index<span style="color:#e6db74">}</span><span style="color:#e6db74"> of </span><span style="color:#e6db74">{</span>vocabulary_size<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>word<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Words similar to &#39;sea&#39;&#34;</span>)
-</span></span><span style="display:flex;"><span>print(model<span style="color:#f92672">.</span>most_similar(<span style="color:#e6db74">&#34;sea&#34;</span>, topn<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>print(glove_model<span style="color:#f92672">.</span>most_similar(<span style="color:#e6db74">&#34;sea&#34;</span>, topn<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Words similar to &#39;dark&#39;&#34;</span>)
-</span></span><span style="display:flex;"><span>print(model<span style="color:#f92672">.</span>most_similar(<span style="color:#e6db74">&#34;dark&#34;</span>, topn<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>print(glove_model<span style="color:#f92672">.</span>most_similar(<span style="color:#e6db74">&#34;dark&#34;</span>, topn<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>))
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Vector representation of the word tower
 </span></span><span style="display:flex;"><span>Vector is of size 100 x 1
 </span></span><span style="display:flex;"><span>[ 0.49798   -0.19195   -0.042257   0.30716    0.14201   -0.17802
@@ -387,13 +393,9 @@
 </span></span></code></pre></div><h4 id="visualizing-the-embeddings">Visualizing the Embeddings</h4>
 <p>Let&rsquo;s try to plot the above. There is no easy way to visualize a 100-D space in which the embeddings lie, so we use a technique called the <strong>Principal Component Analysis (PCA)</strong> to identify a transformed sub-space where the dimensions faithfully capture (within the limitation of the reduced dimensionality) the key distance metrics between our points of interest in the projected space. Unsurprisingly, words that occur in similar contexts show up closer.</p>
 <p>As always, there&rsquo;s a Python package to do that. The code to plot is adapted from <a href="https://web.stanford.edu/class/cs224n/materials/Gensim%20word%20vector%20visualization.html">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.decomposition <span style="color:#f92672">import</span> PCA
-</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;ggplot&#39;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>style<span style="color:#f92672">.</span>use(<span style="color:#e6db74">&#39;ggplot&#39;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">display_pca_scatterplot</span>(model, words):
-</span></span><span style="display:flex;"><span>    words <span style="color:#f92672">=</span> [word <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> model<span style="color:#f92672">.</span>vocab]
 </span></span><span style="display:flex;"><span>    word_vectors <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([model[w] <span style="color:#66d9ef">for</span> w <span style="color:#f92672">in</span> words])
 </span></span><span style="display:flex;"><span>    twodim <span style="color:#f92672">=</span> PCA()<span style="color:#f92672">.</span>fit_transform(word_vectors)[:,:<span style="color:#ae81ff">2</span>]
 </span></span><span style="display:flex;"><span>
@@ -402,9 +404,9 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> word, (x, y) <span style="color:#f92672">in</span> zip(words, twodim):
 </span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>text(x <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.05</span>, y <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.05</span>, word)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>display_pca_scatterplot(model, [<span style="color:#e6db74">&#34;sea&#34;</span>, <span style="color:#e6db74">&#34;waters&#34;</span>, <span style="color:#e6db74">&#34;mediterranean&#34;</span>, <span style="color:#e6db74">&#34;arctic&#34;</span>, <span style="color:#e6db74">&#34;tea&#34;</span>, <span style="color:#e6db74">&#34;giant&#34;</span>, <span style="color:#e6db74">&#34;lion&#34;</span>, <span style="color:#e6db74">&#34;hockey&#34;</span>])
+</span></span><span style="display:flex;"><span>display_pca_scatterplot(glove_model, [<span style="color:#e6db74">&#34;sea&#34;</span>, <span style="color:#e6db74">&#34;waters&#34;</span>, <span style="color:#e6db74">&#34;mediterranean&#34;</span>, <span style="color:#e6db74">&#34;arctic&#34;</span>, <span style="color:#e6db74">&#34;tea&#34;</span>, <span style="color:#e6db74">&#34;giant&#34;</span>, <span style="color:#e6db74">&#34;lion&#34;</span>, <span style="color:#e6db74">&#34;hockey&#34;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;gensim-word-similarities.png&#34;</span>)
-</span></span></code></pre></div><figure><img src="/ox-hugo/gensim-word-similarities.png">
+</span></span></code></pre></div><figure><img src="/notes/an-overview-for-llm-experienced-beginners/gensim-word-similarities.png">
 </figure>
 
 <style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
@@ -422,7 +424,37 @@
 <p>When training LLMs, we could use the word embeddings. But if we trained our LLM on an embeddings model that captures further lower-level language nuances, we can hope to train networks better and also hope to get better outcomes for the various tasks we imagine using the LLMs for. That&rsquo;s where using subword or byte-pair-encoded tokens come in.</p>
 <p>LLM models have their own embeddings that are distinct from embeddings created from more human-understandable semantic entities like dictionary words. In other words, <strong>each</strong> LLM gets to decide its own embeddings model to use and train on. When working with the model data, the embeddings model will be part of the distribution and only that can and will be used. (Use any other embedding model to encode before you feed to the model and don&rsquo;t be surprised to get garbage as output!)</p>
 <p>Let us look at an example embedding computed by <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"></code></pre></div><h2 id="wip-reminder">WIP Reminder</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>llama3_embeddings <span style="color:#f92672">=</span> load_embeddings(llama3_model_embeddings_extract_file)
+</span></span><span style="display:flex;"><span>llama3_tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(llama3_model_name)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>text_for_embeddings <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;The oceans and the seas are filled with salty water, cried the earth.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># We need the return_tensors to be set to pt because the embeddings model expects a tensor in that format</span>
+</span></span><span style="display:flex;"><span>text_tokens <span style="color:#f92672">=</span> llama3_tokenizer(text_for_embeddings, truncation<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, return_tensors<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pt&#34;</span>)
+</span></span><span style="display:flex;"><span>input_ids <span style="color:#f92672">=</span> text_tokens[<span style="color:#e6db74">&#34;input_ids&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The input ids are: </span><span style="color:#e6db74">{</span>input_ids<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>input_embeddings <span style="color:#f92672">=</span> llama3_embeddings(input_ids)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;===== Embeddings =====&#34;</span>)
+</span></span><span style="display:flex;"><span>print(input_embeddings)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+</span></span><span style="display:flex;"><span>Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+</span></span><span style="display:flex;"><span>The input ids are: tensor([[  791, 54280,   323,   279, 52840,   527, 10409,   449, 74975,  3090,
+</span></span><span style="display:flex;"><span>            11, 39169,   279,  9578,    13]])
+</span></span><span style="display:flex;"><span>===== Embeddings =====
+</span></span><span style="display:flex;"><span>tensor([[[ 3.3760e-04, -3.0670e-03, -6.7139e-04,  ...,  7.0801e-03,
+</span></span><span style="display:flex;"><span>          -2.1057e-03,  2.6245e-03],
+</span></span><span style="display:flex;"><span>         [-1.1719e-02, -1.5259e-02,  1.9226e-03,  ...,  3.6469e-03,
+</span></span><span style="display:flex;"><span>           7.9346e-03, -9.8877e-03],
+</span></span><span style="display:flex;"><span>         [-5.5695e-04, -3.0365e-03,  8.2779e-04,  ...,  2.0313e-04,
+</span></span><span style="display:flex;"><span>           1.2589e-03,  5.0964e-03],
+</span></span><span style="display:flex;"><span>         ...,
+</span></span><span style="display:flex;"><span>         [ 7.1335e-04, -2.0294e-03, -1.2436e-03,  ...,  1.0910e-03,
+</span></span><span style="display:flex;"><span>          -5.7373e-03,  2.9297e-03],
+</span></span><span style="display:flex;"><span>         [ 6.6223e-03, -9.5215e-03, -5.0964e-03,  ...,  1.2741e-03,
+</span></span><span style="display:flex;"><span>           3.4790e-03,  3.8147e-03],
+</span></span><span style="display:flex;"><span>         [-8.7738e-04, -5.5313e-04, -1.4603e-05,  ...,  1.6403e-03,
+</span></span><span style="display:flex;"><span>           3.3951e-04,  1.7166e-03]]], grad_fn=&lt;EmbeddingBackward0&gt;)
+</span></span></code></pre></div><h2 id="wip-reminder">WIP Reminder</h2>
 <p>This section exists only to remind you, the unsuspecting reader, that this article is not complete.</p>
 <p>Currently, it is very very <del>very</del> incomplete.</p>
 <p>This section will keep updating - until it goes away completely. When the article is complete.</p>
@@ -457,6 +489,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">matplotlib</span> = <span style="color:#e6db74">&#34;^3.8.4&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">torch</span> = <span style="color:#e6db74">&#34;^2.2.2&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">huggingface-hub</span> = <span style="color:#e6db74">&#34;^0.22.2&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scipy</span> = <span style="color:#e6db74">&#34;&lt;1.13&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">build-system</span>]
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">requires</span> = [<span style="color:#e6db74">&#34;poetry-core&#34;</span>]
@@ -474,6 +507,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">forward</span>(self, input_ids):
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>embedding(input_ids)
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">print_tokens</span>(tokenizer, input_ids_tensor):
 </span></span><span style="display:flex;"><span>    token_texts <span style="color:#f92672">=</span> [tokenizer<span style="color:#f92672">.</span>decode([token_id], skip_special_tokens<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>) <span style="color:#66d9ef">for</span> token_id <span style="color:#f92672">in</span> input_ids_tensor[<span style="color:#ae81ff">0</span>]]
@@ -507,30 +541,15 @@
 </span></span><span style="display:flex;"><span>    embeddings<span style="color:#f92672">.</span>embedding<span style="color:#f92672">.</span>weight<span style="color:#f92672">.</span>data <span style="color:#f92672">=</span> weights
 </span></span><span style="display:flex;"><span>    embeddings<span style="color:#f92672">.</span>eval()
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> embeddings
-</span></span></code></pre></div><p>Sanity check</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> utils
-</span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(mistral_model_name, mistral_model_embeddings_extract_file)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Loading checkpoint shards:   0% 0/2 [00:00&lt;?, ?it/s]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards:  50% 1/2 [00:24&lt;00:24, 24.09s/it]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 2/2 [00:40&lt;00:00, 19.37s/it]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 2/2 [00:40&lt;00:00, 20.07s/it]
-</span></span><span style="display:flex;"><span>Extracted embeddings layer for mistralai/Mistral-7B-v0.1: Embedding(32000, 4096)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> utils
-</span></span><span style="display:flex;"><span>utils<span style="color:#f92672">.</span>extract_embeddings(llama3_model_name, llama3_model_embeddings_extract_file)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Loading checkpoint shards:   0% 0/4 [00:00&lt;?, ?it/s]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards:  25% 1/4 [00:11&lt;00:35, 11.77s/it]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards:  50% 2/4 [00:28&lt;00:29, 14.76s/it]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards:  75% 3/4 [00:50&lt;00:18, 18.06s/it]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 4/4 [00:51&lt;00:00, 11.28s/it]
-</span></span><span style="display:flex;"><span>Loading checkpoint shards: 100% 4/4 [00:51&lt;00:00, 12.88s/it]
-</span></span><span style="display:flex;"><span>Extracted embeddings layer for meta-llama/Meta-Llama-3-8B: Embedding(128256, 4096)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> utils <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span>embeddings <span style="color:#f92672">=</span> load_embeddings(llama3_model_embeddings_extract_file)
+</span></span></code></pre></div><h3 id="code-files">Code Files</h3>
+<ul>
+<li><a href="/deep-learning/constants.py">constants.py</a></li>
+<li><a href="utils.py">utils.py</a></li>
+<li><a href="llm_beginner_overview.py">llm_beginner_overview.py</a></li>
+</ul>
+<p>Sanity check</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>embeddings <span style="color:#f92672">=</span> load_embeddings(llama3_model_embeddings_extract_file)
 </span></span><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(llama3_model_name)
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(tokenizer(<span style="color:#e6db74">&#34;Hello, world!&#34;</span>))
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
 </span></span><span style="display:flex;"><span>{&#39;input_ids&#39;: [9906, 11, 1917, 0], &#39;attention_mask&#39;: [1, 1, 1, 1]}
