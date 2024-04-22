@@ -1,4 +1,4 @@
-# [[file:llm.org::*Code Constants][Code Constants:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Code Constants][Code Constants:1]]
 mistral_model_name = "mistralai/Mistral-7B-v0.1"
 mistral_model_embeddings_extract_file = "mistral-embeddings.pth"
 

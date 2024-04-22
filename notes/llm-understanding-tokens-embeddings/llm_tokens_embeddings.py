@@ -1,4 +1,4 @@
-# [[file:llm.org::*Imports][Imports:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Imports][Imports:1]]
 from utils import *
 from constants import *
 import numpy as np
@@ -9,12 +9,12 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 # Imports:1 ends here
 
-# [[file:llm.org::*Data prep][Data prep:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Data prep][Data prep:1]]
 extract_embeddings(mistral_model_name, mistral_model_embeddings_extract_file)
 extract_embeddings(llama3_model_name, llama3_model_embeddings_extract_file)
 # Data prep:1 ends here
 
-# [[file:llm.org::*Exploring Tokenization in Code][Exploring Tokenization in Code:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Exploring Tokenization in Code][Exploring Tokenization in Code:1]]
 tokenizer = AutoTokenizer.from_pretrained(mistral_model_name)
 
 print(f"The vocabulary size is {len(tokenizer)}")
@@ -28,7 +28,7 @@ input_ids = inputs["input_ids"]
 print_tokens(tokenizer, input_ids)
 # Exploring Tokenization in Code:1 ends here
 
-# [[file:llm.org::*Exploring Tokenization in Code][Exploring Tokenization in Code:2]]
+# [[file:llm-understanding-tokens-embeddings.org::*Exploring Tokenization in Code][Exploring Tokenization in Code:2]]
 tokenizer = AutoTokenizer.from_pretrained(llama3_model_name)
 
 print(f"The vocabulary size is {len(tokenizer)}")
@@ -42,7 +42,7 @@ input_ids = inputs["input_ids"]
 print_tokens(tokenizer, input_ids)
 # Exploring Tokenization in Code:2 ends here
 
-# [[file:llm.org::*Word Embeddings][Word Embeddings:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Word Embeddings][Word Embeddings:1]]
 glove_model = downloader.load(glove_model_name)
 
 example_word = "tower"
@@ -64,7 +64,7 @@ print("Words similar to 'dark'")
 print(glove_model.most_similar("dark", topn=5))
 # Word Embeddings:1 ends here
 
-# [[file:llm.org::*Visualizing the Embeddings][Visualizing the Embeddings:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Visualizing the Embeddings][Visualizing the Embeddings:1]]
 plt.style.use('ggplot')
 
 def display_pca_scatterplot(model, words):
@@ -80,7 +80,7 @@ display_pca_scatterplot(glove_model, ["sea", "waters", "mediterranean", "arctic"
 plt.savefig("gensim-word-similarities.png")
 # Visualizing the Embeddings:1 ends here
 
-# [[file:llm.org::*LLM Model Embeddings][LLM Model Embeddings:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*LLM Model Embeddings][LLM Model Embeddings:1]]
 llama3_embeddings = load_embeddings(llama3_model_embeddings_extract_file)
 llama3_tokenizer = AutoTokenizer.from_pretrained(llama3_model_name)
 
@@ -95,7 +95,7 @@ print("===== Embeddings =====")
 print(input_embeddings)
 # LLM Model Embeddings:1 ends here
 
-# [[file:llm.org::*Code Files][Code Files:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Code Files][Code Files:1]]
 embeddings = load_embeddings(llama3_model_embeddings_extract_file)
 tokenizer = AutoTokenizer.from_pretrained(llama3_model_name)
 print(tokenizer("Hello, world!"))
