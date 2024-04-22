@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>An Overview of LLMs for Experienced Beginners | Sync&#39;ing from Memory</title>
-<meta property="og:title" content="An Overview of LLMs for Experienced Beginners"/>
+<title>LLMs: Understanding Tokens and Embeddings | Sync&#39;ing from Memory</title>
+<meta property="og:title" content="LLMs: Understanding Tokens and Embeddings"/>
 
-<meta property="og:description" content="An overview of Large Language Models for experienced professsionals who are new to the field."/>
+<meta property="og:description" content="An overview of what tokens and embeddings mean in the context of LLMs - and related models"/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@jaju"/>
@@ -48,19 +48,11 @@
         <li><a href="#purpose">Purpose</a>
           <ol>
             <li><a href="#assumptions">Assumptions</a></li>
-            <li><a href="#outcomes">Outcomes</a></li>
           </ol>
         </li>
-        <li><a href="#preface">Preface</a>
-          <ol>
-            <li><a href="#credits">Credits</a></li>
-            <li><a href="#general-structure">General Structure</a></li>
-          </ol>
-        </li>
-        <li><a href="#important-background">Important Background</a>
+        <li><a href="#background">Background</a>
           <ol>
             <li><a href="#quick-supporting-glossary">Quick Supporting Glossary</a></li>
-            <li><a href="#terms-resources-tools">Terms, Resources, Tools</a></li>
           </ol>
         </li>
         <li><a href="#tokenization">Tokenization</a>
@@ -96,9 +88,9 @@
     <article itemscope itemtype="http://schema.org/CreativeWork">
 
         <header>
-            <h1 itemprop="title">An Overview of LLMs for Experienced Beginners</h1>
+            <h1 itemprop="title">LLMs: Understanding Tokens and Embeddings</h1>
             <summary>
-                An overview of Large Language Models for experienced professsionals who are new to the field.
+                An overview of what tokens and embeddings mean in the context of LLMs - and related models
             </summary>
             <div class="meta">
                 
@@ -111,10 +103,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-21 23:29:50 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-22 10:52:21 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Sun</span>,
-                    <span class="day">21</span>
+                    <span class="weekday">Mon</span>,
+                    <span class="day">22</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -125,45 +117,15 @@
 
         <main>
             <h2 id="purpose">Purpose</h2>
+<p>Most engineers coming from a different background may not be familiar with the terms tokens and embeddings used in the context of text-focused deep learning techniques. This article introduces you to those terms from an intuitions perspective, with code in Python to give it more grounding.</p>
+<p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them. I&rsquo;ve liberally used material from the references pointed to.</p>
 <h3 id="assumptions">Assumptions</h3>
 <ul>
 <li>You, the reader, are generally experienced and have a reasonable background in computer science.</li>
 <li>You are not lost when hearing in on discussions involving Linear Algebra, Probability/Statistics, text-processing, <span class="underline">even if you are not contributing</span>.</li>
 </ul>
-<h3 id="outcomes">Outcomes</h3>
-<ul>
-<li>A good intuitive understanding of the LLM space.
-<ul>
-<li>Identifying general terms (both common ones and some key Proper Nouns) better with their purposes. (Eg: BERT, GloVe, GPT etc.)</li>
-</ul>
-</li>
-<li>A good understanding of the model architecture - the various layers, and what their sizes, the inputs and outputs indicate
-<ul>
-<li>Additionally, by way of analogies, an ability to relate to other architectures and find your ways further.</li>
-</ul>
-</li>
-<li>Better familiarity with the software tools that exist in this space</li>
-<li>Awareness of community efforts at collating datasets, open models and such.</li>
-</ul>
-<h2 id="preface">Preface</h2>
-<p>The goal is not to be rigorous, but to be mostly accurate and express the key ideas well.</p>
-<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
-<div class="org-center">
-<p>A <em>good intuition</em> of math (especially <span class="underline">Linear Algebra</span> and <span class="underline">basic calculus</span>) will go a long way in helping to appreciate the field. You just need the intuition - although rigor will take you much further.</p>
-</div>
-<h3 id="credits">Credits</h3>
-<p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them. I&rsquo;ve liberally used material from the references pointed to.</p>
-<h3 id="general-structure">General Structure</h3>
-<p>In each section, we will have roughly the following order.</p>
-<dl>
-<dt>Summary Overview</dt>
-<dd>Not exactly a summary, but nowhere close to being an article in itself.</dd>
-<dt>Optionally, Dip Your Toes</dt>
-<dd>Code samples that enable some grounding of the overview theory</dd>
-<dt>Optionally, Further Reading</dt>
-<dd>Materials that go deeper on the topic of the current section. Typically when I feel the summary overview does not do justice. But reading it would not be necessary to follow the remaining of this article.</dd>
-</dl>
-<h2 id="important-background">Important Background</h2>
+<h2 id="background">Background</h2>
+<p>Important terms and concepts that you should be aware of</p>
 <h3 id="quick-supporting-glossary">Quick Supporting Glossary</h3>
 <dl>
 <dt>Python</dt>
@@ -181,19 +143,12 @@
 <dt>Data Card</dt>
 <dd>Likewise, for published datasets.</dd>
 </dl>
-<h3 id="terms-resources-tools">Terms, Resources, Tools</h3>
 <p>When we refer to a model using an <span class="underline">&lt;org-id/model-name&gt;</span> convention - example, <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>. This points to the organization <span class="underline">mistralai</span>&rsquo;s <span class="underline">Mistral 7B v0.1</span> model repository on Huggingface.</p>
 <p>Models are generally very large in size, and you do <span class="underline">not</span> want to download them again. More often than not, libraries aware of Huggingface manage downloading (and caching) model files from Huggingface and it&rsquo;s only the first time you access a model do you see output on your screens showing transfers in progress. The second time onwards, locally cached data is used. Cached files are typically under <span class="underline">$HOME/.cache/huggingface</span>.</p>
 <p>If you&rsquo;d like to manage your own downloads and caching, you can use the official Huggingface tools like</p>
 <ul>
 <li><a href="https://huggingface.co/docs/huggingface_hub/index">huggingface_hub</a></li>
 <li><a href="https://huggingface.co/docs/huggingface_hub/en/guides/cli">huggingface-cli</a></li>
-</ul>
-<p>Generally preferred (and referred to models) in this write-up are</p>
-<ul>
-<li><a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a></li>
-<li><a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a></li>
-<li><a href="https://huggingface.co/google/gemma-2b">google/gemma-2b</a></li>
 </ul>
 <p>Finally, for getting the code used in this article, you&rsquo;ll find links to download them at the end of this article.</p>
 <h2 id="tokenization">Tokenization</h2>
@@ -316,7 +271,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>example_word <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;tower&#34;</span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Vector representation of the word </span><span style="color:#e6db74">{</span>example_word<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Vector is of size </span><span style="color:#e6db74">{</span>len(model[example_word])<span style="color:#e6db74">}</span><span style="color:#e6db74"> x 1&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Vector is of size </span><span style="color:#e6db74">{</span>len(glove_model[example_word])<span style="color:#e6db74">}</span><span style="color:#e6db74"> x 1&#34;</span>)
 </span></span><span style="display:flex;"><span>print(glove_model[example_word])
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>vocabulary_size <span style="color:#f92672">=</span> len(glove_model<span style="color:#f92672">.</span>index_to_key)
@@ -381,7 +336,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>display_pca_scatterplot(glove_model, [<span style="color:#e6db74">&#34;sea&#34;</span>, <span style="color:#e6db74">&#34;waters&#34;</span>, <span style="color:#e6db74">&#34;mediterranean&#34;</span>, <span style="color:#e6db74">&#34;arctic&#34;</span>, <span style="color:#e6db74">&#34;tea&#34;</span>, <span style="color:#e6db74">&#34;giant&#34;</span>, <span style="color:#e6db74">&#34;lion&#34;</span>, <span style="color:#e6db74">&#34;hockey&#34;</span>])
 </span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#34;gensim-word-similarities.png&#34;</span>)
-</span></span></code></pre></div><figure><img src="/notes/an-overview-of-llms-for-experienced-beginners/gensim-word-similarities.png">
+</span></span></code></pre></div><figure><img src="/notes/llm-understanding-tokens-embeddings/gensim-word-similarities.png">
 </figure>
 
 <style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
@@ -470,7 +425,8 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">requires</span> = [<span style="color:#e6db74">&#34;poetry-core&#34;</span>]
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">build-backend</span> = <span style="color:#e6db74">&#34;poetry.core.masonry.api&#34;</span>
 </span></span></code></pre></div><h3 id="utils">Utils</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> functools <span style="color:#f92672">import</span> cache
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> transformers <span style="color:#f92672">import</span> AutoTokenizer, AutoModel
@@ -499,10 +455,13 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_embeddings</span>(model_name, embeddings_filename):
-</span></span><span style="display:flex;"><span>    model <span style="color:#f92672">=</span> AutoModel<span style="color:#f92672">.</span>from_pretrained(model_name)
-</span></span><span style="display:flex;"><span>    embeddings <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_input_embeddings()
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Extracted embeddings layer for </span><span style="color:#e6db74">{</span>model_name<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>embeddings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>    torch<span style="color:#f92672">.</span>save(embeddings<span style="color:#f92672">.</span>state_dict(), embeddings_filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(embeddings_filename):
+</span></span><span style="display:flex;"><span>        model <span style="color:#f92672">=</span> AutoModel<span style="color:#f92672">.</span>from_pretrained(model_name)
+</span></span><span style="display:flex;"><span>        embeddings <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_input_embeddings()
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Extracted embeddings layer for </span><span style="color:#e6db74">{</span>model_name<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>embeddings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        torch<span style="color:#f92672">.</span>save(embeddings<span style="color:#f92672">.</span>state_dict(), embeddings_filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;File </span><span style="color:#e6db74">{</span>embeddings_filename<span style="color:#e6db74">}</span><span style="color:#e6db74"> already exists...&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Optimizing on load times for REPL-workflows - we cache</span>

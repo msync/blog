@@ -6,14 +6,21 @@
     <description>Recent content in Notes on Sync&#39;ing from Memory</description>
     <generator>Hugo 0.125.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Apr 2024 23:29:50 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2024 10:52:21 +0530</lastBuildDate>
     <atom:link href="https://msync.org/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Overview of LLMs for Experienced Beginners</title>
-      <link>https://msync.org/notes/an-overview-of-llms-for-experienced-beginners/</link>
+      <link>https://msync.org/notes/llm-for-experienced-beginners/</link>
       <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
-      <guid>https://msync.org/notes/an-overview-of-llms-for-experienced-beginners/</guid>
+      <guid>https://msync.org/notes/llm-for-experienced-beginners/</guid>
       <description>An overview of Large Language Models for experienced professsionals who are new to the field.</description>
+    </item>
+    <item>
+      <title>LLMs: Understanding Tokens and Embeddings</title>
+      <link>https://msync.org/notes/llm-understanding-tokens-embeddings/</link>
+      <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
+      <guid>https://msync.org/notes/llm-understanding-tokens-embeddings/</guid>
+      <description>An overview of what tokens and embeddings mean in the context of LLMs - and related models</description>
     </item>
     <item>
       <title>MLX</title>
@@ -31,16 +38,16 @@
     </item>
     <item>
       <title>Notes for Deep Learning with Python</title>
-      <link>https://msync.org/notes/notes-for-deep-learning-with-python/</link>
+      <link>https://msync.org/notes/deep-learning-with-python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>https://msync.org/notes/notes-for-deep-learning-with-python/</guid>
+      <guid>https://msync.org/notes/deep-learning-with-python/</guid>
       <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
     <item>
       <title>JS Quick Restart for the Impatient</title>
-      <link>https://msync.org/notes/js-quick-restart-for-the-impatient/</link>
+      <link>https://msync.org/notes/javascript-quick-restart/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
-      <guid>https://msync.org/notes/js-quick-restart-for-the-impatient/</guid>
+      <guid>https://msync.org/notes/javascript-quick-restart/</guid>
       <description>For polyglots who can&amp;rsquo;t keep too many languages in their heads and need a deep refresher.</description>
     </item>
     <item>
@@ -52,9 +59,9 @@
     </item>
     <item>
       <title>Org-mode Quick Guide</title>
-      <link>https://msync.org/notes/org-mode-quick-guide/</link>
+      <link>https://msync.org/notes/orgguide/</link>
       <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      <guid>https://msync.org/notes/org-mode-quick-guide/</guid>
+      <guid>https://msync.org/notes/orgguide/</guid>
       <description>Summarized guide for features I commonly use, for quick reference.</description>
     </item>
   </channel>

@@ -47,7 +47,7 @@ glove_model = downloader.load(glove_model_name)
 
 example_word = "tower"
 print(f"Vector representation of the word {example_word}")
-print(f"Vector is of size {len(model[example_word])} x 1")
+print(f"Vector is of size {len(glove_model[example_word])} x 1")
 print(glove_model[example_word])
 
 vocabulary_size = len(glove_model.index_to_key)

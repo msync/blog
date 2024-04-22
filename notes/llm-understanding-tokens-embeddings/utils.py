@@ -1,4 +1,5 @@
 # [[file:llm.org::*Utils][Utils:1]]
+import os
 import torch
 import torch.nn as nn
 from functools import cache
@@ -28,10 +29,13 @@ def print_tokens(tokenizer, input_ids_tensor):
 
 
 def extract_embeddings(model_name, embeddings_filename):
-    model = AutoModel.from_pretrained(model_name)
-    embeddings = model.get_input_embeddings()
-    print(f"Extracted embeddings layer for {model_name}: {embeddings}")
-    torch.save(embeddings.state_dict(), embeddings_filename)
+    if not os.path.isfile(embeddings_filename):
+        model = AutoModel.from_pretrained(model_name)
+        embeddings = model.get_input_embeddings()
+        print(f"Extracted embeddings layer for {model_name}: {embeddings}")
+        torch.save(embeddings.state_dict(), embeddings_filename)
+    else:
+        print(f"File {embeddings_filename} already exists...")
 
 
 # Optimizing on load times for REPL-workflows - we cache
