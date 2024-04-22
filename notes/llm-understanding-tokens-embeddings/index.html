@@ -52,7 +52,8 @@
         </li>
         <li><a href="#background">Background</a>
           <ol>
-            <li><a href="#quick-supporting-glossary">Quick Supporting Glossary</a></li>
+            <li><a href="#but-problems-dot-dot-dot">But, Problems&hellip;</a></li>
+            <li><a href="#dealing-with-the-problems">Dealing with the Problems</a></li>
           </ol>
         </li>
         <li><a href="#tokenization">Tokenization</a>
@@ -103,7 +104,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-22 11:06:53 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-22 14:59:10 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Mon</span>,
                     <span class="day">22</span>
@@ -119,14 +120,39 @@
             <h2 id="purpose">Purpose</h2>
 <p>Most engineers coming from a different background may not be familiar with the terms tokens and embeddings used in the context of text-focused deep learning techniques. This article introduces you to those terms from an intuitions perspective, with code in Python to give it more grounding.</p>
 <p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them. I&rsquo;ve liberally used material from the references pointed to.</p>
+<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
+<div class="org-center">
+<p>In this article, we will take the liberty to simplify explanations or ignore being complete, as long as the ideas are being conveyed accurately. Please extrapolate to wider contexts.</p>
+</div>
 <h3 id="assumptions">Assumptions</h3>
 <ul>
 <li>You, the reader, are generally experienced and have a reasonable background in computer science.</li>
 <li>You are not lost when hearing in on discussions involving Linear Algebra, Probability/Statistics, text-processing, <span class="underline">even if you are not contributing</span>.</li>
 </ul>
 <h2 id="background">Background</h2>
-<p>Important terms and concepts that you should be aware of</p>
-<h3 id="quick-supporting-glossary">Quick Supporting Glossary</h3>
+<p>It&rsquo;s well understood that machine learning systems do not deal with text directly. Or for that matter, audio and video too.</p>
+<p>For text, we first convert them to numbers by some mechanism before we feed them into our machine learning systems. The strategies for converting into numbers exist in various forms. And choosing one over the other depends entirely on the architecture of the consuming system, as well will see.</p>
+<p>Until the deep-learning approaches to working with text came onto the scene, we mostly dealt with words and converted words into <span class="underline">numeric identifiers</span>. These words represented as numeric identifiers are called <strong>tokens</strong>. Once the identifiers are associated with a token, dealing with them is as good as dealing with their associated tokens. Any statistical processing over tokens (like, their counts, or co-occurences) can be done by dealing with their associated identifiers.</p>
+<h3 id="but-problems-dot-dot-dot">But, Problems&hellip;</h3>
+<p>Unlike the ideal world, the real world can throw a lot of surprises. Let&rsquo;s say, we use the <span class="underline">identifier</span> 1048 for the word <strong>dog</strong>. But, <strong>dog</strong> at the beginning of a sentence will appear as <strong>Dog</strong>. Are they the same words?</p>
+<p>Also, consider the possibility of mistyping by a human wherein the word was typed as <strong>DOg</strong>. We humans will be able to process it, but the computer is unlikely to be able to deal with it. <span class="underline">Unless</span>, we treat all words in a case-insensitive manner by downcasing everything.</p>
+<p>That&rsquo;s great, you say, but what about <strong>Dawg</strong>? Oh, well. That&rsquo;s a spelling mistake and I can&rsquo;t deal with it, you&rsquo;d say.</p>
+<p>Then, there are other problems too. What about words that don&rsquo;t exist in our dictionary? If we haven&rsquo;t seen a word, we&rsquo;d have no identifiers for it. <strong>Dawg</strong> is only one example, and it is a possible speeleeng myshtake. But new words get introduced into a language all the time.</p>
+<h3 id="dealing-with-the-problems">Dealing with the Problems</h3>
+<p>What if we process text by breaking it down into characters!?</p>
+<p>So, <strong>Dawg</strong> splits into <span class="underline">four</span> tokens - <strong>D</strong>, <strong>a</strong>, <strong>w</strong>, <strong>g</strong>.</p>
+<p>We thus convert all text into character-level tokens and then, deal with them in their numeric identifier forms.</p>
+<p>Sounds insane, and to be sure, it is insane! But, given a very very large scale processing infrastructure, we might still be able to compute language level statistics to such level of detail that we might be able to construct a language from statistical priors of just the characters!</p>
+<p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstration of it done from scratch <a href="https://github.com/karpathy/ng-video-lecture">here</a>.</p>
+<p>We compute the probabilities of <span class="underline">very long</span> <strong>sequences</strong> of characters. Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes <img src="/ltximg/llm-understanding-tokens-embeddings_8b6ac78ac091fed3f46884f94a49bd192ac9e055.png" alt="llm-understanding-tokens-embeddings_8b6ac78ac091fed3f46884f94a49bd192ac9e055.png" /> possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
+<p>In reality, we do wish to optimize here. On the one hand, working with character tokens is very inefficient. On the other hand, working with entire words - those space separated molecules of characters - troubles us with two problems</p>
+<ul>
+<li>A very large dictionary covering the entire natural language</li>
+<li>An inability to deal with words never seen before - either new words or spelling mistakes.</li>
+</ul>
+<p>This leads us to another idea - processing input text into variable-length tokens using techniques like <a href="https://en.wikipedia.org/wiki/Byte_pair_encoding">byte pair encoding (BPE)</a>. This technique does not tokenize at the natural word boundaries (like the space characters), and includes individual characters to sub-words and larger groups to be considered as tokens. This gives us flexibility, and a decent way to address the problems mentioned above.</p>
+<p>We&rsquo;ll go into tokenization next, but before that, a few items of note.</p>
+<h4 id="quick-supporting-glossary">Quick Supporting Glossary</h4>
 <dl>
 <dt>Python</dt>
 <dd>Needs no explanation. Most of ML you do these days are accessible easily through Python</dd>
