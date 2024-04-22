@@ -104,7 +104,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-22 14:59:10 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-22 19:15:51 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Mon</span>,
                     <span class="day">22</span>
@@ -135,7 +135,7 @@
 <p>Until the deep-learning approaches to working with text came onto the scene, we mostly dealt with words and converted words into <span class="underline">numeric identifiers</span>. These words represented as numeric identifiers are called <strong>tokens</strong>. Once the identifiers are associated with a token, dealing with them is as good as dealing with their associated tokens. Any statistical processing over tokens (like, their counts, or co-occurences) can be done by dealing with their associated identifiers.</p>
 <h3 id="but-problems-dot-dot-dot">But, Problems&hellip;</h3>
 <p>Unlike the ideal world, the real world can throw a lot of surprises. Let&rsquo;s say, we use the <span class="underline">identifier</span> 1048 for the word <strong>dog</strong>. But, <strong>dog</strong> at the beginning of a sentence will appear as <strong>Dog</strong>. Are they the same words?</p>
-<p>Also, consider the possibility of mistyping by a human wherein the word was typed as <strong>DOg</strong>. We humans will be able to process it, but the computer is unlikely to be able to deal with it. <span class="underline">Unless</span>, we treat all words in a case-insensitive manner by downcasing everything.</p>
+<p>Also, consider the possibility of mistyping by a human wherein the word was typed as <strong>DOg</strong>. We humans will be able to process it, but the computer is unlikely to be able to deal with it. <span class="underline">Unless</span>, we treat all words in a case-insensitive manner by down/up-casing everything.</p>
 <p>That&rsquo;s great, you say, but what about <strong>Dawg</strong>? Oh, well. That&rsquo;s a spelling mistake and I can&rsquo;t deal with it, you&rsquo;d say.</p>
 <p>Then, there are other problems too. What about words that don&rsquo;t exist in our dictionary? If we haven&rsquo;t seen a word, we&rsquo;d have no identifiers for it. <strong>Dawg</strong> is only one example, and it is a possible speeleeng myshtake. But new words get introduced into a language all the time.</p>
 <h3 id="dealing-with-the-problems">Dealing with the Problems</h3>
@@ -144,7 +144,7 @@
 <p>We thus convert all text into character-level tokens and then, deal with them in their numeric identifier forms.</p>
 <p>Sounds insane, and to be sure, it is insane! But, given a very very large scale processing infrastructure, we might still be able to compute language level statistics to such level of detail that we might be able to construct a language from statistical priors of just the characters!</p>
 <p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstration of it done from scratch <a href="https://github.com/karpathy/ng-video-lecture">here</a>.</p>
-<p>We compute the probabilities of <span class="underline">very long</span> <strong>sequences</strong> of characters. Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes <img src="/ltximg/llm-understanding-tokens-embeddings_8b6ac78ac091fed3f46884f94a49bd192ac9e055.png" alt="llm-understanding-tokens-embeddings_8b6ac78ac091fed3f46884f94a49bd192ac9e055.png" /> possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
+<p>We compute the probabilities of <span class="underline">very long</span> <strong>sequences</strong> of characters. Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes \(26^{100}\) possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
 <p>In reality, we do wish to optimize here. On the one hand, working with character tokens is very inefficient. On the other hand, working with entire words - those space separated molecules of characters - troubles us with two problems</p>
 <ul>
 <li>A very large dictionary covering the entire natural language</li>
@@ -176,7 +176,8 @@
 <li><a href="https://huggingface.co/docs/huggingface_hub/index">huggingface_hub</a></li>
 <li><a href="https://huggingface.co/docs/huggingface_hub/en/guides/cli">huggingface-cli</a></li>
 </ul>
-<p>Finally, for getting the code used in this article, you&rsquo;ll find links to download them at the end of this article.</p>
+<p>Finally, for getting the code used in this article, you&rsquo;ll find links to download them at the end of this article.
+The variable names should be self-explanatory. Refer to the linked code towards the end for more details, including the various import statements.</p>
 <h2 id="tokenization">Tokenization</h2>
 <p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
 <details>
