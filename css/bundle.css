@@ -851,10 +851,6 @@ div.pagination {
   padding-top: 5rem;
 }
 
-h2 ~ h2 {
-  margin-top: 2.5rem;
-}
-
 @media (width >= 976px) {
   div.content.notes {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -865,6 +861,21 @@ h2 ~ h2 {
 
 div.content.notes {
   height: calc(100vh - 84px);
+}
+
+div.content.notes h1 {
+  margin-top: 1.25rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (width >= 976px) {
+  div.content.notes h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 div.content.notes div.toc {
@@ -927,8 +938,6 @@ div.content.notes article {
 @media (width >= 976px) {
   div.content.notes article {
     grid-column: span 10 / span 10;
-    font-size: 1.125rem;
-    line-height: 2;
   }
 }
 
@@ -941,59 +950,6 @@ div.content.notes article {
 div.content.notes article h1, div.content.notes article h2, div.content.notes article h3, div.content.notes article h4 {
   text-shadow: 5px 5px 7px #999;
   font-family: Manrope, sans-serif;
-}
-
-div.content.notes article h1 {
-  margin-top: 1.25rem;
-  margin-left: 0;
-  margin-right: 0;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article h1 {
-    font-size: 3rem;
-    line-height: 1;
-  }
-}
-
-div.content.notes article h2 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article h2 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-}
-
-div.content.notes article h3 {
-  margin-top: .75rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article h3 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-}
-
-div.content.notes article h4 {
-  margin-top: .5rem;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article h4 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 div.content.notes article .org-center {
@@ -1018,14 +974,8 @@ div.content.notes article a:hover {
 }
 
 div.content.notes article > header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
   padding-top: 2.5rem;
-}
-
-@media (width >= 976px) {
-  div.content.notes article > header {
-    padding-top: 5rem;
-  }
 }
 
 div.content.notes article > header h1 {
@@ -1081,13 +1031,25 @@ div.content.notes article > main h2 {
   z-index: 10;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-  text-shadow: 5px 5px 7px #999;
-  background-color: #f3f3f3;
   padding-top: .75rem;
-  scroll-margin-top: 48px;
-  text-decoration-color: #d8d8d8;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   position: sticky;
   top: 0;
+}
+
+@media (width >= 976px) {
+  div.content.notes article > main h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+div.content.notes article > main h2 {
+  text-shadow: 5px 5px 7px #999;
+  background-color: #f3f3f3;
+  scroll-margin-top: 48px;
+  text-decoration-color: #d8d8d8;
   box-shadow: 0 1px 1px orange;
 }
 
@@ -1103,16 +1065,43 @@ div.content.notes article > main h2 > span.tag > span {
   padding-right: .5rem;
 }
 
+div.content.notes article > main h2 ~ h2 {
+  margin-top: 5rem;
+}
+
 div.content.notes article > main h3 {
-  text-shadow: 2px 2px 7px #aaa;
-  background-color: #fff;
-  padding-top: 24px;
-  scroll-margin-top: 96px;
-  text-decoration: underline #f8a8d8;
+  margin-top: .75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (width >= 976px) {
+  div.content.notes article > main h3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+div.content.notes article > main h3 {
+  text-shadow: 2px 2px 5px #aaa;
+  margin-top: 24px;
 }
 
 div.content.notes article > main h4 {
-  text-decoration: underline #08a8d8;
+  margin-top: .5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (width >= 976px) {
+  div.content.notes article > main h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+div.content.notes article > main h4 {
+  margin-top: 12px;
 }
 
 div.content.notes article > main li {
@@ -1273,11 +1262,12 @@ div.content.notes article details summary {
 
 div.content.notes article blockquote {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  background-color: rgb(236 254 255 / var(--tw-bg-opacity));
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   padding: .75rem;
-  font-family: Roboto Mono, Consolas, monospace;
+  font-family: Truculenta, sans-serif;
+  font-size: larger;
 }
 
 div.content.notes article div.definition {

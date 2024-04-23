@@ -45,13 +45,9 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#purpose">Purpose</a>
+        <li><a href="#the-background-story">The Background Story</a>
           <ol>
-            <li><a href="#assumptions">Assumptions</a></li>
-          </ol>
-        </li>
-        <li><a href="#background">Background</a>
-          <ol>
+            <li><a href="#enabling-computers-to-read">Enabling Computers to Read</a></li>
             <li><a href="#but-problems-dot-dot-dot">But, Problems&hellip;</a></li>
             <li><a href="#dealing-with-the-problems">Dealing with the Problems</a></li>
           </ol>
@@ -104,10 +100,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-22 19:15:51 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-23 09:01:24 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Mon</span>,
-                    <span class="day">22</span>
+                    <span class="weekday">Tue</span>,
+                    <span class="day">23</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -117,34 +113,66 @@
         </header>
 
         <main>
-            <h2 id="purpose">Purpose</h2>
-<p>Most engineers coming from a different background may not be familiar with the terms tokens and embeddings used in the context of text-focused deep learning techniques. This article introduces you to those terms from an intuitions perspective, with code in Python to give it more grounding.</p>
-<p>There is also a references section at the end that you can directly skip to - they are much better if you have the time to go through them. I&rsquo;ve liberally used material from the references pointed to.</p>
-<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
-<div class="org-center">
-<p>In this article, we will take the liberty to simplify explanations or ignore being complete, as long as the ideas are being conveyed accurately. Please extrapolate to wider contexts.</p>
-</div>
-<h3 id="assumptions">Assumptions</h3>
-<ul>
-<li>You, the reader, are generally experienced and have a reasonable background in computer science.</li>
-<li>You are not lost when hearing in on discussions involving Linear Algebra, Probability/Statistics, text-processing, <span class="underline">even if you are not contributing</span>.</li>
-</ul>
-<h2 id="background">Background</h2>
-<p>It&rsquo;s well understood that machine learning systems do not deal with text directly. Or for that matter, audio and video too.</p>
-<p>For text, we first convert them to numbers by some mechanism before we feed them into our machine learning systems. The strategies for converting into numbers exist in various forms. And choosing one over the other depends entirely on the architecture of the consuming system, as well will see.</p>
-<p>Until the deep-learning approaches to working with text came onto the scene, we mostly dealt with words and converted words into <span class="underline">numeric identifiers</span>. These words represented as numeric identifiers are called <strong>tokens</strong>. Once the identifiers are associated with a token, dealing with them is as good as dealing with their associated tokens. Any statistical processing over tokens (like, their counts, or co-occurences) can be done by dealing with their associated identifiers.</p>
+            <h2 id="the-background-story">The Background Story</h2>
+<h3 id="enabling-computers-to-read">Enabling Computers to Read</h3>
+<p>It&rsquo;s well understood that machine learning systems do not deal with text directly. Or for that matter, images, audio and video.</p>
+<p>For text, we first convert them to numbers by some mechanism before we feed them into our machine learning systems.</p>
+<p>The strategies for converting into numbers exist in various forms. And choosing one over the other depends entirely on the architecture of the consuming system.</p>
+<p>Until the deep-learning approaches to working with text came onto the scene, we mostly dealt with words and converted words into <span class="underline">numeric identifiers</span>. Words are a group of characters delimited by spaces and punctuations. Something we are all familiar with. As we will see further, it&rsquo;s not necessary that we segment text only at spaces and punctuations. We can even break down a single word into many units - these units are what we call as <strong>tokens</strong>.</p>
+<blockquote>
+<p>Tokens are the fundamental unit we deal with as one of the outcomes of the text preprocessing, and they are further mapped to <span class="underline">numeric identifiers</span>. Each token maps to a unique numeric identifier.</p>
+</blockquote>
+<p>Once the identifiers are associated with a token, dealing with them is as good as dealing with their associated tokens. Any statistical processing over tokens (like, their counts, or co-occurences) can be done by dealing with their associated identifiers.</p>
+<p>Words are natural candidates for processing as tokens because they are first-class elements of our natural language. But tokens are more general - a single word represented as consisting of multiple tokens is perfectly normal. And a token can even span multiple words, not necessarily starting and ending at word boundaries. (This - the latter part - may not make complete sense just yet.)</p>
+<p>We store the words to ids relationships in a table. Within the context of a given system, we are required to be consistent in using this mapping table throughout.</p>
 <h3 id="but-problems-dot-dot-dot">But, Problems&hellip;</h3>
-<p>Unlike the ideal world, the real world can throw a lot of surprises. Let&rsquo;s say, we use the <span class="underline">identifier</span> 1048 for the word <strong>dog</strong>. But, <strong>dog</strong> at the beginning of a sentence will appear as <strong>Dog</strong>. Are they the same words?</p>
+<p>Unlike the ideal world, the real world can throw a lot of surprises. Let&rsquo;s say, we use the <span class="underline">identifier</span> 1048 for the word <strong>dog</strong>.</p>
+<p>But, <strong>dog</strong> at the beginning of a sentence will appear as <strong>Dog</strong>. Are they the same words?</p>
 <p>Also, consider the possibility of mistyping by a human wherein the word was typed as <strong>DOg</strong>. We humans will be able to process it, but the computer is unlikely to be able to deal with it. <span class="underline">Unless</span>, we treat all words in a case-insensitive manner by down/up-casing everything.</p>
 <p>That&rsquo;s great, you say, but what about <strong>Dawg</strong>? Oh, well. That&rsquo;s a spelling mistake and I can&rsquo;t deal with it, you&rsquo;d say.</p>
-<p>Then, there are other problems too. What about words that don&rsquo;t exist in our dictionary? If we haven&rsquo;t seen a word, we&rsquo;d have no identifiers for it. <strong>Dawg</strong> is only one example, and it is a possible speeleeng myshtake. But new words get introduced into a language all the time.</p>
+<table>
+<thead>
+<tr>
+<th>token</th>
+<th>id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dog</td>
+<td>1048</td>
+</tr>
+<tr>
+<td>Dog</td>
+<td>??</td>
+</tr>
+<tr>
+<td>DOg</td>
+<td>??</td>
+</tr>
+<tr>
+<td>Dawg</td>
+<td>??</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then, there are other problems too. What about words that don&rsquo;t exist in our dictionary? If we haven&rsquo;t seen a word, we&rsquo;d have no identifiers for it. <strong>Dawg</strong> is only one example, and it is a possible <em>speeleeng myshtake</em>. But new words get introduced into a language all the time.</p>
 <h3 id="dealing-with-the-problems">Dealing with the Problems</h3>
+<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
+<div class="org-center">
 <p>What if we process text by breaking it down into characters!?</p>
-<p>So, <strong>Dawg</strong> splits into <span class="underline">four</span> tokens - <strong>D</strong>, <strong>a</strong>, <strong>w</strong>, <strong>g</strong>.</p>
+</div>
+<p>So, how about <strong>Dawg</strong> splitting into <span class="underline">four</span> tokens - <strong>D</strong>, <strong>a</strong>, <strong>w</strong>, <strong>g</strong>.</p>
 <p>We thus convert all text into character-level tokens and then, deal with them in their numeric identifier forms.</p>
-<p>Sounds insane, and to be sure, it is insane! But, given a very very large scale processing infrastructure, we might still be able to compute language level statistics to such level of detail that we might be able to construct a language from statistical priors of just the characters!</p>
-<p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstration of it done from scratch <a href="https://github.com/karpathy/ng-video-lecture">here</a>.</p>
-<p>We compute the probabilities of <span class="underline">very long</span> <strong>sequences</strong> of characters. Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes \(26^{100}\) possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
+<p>Sounds insane, and maybe it is! Until, we throw huge amounts of compute power at our problem. Given a very very large scale processing infrastructure, we can indeed compute language level statistics to such level of detail that we might be able to re-construct a language from statistical priors of just the characters!</p>
+<p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstration of it done from scratch <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">here</a>.</p>
+<p><span class="underline">What are LLMs</span>?</p>
+<p>LLMs compute the probabilities of <span class="underline">very long</span> <strong>sequences</strong> of characters. During training, they compute and remember the distribution from the training data. During generation, they predict - based on what they have learnt. Conceptually, it&rsquo;s that simple!</p>
+<p>Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes \(26^{100}\) possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
 <p>In reality, we do wish to optimize here. On the one hand, working with character tokens is very inefficient. On the other hand, working with entire words - those space separated molecules of characters - troubles us with two problems</p>
 <ul>
 <li>A very large dictionary covering the entire natural language</li>
@@ -273,7 +301,7 @@ The variable names should be self-explanatory. Refer to the linked code towards 
 </span></span><span style="display:flex;"><span> Perry     | 31421
 </span></span><span style="display:flex;"><span>?          | 30
 </span></span><span style="display:flex;"><span>==============================
-</span></span></code></pre></div><p>The tokens are different. But Llama 3, given that it has a higher token vocabulary size, encodes with less tokens the sentence with words it has possibly seen before. But both tokenizers handle the possibly new words &ldquo;Pani Puri&rdquo; without a problem.</p>
+</span></span></code></pre></div><p>The tokens are different. But Llama 3, given that it has a higher token vocabulary size, encodes with less tokens the sentence with words it has possibly seen before. But both tokenizers handle the possibly new words <a href="https://en.wikipedia.org/wiki/Panipuri">&ldquo;Pani Puri&rdquo;</a> without a problem.</p>
 <h2 id="embeddings">Embeddings</h2>
 <p>Tokens are only a preprocessing step. There are too many of them, and while we can certainly feed them as &ldquo;features&rdquo; to the neural network, we probably can do better by converting them into a representation that captures better semantic relationships.</p>
 <p>The better the information content of the training data, the more you will be able to get from any machine learning effort, for the same architecture.</p>
