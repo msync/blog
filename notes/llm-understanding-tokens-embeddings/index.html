@@ -52,6 +52,11 @@
             <li><a href="#dealing-with-the-problems">Dealing with the Problems</a></li>
           </ol>
         </li>
+        <li><a href="#quick-supporting-glossary">Quick Supporting Glossary</a>
+          <ol>
+            <li><a href="#and-a-few-steps">And a Few Steps</a></li>
+          </ol>
+        </li>
         <li><a href="#tokenization">Tokenization</a>
           <ol>
             <li><a href="#exploring-tokenization-in-code">Exploring Tokenization in Code</a></li>
@@ -100,7 +105,7 @@
                 </time>
 
                 
-                <time datetime="2024-04-23 09:01:24 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-23 15:37:47 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
                     <span class="weekday">Tue</span>,
                     <span class="day">23</span>
@@ -129,7 +134,7 @@
 <p>Unlike the ideal world, the real world can throw a lot of surprises. Let&rsquo;s say, we use the <span class="underline">identifier</span> 1048 for the word <strong>dog</strong>.</p>
 <p>But, <strong>dog</strong> at the beginning of a sentence will appear as <strong>Dog</strong>. Are they the same words?</p>
 <p>Also, consider the possibility of mistyping by a human wherein the word was typed as <strong>DOg</strong>. We humans will be able to process it, but the computer is unlikely to be able to deal with it. <span class="underline">Unless</span>, we treat all words in a case-insensitive manner by down/up-casing everything.</p>
-<p>That&rsquo;s great, you say, but what about <strong>Dawg</strong>? Oh, well. That&rsquo;s a spelling mistake and I can&rsquo;t deal with it, you&rsquo;d say.</p>
+<p>That&rsquo;s great, you say, but what about <strong>Dawg</strong>? Oh, well. That&rsquo;s a spelling mistake and we can&rsquo;t handle it.</p>
 <table>
 <thead>
 <tr>
@@ -160,18 +165,18 @@
 </tr>
 </tbody>
 </table>
-<p>Then, there are other problems too. What about words that don&rsquo;t exist in our dictionary? If we haven&rsquo;t seen a word, we&rsquo;d have no identifiers for it. <strong>Dawg</strong> is only one example, and it is a possible <em>speeleeng myshtake</em>. But new words get introduced into a language all the time.</p>
+<p>Then, there are other problems too. What about words that don&rsquo;t exist in our dictionary? If we haven&rsquo;t seen a word, we&rsquo;d have no identifiers for it. <span class="underline">Dawg</span> is only one example, and it is a possible <em>speeleeng myshtake</em>. But new words get introduced into a language all the time.</p>
 <h3 id="dealing-with-the-problems">Dealing with the Problems</h3>
 <style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
 <div class="org-center">
 <p>What if we process text by breaking it down into characters!?</p>
 </div>
-<p>So, how about <strong>Dawg</strong> splitting into <span class="underline">four</span> tokens - <strong>D</strong>, <strong>a</strong>, <strong>w</strong>, <strong>g</strong>.</p>
-<p>We thus convert all text into character-level tokens and then, deal with them in their numeric identifier forms.</p>
+<p>So, how about splitting <strong>Dawg</strong> into <span class="underline">four</span> tokens - <strong>D</strong>, <strong>a</strong>, <strong>w</strong>, <strong>g</strong>.</p>
+<p>We thus convert all text into character-level tokens and then, deal with their numeric identifiers.</p>
 <p>Sounds insane, and maybe it is! Until, we throw huge amounts of compute power at our problem. Given a very very large scale processing infrastructure, we can indeed compute language level statistics to such level of detail that we might be able to re-construct a language from statistical priors of just the characters!</p>
 <p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstration of it done from scratch <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">here</a>.</p>
 <p><span class="underline">What are LLMs</span>?</p>
-<p>LLMs compute the probabilities of <span class="underline">very long</span> <strong>sequences</strong> of characters. During training, they compute and remember the distribution from the training data. During generation, they predict - based on what they have learnt. Conceptually, it&rsquo;s that simple!</p>
+<p>LLMs compute the probabilities of <span class="underline">long</span> <strong>sequences</strong> of characters. During training, they compute and remember the distribution from the training data. During generation, they predict - based on what they have learnt. Conceptually, it&rsquo;s that simple!</p>
 <p>Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes \(26^{100}\) possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
 <p>In reality, we do wish to optimize here. On the one hand, working with character tokens is very inefficient. On the other hand, working with entire words - those space separated molecules of characters - troubles us with two problems</p>
 <ul>
@@ -180,7 +185,7 @@
 </ul>
 <p>This leads us to another idea - processing input text into variable-length tokens using techniques like <a href="https://en.wikipedia.org/wiki/Byte_pair_encoding">byte pair encoding (BPE)</a>. This technique does not tokenize at the natural word boundaries (like the space characters), and includes individual characters to sub-words and larger groups to be considered as tokens. This gives us flexibility, and a decent way to address the problems mentioned above.</p>
 <p>We&rsquo;ll go into tokenization next, but before that, a few items of note.</p>
-<h4 id="quick-supporting-glossary">Quick Supporting Glossary</h4>
+<h2 id="quick-supporting-glossary">Quick Supporting Glossary</h2>
 <dl>
 <dt>Python</dt>
 <dd>Needs no explanation. Most of ML you do these days are accessible easily through Python</dd>
@@ -206,23 +211,56 @@
 </ul>
 <p>Finally, for getting the code used in this article, you&rsquo;ll find links to download them at the end of this article.
 The variable names should be self-explanatory. Refer to the linked code towards the end for more details, including the various import statements.</p>
-<h2 id="tokenization">Tokenization</h2>
-<p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
-<details>
-<summary>Tokenization is an important tunable part of the entire process. Tokenization choices will deeply impact the sizes of the network and the quality of the outcomes.</summary>
-<div class="details">
+<h3 id="and-a-few-steps">And a Few Steps</h3>
+<p>To work with the code, you need to take care of a few things</p>
 <ul>
-<li>On the one hand, your dictionary consists of the least number of tokens if you choose character-level tokenization, and on ther other hand, the dictionary can grow unreasonably large</li>
-<li>On the one hand, you lose larger structures and patterns, while on the other, you capture more of them</li>
-<li>Again, you go from being able to deal with every input never seen before, to not being able to handle well tokens/inputs never seen before.</li>
+<li>Install <a href="https://www.python.org/">Python</a>
+<ul>
+<li>Install <a href="https://python-poetry.org/">Poetry</a></li>
+<li>Optional, but strongly recommended - a virtual Python environment manager like <a href="https://pypi.org/project/virtualenv/">virtualenv</a>.</li>
 </ul>
-</div>
-</details>
-<p>In general, depending on your downstream architecture and resource budgets, you choose how further to go.</p>
+</li>
+<li>Download the <a href="pyproject.toml">pyproject.toml</a> file into a directory
+<ul>
+<li>Run `poetry update` within that directory</li>
+<li>Keep all python code within this directory</li>
+</ul>
+</li>
+<li>Create an account on <a href="https://huggingface.co/">Huggingface</a>.
+<ul>
+<li>Run `huggingface-cli login` and follow instructions</li>
+</ul>
+</li>
+<li>On Huggingface, visit the {{mistral}} and {{llama3}} pages and register/sign agreement to use those models.</li>
+</ul>
+<h2 id="tokenization">Tokenization</h2>
+<p>Let&rsquo;s jump into tokenization.</p>
+<p>Tokenization creates a vocabulary or a dictionary for encoding the input text for further processing. Our choice ranges between using individual characters to using word tokens. Even beyond (length-wise), actually, but that doesn&rsquo;t make much sense.</p>
+<p>Tokenization is an important tunable part of the entire process. Tokenization choices will deeply impact the sizes of the network, the training effort, and the quality of the outcomes.</p>
+<ul>
+<li>Character-level tokens will keep your dictionary small. Word-level tokens will bloat your dictionary.</li>
+<li>With character tokens, you lose larger structures and patterns. With word tokens, you capture more of them</li>
+<li>Again, with character tokens, you are able to deal with every input never seen before. With word tokens, you will not be able to handle tokens/inputs never seen before.</li>
+</ul>
+<p>The smart folks in this area have tried to keep the best of both worlds. Conceptually in a manner similar to Huffman encoding - the famous technique for compression - tokenization of input text is done, using variable-length chunks of text based on their frequencies as tokens. Thus, we have tokens that range from individual characters to those that can be complete words, and everything in between. This takes care of handling out-of-vocabulary words, while also capturing word-formation structures with the longer tokens. And since we use the longest-match, the size of the vocabulary does not affect the correctness of the tokenization activity. <span class="underline">Better yet</span>, you can choose the size of the vocabulary depending on your resource estimates.</p>
 <h3 id="exploring-tokenization-in-code">Exploring Tokenization in Code</h3>
-<p>Let&rsquo;s look at the tokenization of a model <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>.</p>
+<p>Let&rsquo;s look at how <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a> does tokenization.</p>
 <p>We use the <em>transformers</em> library from Huggingface. It has some pretty nifty <em>Auto*</em> classes that can infer the format without any effort.</p>
 <p>Also note that we use the model name as is while passing to the <em>Auto*</em> methods, because the models are self-contained - they include the token vocabulary, the embeddings architecture, apart from the trained parameters for the language tasks.</p>
+<p>On my machine, the model directory has the following files</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff         596 Apr  8 10:43 config.json
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff         111 Apr  8 10:43 generation_config.json
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff  4943162336 Apr  8 10:52 model-00001-of-00003.safetensors
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff  4999819336 Apr  8 10:49 model-00002-of-00003.safetensors
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff  4540516344 Apr  8 10:51 model-00003-of-00003.safetensors
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff       25125 Apr  8 10:43 model.safetensors.index.json
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff       23950 Apr  8 10:43 pytorch_model.bin.index.json
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff          72 Apr  8 10:43 special_tokens_map.json
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff     1795303 Apr  8 10:43 tokenizer.json
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff      493443 Apr  8 10:43 tokenizer.model
+</span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff        1460 Apr  8 10:43 tokenizer_config.json
+</span></span></code></pre></div><p>You can inspect the <span class="underline">tokenizer.json</span> file for more insights. In fact, there are other plain-text JSON files too and I&rsquo;d recommend scanning them.</p>
+<p>Let&rsquo;s pass some sentences to the tokenizer and see how it is broken into tokens. The <span class="underline">transformers</span> library gives you a pretty nifty API to deal with this processing, as you can see below. The tokenizer object is a function object.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(mistral_model_name)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The vocabulary size is </span><span style="color:#e6db74">{</span>len(tokenizer)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
@@ -301,7 +339,8 @@ The variable names should be self-explanatory. Refer to the linked code towards 
 </span></span><span style="display:flex;"><span> Perry     | 31421
 </span></span><span style="display:flex;"><span>?          | 30
 </span></span><span style="display:flex;"><span>==============================
-</span></span></code></pre></div><p>The tokens are different. But Llama 3, given that it has a higher token vocabulary size, encodes with less tokens the sentence with words it has possibly seen before. But both tokenizers handle the possibly new words <a href="https://en.wikipedia.org/wiki/Panipuri">&ldquo;Pani Puri&rdquo;</a> without a problem.</p>
+</span></span></code></pre></div><p>The tokens are different. But Llama 3, given that it has a higher token vocabulary size - about <strong>4 times</strong> - and encodes with less tokens the sentence with words it has possibly seen before. But both tokenizers handle the possibly new words <a href="https://en.wikipedia.org/wiki/Panipuri">&ldquo;Pani Puri&rdquo;</a> without a problem.</p>
+<p>With a larger vocabulary, you can encode more in less. There&rsquo;s more signal for less number of tokens.</p>
 <h2 id="embeddings">Embeddings</h2>
 <p>Tokens are only a preprocessing step. There are too many of them, and while we can certainly feed them as &ldquo;features&rdquo; to the neural network, we probably can do better by converting them into a representation that captures better semantic relationships.</p>
 <p>The better the information content of the training data, the more you will be able to get from any machine learning effort, for the same architecture.</p>
