@@ -95,8 +95,8 @@ print("===== Embeddings =====")
 print(input_embeddings)
 # LLM Model Embeddings:1 ends here
 
-# [[file:llm-understanding-tokens-embeddings.org::*Code Files][Code Files:1]]
+# [[file:llm-understanding-tokens-embeddings.org::*Sanity check][Sanity check:1]]
 embeddings = load_embeddings(llama3_model_embeddings_extract_file)
 tokenizer = AutoTokenizer.from_pretrained(llama3_model_name)
 print(tokenizer("Hello, world!"))
-# Code Files:1 ends here
+# Sanity check:1 ends here
