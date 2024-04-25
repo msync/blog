@@ -12,6 +12,9 @@ from sklearn.decomposition import PCA
 # [[file:llm-understanding-tokens-embeddings.org::*Data prep][Data prep:1]]
 extract_embeddings(mistral_model_name, mistral_model_embeddings_extract_file)
 extract_embeddings(llama3_model_name, llama3_model_embeddings_extract_file)
+
+# WIP - transformers support for Phi-3 is in the works
+#extract_embeddings(phi3_mini_model_name, phi3_mini_model_embeddings_extract_file, trust_remote_code=True)
 # Data prep:1 ends here
 
 # [[file:llm-understanding-tokens-embeddings.org::*Exploring Tokenization in Code][Exploring Tokenization in Code:1]]

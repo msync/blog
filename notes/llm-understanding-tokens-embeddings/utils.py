@@ -28,9 +28,10 @@ def print_tokens(tokenizer, input_ids_tensor):
     print(f"{'='*30}")
 
 
-def extract_embeddings(model_name, embeddings_filename):
+def extract_embeddings(model_name, embeddings_filename, **kwargs):
+    trust_remote_code = kwargs.pop("trust_remote_code", False)
     if not os.path.isfile(embeddings_filename):
-        model = AutoModel.from_pretrained(model_name)
+        model = AutoModel.from_pretrained(model_name, trust_remote_code=trust_remote_code)
         embeddings = model.get_input_embeddings()
         print(f"Extracted embeddings layer for {model_name}: {embeddings}")
         torch.save(embeddings.state_dict(), embeddings_filename)

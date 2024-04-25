@@ -69,12 +69,8 @@
             <li><a href="#llm-model-embeddings">LLM Model Embeddings</a></li>
           </ol>
         </li>
-        <li><a href="#wip-reminder">WIP Reminder</a></li>
-        <li><a href="#references">References</a>
-          <ol>
-            <li><a href="#unordered-papers">Unordered papers</a></li>
-          </ol>
-        </li>
+        <li><a href="#next-dot-dot-dot">Next&hellip;</a></li>
+        <li><a href="#references">References</a></li>
         <li><a href="#supporting-code">Supporting Code</a>
           <ol>
             <li><a href="#pyproject-dot-toml">pyproject.toml</a></li>
@@ -106,10 +102,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-24 14:57:07 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-25 18:45:39 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Wed</span>,
-                    <span class="day">24</span>
+                    <span class="weekday">Thu</span>,
+                    <span class="day">25</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -175,7 +171,7 @@
 <p>So, how about splitting <strong>Dawg</strong> into <span class="underline">four</span> tokens - <strong>D</strong>, <strong>a</strong>, <strong>w</strong>, <strong>g</strong>.</p>
 <p>We thus convert all text into character-level tokens and then, deal with their numeric identifiers.</p>
 <p>Sounds insane, and maybe it is! Until, we throw huge amounts of compute power at our problem. Given a very very large scale processing infrastructure, we can indeed compute language level statistics to such level of detail that we might be able to re-construct a language from statistical priors of just the characters!</p>
-<p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstration of it done from scratch <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">here</a>.</p>
+<p>Don&rsquo;t believe? Go check Andrej Karpathy&rsquo;s demonstrating how to do this from scratch <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">here</a>.</p>
 <p>LLMs compute the probabilities of <span class="underline">long</span> <strong>sequences</strong> of characters. During training, they compute and remember the distribution from the training data. During generation, they predict - based on what they have learnt. Conceptually, it&rsquo;s that simple!</p>
 <p>Assume a sequence length of 100 characters, and 26 characters, assuming lower-case alphabets without numbers. That makes \(26^{100}\) possible combinations - surely, an oversimplification. And sure enough, all characters are not independently random. So, given enough training data, there is a great chance that a large enough computer can calculate prior probabilities and then use those to predict next character tokens when we input a new piece of text from the same distribution.</p>
 <p>In reality, we do wish to optimize here. On the one hand, working with character tokens is very inefficient. On the other hand, working with entire words - those space separated molecules of characters - troubles us with two problems</p>
@@ -192,7 +188,7 @@
 <dt>Numpy</dt>
 <dd>A vast Python library for numerical processing. ML is nothing if not numerical processing</dd>
 <dt>Huggingface</dt>
-<dd>A company, a community, to discover and share models, data, information. Most open models and datasets can be found here, including those that common folks like us can publish. Loosely, the Docker Hub equivalent for ML.
+<dd>A company, a community, to discover and share models, data, information. Maybe, the Github of the ML world!? Most open models and datasets can be found here, including those that common folks like us can publish. Loosely, the Docker Hub equivalent for ML.
 <ul>
 <li><strong>Transformers:</strong> In the context of Huggingface, a library they have published for generally dealing with the various models published on the hub.</li>
 </ul>
@@ -247,8 +243,12 @@ The variable names should be self-explanatory. Refer to the linked code towards 
 <p>It&rsquo;s also interesting to note that with more tokens, we capture further structures of the language - how characters combine to form larger and larger structures. These can indirectly encapsulate patterns that represent notions like grammar, or how words form. These enable the downstream network to even deal with new words not seen before, and even misspellings!</p>
 <h3 id="exploring-tokenization-in-code">Exploring Tokenization in Code</h3>
 <p>Let&rsquo;s look at how <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a> does tokenization.</p>
-<p>We use the <em>transformers</em> library from Huggingface. It has some pretty nifty <em>Auto*</em> classes that can infer the format without any effort.</p>
-<p>Also note that we use the model name as is while passing to the <em>Auto*</em> methods, because the models are self-contained - they include the token vocabulary, the embeddings architecture, apart from the trained parameters for the language tasks. The library knows the location of the locally downloaded directory that contains necessary information - the weights, the metadata and all.</p>
+<p>We use the <em>transformers</em> library from Huggingface. It has some pretty nifty utilities for working with a variety of models with literally no configuration steps. In particular, we will be using the two <a href="https://huggingface.co/docs/transformers/model_doc/auto"><em>Auto*</em></a> classes</p>
+<ul>
+<li><a href="https://huggingface.co/docs/transformers/model_doc/auto#transformers.AutoTokenizer">AutoTokenizer</a></li>
+<li><a href="https://huggingface.co/docs/transformers/model_doc/auto#transformers.AutoModel">AutoModel</a></li>
+</ul>
+<p>The model data contains everything - metadata, token vocabulary, architecture, layers information, and more. So, using the Huggingface coordinates as strings (<em>e.g.</em>, <a href="https://huggingface.co/mistralai/Mistral-7B-v0.1">mistralai/Mistral-7B-v0.1</a>) while invoking class methods on these above classes is enough - the transformers library pretty much does eveything else for the most common use-cases we are interested in.</p>
 <p>On my machine, the model directory has the following files</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff         596 Apr  8 10:43 config.json
 </span></span><span style="display:flex;"><span>-rw-r--r--  1 jaju  staff         111 Apr  8 10:43 generation_config.json
@@ -302,7 +302,7 @@ The variable names should be self-explanatory. Refer to the linked code towards 
 </span></span><span style="display:flex;"><span>Perry      | 24150
 </span></span><span style="display:flex;"><span>?          | 28804
 </span></span><span style="display:flex;"><span>==============================
-</span></span></code></pre></div><p>Look at the tokens closely. Familiar word-level tokens are only incidental - depending on how Mistral chose the size of the vocabulary and the strategy, the tokens have been generated. You can observe the token vocabulary size - it&rsquo;s a round number. And that was a choice made ahead of time.</p>
+</span></span></code></pre></div><p>Look at the tokens closely. Familiar word-level tokens are only incidental - depending on how Mistral chose the size of the vocabulary and the strategy, the tokens have been generated. You can observe the token vocabulary size - it&rsquo;s a round number. And that was a choice made ahead of time. <span class="underline">Also note the first token is empty space with id 1</span> - the tokenization strategy decides how (and if) to encode markers like a sentence/content start. The next model does it differently, as you&rsquo;ll see.</p>
 <p>Let&rsquo;s run the above with the <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a> as well, for a comparison. What differences do you notice?</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>tokenizer <span style="color:#f92672">=</span> AutoTokenizer<span style="color:#f92672">.</span>from_pretrained(llama3_model_name)
 </span></span><span style="display:flex;"><span>
@@ -342,6 +342,7 @@ The variable names should be self-explanatory. Refer to the linked code towards 
 </span></span><span style="display:flex;"><span>?          | 30
 </span></span><span style="display:flex;"><span>==============================
 </span></span></code></pre></div><p>The tokens are different. But Llama 3, given that it has a higher token vocabulary size - about <strong>4 times</strong> - and encodes with less tokens the sentence with words it has possibly seen before. But both tokenizers handle the possibly new words <a href="https://en.wikipedia.org/wiki/Panipuri">&ldquo;Pani Puri&rdquo;</a> without a problem.</p>
+<p><span class="underline">Also note that each token that covers a beginning of a word has a leading space</span>. These minor-looking choices impact how the network looks at data and what it learns very significantly.</p>
 <p>With a larger vocabulary, you can encode more in less. There&rsquo;s more signal for less number of tokens.</p>
 <h2 id="embeddings">Embeddings</h2>
 <p>Embeddings are an interesting next level to get to.</p>
@@ -563,10 +564,10 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
 </span></span><span style="display:flex;"><span>  )
 </span></span><span style="display:flex;"><span>  (norm): LlamaRMSNorm()
 </span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><p>The <strong>embeddings</strong> layer is the first in sequence - it&rsquo;s dimensions are \(128256 \times 4096\). Recall that the token vocabulary size of <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a> is 128256 and the embeddings dimension is 4096. The embeddings layer maps each token to a 4096 dimensional vector.</p>
+</span></span></code></pre></div><p>The <strong>embeddings</strong> layer is the first in sequence - its dimensions are \(128256 \times 4096\). Recall that the token vocabulary size of <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a> is 128256 and the embeddings dimension is 4096. The embeddings layer maps each token to a 4096 dimensional vector.</p>
 <p>We don&rsquo;t need to deal with the embeddings in LLMs directly, unlike <strong>GloVe</strong>. Both kinds of embeddings - those for LLMs, and those created from natural language words - serve different purposes.</p>
-<h2 id="wip-reminder">WIP Reminder</h2>
-<p>This section will keep updating - until it goes away completely. When the article is complete.</p>
+<h2 id="next-dot-dot-dot">Next&hellip;</h2>
+<p>Tokens and embeddings are the first few phases that any text encounters as it traverses through some network. The next logical steps will be to explore how LLMs work - for our purposes - <span class="underline">in code</span>. If you liked this article so far, hopefully you&rsquo;ll like the following article too - which is in the works. Will link to it here when it&rsquo;s ready.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://youtube.com/watch?v=kCc8FmEb1nY">Let&rsquo;s build GPT: from scratch, in code, spelled out.</a></li>
@@ -575,10 +576,6 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
 <li>The <a href="https://github.com/chrishayuk/embeddings">code repository</a> that goes along side the above video.</li>
 </ul>
 </li>
-</ul>
-<h3 id="unordered-papers">Unordered papers</h3>
-<ul>
-<li><a href="https://arxiv.org/abs/2401.06066"> DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models</a></li>
 </ul>
 <h2 id="supporting-code">Supporting Code</h2>
 <p>The supporting code not found in the snippets above can be found below.</p>
@@ -633,9 +630,10 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
 </span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span><span style="color:#e6db74">&#39;=&#39;</span><span style="color:#f92672">*</span><span style="color:#ae81ff">30</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_embeddings</span>(model_name, embeddings_filename):
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_embeddings</span>(model_name, embeddings_filename, <span style="color:#f92672">**</span>kwargs):
+</span></span><span style="display:flex;"><span>    trust_remote_code <span style="color:#f92672">=</span> kwargs<span style="color:#f92672">.</span>pop(<span style="color:#e6db74">&#34;trust_remote_code&#34;</span>, <span style="color:#66d9ef">False</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>isfile(embeddings_filename):
-</span></span><span style="display:flex;"><span>        model <span style="color:#f92672">=</span> AutoModel<span style="color:#f92672">.</span>from_pretrained(model_name)
+</span></span><span style="display:flex;"><span>        model <span style="color:#f92672">=</span> AutoModel<span style="color:#f92672">.</span>from_pretrained(model_name, trust_remote_code<span style="color:#f92672">=</span>trust_remote_code)
 </span></span><span style="display:flex;"><span>        embeddings <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>get_input_embeddings()
 </span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Extracted embeddings layer for </span><span style="color:#e6db74">{</span>model_name<span style="color:#e6db74">}</span><span style="color:#e6db74">: </span><span style="color:#e6db74">{</span>embeddings<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>        torch<span style="color:#f92672">.</span>save(embeddings<span style="color:#f92672">.</span>state_dict(), embeddings_filename)
@@ -676,7 +674,6 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
 </div>
 
 <div class="social-media-list float-right">
-
   <span class="social-media-item">
     <a href="https://github.com/jaju">
       <span class="svg-social-icon icon--github">
@@ -688,7 +685,7 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
       <span class="username">jaju</span>
     </a>
   </span>
-    <span class="social-media-item">
+  <span class="social-media-item">
     <a href="https://twitter.com/jaju">
       <span class="svg-social-icon icon--twitter">
         <svg viewBox="0 0 16 16">
@@ -699,7 +696,6 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
       <span class="username">jaju</span>
     </a>
   </span>
-
 </div>
 
     </footer>
