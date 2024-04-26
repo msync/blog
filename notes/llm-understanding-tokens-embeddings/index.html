@@ -69,7 +69,7 @@
             <li><a href="#llm-model-embeddings">LLM Model Embeddings</a></li>
           </ol>
         </li>
-        <li><a href="#next-dot-dot-dot">Next&hellip;</a></li>
+        <li><a href="#summing-up-dot-dot-dot">Summing up&hellip;</a></li>
         <li><a href="#references">References</a></li>
         <li><a href="#supporting-code">Supporting Code</a>
           <ol>
@@ -102,10 +102,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-25 18:45:39 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-26 16:17:09 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Thu</span>,
-                    <span class="day">25</span>
+                    <span class="weekday">Fri</span>,
+                    <span class="day">26</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -205,7 +205,9 @@
 <li><a href="https://huggingface.co/docs/huggingface_hub/index">huggingface_hub</a></li>
 <li><a href="https://huggingface.co/docs/huggingface_hub/en/guides/cli">huggingface-cli</a></li>
 </ul>
-<p>Finally, for getting the code used in this article, you&rsquo;ll find links to download them at the end of this article.
+<p>While the model data will be automatically downloaded when you run the code, you can download them ahead of time using <span class="underline">huggingface-cli</span>, as shown in an example below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>huggingface-cli download meta-llama/Meta-Llama-3-8B
+</span></span></code></pre></div><p>Finally, for getting the code used in this article, you&rsquo;ll find links to download them at the end of this article.
 The variable names should be self-explanatory. Refer to the linked code towards the end for more details, including the various import statements.</p>
 <h3 id="and-a-few-steps">And a Few Steps</h3>
 <p>To work with the code, you need to take care of a few things</p>
@@ -566,8 +568,10 @@ We are wired to decipher patterns and learn them. And then apply them.</p>
 </span></span><span style="display:flex;"><span>)
 </span></span></code></pre></div><p>The <strong>embeddings</strong> layer is the first in sequence - its dimensions are \(128256 \times 4096\). Recall that the token vocabulary size of <a href="https://huggingface.co/meta-llama/Meta-Llama-3-8B">meta-llama/Meta-Llama-3-8B</a> is 128256 and the embeddings dimension is 4096. The embeddings layer maps each token to a 4096 dimensional vector.</p>
 <p>We don&rsquo;t need to deal with the embeddings in LLMs directly, unlike <strong>GloVe</strong>. Both kinds of embeddings - those for LLMs, and those created from natural language words - serve different purposes.</p>
-<h2 id="next-dot-dot-dot">Next&hellip;</h2>
-<p>Tokens and embeddings are the first few phases that any text encounters as it traverses through some network. The next logical steps will be to explore how LLMs work - for our purposes - <span class="underline">in code</span>. If you liked this article so far, hopefully you&rsquo;ll like the following article too - which is in the works. Will link to it here when it&rsquo;s ready.</p>
+<h2 id="summing-up-dot-dot-dot">Summing up&hellip;</h2>
+<p>Tokens and embeddings are the initial phases that any text encounters as it traverses through some network.</p>
+<p>If you are looking to develop with, or build upon textual deep learning systems, understanding both of these is certainly a big advantage. Knowledge of tokenization and embeddings can also help you tune performance, and exploit better, systems like vector databases too. Vector databases work with embeddings, and they provide means to store documents and retrieve based on similarity scores. The similarity is defined by some distance measure in the vector-space of the embeddings. Knowing how a particular embedding model works will help you make better choices for your use-cases.</p>
+<p>The next logical steps will be to explore how LLMs work - for our purposes - <span class="underline">in code</span>. If you liked this article so far, I hope you&rsquo;ll like the following article too - which is in the works. Will link to it here when it&rsquo;s ready.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://youtube.com/watch?v=kCc8FmEb1nY">Let&rsquo;s build GPT: from scratch, in code, spelled out.</a></li>
