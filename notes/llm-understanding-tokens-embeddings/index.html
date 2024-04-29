@@ -7,7 +7,7 @@
 <title>LLMs: Understanding Tokens and Embeddings | Sync&#39;ing from Memory</title>
 <meta property="og:title" content="LLMs: Understanding Tokens and Embeddings"/>
 
-<meta property="og:description" content="An overview of what tokens and embeddings mean in the context of LLMs - and related models"/>
+<meta property="og:description" content="An overview of what tokens and embeddings mean in the context of LLMs - and related models. Please use the code along side for more grounding. Code links towards the end."/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@jaju"/>
@@ -89,7 +89,7 @@
         <header>
             <h1 itemprop="title">LLMs: Understanding Tokens and Embeddings</h1>
             <summary>
-                An overview of what tokens and embeddings mean in the context of LLMs - and related models
+                An overview of what tokens and embeddings mean in the context of LLMs - and related models. Please use the code along side for more grounding. Code links towards the end.
             </summary>
             <div class="meta">
                 
@@ -102,10 +102,10 @@
                 </time>
 
                 
-                <time datetime="2024-04-26 16:17:09 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-04-29 14:16:39 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Fri</span>,
-                    <span class="day">26</span>
+                    <span class="weekday">Mon</span>,
+                    <span class="day">29</span>
                     <span class="month">Apr</span>,
                     <span class="year">2024</span>
                 </time>
@@ -179,7 +179,14 @@
 <li>A very large dictionary covering the entire natural language</li>
 <li>An inability to deal with words never seen before - either new words or spelling mistakes.</li>
 </ul>
-<p>This leads us to another idea - processing input text into variable-length tokens using techniques like <a href="https://en.wikipedia.org/wiki/Byte_pair_encoding">byte pair encoding (BPE)</a>. This technique does not tokenize at the natural word boundaries (like the space characters), and includes individual characters to sub-words and larger groups to be considered as tokens. This gives us flexibility, and a decent way to address the problems mentioned above.</p>
+<details>
+<summary>This leads us to another idea - processing input text into variable-length tokens using techniques like <a href="https://en.wikipedia.org/wiki/Byte_pair_encoding">byte pair encoding (BPE)</a>. This technique does not tokenize at the natural word boundaries (like the space characters), and includes individual characters to sub-words and larger groups to be considered as tokens. This gives us flexibility, and a decent way to address the problems mentioned above.</summary>
+<div class="details">
+<p>Technically, you can encode larger chunks without ever stopping - but the key thing is that if there are very few instances of a &ldquo;token&rdquo; then it is statistical noise. The value is in seeing many of them and in some context to associate prior probabilities to them. This is also a key engineering knob - deciding where to stop when it comes to the vocabulary size.</p>
+<p>Too small a dictionary means we have to calculate conditional probabilities over much longer sequences as the information gain over a shorter sequence is likely to be much lower. A very large dictionary might mean quite a few tokens will have no useful conditional probabilities that can be calculated with confidence.</p>
+<p>Allowing characters and subwords to exist in the dictionary, along with some of the common whole words, and up to a limit that can be handled by the size of the model and the resources we are willing to commit to (memory, CPU) - should work well.</p>
+</div>
+</details>
 <p>We&rsquo;ll go into tokenization next, but before that, a few items of note.</p>
 <h2 id="quick-supporting-glossary">Quick Supporting Glossary</h2>
 <dl>
