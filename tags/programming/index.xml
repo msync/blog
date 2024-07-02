@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/tags/programming/</link>
+    <link>http://localhost:1313/tags/programming/</link>
     <description>Recent content in Programming on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Apr 2024 17:31:17 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 May 2024 09:33:57 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handy Hacks</title>
+      <link>http://localhost:1313/notes/handy-hacks/</link>
+      <pubDate>Wed, 01 May 2024 09:30:31 +0530</pubDate>
+      <guid>http://localhost:1313/notes/handy-hacks/</guid>
+      <description>Quick handy hacks for reference from anywhere.</description>
+    </item>
     <item>
       <title>Clojure</title>
-      <link>https://msync.org/notes/clojure/</link>
+      <link>http://localhost:1313/notes/clojure/</link>
       <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      <guid>https://msync.org/notes/clojure/</guid>
+      <guid>http://localhost:1313/notes/clojure/</guid>
       <description>Clojure Notes - An aimless dump of anything and everything interesting I find &lt;em&gt;and&lt;/em&gt; manage to record.</description>
     </item>
   </channel>

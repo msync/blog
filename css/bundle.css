@@ -1,5 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,500,700|Raleway:400,500,700";
 @import "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Truculenta:opsz,wght@12..72,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700";
+@import "https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap";
 *, :before, :after {
   box-sizing: border-box;
   border: 0 solid #e5e7eb;
@@ -428,24 +429,81 @@ img, video {
   }
 }
 
-div.content.posts article > header {
-  margin-bottom: 3rem;
+div.content.posts {
+  height: calc(100vh - 84px);
+}
+
+div.content.posts article {
+  width: 100%;
+}
+
+@media (width >= 640px) {
+  div.content.posts article {
+    max-width: 640px;
+  }
+}
+
+@media (width >= 976px) {
+  div.content.posts article {
+    max-width: 976px;
+  }
+}
+
+@media (width >= 1280px) {
+  div.content.posts article {
+    max-width: 1280px;
+  }
+}
+
+div.content.posts article {
+  margin-top: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.625;
+}
+
+div.content.posts article > header h1 {
+  text-align: center;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (width >= 976px) {
+  div.content.posts article > header h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 div.content.posts article > header h1 {
   background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
   background-color: #fefefe;
   background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
-  min-width: 70%;
-  max-width: 100%;
-  padding: 20px 10px 15px;
-  font-weight: 600;
   box-shadow: 1px 2px 3px #999;
 }
 
+div.content.posts article > header div.meta {
+  float: right;
+  position: relative;
+}
+
+@media (width >= 640px) {
+  div.content.posts article > header div.meta time {
+    display: block;
+  }
+}
+
+@media (width >= 976px) {
+  div.content.posts article > header div.meta time {
+    display: inline-block;
+  }
+}
+
 div.content.posts article > header div.meta time {
-  background-color: #efe9e2;
-  margin-right: 15px;
   padding: 0 5px;
   font-size: 18px;
   box-shadow: 1px 1px 1px #666;
@@ -455,26 +513,15 @@ div.content.posts article > summary {
   background-image: -webkit-linear-gradient(to right, lightyellow, #dcdcdc80, lightyellow);
   background-color: #f2f2f2;
   background-image: linear-gradient(to right, #ffffe0, #dcdcdc80, #ffffe0);
-  border-left: none;
-  max-width: 100%;
-  margin-bottom: 2rem;
-  padding: 1em;
+  margin-top: 2.5rem;
   font-style: italic;
-  font-weight: 500;
-  display: block;
 }
 
 div.content.posts article main {
-  background-color: #fffffa;
   margin-bottom: 1.2rem;
   padding-left: 25px;
   padding-right: 15px;
   font-size: 1.2rem;
-}
-
-div.content.posts article main h1, div.content.posts article main h2, div.content.posts article main h3 {
-  min-width: 70%;
-  max-width: 100%;
 }
 
 div.content.posts article main div pre {
@@ -900,7 +947,6 @@ div.content.notes div.toc {
 
 div.content.notes div.toc a {
   color: #483d8b;
-  border-bottom: 1px dotted orange;
 }
 
 div.content.notes div.toc span.tag {
@@ -965,12 +1011,12 @@ div.content.notes article .org-center p {
 
 div.content.notes article a {
   color: #483d8b;
-  border-bottom: 2px dotted orange;
+  border-bottom: 2px solid orange;
 }
 
 div.content.notes article a:hover {
-  background-color: #ffffe0;
-  border-bottom: 2px solid orange;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ff8c00;
 }
 
 div.content.notes article > header {
@@ -1066,7 +1112,7 @@ div.content.notes article > main h2 > span.tag > span {
 }
 
 div.content.notes article > main h2 ~ h2 {
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 
 div.content.notes article > main h3 {
@@ -1260,14 +1306,43 @@ div.content.notes article details summary {
   line-height: 1.75rem;
 }
 
-div.content.notes article blockquote {
+div.content.notes article aside {
   --tw-bg-opacity: 1;
-  background-color: rgb(236 254 255 / var(--tw-bg-opacity));
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  padding: .75rem;
-  font-family: Truculenta, sans-serif;
-  font-size: larger;
+  background-color: rgb(244 244 245 / var(--tw-bg-opacity));
+  border-width: 2px;
+  width: max(100ch, 50vw);
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-size: smaller;
+  line-height: 1.5rem;
+}
+
+div.content.notes article blockquote {
+  color: #111;
+  border-width: 2px;
+  margin: .75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-family: Kalam, Truculenta, sans-serif;
+  font-weight: 500;
+}
+
+div.content.notes article blockquote p {
+  white-space: pre;
+}
+
+div.content.notes article div.sample {
+  margin: 1.25rem;
+}
+
+div.content.notes article div.sample p {
+  text-wrap: pretty;
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
+  white-space: pre;
+  padding: .75rem 2.5rem;
 }
 
 div.content.notes article div.definition {

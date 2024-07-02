@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tokens on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/tags/tokens/</link>
+    <link>http://localhost:1313/tags/tokens/</link>
     <description>Recent content in Tokens on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2024 14:43:46 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/tags/tokens/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jun 2024 18:37:01 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tokens/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLMs: Exploring To Understand</title>
+      <link>http://localhost:1313/notes/llm-exploration/</link>
+      <pubDate>Mon, 29 Apr 2024 18:29:59 +0530</pubDate>
+      <guid>http://localhost:1313/notes/llm-exploration/</guid>
+      <description>Delving into LLMs to probe how they do what they do.</description>
+    </item>
     <item>
       <title>LLMs: Understanding Tokens and Embeddings</title>
-      <link>https://msync.org/notes/llm-understanding-tokens-embeddings/</link>
+      <link>http://localhost:1313/notes/llm-understanding-tokens-embeddings/</link>
       <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
-      <guid>https://msync.org/notes/llm-understanding-tokens-embeddings/</guid>
+      <guid>http://localhost:1313/notes/llm-understanding-tokens-embeddings/</guid>
       <description>An overview of what tokens and embeddings mean in the context of LLMs - and related models. Please use the code along side for more grounding. Code links towards the end.</description>
     </item>
   </channel>

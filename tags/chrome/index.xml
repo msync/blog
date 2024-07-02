@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chrome on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/tags/chrome/</link>
+    <link>http://localhost:1313/tags/chrome/</link>
     <description>Recent content in Chrome on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Mar 2024 23:38:44 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Developing Chrome Extensions using Clojurescript</title>
-      <link>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</link>
+      <link>http://localhost:1313/posts/2015/04/developing-chrome-extensions-using-clojurescript/</link>
       <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</guid>
+      <guid>http://localhost:1313/posts/2015/04/developing-chrome-extensions-using-clojurescript/</guid>
       <description>How you may set up your clojurescript project for developing chrome extensions - an example</description>
     </item>
   </channel>

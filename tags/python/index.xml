@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/tags/python/</link>
+    <link>http://localhost:1313/tags/python/</link>
     <description>Recent content in Python on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 14 Apr 2024 21:25:59 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MLX</title>
-      <link>https://msync.org/notes/mlx/</link>
+      <link>http://localhost:1313/notes/mlx/</link>
       <pubDate>Fri, 05 Apr 2024 09:36:15 +0530</pubDate>
-      <guid>https://msync.org/notes/mlx/</guid>
+      <guid>http://localhost:1313/notes/mlx/</guid>
       <description>MLX 20/80. With 20% effort, hope to get 80% covered on MLX&amp;rsquo;s offerings. And, I don&amp;rsquo;t stand by this claim.</description>
     </item>
     <item>
       <title>Notes for Deep Learning with Python</title>
-      <link>https://msync.org/notes/deep-learning-with-python/</link>
+      <link>http://localhost:1313/notes/deep-learning-with-python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>https://msync.org/notes/deep-learning-with-python/</guid>
+      <guid>http://localhost:1313/notes/deep-learning-with-python/</guid>
       <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
   </channel>

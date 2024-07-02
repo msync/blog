@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Mar 2024 23:42:52 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Fallacy of the Full-stackist</title>
-      <link>https://msync.org/posts/2020/01/the-fallacy-of-the-full-stackist/</link>
+      <link>http://localhost:1313/posts/2020/01/the-fallacy-of-the-full-stackist/</link>
       <pubDate>Sat, 04 Jan 2020 16:54:50 +0530</pubDate>
-      <guid>https://msync.org/posts/2020/01/the-fallacy-of-the-full-stackist/</guid>
+      <guid>http://localhost:1313/posts/2020/01/the-fallacy-of-the-full-stackist/</guid>
       <description>The distinction between being a full-stack developer and the perception of being one can be big.</description>
     </item>
     <item>
       <title>Useful Clojure Asides - Logging and Exceptions</title>
-      <link>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
+      <link>http://localhost:1313/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</guid>
+      <guid>http://localhost:1313/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</guid>
       <description>It&amp;rsquo;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description>
     </item>
     <item>
       <title>Developing Chrome Extensions using Clojurescript</title>
-      <link>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</link>
+      <link>http://localhost:1313/posts/2015/04/developing-chrome-extensions-using-clojurescript/</link>
       <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</guid>
+      <guid>http://localhost:1313/posts/2015/04/developing-chrome-extensions-using-clojurescript/</guid>
       <description>How you may set up your clojurescript project for developing chrome extensions - an example</description>
     </item>
     <item>
       <title>On The &#39;Decay&#39; Of Small Organizations into Large Organizations</title>
-      <link>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</link>
+      <link>http://localhost:1313/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</guid>
+      <guid>http://localhost:1313/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</guid>
       <description>Some observations on challenges in managing quality and talent in organizations of different sizes.</description>
     </item>
     <item>
       <title>Welcome to the All New M&#39;Sync Blog</title>
-      <link>https://msync.org/posts/2015/03/welcome-to-the-all-new-msync-blog/</link>
+      <link>http://localhost:1313/posts/2015/03/welcome-to-the-all-new-msync-blog/</link>
       <pubDate>Tue, 31 Mar 2015 20:45:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/03/welcome-to-the-all-new-msync-blog/</guid>
+      <guid>http://localhost:1313/posts/2015/03/welcome-to-the-all-new-msync-blog/</guid>
       <description>Mandatory introductory post.</description>
     </item>
   </channel>

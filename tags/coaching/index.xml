@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coaching on Sync&#39;ing from Memory</title>
-    <link>https://msync.org/tags/coaching/</link>
+    <link>http://localhost:1313/tags/coaching/</link>
     <description>Recent content in Coaching on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Mar 2024 23:37:23 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/tags/coaching/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/coaching/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On The &#39;Decay&#39; Of Small Organizations into Large Organizations</title>
-      <link>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</link>
+      <link>http://localhost:1313/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</guid>
+      <guid>http://localhost:1313/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</guid>
       <description>Some observations on challenges in managing quality and talent in organizations of different sizes.</description>
     </item>
   </channel>
