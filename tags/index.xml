@@ -2,178 +2,178 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Sync&#39;ing from Memory</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://msync.org/tags/</link>
     <description>Recent content in Tags on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jul 2024 15:27:08 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jul 2024 10:18:16 +0530</lastBuildDate>
+    <atom:link href="https://msync.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Accelerate</title>
-      <link>http://localhost:1313/tags/accelerate/</link>
+      <link>https://msync.org/tags/accelerate/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/accelerate/</guid>
+      <guid>https://msync.org/tags/accelerate/</guid>
       <description></description>
     </item>
     <item>
       <title>Apple-Silicon</title>
-      <link>http://localhost:1313/tags/apple-silicon/</link>
+      <link>https://msync.org/tags/apple-silicon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/apple-silicon/</guid>
+      <guid>https://msync.org/tags/apple-silicon/</guid>
       <description></description>
     </item>
     <item>
       <title>Metal</title>
-      <link>http://localhost:1313/tags/metal/</link>
+      <link>https://msync.org/tags/metal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/metal/</guid>
+      <guid>https://msync.org/tags/metal/</guid>
       <description></description>
     </item>
     <item>
       <title>Simd</title>
-      <link>http://localhost:1313/tags/simd/</link>
+      <link>https://msync.org/tags/simd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/simd/</guid>
+      <guid>https://msync.org/tags/simd/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:1313/tags/programming/</link>
+      <link>https://msync.org/tags/programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/programming/</guid>
+      <guid>https://msync.org/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Embeddings</title>
-      <link>http://localhost:1313/tags/embeddings/</link>
+      <link>https://msync.org/tags/embeddings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/embeddings/</guid>
+      <guid>https://msync.org/tags/embeddings/</guid>
       <description></description>
     </item>
     <item>
       <title>Llm</title>
-      <link>http://localhost:1313/tags/llm/</link>
+      <link>https://msync.org/tags/llm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
+      <guid>https://msync.org/tags/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Learning</title>
-      <link>http://localhost:1313/tags/machine-learning/</link>
+      <link>https://msync.org/tags/machine-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/machine-learning/</guid>
+      <guid>https://msync.org/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Neural Networks</title>
-      <link>http://localhost:1313/tags/neural-networks/</link>
+      <link>https://msync.org/tags/neural-networks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/neural-networks/</guid>
+      <guid>https://msync.org/tags/neural-networks/</guid>
       <description></description>
     </item>
     <item>
       <title>Tokens</title>
-      <link>http://localhost:1313/tags/tokens/</link>
+      <link>https://msync.org/tags/tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tokens/</guid>
+      <guid>https://msync.org/tags/tokens/</guid>
       <description></description>
     </item>
     <item>
       <title>Math</title>
-      <link>http://localhost:1313/tags/math/</link>
+      <link>https://msync.org/tags/math/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/math/</guid>
+      <guid>https://msync.org/tags/math/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://msync.org/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://msync.org/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Probability</title>
-      <link>http://localhost:1313/tags/probability/</link>
+      <link>https://msync.org/tags/probability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/probability/</guid>
+      <guid>https://msync.org/tags/probability/</guid>
       <description></description>
     </item>
     <item>
       <title>Clojure</title>
-      <link>http://localhost:1313/tags/clojure/</link>
+      <link>https://msync.org/tags/clojure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/clojure/</guid>
+      <guid>https://msync.org/tags/clojure/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualenv</title>
-      <link>http://localhost:1313/tags/virtualenv/</link>
+      <link>https://msync.org/tags/virtualenv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/virtualenv/</guid>
+      <guid>https://msync.org/tags/virtualenv/</guid>
       <description></description>
     </item>
     <item>
       <title>Javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
+      <link>https://msync.org/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/javascript/</guid>
+      <guid>https://msync.org/tags/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>Nodejs</title>
-      <link>http://localhost:1313/tags/nodejs/</link>
+      <link>https://msync.org/tags/nodejs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nodejs/</guid>
+      <guid>https://msync.org/tags/nodejs/</guid>
       <description></description>
     </item>
     <item>
       <title>Exception-Handling</title>
-      <link>http://localhost:1313/tags/exception-handling/</link>
+      <link>https://msync.org/tags/exception-handling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/exception-handling/</guid>
+      <guid>https://msync.org/tags/exception-handling/</guid>
       <description></description>
     </item>
     <item>
       <title>Logging</title>
-      <link>http://localhost:1313/tags/logging/</link>
+      <link>https://msync.org/tags/logging/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/logging/</guid>
+      <guid>https://msync.org/tags/logging/</guid>
       <description></description>
     </item>
     <item>
       <title>Chrome</title>
-      <link>http://localhost:1313/tags/chrome/</link>
+      <link>https://msync.org/tags/chrome/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/chrome/</guid>
+      <guid>https://msync.org/tags/chrome/</guid>
       <description></description>
     </item>
     <item>
       <title>Clojurescript</title>
-      <link>http://localhost:1313/tags/clojurescript/</link>
+      <link>https://msync.org/tags/clojurescript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/clojurescript/</guid>
+      <guid>https://msync.org/tags/clojurescript/</guid>
       <description></description>
     </item>
     <item>
       <title>Agile</title>
-      <link>http://localhost:1313/tags/agile/</link>
+      <link>https://msync.org/tags/agile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/agile/</guid>
+      <guid>https://msync.org/tags/agile/</guid>
       <description></description>
     </item>
     <item>
       <title>Coaching</title>
-      <link>http://localhost:1313/tags/coaching/</link>
+      <link>https://msync.org/tags/coaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/coaching/</guid>
+      <guid>https://msync.org/tags/coaching/</guid>
       <description></description>
     </item>
     <item>
       <title>Culture</title>
-      <link>http://localhost:1313/tags/culture/</link>
+      <link>https://msync.org/tags/culture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/culture/</guid>
+      <guid>https://msync.org/tags/culture/</guid>
       <description></description>
     </item>
   </channel>

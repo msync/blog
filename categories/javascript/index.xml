@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Sync&#39;ing from Memory</title>
-    <link>http://localhost:1313/categories/javascript/</link>
+    <link>https://msync.org/categories/javascript/</link>
     <description>Recent content in Javascript on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Mar 2024 18:38:08 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://msync.org/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JS Quick Restart for the Impatient</title>
-      <link>http://localhost:1313/notes/javascript-quick-restart/</link>
+      <link>https://msync.org/notes/javascript-quick-restart/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
-      <guid>http://localhost:1313/notes/javascript-quick-restart/</guid>
+      <guid>https://msync.org/notes/javascript-quick-restart/</guid>
       <description>For polyglots who can&amp;rsquo;t keep too many languages in their heads and need a deep refresher.</description>
     </item>
   </channel>

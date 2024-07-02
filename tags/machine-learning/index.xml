@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Sync&#39;ing from Memory</title>
-    <link>http://localhost:1313/tags/machine-learning/</link>
+    <link>https://msync.org/tags/machine-learning/</link>
     <description>Recent content in Machine Learning on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jun 2024 18:37:01 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://msync.org/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LLMs: Exploring To Understand</title>
-      <link>http://localhost:1313/notes/llm-exploration/</link>
+      <link>https://msync.org/notes/llm-exploration/</link>
       <pubDate>Mon, 29 Apr 2024 18:29:59 +0530</pubDate>
-      <guid>http://localhost:1313/notes/llm-exploration/</guid>
+      <guid>https://msync.org/notes/llm-exploration/</guid>
       <description>Delving into LLMs to probe how they do what they do.</description>
     </item>
     <item>
       <title>LLMs: Understanding Tokens and Embeddings</title>
-      <link>http://localhost:1313/notes/llm-understanding-tokens-embeddings/</link>
+      <link>https://msync.org/notes/llm-understanding-tokens-embeddings/</link>
       <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
-      <guid>http://localhost:1313/notes/llm-understanding-tokens-embeddings/</guid>
+      <guid>https://msync.org/notes/llm-understanding-tokens-embeddings/</guid>
       <description>An overview of what tokens and embeddings mean in the context of LLMs - and related models. Please use the code along side for more grounding. Code links towards the end.</description>
     </item>
     <item>
       <title>Notes for Deep Learning with Python</title>
-      <link>http://localhost:1313/notes/deep-learning-with-python/</link>
+      <link>https://msync.org/notes/deep-learning-with-python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>http://localhost:1313/notes/deep-learning-with-python/</guid>
+      <guid>https://msync.org/notes/deep-learning-with-python/</guid>
       <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
   </channel>

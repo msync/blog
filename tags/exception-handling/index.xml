@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Exception-Handling on Sync&#39;ing from Memory</title>
-    <link>http://localhost:1313/tags/exception-handling/</link>
+    <link>https://msync.org/tags/exception-handling/</link>
     <description>Recent content in Exception-Handling on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Mar 2024 23:40:44 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/exception-handling/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://msync.org/tags/exception-handling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Useful Clojure Asides - Logging and Exceptions</title>
-      <link>http://localhost:1313/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
+      <link>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      <guid>http://localhost:1313/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</guid>
+      <guid>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</guid>
       <description>It&amp;rsquo;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description>
     </item>
   </channel>

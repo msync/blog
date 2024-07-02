@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on Sync&#39;ing from Memory</title>
-    <link>http://localhost:1313/notes/</link>
+    <link>https://msync.org/notes/</link>
     <description>Recent content in Notes on Sync&#39;ing from Memory</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Jul 2024 10:18:16 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/notes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://msync.org/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Quick Notes - Hardware-aware programming on MacOS</title>
-      <link>http://localhost:1313/notes/apple-silicon-macos/</link>
+      <link>https://msync.org/notes/apple-silicon-macos/</link>
       <pubDate>Sat, 29 Jun 2024 09:32:47 +0530</pubDate>
-      <guid>http://localhost:1313/notes/apple-silicon-macos/</guid>
+      <guid>https://msync.org/notes/apple-silicon-macos/</guid>
       <description>Short notes - pointers to programming for speed and efficiency, leveraging hardware-specific features available on ARM Apple Silicon. MacOS-focused at most places, although ideas are easy to generalise.</description>
     </item>
     <item>
       <title>Handy Hacks</title>
-      <link>http://localhost:1313/notes/handy-hacks/</link>
+      <link>https://msync.org/notes/handy-hacks/</link>
       <pubDate>Wed, 01 May 2024 09:30:31 +0530</pubDate>
-      <guid>http://localhost:1313/notes/handy-hacks/</guid>
+      <guid>https://msync.org/notes/handy-hacks/</guid>
       <description>Quick handy hacks for reference from anywhere.</description>
     </item>
     <item>
       <title>LLMs: Exploring To Understand</title>
-      <link>http://localhost:1313/notes/llm-exploration/</link>
+      <link>https://msync.org/notes/llm-exploration/</link>
       <pubDate>Mon, 29 Apr 2024 18:29:59 +0530</pubDate>
-      <guid>http://localhost:1313/notes/llm-exploration/</guid>
+      <guid>https://msync.org/notes/llm-exploration/</guid>
       <description>Delving into LLMs to probe how they do what they do.</description>
     </item>
     <item>
       <title>LLMs: Understanding Tokens and Embeddings</title>
-      <link>http://localhost:1313/notes/llm-understanding-tokens-embeddings/</link>
+      <link>https://msync.org/notes/llm-understanding-tokens-embeddings/</link>
       <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
-      <guid>http://localhost:1313/notes/llm-understanding-tokens-embeddings/</guid>
+      <guid>https://msync.org/notes/llm-understanding-tokens-embeddings/</guid>
       <description>An overview of what tokens and embeddings mean in the context of LLMs - and related models. Please use the code along side for more grounding. Code links towards the end.</description>
     </item>
     <item>
       <title>MLX</title>
-      <link>http://localhost:1313/notes/mlx/</link>
+      <link>https://msync.org/notes/mlx/</link>
       <pubDate>Fri, 05 Apr 2024 09:36:15 +0530</pubDate>
-      <guid>http://localhost:1313/notes/mlx/</guid>
+      <guid>https://msync.org/notes/mlx/</guid>
       <description>MLX 20/80. With 20% effort, hope to get 80% covered on MLX&amp;rsquo;s offerings. And, I don&amp;rsquo;t stand by this claim.</description>
     </item>
     <item>
       <title>Probability</title>
-      <link>http://localhost:1313/notes/probability/</link>
+      <link>https://msync.org/notes/probability/</link>
       <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
-      <guid>http://localhost:1313/notes/probability/</guid>
+      <guid>https://msync.org/notes/probability/</guid>
       <description>Probably definitely incomplete notes on probability.</description>
     </item>
     <item>
       <title>Notes for Deep Learning with Python</title>
-      <link>http://localhost:1313/notes/deep-learning-with-python/</link>
+      <link>https://msync.org/notes/deep-learning-with-python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>http://localhost:1313/notes/deep-learning-with-python/</guid>
+      <guid>https://msync.org/notes/deep-learning-with-python/</guid>
       <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
     </item>
     <item>
       <title>JS Quick Restart for the Impatient</title>
-      <link>http://localhost:1313/notes/javascript-quick-restart/</link>
+      <link>https://msync.org/notes/javascript-quick-restart/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
-      <guid>http://localhost:1313/notes/javascript-quick-restart/</guid>
+      <guid>https://msync.org/notes/javascript-quick-restart/</guid>
       <description>For polyglots who can&amp;rsquo;t keep too many languages in their heads and need a deep refresher.</description>
     </item>
     <item>
       <title>Clojure</title>
-      <link>http://localhost:1313/notes/clojure/</link>
+      <link>https://msync.org/notes/clojure/</link>
       <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      <guid>http://localhost:1313/notes/clojure/</guid>
+      <guid>https://msync.org/notes/clojure/</guid>
       <description>Clojure Notes - An aimless dump of anything and everything interesting I find &lt;em&gt;and&lt;/em&gt; manage to record.</description>
     </item>
     <item>
       <title>Org-mode Quick Guide</title>
-      <link>http://localhost:1313/notes/orgguide/</link>
+      <link>https://msync.org/notes/orgguide/</link>
       <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      <guid>http://localhost:1313/notes/orgguide/</guid>
+      <guid>https://msync.org/notes/orgguide/</guid>
       <description>Summarized guide for features I commonly use, for quick reference.</description>
     </item>
   </channel>
