@@ -16,13 +16,6 @@
       <description>Short notes - pointers to programming for speed and efficiency, leveraging hardware-specific features available on ARM Apple Silicon. MacOS-focused at most places, although ideas are easy to generalise.</description>
     </item>
     <item>
-      <title>Handy Hacks</title>
-      <link>https://msync.org/notes/handy-hacks/</link>
-      <pubDate>Wed, 01 May 2024 09:30:31 +0530</pubDate>
-      <guid>https://msync.org/notes/handy-hacks/</guid>
-      <description>Quick handy hacks for reference from anywhere.</description>
-    </item>
-    <item>
       <title>JS Quick Restart for the Impatient</title>
       <link>https://msync.org/notes/javascript-quick-restart/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
