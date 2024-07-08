@@ -87,10 +87,10 @@
                 </time>
 
                 
-                <time datetime="2024-07-02 10:18:16 &#43;0530 IST" itemprop="dateModified" class="pubdate">
+                <time datetime="2024-07-08 21:59:56 &#43;0530 IST" itemprop="dateModified" class="pubdate">
                     Updated:
-                    <span class="weekday">Tue</span>,
-                    <span class="day">2</span>
+                    <span class="weekday">Mon</span>,
+                    <span class="day">8</span>
                     <span class="month">Jul</span>,
                     <span class="year">2024</span>
                 </time>
@@ -104,12 +104,12 @@
 <p>The purpose of this document is to help with a quick overview and reference for developers on the Apple platform who&rsquo;d like to be aware of what facilities are available for optimal utilisation of their hardware, in the current context of an upcoming AI-focused tech world where parallel processing is a fundamental need. The ideas are general and developers will be able to map these to other platforms, and know what to look for in general when faced with unknowns.</p>
 <h2 id="key-terms-and-techniques">Key Terms and Techniques</h2>
 <h3 id="simd-single-instruction-multiple-data"><a href="https://en.wikipedia.org/wiki/Single_instruction,_multiple_data">SIMD</a> - Single Instruction, Multiple Data</h3>
-<p>From Wikipedia</p>
+<p>SIMD allows for working on more data in lesser number of CPU cycles, by optimally using the available registers (typically, under-utilised) and the bandwidth between the CPU and memory (again, typically under-utilised). Recall that moving data around is counted as <a href="https://en.wikipedia.org/wiki/Input/output">IO</a>, which is generally orders of magnitude slower than compute.</p>
+<p>It&rsquo;s useful here to quote Wikipedia</p>
 <aside>
 <p>Single instruction, multiple data (SIMD) is a type of parallel processing in <a href="https://en.wikipedia.org/wiki/Flynn%27s_taxonomy">Flynn&rsquo;s taxonomy</a>.
 SIMD can be internal (part of the hardware design) and it can be directly accessible through an instruction set architecture (ISA), but it should not be confused with an ISA. SIMD describes computers with multiple processing elements that perform the same operation on multiple data points simultaneously.</p>
 </aside>
-<p>Concisely, SIMD allows for working on more data in lesser number of CPU cycles, by optimally using the available registers (typically, under-utilised) and the bandwidth between the CPU and memory (again, typically under-utilised). Recall that moving data around is counted as <a href="https://en.wikipedia.org/wiki/Input/output">IO</a>, which is generally orders of magnitude slower than compute.</p>
 <!--list-separator-->
 <ul>
 <li>
@@ -121,7 +121,7 @@ Note: NEON is a trademark associated with ARM, not Apple. Apple Silicon uses the
 <h3 id="metal"><a href="https://developer.apple.com/metal/">Metal</a></h3>
 <p>Metal is a low-level graphics API that is useful for general-purpose GPU programming - <strong>GPGPU</strong>. This is Apple-specific.</p>
 <h3 id="accelerate"><a href="https://developer.apple.com/documentation/accelerate">Accelerate</a></h3>
-<p>Accelerate provides a unified computing framework for various devices in the Apple ecosystem, leveraging the hardware as efficiently as possible, including hardware-specific SIMD instructions. It takes away from the programmer the need to program differently for different underlying hardware.</p>
+<p>Acclerate is <strong>not</strong> related to the GPU. It provides a unified computing framework for various devices in the Apple ecosystem, leveraging the hardware as efficiently as possible, including hardware-specific SIMD instructions. It takes away from the programmer the need to program differently for different underlying hardware.</p>
 <h3 id="loop-unrolling">Loop Unrolling <span class="tag"><span class="technique">technique</span></span></h3>
 <p>Do more in a single loop - because every loop has an overhead, and a single loop may not optimally utilise all the resources that are reserved for that round.</p>
 <h3 id="data-prefetching">Data prefetching <span class="tag"><span class="technique">technique</span></span></h3>
@@ -203,7 +203,7 @@ The NEON unit can view the same register bank as</p>
 <li>Submitting command buffers</li>
 </ol>
 <h2 id="accelerate"><a href="https://developer.apple.com/documentation/accelerate">Accelerate</a></h2>
-<p>Accelerate abstracts programming at a higher level for various application areas, like scientific computing, machine learning, image processing and such. It enables a more convenient way to implement logic for computationally intensive tasks, without having to write code conditioned on the hardware differences.</p>
+<p>Accelerate abstracts programming at a higher level for various application areas, like scientific computing, machine learning, image processing and such. It enables a more convenient way to implement logic for computationally intensive tasks, without having to write code conditioned on the hardware differences. It attempts to provide high performance at low energy consumption by using the hardware instructions well.</p>
 <p>The key components and uses of the Accelerate framework are</p>
 <ul>
 <li>Vector Digital Signal Processing
