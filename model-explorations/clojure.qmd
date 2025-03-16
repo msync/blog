@@ -1,0 +1,14 @@
+---
+title: "Clojure Trial"
+jupyter: clojupyter
+---
+
+# Introduction
+
+```{clojure}
+(ns clojure-trial
+  (:require [clojure.string :as str]))
+
+(+ 1 1)
+(print "Hello, Clojure!")
+```

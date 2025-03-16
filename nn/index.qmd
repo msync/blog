@@ -1,0 +1,183 @@
+---
+title: "Building Blocks of the Deep Learning Model"
+execute:
+  echo: true
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+This note is nothing but some commentary added on Karpathy's [micrograd](https://github.com/karpathy/micrograd) example.
+
+# The Perceptrons, Layers, and Networks
+
+It's signal in, and signal out. The transformation function is the key - it can literally be anything. Intuitively, modeling based on our understanding of the neuron, a simpler function is a good choice. But we do not choose linear functions as they can not model complex relationships.
+
+Stacking multiple of them leads to obviously interesting complex functions. But we do not know the parameters of this large function that the entire network represents. We need to learn them.
+
+```{python}
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+from micrograd.engine import Value
+from micrograd.nn import Neuron, Layer, MLP
+from sklearn.datasets import make_moons
+
+np.random.seed(1337)
+random.seed(1337)
+```
+
+```{python}
+#| code-fold: false
+X, y = make_moons(n_samples=100, noise=0.1)
+
+y = y*2 - 1
+plt.figure(figsize=(5,5))
+plt.scatter(X[:,0], X[:,1], c=y, cmap='coolwarm')
+```
+
+The dataset is a simple 2D dataset with two classes. We can see that the classes are not linearly separable.
+
+What we want is a function that, given any of those points, can tell us which class it belongs to. The simplest way to do it is to define a dictionary that maps each point to a class. But that's not what we want, because that's not a realistic problem to solve.
+
+## Generalization
+The promise of the neural network is, like the brain, to generalize. That is, to be able to predict the class of a point that it has never seen before. This is the key to the success of neural networks.
+
+So, we imagine that the solution is a function that can, given any point in this 2D space, choose a "side." This side is the class that the point belongs to. So, a curve that can somehow separate the two classes is what we are looking for.
+
+As we have stated before (without any formal proof), a network of stacked perceptrons can model any function. So, let's model this conjectured function with a network of perceptrons.
+
+# The Multi-Layer Perceptron
+Science and engineering make progress with any or all of abstractions, simplifications  and generalizations. The perceptron is a simplification of the neuron. The multi-layer perceptron is a generalization of the perceptron, and a simplification of the brain.
+
+```{python}
+#| echo: false
+
+def draw_mlp(layers):
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.set_xlim(-1.5, len(layers))
+    ax.set_ylim(-max(layers) / 1.3, max(layers) / 1.8)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.axis("off")
+
+    positions = {}
+
+    # Draw neurons
+    for i, layer_size in enumerate(layers):
+        y_positions = np.linspace(-layer_size / 4, layer_size / 4, layer_size)
+        for j, y in enumerate(y_positions):
+            positions[(i, j)] = (i, y)
+            circle = plt.Circle((i, y), 0.18, fill=True, color="orange")
+            ax.add_patch(circle)
+
+    # Draw connections
+    for i in range(len(layers) - 1):
+        for j in range(layers[i]):
+            for k in range(layers[i + 1]):
+                start = positions[(i, j)]
+                end = positions[(i + 1, k)]
+                ax.plot([start[0], end[0]], [start[1], end[1]], "k-", lw=0.8)
+
+    # Draw input arrows
+    for j in range(layers[0]):
+        start = (-1.2, positions[(0, j)][1])
+        end = positions[(0, j)]
+        ax.arrow(start[0], start[1], end[0] - start[0] - 0.2, end[1] - start[1], 
+                 head_width=0.11, head_length=0.18, fc="blue", ec="blue")
+    
+    # Draw output arrows
+    for j in range(layers[-1]):
+        start = positions[(len(layers) - 3, j)]
+        end = (len(layers) - 0.8, start[1])
+        ax.arrow(start[0] + 1.9, start[1], end[0] - start[0] - 1.8, end[1] - start[1], 
+                 head_width=0.11, head_length=0.18, fc="red", ec="red")
+
+    plt.show()
+
+draw_mlp([2, 3, 2])
+
+```
+
+Let's attempt to solve this classification problem with a model that takes two inputs (the x and y coordinates of the point) and outputs a single value. This value will be the class of the point. We will use a multi-layer perceptron with 2 hidden layers, each with 16 neurons.
+
+```{python}
+#| code-fold: false
+model = MLP(2, [16, 16, 1])
+print("Number of parameters in the model is", len(model.parameters()))
+```
+
+To train this network, we use our trusty friend - calculus, trying to minimize the error between the predicted class and the actual class. Because reducing the error means the network does what we want it to do, and calculus is great at helping us find minima or maxima by way of slopes.
+
+Ah - the slope. The slope of the error function with respect to the parameters of the network. This is the key to training the network. We can use the slope to adjust the parameters in the right direction, so that the error decreases.
+
+Which means we represent the network's computation in terms of the delta between the wanted value and the actual value, and then use calculus to find the slope of the error function with respect to the parameters of the network. And adjust the parameters in such a way as to reduce the error.
+
+```{python}
+#| code-fold: false
+def loss(batch_size=None):
+    if batch_size is None:
+        Xb, yb = X, y
+    else:
+        ri = np.random.permutation(X.shape[0])[:batch_size]
+        Xb, yb = X[ri], y[ri]
+    inputs = [list(map(Value, xrow)) for xrow in Xb]
+
+    scores = list(map(model, inputs))
+
+    losses = [(1 + -yi*scorei).relu() for yi, scorei in zip(yb, scores)]
+    data_loss = sum(losses) * (1.0 / len(losses))
+    alpha = 1e-4
+    reg_loss = alpha * sum((p*p for p in model.parameters()))
+    total_loss = data_loss + reg_loss
+
+    accuracy = [(yi > 0) == (scorei.data > 0) for yi, scorei in zip(yb, scores)]
+    return total_loss, sum(accuracy) / len(accuracy)
+
+total_loss, acc = loss()
+print(total_loss, acc)
+```
+
+Now, let's let loose our optimization algorithm. Run the network through the input a 100 times, and adjust the parameters each time to reduce the error. And see where we land.
+
+```{python}
+#| code-fold: false
+#| freeze: auto
+for k in range(100):
+    total_loss, acc = loss()
+
+    model.zero_grad()
+    total_loss.backward()
+
+    learning_rate = 1.0 - 0.9*k/100
+    for p in model.parameters():
+        p.data -= learning_rate * p.grad
+
+    if k % 1 == 0:
+        print(f"step {k} loss {total_loss.data}, accuracy {acc*100}%")
+```
+
+Wow, looks like it wasn't hard at all! The network learnt pretty quickly and the accuracy moved to 100% pretty early on.
+
+Let's visualize the decision boundary of the network.
+```{python}
+h = 0.25
+x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+Xmesh = np.c_[xx.ravel(), yy.ravel()]
+inputs = [list(map(Value, xrow)) for xrow in Xmesh]
+scores = list(map(model, inputs))
+Z = np.array([s.data > 0 for s in scores])
+Z = Z.reshape(xx.shape)
+
+fig = plt.figure()
+plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral, alpha=0.8)
+plt.scatter(X[:, 0], X[:, 1], c=y, s=40, cmap=plt.cm.Spectral)
+plt.xlim(xx.min(), yy.max())
+plt.ylim(yy.min(), yy.max())
+```
+
+

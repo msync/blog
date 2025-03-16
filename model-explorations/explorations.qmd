@@ -1,0 +1,56 @@
+---
+title: "Model Architecture Explorations"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+# Introduction
+This is a place for quick explorations of model architectures. No detailed explanations, just code snippets and outputs.
+
+# Audio
+
+## Whisper
+
+```{python}
+import torch
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+```
+
+```{python}
+DEVICE = "mps"
+model_id = "openai/whisper-large-v3-turbo"
+model = AutoModelForSpeechSeq2Seq.from_pretrained(model_id).to(DEVICE)
+encoder = model.get_encoder()
+decoder = model.get_decoder()
+```
+
+```{python}
+encoder.layers[0].self_attn
+```
+
+```{python}
+decoder.layers[1]
+```
+
+# Test Section
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+#| code-fold: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
