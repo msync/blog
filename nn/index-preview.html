@@ -206,6 +206,11 @@
    
   <ul>
   <li><a href="#the-perceptrons-layers-and-networks" id="toc-the-perceptrons-layers-and-networks" class="nav-link active" data-scroll-target="#the-perceptrons-layers-and-networks">The Perceptrons, Layers, and Networks</a></li>
+  <li><a href="#classification-with-a-multi-layer-perceptron" id="toc-classification-with-a-multi-layer-perceptron" class="nav-link" data-scroll-target="#classification-with-a-multi-layer-perceptron">Classification with a Multi-Layer Perceptron</a>
+  <ul class="collapse">
+  <li><a href="#the-setup" id="toc-the-setup" class="nav-link" data-scroll-target="#the-setup">The setup</a></li>
+  <li><a href="#the-dataset" id="toc-the-dataset" class="nav-link" data-scroll-target="#the-dataset">The dataset</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -213,12 +218,26 @@
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-       <p>This note is nothing but some commentary added on Karpathy’s <a href="https://github.com/karpathy/micrograd">micrograd</a> example.</p>
-<section id="the-perceptrons-layers-and-networks" class="level1">
+       <section id="the-perceptrons-layers-and-networks" class="level1">
 <h1>The Perceptrons, Layers, and Networks</h1>
-<p>It’s signal in, and signal out. The transformation function is the key - it can literally be anything. Intuitively, modeling based on our understanding of the neuron, a simpler function is a good choice. But we do not choose linear functions as they can not model complex relationships.</p>
-<p>Stacking multiple of them leads to obviously interesting complex functions. But we do not know the parameters of this large function that the entire network represents. We need to learn them.</p>
-<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="d38518f0" class="cell" data-execution_count="1">
+<ul>
+<li>Perceptron &lt; Layer &lt; Network</li>
+<li>Need non-linear activation functions to model complex functions</li>
+<li>Stacking multiple of them leads to obviously interesting complex functions.</li>
+<li>We do not know the parameters of this large function that the entire network represents. We need to learn them.</li>
+<li>Learning is done by adjusting the parameters of the network to minimize the error between the predicted value and the actual value.
+<ul>
+<li>Using calculus to extremize the error function with respect to the parameters of the network.</li>
+</ul></li>
+</ul>
+</section>
+<section id="classification-with-a-multi-layer-perceptron" class="level1">
+<h1>Classification with a Multi-Layer Perceptron</h1>
+<p>We’ll use synthetic data to create two classes of points that are not linearly separable. We’ll then use a multi-layer perceptron to classify these points. This note is nothing but some commentary added on Karpathy’s <a href="https://github.com/karpathy/micrograd">micrograd</a> example.</p>
+<p>We’ll solve a classification problem with a multi-layer perceptron. The problem is simple - given a point in a 2D space, we want to predict which class it belongs to. The two classes and their members are synthetically generated.</p>
+<section id="the-setup" class="level2">
+<h2 class="anchored" data-anchor-id="the-setup">The setup</h2>
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="b595b982" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
@@ -233,7 +252,14 @@
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">1337</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="646a161e" class="cell" data-execution_count="2">
+</section>
+<div id="ada809f7" class="cell markdown">
+<section id="the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="the-dataset">The dataset</h2>
+<p><code>make_moons</code> from <code>sklearn.datasets</code> creates two interleaving half circles. We’ll use this to create a simple 2D dataset with two classes. Moon - because you can see the (non-linear) crescent shape of the two classes, and the points are not linearly separable.</p>
+</section>
+</div>
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="e8fb0bf3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_moons(n_samples<span class="op">=</span><span class="dv">100</span>, noise<span class="op">=</span><span class="fl">0.1</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y<span class="op">*</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span></span>
@@ -247,9 +273,11 @@
 </div>
 </div>
 </div></div>
-<div id="943ad20d" class="cell markdown">
-<p>The dataset is a simple 2D dataset with two classes. We can see that the classes are not linearly separable.</p>
+<div id="a135cdbf" class="cell markdown">
+<section id="the-task" class="level2">
+<h2 class="anchored" data-anchor-id="the-task">The task</h2>
 <p>What we want is a function that, given any of those points, can tell us which class it belongs to. The simplest way to do it is to define a dictionary that maps each point to a class. But that’s not what we want, because that’s not a realistic problem to solve.</p>
+</section>
 <section id="generalization" class="level2">
 <h2 class="anchored" data-anchor-id="generalization">Generalization</h2>
 <p>The promise of the neural network is, like the brain, to generalize. That is, to be able to predict the class of a point that it has never seen before. This is the key to the success of neural networks.</p>
@@ -258,10 +286,10 @@
 </section>
 <section id="the-multi-layer-perceptron" class="level1">
 <h1>The Multi-Layer Perceptron</h1>
-<p>Science and engineering make progress with any or all of abstractions, simplifications and generalizations. The perceptron is a simplification of the neuron. The multi-layer perceptron is a generalization of the perceptron, and a simplification of the brain.</p>
+<p>Let’s visualize the network we are going to build. It has 2 input neurons, 3 neurons in the first hidden layer, and 2 output neuron. The input neurons represent the x and y coordinates of the point, and the output neurons represent the class of the point - one for each class. Naive, but simple to understand.</p>
 </section>
 </div>
-<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="dafb2e02" class="cell" data-execution_count="3">
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="9c883c14" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_mlp(layers):</span>
@@ -316,22 +344,21 @@
 </div>
 </div>
 </div></div>
-<div id="56354334" class="cell markdown">
+<div id="6f44c36f" class="cell markdown">
 <p>Let’s attempt to solve this classification problem with a model that takes two inputs (the x and y coordinates of the point) and outputs a single value. This value will be the class of the point. We will use a multi-layer perceptron with 2 hidden layers, each with 16 neurons.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="95b271b1" class="cell" data-execution_count="4">
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="4e967b7c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> MLP(<span class="dv">2</span>, [<span class="dv">16</span>, <span class="dv">16</span>, <span class="dv">1</span>])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Number of parameters in the model is"</span>, <span class="bu">len</span>(model.parameters()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of parameters in the model is 337</code></pre>
 </div>
 </div></div>
-<div id="f1ae984b" class="cell markdown">
+<div id="2c8e21dd" class="cell markdown">
 <p>To train this network, we use our trusty friend - calculus, trying to minimize the error between the predicted class and the actual class. Because reducing the error means the network does what we want it to do, and calculus is great at helping us find minima or maxima by way of slopes.</p>
-<p>Ah - the slope. The slope of the error function with respect to the parameters of the network. This is the key to training the network. We can use the slope to adjust the parameters in the right direction, so that the error decreases.</p>
-<p>Which means we represent the network’s computation in terms of the delta between the wanted value and the actual value, and then use calculus to find the slope of the error function with respect to the parameters of the network. And adjust the parameters in such a way as to reduce the error.</p>
+<p>Intuitively, the slope gives us an indication of the amount and direction of the adjustments. Larger slopes mean larger adjustments. This is adjusted by a learning rate, which is a hyperparameter that we need to tune.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="cd33a104" class="cell" data-execution_count="5">
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="c699ca65" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> loss(batch_size<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> batch_size <span class="kw">is</span> <span class="va">None</span>:</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        Xb, yb <span class="op">=</span> X, y</span>
@@ -357,10 +384,10 @@
 <pre><code>Value(data=0.8958441028683222, grad=0) 0.5</code></pre>
 </div>
 </div></div>
-<div id="09a6167f" class="cell markdown">
+<div id="96326ae2" class="cell markdown">
 <p>Now, let’s let loose our optimization algorithm. Run the network through the input a 100 times, and adjust the parameters each time to reduce the error. And see where we land.</p>
 </div>
-<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="e5d6347c" class="cell" data-freeze="auto" data-execution_count="6">
+<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="c0d9d925" class="cell" data-freeze="auto" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    total_loss, acc <span class="op">=</span> loss()</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -371,116 +398,26 @@
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> p <span class="kw">in</span> model.parameters():</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        p.data <span class="op">-=</span> learning_rate <span class="op">*</span> p.grad</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> k <span class="op">%</span> <span class="dv">1</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> k <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"step </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss"> loss </span><span class="sc">{</span>total_loss<span class="sc">.</span>data<span class="sc">}</span><span class="ss">, accuracy </span><span class="sc">{</span>acc<span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>step 0 loss 0.8958441028683222, accuracy 50.0%
-step 1 loss 1.7235905336972022, accuracy 81.0%
-step 2 loss 0.7429006313851131, accuracy 77.0%
-step 3 loss 0.7705641260584201, accuracy 82.0%
-step 4 loss 0.3692793385976537, accuracy 84.0%
-step 5 loss 0.31354548191852194, accuracy 86.0%
-step 6 loss 0.28142343497724337, accuracy 89.0%
-step 7 loss 0.26888733313983904, accuracy 91.0%
-step 8 loss 0.2567147286057417, accuracy 91.0%
-step 9 loss 0.2704862551637922, accuracy 91.0%
-step 10 loss 0.2450702385365805, accuracy 91.0%
-step 11 loss 0.2509905529791503, accuracy 92.0%
-step 12 loss 0.2156095185192295, accuracy 91.0%
-step 13 loss 0.23090378446402723, accuracy 93.0%
-step 14 loss 0.2015215122789944, accuracy 92.0%
-step 15 loss 0.2257450627928222, accuracy 93.0%
-step 16 loss 0.19447987596204114, accuracy 92.0%
-step 17 loss 0.21089496199246358, accuracy 93.0%
-step 18 loss 0.15983077356303593, accuracy 94.0%
-step 19 loss 0.18453748746883916, accuracy 93.0%
+step 10 loss 0.24507023853658055, accuracy 91.0%
 step 20 loss 0.1897752285608764, accuracy 91.0%
-step 21 loss 0.19072704042579644, accuracy 93.0%
-step 22 loss 0.11733695088756486, accuracy 97.0%
-step 23 loss 0.12173524408232451, accuracy 95.0%
-step 24 loss 0.12615712612770447, accuracy 95.0%
-step 25 loss 0.16049097780801663, accuracy 95.0%
-step 26 loss 0.18747197705245822, accuracy 92.0%
-step 27 loss 0.16741837891059408, accuracy 95.0%
-step 28 loss 0.09586583491455399, accuracy 97.0%
-step 29 loss 0.08778783707420909, accuracy 96.0%
-step 30 loss 0.11731297569011845, accuracy 95.0%
-step 31 loss 0.09340146460619835, accuracy 97.0%
-step 32 loss 0.12454454903103446, accuracy 95.0%
-step 33 loss 0.07984002652777271, accuracy 97.0%
-step 34 loss 0.07727519232921677, accuracy 97.0%
-step 35 loss 0.07661250143094474, accuracy 98.0%
-step 36 loss 0.10610492379198357, accuracy 96.0%
-step 37 loss 0.0906280842926598, accuracy 99.0%
-step 38 loss 0.10671887043036926, accuracy 95.0%
-step 39 loss 0.05225659921975852, accuracy 98.0%
-step 40 loss 0.060160098952344615, accuracy 100.0%
-step 41 loss 0.08596724533333942, accuracy 96.0%
-step 42 loss 0.051121079431795946, accuracy 99.0%
-step 43 loss 0.05240142401642838, accuracy 97.0%
-step 44 loss 0.04530684179001562, accuracy 100.0%
-step 45 loss 0.07211073370655104, accuracy 97.0%
-step 46 loss 0.033342386513102375, accuracy 99.0%
-step 47 loss 0.03143222795751116, accuracy 100.0%
-step 48 loss 0.036585367471115154, accuracy 99.0%
-step 49 loss 0.04829139382390281, accuracy 99.0%
-step 50 loss 0.09875114765619622, accuracy 96.0%
-step 51 loss 0.05449063965875464, accuracy 99.0%
-step 52 loss 0.03392679435708301, accuracy 100.0%
-step 53 loss 0.05261517263568447, accuracy 97.0%
-step 54 loss 0.03250295251424931, accuracy 99.0%
-step 55 loss 0.02888327387207811, accuracy 100.0%
-step 56 loss 0.04139151104027243, accuracy 98.0%
-step 57 loss 0.018987407426128478, accuracy 100.0%
-step 58 loss 0.025238335238837464, accuracy 100.0%
-step 59 loss 0.020796565213418827, accuracy 100.0%
-step 60 loss 0.03259711157810239, accuracy 99.0%
-step 61 loss 0.017863351693480266, accuracy 100.0%
-step 62 loss 0.023008717832211728, accuracy 100.0%
-step 63 loss 0.022079325463581392, accuracy 100.0%
-step 64 loss 0.029432917853529757, accuracy 99.0%
-step 65 loss 0.016251514644091844, accuracy 100.0%
-step 66 loss 0.028468534483264522, accuracy 99.0%
-step 67 loss 0.01399436554620872, accuracy 100.0%
-step 68 loss 0.015552344843651306, accuracy 100.0%
-step 69 loss 0.03389119946160177, accuracy 99.0%
-step 70 loss 0.01422987006592691, accuracy 100.0%
-step 71 loss 0.0132552815832855, accuracy 100.0%
-step 72 loss 0.012300277590022049, accuracy 100.0%
-step 73 loss 0.012676052498355959, accuracy 100.0%
-step 74 loss 0.020593811955954743, accuracy 100.0%
-step 75 loss 0.011845398205364446, accuracy 100.0%
-step 76 loss 0.016012697472883086, accuracy 100.0%
-step 77 loss 0.0254583602392221, accuracy 100.0%
-step 78 loss 0.01438293028966191, accuracy 100.0%
-step 79 loss 0.011698962425817997, accuracy 100.0%
-step 80 loss 0.01231850080051574, accuracy 100.0%
-step 81 loss 0.014121117031464236, accuracy 100.0%
-step 82 loss 0.01166459196244622, accuracy 100.0%
-step 83 loss 0.011589314549188722, accuracy 100.0%
-step 84 loss 0.010990299347735226, accuracy 100.0%
-step 85 loss 0.01098922672069161, accuracy 100.0%
-step 86 loss 0.010988193757655071, accuracy 100.0%
-step 87 loss 0.010987200447388707, accuracy 100.0%
-step 88 loss 0.010986246779084923, accuracy 100.0%
-step 89 loss 0.010985332742365276, accuracy 100.0%
-step 90 loss 0.010984458327280176, accuracy 100.0%
-step 91 loss 0.010983623524308863, accuracy 100.0%
-step 92 loss 0.010982828324359074, accuracy 100.0%
-step 93 loss 0.010982072718767005, accuracy 100.0%
-step 94 loss 0.010981356699297042, accuracy 100.0%
-step 95 loss 0.010980680258141723, accuracy 100.0%
-step 96 loss 0.010980043387921506, accuracy 100.0%
-step 97 loss 0.010979446081684675, accuracy 100.0%
-step 98 loss 0.010978888332907227, accuracy 100.0%
-step 99 loss 0.010978370135492717, accuracy 100.0%</code></pre>
+step 30 loss 0.11731297569011848, accuracy 95.0%
+step 40 loss 0.06016009895234466, accuracy 100.0%
+step 50 loss 0.09875114765619628, accuracy 96.0%
+step 60 loss 0.03259711157810232, accuracy 99.0%
+step 70 loss 0.01422987006592693, accuracy 100.0%
+step 80 loss 0.01231850080051585, accuracy 100.0%
+step 90 loss 0.010984458327280174, accuracy 100.0%</code></pre>
 </div>
 </div></div>
-<div id="a814262c" class="cell markdown">
-<p>Wow, looks like it wasn’t hard at all! The network learnt pretty quickly and the accuracy moved to 100% pretty early on.</p>
+<div id="6efe55a5" class="cell markdown">
+<p>Wow, looks like it wasn’t hard at all! The network learnt pretty quickly and the accuracy improved pretty quickly. But note that it still oscillates a bit. Because the setup is simple, the network learns quickly. But in real-world problems, it might take a lot more time and effort to train a network.</p>
 <p>Let’s visualize the decision boundary of the network.</p>
 </div>
-<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="0838fe9b" class="cell" data-execution_count="7">
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="2593bada" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.25</span></span>
@@ -507,6 +444,14 @@ step 99 loss 0.010978370135492717, accuracy 100.0%</code></pre>
 </div>
 </div>
 </div></div>
+<div id="e3c09002" class="cell markdown">
+<p>So, there’s that for a simple, 2-class setup.</p>
+<p>There are more. Let’s look at some generative models next.</p>
+<section id="generation" class="level1">
+<h1>Generation</h1>
+<p>We will explore another model, but this time, we will not be building it from scratch. We will use a pre-built model from the <code>torch</code> library. We will use a Generative Adversarial Network (GAN) to generate new samples from the same distribution as the training data.</p>
+</section>
+</div>
 </section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">

@@ -8,13 +8,25 @@ format:
 jupyter: python3
 ---
 
-This note is nothing but some commentary added on Karpathy's [micrograd](https://github.com/karpathy/micrograd) example.
 
 # The Perceptrons, Layers, and Networks
 
-It's signal in, and signal out. The transformation function is the key - it can literally be anything. Intuitively, modeling based on our understanding of the neuron, a simpler function is a good choice. But we do not choose linear functions as they can not model complex relationships.
+- Perceptron < Layer < Network
+- Need non-linear activation functions to model complex functions
+- Stacking multiple of them leads to obviously interesting complex functions. 
+- We do not know the parameters of this large function that the entire network represents. We need to learn them.
+- Learning is done by adjusting the parameters of the network to minimize the error between the predicted value and the actual value.
+  - Using calculus to extremize the error function with respect to the parameters of the network.
 
-Stacking multiple of them leads to obviously interesting complex functions. But we do not know the parameters of this large function that the entire network represents. We need to learn them.
+
+# Classification with a Multi-Layer Perceptron
+
+We'll use synthetic data to create two classes of points that are not linearly separable. We'll then use a multi-layer perceptron to classify these points.
+This note is nothing but some commentary added on Karpathy's [micrograd](https://github.com/karpathy/micrograd) example.
+
+We'll solve a classification problem with a multi-layer perceptron. The problem is simple - given a point in a 2D space, we want to predict which class it belongs to. The two classes and their members are synthetically generated.
+
+## The setup
 
 ```{python}
 import random
@@ -29,6 +41,11 @@ np.random.seed(1337)
 random.seed(1337)
 ```
 
+## The dataset
+
+`make_moons` from `sklearn.datasets` creates two interleaving half circles. We'll use this to create a simple 2D dataset with two classes.
+Moon - because you can see the (non-linear) crescent shape of the two classes, and the points are not linearly separable.
+
 ```{python}
 #| code-fold: false
 X, y = make_moons(n_samples=100, noise=0.1)
@@ -38,7 +55,7 @@ plt.figure(figsize=(5,5))
 plt.scatter(X[:,0], X[:,1], c=y, cmap='coolwarm')
 ```
 
-The dataset is a simple 2D dataset with two classes. We can see that the classes are not linearly separable.
+## The task
 
 What we want is a function that, given any of those points, can tell us which class it belongs to. The simplest way to do it is to define a dictionary that maps each point to a class. But that's not what we want, because that's not a realistic problem to solve.
 
@@ -50,7 +67,8 @@ So, we imagine that the solution is a function that can, given any point in this
 As we have stated before (without any formal proof), a network of stacked perceptrons can model any function. So, let's model this conjectured function with a network of perceptrons.
 
 # The Multi-Layer Perceptron
-Science and engineering make progress with any or all of abstractions, simplifications  and generalizations. The perceptron is a simplification of the neuron. The multi-layer perceptron is a generalization of the perceptron, and a simplification of the brain.
+
+Let's visualize the network we are going to build. It has 2 input neurons, 3 neurons in the first hidden layer, and 2 output neuron. The input neurons represent the x and y coordinates of the point, and the output neurons represent the class of the point - one for each class. Naive, but simple to understand.
 
 ```{python}
 #| echo: false
@@ -111,9 +129,7 @@ print("Number of parameters in the model is", len(model.parameters()))
 
 To train this network, we use our trusty friend - calculus, trying to minimize the error between the predicted class and the actual class. Because reducing the error means the network does what we want it to do, and calculus is great at helping us find minima or maxima by way of slopes.
 
-Ah - the slope. The slope of the error function with respect to the parameters of the network. This is the key to training the network. We can use the slope to adjust the parameters in the right direction, so that the error decreases.
-
-Which means we represent the network's computation in terms of the delta between the wanted value and the actual value, and then use calculus to find the slope of the error function with respect to the parameters of the network. And adjust the parameters in such a way as to reduce the error.
+Intuitively, the slope gives us an indication of the amount and direction of the adjustments. Larger slopes mean larger adjustments. This is adjusted by a learning rate, which is a hyperparameter that we need to tune.
 
 ```{python}
 #| code-fold: false
@@ -155,11 +171,11 @@ for k in range(100):
     for p in model.parameters():
         p.data -= learning_rate * p.grad
 
-    if k % 1 == 0:
+    if k % 10 == 0:
         print(f"step {k} loss {total_loss.data}, accuracy {acc*100}%")
 ```
 
-Wow, looks like it wasn't hard at all! The network learnt pretty quickly and the accuracy moved to 100% pretty early on.
+Wow, looks like it wasn't hard at all! The network learnt pretty quickly and the accuracy improved pretty quickly. But note that it still oscillates a bit. Because the setup is simple, the network learns quickly. But in real-world problems, it might take a lot more time and effort to train a network.
 
 Let's visualize the decision boundary of the network.
 ```{python}
@@ -180,4 +196,9 @@ plt.xlim(xx.min(), yy.max())
 plt.ylim(yy.min(), yy.max())
 ```
 
+So, there's that for a simple, 2-class setup.
 
+There are more. Let's look at some generative models next.
+
+# Generation
+We will explore another model, but this time, we will not be building it from scratch. We will use a pre-built model from the `torch` library. We will use a Generative Adversarial Network (GAN) to generate new samples from the same distribution as the training data.
