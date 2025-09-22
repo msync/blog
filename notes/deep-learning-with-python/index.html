@@ -1,139 +1,259 @@
-<!doctype html>
-<html class="no-js" lang="en-us">
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Notes for Deep Learning with Python | Sync&#39;ing from Memory</title>
-<meta property="og:title" content="Notes for Deep Learning with Python"/>
+<title itemprop="name">Notes for Deep Learning with Python | M&#39;Sync</title>
+<meta property="og:title" content="Notes for Deep Learning with Python | M&#39;Sync" />
+<meta name="twitter:title" content="Notes for Deep Learning with Python | M&#39;Sync" />
+<meta itemprop="name" content="Notes for Deep Learning with Python | M&#39;Sync" />
+<meta name="application-name" content="Notes for Deep Learning with Python | M&#39;Sync" />
+<meta property="og:site_name" content="M&#39;Sync" />
 
-<meta property="og:description" content="Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code."/>
+<meta name="description" content="Knowledge garden with notes and computational content">
+<meta itemprop="description" content="Knowledge garden with notes and computational content" />
+<meta property="og:description" content="Knowledge garden with notes and computational content" />
+<meta name="twitter:description" content="Knowledge garden with notes and computational content" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:site" content="@jaju"/>
-<meta name="twitter:creator" content="@jaju"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="https://example.org/notes/deep-learning-with-python/" title="" />
 
 
-<link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
-<link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
 
+
+
+
+<meta name="generator" content="Hugo 0.150.0">
+
+    
+    <meta property="og:url" content="https://example.org/notes/deep-learning-with-python/">
+  <meta property="og:site_name" content="M&#39;Sync">
+  <meta property="og:title" content="Notes for Deep Learning with Python">
+  <meta property="og:description" content="Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2020-06-06T19:23:10+05:30">
+    <meta property="article:modified_time" content="2024-03-29T14:26:47+05:30">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Notes for Deep Learning with Python">
+  <meta name="twitter:description" content="Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.">
+
+
+    
+
+    <link rel="canonical" href="https://example.org/notes/deep-learning-with-python/">
+    <link href="/style.min.8e72eaf30242279b90867e29e1caad29da8705d884235124f205cdaf7cf82fa4.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://example.org/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+      
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+    
 </head>
+<body data-theme = "light" class="notransition">
 
-<body>
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
-<div id="body">
-    <header id="site-header">
-        <div class="content">
-  <a href="https://msync.org/">Sync&#39;ing from Memory</a>
-  <nav>
-    
-    <a href="https://msync.org/notes/">Notes</a>
-    
-    <a href="https://msync.org/posts/">Posts</a>
-    
-  </nav>
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://example.org/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/notes/">
+                        Notes
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/blog/">
+                        Blog
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
 </div>
-    </header>
 
-    <div id="main-wrapper">
-        
-<div class="content notes">
-
-    <div class="toc">
-        <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#chapter-1-what-is-deep-learning">Chapter 1 - What is deep learning?</a>
-          <ol>
-            <li><a href="#terms">Terms <span class="tag"><span class="term">term</span></span></a></li>
-            <li><a href="#history">History</a></li>
-          </ol>
-        </li>
-        <li><a href="#chapter-2-the-mathematical-building-blocks-of-neural-networks">Chapter 2 - The mathematical building blocks of neural networks</a>
-          <ol>
-            <li><a href="#terms">Terms</a></li>
-            <li><a href="#environment-setup">Environment setup</a></li>
-            <li><a href="#real-world-examples-of-data-tensors">Real-world examples of data tensors</a></li>
-            <li><a href="#tensor-operations">Tensor operations</a></li>
-            <li><a href="#gradient-based-optimization">Gradient-based optimization</a></li>
-          </ol>
-        </li>
-        <li><a href="#chapter-3-introduction-to-keras-and-tensorflow">Chapter 3 - Introduction to Keras and Tensorflow</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-    </div>
-
-    <article itemscope itemtype="http://schema.org/CreativeWork">
-
-        <header>
-            <h1 itemprop="title">Notes for Deep Learning with Python</h1>
-            <summary>
-                Chapter-wise notes for <a href="https://www.manning.com/books/deep-learning-with-python-second-edition">Deep Learning with Python</a> with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.
-            </summary>
-            <div class="meta">
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Notes for Deep Learning with Python</h1>
                 
-                <div class="time">
-                <time datetime="2020-06-06 19:23:10 &#43;0530 IST" itemprop="datePublished" class="pubdate">
-                    <span class="weekday">Sat</span>,
-                    <span class="day">6</span>
-                    <span class="month">Jun</span>,
-                    <span class="year">2020</span>
-                </time>
-
                 
-                <time datetime="2024-03-29 14:26:50 &#43;0530 IST" itemprop="dateModified" class="pubdate">
-                    Updated:
-                    <span class="weekday">Fri</span>,
-                    <span class="day">29</span>
-                    <span class="month">Mar</span>,
-                    <span class="year">2024</span>
-                </time>
                 
+                <div class="post-meta">
+                    <time datetime="2020-06-06T19:23:10&#43;05:30" itemprop="datePublished"> Jun 6, 2020 </time>
                 </div>
-            </div>
-        </header>
-
-        <main>
-            <h2 id="chapter-1-what-is-deep-learning">Chapter 1 - What is deep learning?</h2>
+                
+            </header>
+            
+            <div class="page-content">
+                
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Chapter 1 - What is deep learning?
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
 <p>Deep stands for the depth of the (successive) representation layers of the feature-data, starting from the input and ending at a useful output that we identify as the outcome of the learning system.</p>
-<h3 id="terms">Terms <span class="tag"><span class="term">term</span></span></h3>
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+Terms&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-term">term</span></span>
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
 <dl>
-<dt>Loss Function</dt>
-<dd>A function to measure the difference between the actual and the expected outputs
-<ul>
-<li><strong>Synonyms:</strong> <span class="underline"><span class="underline">Objective Function</span></span>, <span class="underline"><span class="underline">Cost Function</span></span></li>
-</ul>
+<dt>
+Loss Function
+</dt>
+<dd>
+<p>A function to measure the difference between the actual and the expected outputs</p>
+<dl>
+<dt>
+Synonyms
+</dt>
+<dd><span style="text-decoration: underline;"><span style="text-decoration: underline;">Objective Function</span></span>, <span style="text-decoration: underline;"><span style="text-decoration: underline;">Cost Function</span></span></dd>
+</dl>
 </dd>
-<dt>Optimizers</dt>
+<dt>
+Optimizers
+</dt>
 <dd>The algorithm that implements <strong>backpropagation</strong> to adjust weights with the purpose of reducing the loss functions.</dd>
-<dt>Weights</dt>
+<dt>
+Weights
+</dt>
 <dd>Parameters of the various connections between the processing units (the <em>neurons</em>).</dd>
-<dt>Kernel Function (SVM)</dt>
+<dt>
+Kernel Function (SVM)
+</dt>
 <dd>A computationally tractable function that maps any two points in the input space to their distance in the target representation space.</dd>
-<dt>Random Forests</dt>
+<dt>
+Random Forests
+</dt>
 <dd>Ensemble of specialized decision trees.</dd>
-<dt>Gradient Boosting</dt>
+<dt>
+Gradient Boosting
+</dt>
 <dd>Ensemble of weak prediction models that focuses on boosting the weaker of the contained models to improve prediction.</dd>
-<dt>Feature Engineering</dt>
+<dt>
+Feature Engineering
+</dt>
 <dd>Transforming the input data (with mostly manual intervention) into forms that machine learning algorithms can consume. A step now greatly automated / made redundant with deep learning.</dd>
-<dt><a href="https://developer.nvidia.com/about-cuda">CUDA</a></dt>
-<dd>A programming interface for Nvidia&rsquo;s GPUs. CUDA implementations for neural network matrix operations, started happening around 2011.</dd>
-<dt>TPU</dt>
-<dd>Google&rsquo;s Tensor Processing Unit chip project meant to be faster and more energy efficient than the GPUs for neural network matrix operations.</dd>
-<dt>Activation Functions</dt>
+<dt>
+<a href="https://developer.nvidia.com/about-cuda">CUDA</a>
+</dt>
+<dd>A programming interface for Nvidia&#39;s GPUs. CUDA implementations for neural network matrix operations, started happening around 2011.</dd>
+<dt>
+TPU
+</dt>
+<dd>Google&#39;s Tensor Processing Unit chip project meant to be faster and more energy efficient than the GPUs for neural network matrix operations.</dd>
+<dt>
+Activation Functions
+</dt>
 <dd>A class of functions that transform the input signal into a neuron into an output signal.</dd>
 </dl>
-<h3 id="history">History</h3>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+History
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
 <p>Improvements in the gradient backpropagation algorithms were key in allowing faster training of more complex (deep) neural networks. Key aspects were</p>
 <ul>
 <li>Newer types of <em>activation functions</em> being tried</li>
 <li>Better <em>weight initialization schemes</em></li>
 <li>Better <em>optimization schemes</em> like <strong>RMSProp</strong> and <strong>Adam</strong></li>
-<li>Better ways to help gradient propagation
+<li>
+<p>Better ways to help gradient propagation</p>
 <ul>
 <li>Batch normalization</li>
 <li>Residual Connections</li>
@@ -141,156 +261,250 @@
 </ul>
 </li>
 </ul>
-<h2 id="chapter-2-the-mathematical-building-blocks-of-neural-networks">Chapter 2 - The mathematical building blocks of neural networks</h2>
-<h3 id="terms">Terms</h3>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+Chapter 2 - The mathematical building blocks of neural networks
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Terms
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
 <dl>
-<dt>Tensor</dt>
+<dt>
+Tensor
+</dt>
 <dd>Multi-dimensional arrays. Tensors are generalizations of arrays and matrices - rank-1 and rank-2 tensors themselves. By extensions, scalars are rank-0 tensors.</dd>
-<dt>Differentiation</dt>
+<dt>
+Differentiation
+</dt>
 <dd>Yes. Calculus.</dd>
-<dt>Gradient Descent</dt>
+<dt>
+Gradient Descent
+</dt>
 <dd>Moving towards a (local) minima in search for the right fit parameters, guided by the loss function. Calculus.</dd>
-<dt>Overfitting</dt>
+<dt>
+Overfitting
+</dt>
 <dd>Learning too keenly from the training data, leading to a lower ability to generalize.</dd>
-<dt>Batch Axis</dt>
+<dt>
+Batch Axis
+</dt>
 <dd>Also called <strong>Batch Dimension</strong>. In data samples, typically the <em>0</em>-th axis lists individual data items and batching happens on this collection. Batch Axis refers to the axis that lists the data items.</dd>
-<dt>Random initialization</dt>
+<dt>
+Random initialization
+</dt>
 <dd>The weight-matrices, when initialized, are filled with random values. That process.</dd>
 </dl>
-<h3 id="environment-setup">Environment setup</h3>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Environment setup
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
 <p>Code samples here require some local setup to have been done, instructions for which are in Chapter 3.</p>
-<p>Let&rsquo;s first <code>activate</code> the virtualenv infrastructure for Emacs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(pyvenv-activate <span style="color:#e6db74">&#34;~/.venv/dl&#34;</span>)
-</span></span></code></pre></div><p>Next, we install the requisite Python packages with <em>pip</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>source ~/.venv/dl/bin/activate
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#pip install tensorflow keras matplotlib</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&#39; is not defined
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> keras.datasets <span style="color:#f92672">import</span> mnist
-</span></span><span style="display:flex;"><span>(train_images, train_labels), (test_images, test_labels) <span style="color:#f92672">=</span> mnist<span style="color:#f92672">.</span>load_data()
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_labels[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>])
-</span></span><span style="display:flex;"><span>print(test_labels[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>])
-</span></span></code></pre></div><p>With this setup, most of the code samples in the second chapter can be executed.</p>
-<h3 id="real-world-examples-of-data-tensors">Real-world examples of data tensors</h3>
+<p>
+Let&#39;s first <code>activate</code> the virtualenv infrastructure for Emacs.</p>
+<div class="src src-elisp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">pyvenv-activate</span> <span class="s">&#34;~/.venv/dl&#34;</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<p>
+Next, we install the requisite Python packages with <em>pip</em>.</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> ~/.venv/dl/bin/activate
+</span></span><span class="line"><span class="cl"><span class="c1">#pip install tensorflow keras matplotlib</span></span></span></code></pre></div>
+</div>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python</span></span></code></pre></div>
+</div>
+<pre class="example">
+&#39; is not defined
+</pre>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span></span></span></code></pre></div>
+</div>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">train_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">test_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span></span></span></code></pre></div>
+</div>
+<p>
+With this setup, most of the code samples in the second chapter can be executed.</p>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+Real-world examples of data tensors
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
 <p>Most of the data-sets we will use fall under one of the following categories</p>
 <dl>
-<dt>Vector data</dt>
+<dt>
+Vector data
+</dt>
 <dd>Rank-2 tensors of shape <code>(samples, features)</code></dd>
-<dt>Timeseries/Sequence data</dt>
+<dt>
+Timeseries/Sequence data
+</dt>
 <dd>Rank-3 tensors of shape <code>(samples, timesteps, features)</code></dd>
-<dt>Images</dt>
+<dt>
+Images
+</dt>
 <dd>Rank-4 tensors of shape <code>(samples, height, width, channels)</code> or <code>(samples, channels, height, width)</code></dd>
-<dt>Video</dt>
+<dt>
+Video
+</dt>
 <dd>Rank-5 tensors of shape <code>(samples, frames, height, width, channels)</code> or <code>(samples, frames, channels, height, width)</code></dd>
-<dt>Learning rate</dt>
-<dd>A scalar factor that modulates the speed at which &ldquo;learning&rdquo; happens - in other words, it controls the rate at which the model converges to a steady state. Too fast, and the learning may be unstable and never converge. Too little, and you may need to wait a lifetime for the learning to finish.</dd>
-<dt>Gradient Descent</dt>
+<dt>
+Learning rate
+</dt>
+<dd>A scalar factor that modulates the speed at which &#34;learning&#34; happens - in other words, it controls the rate at which the model converges to a steady state. Too fast, and the learning may be unstable and never converge. Too little, and you may need to wait a lifetime for the learning to finish.</dd>
+<dt>
+Gradient Descent
+</dt>
 <dd>Descend the gradient in search of stability.</dd>
-<dt>Stochastic Gradient Descent</dt>
+<dt>
+Stochastic Gradient Descent
+</dt>
 <dd>Random batch training, with varying batch sizes.</dd>
-<dt>Backpropagation algorithm</dt>
+<dt>
+Backpropagation algorithm
+</dt>
 <dd>Applying chain rule to the computation of the gradient values.</dd>
-<dt>Computation graph</dt>
+<dt>
+Computation graph
+</dt>
 <dd>A datastructure which forms the core of <em>Tensorflow</em>. It is a <em>directed acyclic graph</em> of tensor operations in the context of <em>Tensorflow</em>.</dd>
 </dl>
-<h3 id="tensor-operations">Tensor operations</h3>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+Tensor operations
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
 <ul>
 <li>Element-wise operations</li>
 <li>Broadcasting</li>
 <li>Tensor product - Also called the <em>dot product</em></li>
 <li>Tensor reshaping</li>
 </ul>
-<h3 id="gradient-based-optimization">Gradient-based optimization</h3>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
+Gradient-based optimization
+</h3>
+<div id="outline-text-headline-9" class="outline-text-3">
 <p>If the loss-function - a function of the weights of the neural network amongst other parameters - represents a hyperplane for various values of the weight-matrices, traversing in a direction that reduces the value for our inputs (training samples) is akin to descending down the hyperplane towards some (local) minima. That is gradient-descent, or gradient-based optimization.</p>
-<p>Conceptually, the process will look like the following for neural networks</p>
+<p>
+Conceptually, the process will look like the following for neural networks</p>
 <ul>
-<li>Take a batch of input data <img src="/ltximg/readme_c6a227bc95a80b586570a597d8d17fa216d43a5f.png" alt="readme_c6a227bc95a80b586570a597d8d17fa216d43a5f.png" /> and the corresponding labels <img src="/ltximg/readme_6bc57b6a2cb1a89460ab6b28182f683e39e0d39f.png" alt="readme_6bc57b6a2cb1a89460ab6b28182f683e39e0d39f.png" /></li>
+<li>Take a batch of input data $x_{1}$ and the corresponding labels $ytrue_{1}$</li>
 <li>Run the model on x<sub>1</sub> to obtain the predicted labels y_pred<sub>1</sub></li>
 <li>Compute the loss for this batch - which is a measure of the mismatch between y-true<sub>1</sub> and y-pred<sub>1</sub></li>
 <li>Update weights on the model slightly in a <em>direction</em> that slightly reduces the loss on this batch.</li>
 </ul>
-<h4 id="stochastic-gradient-descent">Stochastic gradient descent</h4>
-<p>In this method, we use the gradient of the loss <em>with respect to</em> the model&rsquo;s parameters. This step is called the <em>backward pass</em>. Weights are then updated to reduce the loss, in conjunction with the <em>learning rate</em>.
-When done in batches of sub-sets, this is called the <em>mini-batch stochastic gradient descent</em>, or <strong>mini-batch SGD</strong>. The <strong>stochastic</strong> part refers to the randomness in the selection of the batch. One can go with a single-sized &ldquo;batch&rdquo; or the entire training data in one go (the latter being called <strong>batch SGD</strong>).</p>
-<p>There are multiple variants of SGD - focused on taking into account the previous weight updates, while computing the next weight updates, rather than looking only at the current gradient. This is where the concept of <em>momentum</em> arises. All intuition based approaches, I suppose. Other example variants include <strong>ADAGrad</strong> and <strong>RMSProp</strong>.</p>
-<p><em>Momentum</em> addresses two issues</p>
+<div id="outline-container-headline-10" class="outline-4">
+<h4 id="headline-10">
+Stochastic gradient descent
+</h4>
+<div id="outline-text-headline-10" class="outline-text-4">
+<p>In this method, we use the gradient of the loss <em>with respect to</em> the model&#39;s parameters. This step is called the <em>backward pass</em>. Weights are then updated to reduce the loss, in conjunction with the <em>learning rate</em>.
+When done in batches of sub-sets, this is called the <em>mini-batch stochastic gradient descent</em>, or <strong>mini-batch SGD</strong>. The <strong>stochastic</strong> part refers to the randomness in the selection of the batch. One can go with a single-sized &#34;batch&#34; or the entire training data in one go (the latter being called <strong>batch SGD</strong>).</p>
+<p>
+There are multiple variants of SGD - focused on taking into account the previous weight updates, while computing the next weight updates, rather than looking only at the current gradient. This is where the concept of <em>momentum</em> arises. All intuition based approaches, I suppose. Other example variants include <strong>ADAGrad</strong> and <strong>RMSProp</strong>.</p>
+<p>
+<em>Momentum</em> addresses two issues</p>
 <ul>
 <li>Convergence speed</li>
 <li>Local minima</li>
 </ul>
 <p>The intuition is that if the current learning velocity is large (high momentum), then if there is a local minima, the chances of descending and staying there are reduced as the momentum carries you <em>over</em> the local <em>hills</em>.</p>
-<h4 id="the-backpropagation-algoritm-chaining-derivatives">The Backpropagation Algoritm - Chaining derivatives</h4>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-4">
+<h4 id="headline-11">
+The Backpropagation Algoritm - Chaining derivatives
+</h4>
+<div id="outline-text-headline-11" class="outline-text-4">
 <p>This algorithm leverages the <em>chain rule</em> of derivatives.</p>
-<style>.org-center { margin-left: auto; margin-right: auto; text-align: center; }</style>
-<div class="org-center">
-<img src="/ltximg/readme_da87f48cea135794635ca67d1dec457be295ff97.png" alt="readme_da87f48cea135794635ca67d1dec457be295ff97.png" />
+<div class="center-block" style="text-align: center; margin-left: auto; margin-right: auto;">
+<p>$\partial(f \middot g)/ \partial(x) = \partial(f \middot g)/ \partial g \middot \partial g/\partial x$</p>
 </div>
-<p>Applying the chain rule to the computation of the gradient values is what the Backpropagation algorithm is about.</p>
-<!--list-separator-->
-<ul>
-<li>
-<p>Automatic differentiation with Computation Graphs</p>
+<p>
+Applying the chain rule to the computation of the gradient values is what the Backpropagation algorithm is about.</p>
+<div id="outline-container-headline-12" class="outline-5">
+<h5 id="headline-12">
+Automatic differentiation with Computation Graphs
+</h5>
+<div id="outline-text-headline-12" class="outline-text-5">
 <p>Computation graphs capture computation as a datastructure. In the Tensorflow world, it captures a graph of <em>tensor operations</em>. The operations and the graph are accurately specified and can be transformed in a very principled manner. In other words, they can be input to computing functions, and can very well be output from computing functions. And thus, they can be composed with various functions and transformed.</p>
-<p>Obviously, these functions and transformations are particularly exciting from the perspective of enabling the above discussed optimizations, and thus, learning.</p>
-<p>A graph that represents an expression can be subjected to a computation that outputs the derivative of that expression - in other words, we can do <em>automatic differentiation</em>. This clearly enables efficient learning of the kind we&rsquo;ve been talking about above.</p>
-</li>
-</ul>
-<h2 id="chapter-3-introduction-to-keras-and-tensorflow">Chapter 3 - Introduction to Keras and Tensorflow</h2>
-
-        </main>
-
-    </article>
-
+<p>
+Obviously, these functions and transformations are particularly exciting from the perspective of enabling the above discussed optimizations, and thus, learning.</p>
+<p>
+A graph that represents an expression can be subjected to a computation that outputs the derivative of that expression - in other words, we can do <em>automatic differentiation</em>. This clearly enables efficient learning of the kind we&#39;ve been talking about above.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
+Chapter 3 - Introduction to Keras and Tensorflow
+</h2>
 </div>
 
-    </div>
-
-    <footer id="site-footer">
-        <div class="hide-for-small-only float-left author">
-    <span>&copy; <span
-            class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
+            </div>
+        </article></main>
 </div>
 
-<div class="social-media-list float-right">
-  <span class="social-media-item">
-    <a href="https://github.com/jaju">
-      <span class="svg-social-icon icon--github">
-        <svg viewBox="0 0 16 16">
-          <path fill="#828282"
-                d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-        </svg>
-      </span>
-      <span class="username">jaju</span>
+<footer class="footer">
+    <small class="footer_copyright">
+        © 2025 Ravindra R. Jaju.
+        
+    </small>
+</footer>
+
+
+<div class="fixed-social-icons">
+    <a href="https://github.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="GitHub" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
     </a>
-  </span>
-  <span class="social-media-item">
-    <a href="https://twitter.com/jaju">
-      <span class="svg-social-icon icon--twitter">
-        <svg viewBox="0 0 16 16">
-          <path fill="#828282"
-                d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
-        </svg>
-      </span>
-      <span class="username">jaju</span>
+    <a href="https://x.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="X (Twitter)" class="social-icon">
+        <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
     </a>
-  </span>
 </div>
 
-    </footer>
-</div>
-
-<script src="/js/bundle.js"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYE506V9R8"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TYE506V9R8');
-</script>
+
+
+
+
+    
+    <script src="https://example.org/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
+
+    
+
 </body>
 </html>

@@ -1,185 +1,326 @@
-<!doctype html>
-<html class="no-js" lang="en-us">
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>MLX | Sync&#39;ing from Memory</title>
-<meta property="og:title" content="MLX"/>
+<title itemprop="name">MLX | M&#39;Sync</title>
+<meta property="og:title" content="MLX | M&#39;Sync" />
+<meta name="twitter:title" content="MLX | M&#39;Sync" />
+<meta itemprop="name" content="MLX | M&#39;Sync" />
+<meta name="application-name" content="MLX | M&#39;Sync" />
+<meta property="og:site_name" content="M&#39;Sync" />
 
-<meta property="og:description" content="MLX 20/80. With 20% effort, hope to get 80% covered on MLX&#39;s offerings. And, I don&#39;t stand by this claim."/>
+<meta name="description" content="Knowledge garden with notes and computational content">
+<meta itemprop="description" content="Knowledge garden with notes and computational content" />
+<meta property="og:description" content="Knowledge garden with notes and computational content" />
+<meta name="twitter:description" content="Knowledge garden with notes and computational content" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:site" content="@jaju"/>
-<meta name="twitter:creator" content="@jaju"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="https://example.org/notes/mlx/" title="" />
 
 
-<link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
-<link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
 
+
+
+
+<meta name="generator" content="Hugo 0.150.0">
+
+    
+    <meta property="og:url" content="https://example.org/notes/mlx/">
+  <meta property="og:site_name" content="M&#39;Sync">
+  <meta property="og:title" content="MLX">
+  <meta property="og:description" content="MLX 20/80. With 20% effort, hope to get 80% covered on MLX&#39;s offerings. And, I don&#39;t stand by this claim.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2024-04-05T09:36:15+05:30">
+    <meta property="article:modified_time" content="2024-04-06T22:35:36+05:30">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MLX">
+  <meta name="twitter:description" content="MLX 20/80. With 20% effort, hope to get 80% covered on MLX&#39;s offerings. And, I don&#39;t stand by this claim.">
+
+
+    
+
+    <link rel="canonical" href="https://example.org/notes/mlx/">
+    <link href="/style.min.8e72eaf30242279b90867e29e1caad29da8705d884235124f205cdaf7cf82fa4.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://example.org/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+      
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+    
 </head>
+<body data-theme = "light" class="notransition">
 
-<body>
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
-<div id="body">
-    <header id="site-header">
-        <div class="content">
-  <a href="https://msync.org/">Sync&#39;ing from Memory</a>
-  <nav>
-    
-    <a href="https://msync.org/notes/">Notes</a>
-    
-    <a href="https://msync.org/posts/">Posts</a>
-    
-  </nav>
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://example.org/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/notes/">
+                        Notes
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/blog/">
+                        Blog
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
 </div>
-    </header>
 
-    <div id="main-wrapper">
-        
-<div class="content notes">
-
-    <div class="toc">
-        <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#utility-functions">Utility Functions</a></li>
-        <li><a href="#unified-memory">Unified Memory</a></li>
-        <li><a href="#saving-and-loading-arrays">Saving and Loading Arrays</a></li>
-        <li><a href="#gpt">GPT</a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-    </div>
-
-    <article itemscope itemtype="http://schema.org/CreativeWork">
-
-        <header>
-            <h1 itemprop="title">MLX</h1>
-            <summary>
-                MLX 20/80. With 20% effort, hope to get 80% covered on MLX's offerings. And, I don't stand by this claim.
-            </summary>
-            <div class="meta">
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">MLX</h1>
                 
-                <div class="time">
-                <time datetime="2024-04-05 09:36:15 &#43;0530 IST" itemprop="datePublished" class="pubdate">
-                    <span class="weekday">Fri</span>,
-                    <span class="day">5</span>
-                    <span class="month">Apr</span>,
-                    <span class="year">2024</span>
-                </time>
-
                 
-                <time datetime="2024-04-14 21:25:59 &#43;0530 IST" itemprop="dateModified" class="pubdate">
-                    Updated:
-                    <span class="weekday">Sun</span>,
-                    <span class="day">14</span>
-                    <span class="month">Apr</span>,
-                    <span class="year">2024</span>
-                </time>
                 
+                <div class="post-meta">
+                    <time datetime="2024-04-05T09:36:15&#43;05:30" itemprop="datePublished"> Apr 5, 2024 </time>
                 </div>
-            </div>
-        </header>
-
-        <main>
-            <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(pyvenv-activate <span style="color:#e6db74">&#34;~/.venv/machine-learning&#34;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> mlx.core <span style="color:#66d9ef">as</span> mx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>a <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>])
-</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">.</span>shape)
-</span></span><span style="display:flex;"><span>print(a<span style="color:#f92672">.</span>dtype)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">12.0</span>, <span style="color:#ae81ff">13.0</span>, <span style="color:#ae81ff">14.0</span>, <span style="color:#ae81ff">15.0</span>])
-</span></span><span style="display:flex;"><span>print(b<span style="color:#f92672">.</span>shape)
-</span></span><span style="display:flex;"><span>print(b<span style="color:#f92672">.</span>dtype)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(6,)
-</span></span><span style="display:flex;"><span>mlx.core.int32
-</span></span><span style="display:flex;"><span>(6,)
-</span></span><span style="display:flex;"><span>mlx.core.float32
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b
-</span></span><span style="display:flex;"><span>print(c)
-</span></span><span style="display:flex;"><span>mx<span style="color:#f92672">.</span>eval(c)
-</span></span><span style="display:flex;"><span>print(c)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>array([10, 12, 14, 16, 18, 20], dtype=float32)
-</span></span><span style="display:flex;"><span>array([10, 12, 14, 16, 18, 20], dtype=float32)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(mx<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">10</span>))
-</span></span><span style="display:flex;"><span>print(mx<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>normal((<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>)))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>array([0, 1, 2, ..., 7, 8, 9], dtype=int32)
-</span></span><span style="display:flex;"><span>array([[0.492185, -0.329351, -1.04443, ..., 0.454991, -0.884072, -0.39394]], dtype=float32)
-</span></span></code></pre></div><h2 id="utility-functions">Utility Functions</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timeit</span>(f):
-</span></span><span style="display:flex;"><span>    start <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>perf_counter()
-</span></span><span style="display:flex;"><span>    ret <span style="color:#f92672">=</span> f()
-</span></span><span style="display:flex;"><span>    end <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>perf_counter()
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> ret, end <span style="color:#f92672">-</span> start
-</span></span></code></pre></div><p>Testing this&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ret, elapsed <span style="color:#f92672">=</span> timeit(<span style="color:#66d9ef">lambda</span> : <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
-</span></span><span style="display:flex;"><span>print(ret)
-</span></span><span style="display:flex;"><span>print(elapsed)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>2
-</span></span><span style="display:flex;"><span>4.000000000004e-06
-</span></span></code></pre></div><h2 id="unified-memory">Unified Memory</h2>
-<p>The CPU and GPU use the same RAM. We don&rsquo;t need to move data when planning operations between the CPU and the GPU.</p>
-<p>It&rsquo;s essential to understand what the CPU and GPU are good and not great for, before we choose how to distribute our computing. Here&rsquo;s an example from the <a href="https://ml-explore.github.io/mlx/build/html/usage/unified_memory.html">MLX :: Unified Memory</a> documentation.</p>
-<p>Here&rsquo;s a function that operates on its arguments, and takes as parameters the devices on which to run its constituent operations.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fun</span>(a, b, d1, d2): <span style="color:#75715e"># d1, d2 -&gt; devices</span>
-</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>matmul(a, b, stream<span style="color:#f92672">=</span>d1)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">500</span>):
-</span></span><span style="display:flex;"><span>        b <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>exp(b, stream<span style="color:#f92672">=</span>d2)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x, b
-</span></span></code></pre></div><p>We create some sample inputs a and b</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">4096</span>, <span style="color:#ae81ff">512</span>))
-</span></span><span style="display:flex;"><span>b <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">4</span>))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ret, elapsed <span style="color:#f92672">=</span> timeit(<span style="color:#66d9ef">lambda</span>: fun(a, b, mx<span style="color:#f92672">.</span>gpu, mx<span style="color:#f92672">.</span>gpu))
-</span></span><span style="display:flex;"><span>print(ret)
-</span></span><span style="display:flex;"><span>print(elapsed)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ret, elapsed <span style="color:#f92672">=</span> timeit(<span style="color:#66d9ef">lambda</span>: fun(a, b, mx<span style="color:#f92672">.</span>gpu, mx<span style="color:#f92672">.</span>cpu))
-</span></span><span style="display:flex;"><span>print(ret)
-</span></span><span style="display:flex;"><span>print(elapsed)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(array([[134.262, 129.237, 130.571, 130.649],
-</span></span><span style="display:flex;"><span>       [130.853, 129.764, 131.11, 131.915],
-</span></span><span style="display:flex;"><span>       [125.345, 126.757, 126.702, 126.284],
-</span></span><span style="display:flex;"><span>       ...,
-</span></span><span style="display:flex;"><span>       [129.413, 126.892, 128.287, 128.288],
-</span></span><span style="display:flex;"><span>       [132.635, 127.151, 128.288, 132.74],
-</span></span><span style="display:flex;"><span>       [131.024, 122.929, 128.609, 130.531]], dtype=float32), array([[inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       ...,
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf]], dtype=float32))
-</span></span><span style="display:flex;"><span>0.00019970801076851785
-</span></span><span style="display:flex;"><span>(array([[134.262, 129.237, 130.571, 130.649],
-</span></span><span style="display:flex;"><span>       [130.853, 129.764, 131.11, 131.915],
-</span></span><span style="display:flex;"><span>       [125.345, 126.757, 126.702, 126.284],
-</span></span><span style="display:flex;"><span>       ...,
-</span></span><span style="display:flex;"><span>       [129.413, 126.892, 128.287, 128.288],
-</span></span><span style="display:flex;"><span>       [132.635, 127.151, 128.288, 132.74],
-</span></span><span style="display:flex;"><span>       [131.024, 122.929, 128.609, 130.531]], dtype=float32), array([[inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       ...,
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf],
-</span></span><span style="display:flex;"><span>       [inf, inf, inf, inf]], dtype=float32))
-</span></span><span style="display:flex;"><span>0.00015633300063200295
-</span></span></code></pre></div><h2 id="saving-and-loading-arrays">Saving and Loading Arrays</h2>
+                
+            </header>
+            
+            <div class="page-content">
+                
+<div class="src src-elisp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elisp" data-lang="elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">pyvenv-activate</span> <span class="s">&#34;~/.venv/machine-learning&#34;</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">mlx.core</span> <span class="k">as</span> <span class="nn">mx</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">,</span> <span class="mf">13.0</span><span class="p">,</span> <span class="mf">14.0</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+(6,)
+mlx.core.int32
+(6,)
+mlx.core.float32
+</pre>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mx</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+array([10, 12, 14, 16, 18, 20], dtype=float32)
+array([10, 12, 14, 16, 18, 20], dtype=float32)
+</pre>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+array([0, 1, 2, ..., 7, 8, 9], dtype=int32)
+array([[0.492185, -0.329351, -1.04443, ..., 0.454991, -0.884072, -0.39394]], dtype=float32)
+</pre>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+Utility Functions
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">timeit</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ret</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span></span></span></code></pre></div>
+</div>
+<p>
+Testing this…</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ret</span><span class="p">,</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">(</span><span class="k">lambda</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+2
+4.000000000004e-06
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Unified Memory
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>The CPU and GPU use the same RAM. We don&#39;t need to move data when planning operations between the CPU and the GPU.</p>
+<p>
+It&#39;s essential to understand what the CPU and GPU are good and not great for, before we choose how to distribute our computing. Here&#39;s an example from the <a href="https://ml-explore.github.io/mlx/build/html/usage/unified_memory.html">MLX :: Unified Memory</a> documentation.</p>
+<p>
+Here&#39;s a function that operates on its arguments, and takes as parameters the devices on which to run its constituent operations.</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span> <span class="c1"># d1, d2 -&gt; devices</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">d1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">d2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span></span></span></code></pre></div>
+</div>
+<p>
+We create some sample inputs a and b</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4096</span><span class="p">,</span> <span class="mi">512</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span></span></span></code></pre></div>
+</div>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ret</span><span class="p">,</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">mx</span><span class="o">.</span><span class="n">gpu</span><span class="p">,</span> <span class="n">mx</span><span class="o">.</span><span class="n">gpu</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ret</span><span class="p">,</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">timeit</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">mx</span><span class="o">.</span><span class="n">gpu</span><span class="p">,</span> <span class="n">mx</span><span class="o">.</span><span class="n">cpu</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+(array([[134.262, 129.237, 130.571, 130.649],
+       [130.853, 129.764, 131.11, 131.915],
+       [125.345, 126.757, 126.702, 126.284],
+       ...,
+       [129.413, 126.892, 128.287, 128.288],
+       [132.635, 127.151, 128.288, 132.74],
+       [131.024, 122.929, 128.609, 130.531]], dtype=float32), array([[inf, inf, inf, inf],
+       [inf, inf, inf, inf],
+       [inf, inf, inf, inf],
+       ...,
+       [inf, inf, inf, inf],
+       [inf, inf, inf, inf],
+       [inf, inf, inf, inf]], dtype=float32))
+0.00019970801076851785
+(array([[134.262, 129.237, 130.571, 130.649],
+       [130.853, 129.764, 131.11, 131.915],
+       [125.345, 126.757, 126.702, 126.284],
+       ...,
+       [129.413, 126.892, 128.287, 128.288],
+       [132.635, 127.151, 128.288, 132.74],
+       [131.024, 122.929, 128.609, 130.531]], dtype=float32), array([[inf, inf, inf, inf],
+       [inf, inf, inf, inf],
+       [inf, inf, inf, inf],
+       ...,
+       [inf, inf, inf, inf],
+       [inf, inf, inf, inf],
+       [inf, inf, inf, inf]], dtype=float32))
+0.00015633300063200295
+</pre>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+Saving and Loading Arrays
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
 <p>MLX can save and load arrays in multiple formats, making it very easy to interoperate with other libraries/tools/applications. Supported formats and corresponding functions in the `mx.core` package.</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Format</th>
-<th>Save function</th>
-<th>Load function</th>
+<td>Format</td>
+<td>Save function</td>
+<td>Load function</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>NumPy</td>
@@ -204,213 +345,257 @@
 </tbody>
 </table>
 <p>As you can see, the `load` function works for all formats - it infers the format either from the suffix of the file used for reading, or can take an (optional) argument that indicates the format.</p>
-<h2 id="gpt">GPT</h2>
-<p>This is from Andrej Karpathy&rsquo;s <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Let&rsquo;s build GPT: from scratch, in code, spelled out</a> video.</p>
-<p>We&rsquo;ll be using the dataset indicated in the video - called the <a href="https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt">Tiny Shakespeare</a> text. Download it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -f <span style="color:#e6db74">&#34;input.txt&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span></code></pre></div><p>We read the text into memory, and then evaluate some quick details and create the encoder and decoder. To and from integers.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;input.txt&#39;</span>, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8&#39;</span>) <span style="color:#66d9ef">as</span> f:
-</span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;length of dataset in characters: &#34;</span>, len(text))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>length of dataset in characters:  1115394
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>chars <span style="color:#f92672">=</span> sorted(list(set(text)))
-</span></span><span style="display:flex;"><span>vocab_size <span style="color:#f92672">=</span> len(chars)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>stoi <span style="color:#f92672">=</span> { ch : i <span style="color:#66d9ef">for</span> i, ch <span style="color:#f92672">in</span> enumerate(chars) }
-</span></span><span style="display:flex;"><span>itos <span style="color:#f92672">=</span> { i : ch <span style="color:#66d9ef">for</span> i, ch <span style="color:#f92672">in</span> enumerate(chars) }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>encode <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> s: [stoi[c] <span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> s] <span style="color:#75715e"># string -&gt; list[integer]</span>
-</span></span><span style="display:flex;"><span>decode <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> l: <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join([itos[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> l]) <span style="color:#75715e"># list[integer] -&gt; string</span>
-</span></span></code></pre></div><p>Let&rsquo;s quickly check our code</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(chars))
-</span></span><span style="display:flex;"><span>print(vocab_size)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(encode(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>))
-</span></span><span style="display:flex;"><span>print(decode(encode(<span style="color:#e6db74">&#34;How are you doing today?&#34;</span>)))
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span> !$&amp;&#39;,-.3:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
-</span></span><span style="display:flex;"><span>65
-</span></span><span style="display:flex;"><span>[20, 43, 50, 50, 53, 6, 1, 35, 53, 56, 50, 42, 2]
-</span></span><span style="display:flex;"><span>How are you doing today?
-</span></span></code></pre></div><p>We have a custom encoder/decoder pair here. For real-world use-cases, libraries like <a href="https://github.com/google/sentencepiece">sentencepiece</a> and <a href="https://github.com/openai/tiktoken">tiktoken</a> are appropriate.</p>
-<p>We&rsquo;ll next encode the entire text into an `mlx.core.array` object</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> mlx.core <span style="color:#66d9ef">as</span> mx
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>array(encode(text))
-</span></span></code></pre></div><p>Quick check</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(data<span style="color:#f92672">.</span>shape, data<span style="color:#f92672">.</span>dtype)
-</span></span><span style="display:flex;"><span>print(data[:<span style="color:#ae81ff">1000</span>])
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(1115394,) mlx.core.int32
-</span></span><span style="display:flex;"><span>array([18, 47, 56, ..., 8, 0, 0], dtype=int32)
-</span></span></code></pre></div><p>Splitting into train and test</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n <span style="color:#f92672">=</span> int(<span style="color:#ae81ff">0.9</span> <span style="color:#f92672">*</span> len(data))
-</span></span><span style="display:flex;"><span>train_data <span style="color:#f92672">=</span> data[:n]
-</span></span><span style="display:flex;"><span>val_data <span style="color:#f92672">=</span> data[n:]
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>block_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span> <span style="color:#75715e"># The maximum context length for predictions</span>
-</span></span></code></pre></div><p>Quick check, and a show of what our input training data and corresponding target values are</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(train_data[:block_size<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> train_data[:block_size]
-</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> train_data[<span style="color:#ae81ff">1</span>:block_size<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> range(block_size):
-</span></span><span style="display:flex;"><span>    context <span style="color:#f92672">=</span> x[:t<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>    target <span style="color:#f92672">=</span> y[t]
-</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;When input is </span><span style="color:#e6db74">{</span>context<span style="color:#e6db74">}</span><span style="color:#e6db74">, the target is </span><span style="color:#e6db74">{</span>target<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>array([18, 47, 56, ..., 15, 47, 58], dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18], dtype=int32), the target is array(47, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47], dtype=int32), the target is array(56, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47, 56], dtype=int32), the target is array(57, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47, 56, 57], dtype=int32), the target is array(58, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47, 56, 57, 58], dtype=int32), the target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47, 56, 57, 58, 1], dtype=int32), the target is array(15, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47, 56, ..., 58, 1, 15], dtype=int32), the target is array(47, dtype=int32)
-</span></span><span style="display:flex;"><span>When input is array([18, 47, 56, ..., 1, 15, 47], dtype=int32), the target is array(58, dtype=int32)
-</span></span></code></pre></div><p>Coming to now, the batch size. We pass in data in batches to be efficient with the use of the CPU/GPU resources which can handle multiple computations of the same kind in parallel.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>batch_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#75715e"># Number of independent sequences we will process in parallel</span>
-</span></span><span style="display:flex;"><span>mx<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">1337</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_batch</span>(data):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Generate a small batch of data of inputs x and targets y</span>
-</span></span><span style="display:flex;"><span>    ix <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, len(data) <span style="color:#f92672">-</span> block_size, [batch_size])
-</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>stack([data[i:i<span style="color:#f92672">+</span>block_size] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ix<span style="color:#f92672">.</span>tolist()])
-</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> mx<span style="color:#f92672">.</span>stack([data[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:i<span style="color:#f92672">+</span>block_size<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> ix<span style="color:#f92672">.</span>tolist()])
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x, y
-</span></span></code></pre></div><p>Quick check</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>x, y <span style="color:#f92672">=</span> get_batch(train_data)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;inputs&#34;</span>)
-</span></span><span style="display:flex;"><span>print(x<span style="color:#f92672">.</span>shape)
-</span></span><span style="display:flex;"><span>print(x)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;targets&#34;</span>)
-</span></span><span style="display:flex;"><span>print(y<span style="color:#f92672">.</span>shape)
-</span></span><span style="display:flex;"><span>print(y)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> b <span style="color:#f92672">in</span> range(batch_size): <span style="color:#75715e"># batch dimension</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> range(block_size): <span style="color:#75715e"># time dimension</span>
-</span></span><span style="display:flex;"><span>        context <span style="color:#f92672">=</span> x[b, :t<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>        target <span style="color:#f92672">=</span> y[b, t]
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;when input is </span><span style="color:#e6db74">{</span>context<span style="color:#f92672">.</span>tolist()<span style="color:#e6db74">}</span><span style="color:#e6db74">, target is </span><span style="color:#e6db74">{</span>target<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>inputs
-</span></span><span style="display:flex;"><span>(4, 8)
-</span></span><span style="display:flex;"><span>array([[53, 1, 51, ..., 43, 50, 44],
-</span></span><span style="display:flex;"><span>       [32, 53, 1, ..., 39, 58, 1],
-</span></span><span style="display:flex;"><span>       [53, 59, 1, ..., 50, 50, 1],
-</span></span><span style="display:flex;"><span>       [23, 17, 10, ..., 39, 52, 1]], dtype=int32)
-</span></span><span style="display:flex;"><span>targets
-</span></span><span style="display:flex;"><span>(4, 8)
-</span></span><span style="display:flex;"><span>array([[1, 51, 63, ..., 50, 44, 0],
-</span></span><span style="display:flex;"><span>       [53, 1, 61, ..., 58, 1, 61],
-</span></span><span style="display:flex;"><span>       [59, 1, 58, ..., 50, 1, 51],
-</span></span><span style="display:flex;"><span>       [17, 10, 0, ..., 52, 1, 52]], dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53], target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1], target is array(51, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1, 51], target is array(63, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1, 51, 63], target is array(57, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1, 51, 63, 57], target is array(43, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1, 51, 63, 57, 43], target is array(50, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1, 51, 63, 57, 43, 50], target is array(44, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 1, 51, 63, 57, 43, 50, 44], target is array(0, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32], target is array(53, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53], target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53, 1], target is array(61, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53, 1, 61], target is array(46, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53, 1, 61, 46], target is array(39, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53, 1, 61, 46, 39], target is array(58, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53, 1, 61, 46, 39, 58], target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [32, 53, 1, 61, 46, 39, 58, 1], target is array(61, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53], target is array(59, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59], target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59, 1], target is array(58, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59, 1, 58], target is array(43, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59, 1, 58, 43], target is array(50, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59, 1, 58, 43, 50], target is array(50, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59, 1, 58, 43, 50, 50], target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [53, 59, 1, 58, 43, 50, 50, 1], target is array(51, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23], target is array(17, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17], target is array(10, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17, 10], target is array(0, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17, 10, 0], target is array(15, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17, 10, 0, 15], target is array(39, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17, 10, 0, 15, 39], target is array(52, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17, 10, 0, 15, 39, 52], target is array(1, dtype=int32)
-</span></span><span style="display:flex;"><span>when input is [23, 17, 10, 0, 15, 39, 52, 1], target is array(52, dtype=int32)
-</span></span></code></pre></div><p>Let&rsquo;s next implement the `BigramLanguageModel`</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> mlx.nn <span style="color:#66d9ef">as</span> nn
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BigramLanguageModel</span>(nn<span style="color:#f92672">.</span>Module):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self, vocab_size):
-</span></span><span style="display:flex;"><span>        super()<span style="color:#f92672">.</span>__init__()
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>token_embedding_table <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>Embedding(vocab_size, vocab_size)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __call__(self, idx, targets):
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># idx and targets are both (B,T) tensor of integers</span>
-</span></span><span style="display:flex;"><span>        logits <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>token_embedding_table(idx) <span style="color:#75715e"># (B, T, C)</span>
-</span></span><span style="display:flex;"><span>        loss <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>losses<span style="color:#f92672">.</span>cross_entropy(logits, targets)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> logits
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>m <span style="color:#f92672">=</span> BigramLanguageModel(vocab_size)
-</span></span><span style="display:flex;"><span>out <span style="color:#f92672">=</span> m(x, y)
-</span></span><span style="display:flex;"><span>print(out<span style="color:#f92672">.</span>shape)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>array([[4.24595, 4.1331, 4.40312, ..., 4.31248, 4.05547, 4.20361],
-</span></span><span style="display:flex;"><span>       [4.10041, 4.24595, 4.21379, ..., 4.32175, 4.28335, 4.21379],
-</span></span><span style="display:flex;"><span>       [4.11496, 4.26998, 4.01405, ..., 4.19023, 4.3109, 4.1331],
-</span></span><span style="display:flex;"><span>       [4.0343, 4.34374, 4.10972, ..., 4.19232, 4.04217, 4.41227]], dtype=float32)
-</span></span><span style="display:flex;"><span>(4, 8, 65)
-</span></span></code></pre></div>
-        </main>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+GPT
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>This is from Andrej Karpathy&#39;s <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Let&#39;s build GPT: from scratch, in code, spelled out</a> video.</p>
+<p>
+We&#39;ll be using the dataset indicated in the video - called the <a href="https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt">Tiny Shakespeare</a> text. Download it.</p>
+<div class="src src-bash">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;input.txt&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
+</span></span><span class="line"><span class="cl"><span class="k">fi</span></span></span></code></pre></div>
+</div>
+<p>
+We read the text into memory, and then evaluate some quick details and create the encoder and decoder. To and from integers.</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;input.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;length of dataset in characters: &#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+length of dataset in characters:  1115394
+</pre>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">chars</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">text</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stoi</span> <span class="o">=</span> <span class="p">{</span> <span class="n">ch</span> <span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">itos</span> <span class="o">=</span> <span class="p">{</span> <span class="n">i</span> <span class="p">:</span> <span class="n">ch</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">encode</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">[</span><span class="n">stoi</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]</span> <span class="c1"># string -&gt; list[integer]</span>
+</span></span><span class="line"><span class="cl"><span class="n">decode</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">l</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">itos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">])</span> <span class="c1"># list[integer] -&gt; string</span></span></span></code></pre></div>
+</div>
+<p>
+Let&#39;s quickly check our code</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chars</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;Hello, World!&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">decode</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;How are you doing today?&#34;</span><span class="p">)))</span></span></span></code></pre></div>
+</div>
+<pre class="example">
 
-    </article>
-
+ !$&amp;&#39;,-.3:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+65
+[20, 43, 50, 50, 53, 6, 1, 35, 53, 56, 50, 42, 2]
+How are you doing today?
+</pre>
+<p>
+We have a custom encoder/decoder pair here. For real-world use-cases, libraries like <a href="https://github.com/google/sentencepiece">sentencepiece</a> and <a href="https://github.com/openai/tiktoken">tiktoken</a> are appropriate.</p>
+<p>
+We&#39;ll next encode the entire text into an `mlx.core.array` object</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">mlx.core</span> <span class="k">as</span> <span class="nn">mx</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="p">))</span></span></span></code></pre></div>
+</div>
+<p>
+Quick check</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+(1115394,) mlx.core.int32
+array([18, 47, 56, ..., 8, 0, 0], dtype=int32)
+</pre>
+<p>
+Splitting into train and test</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.9</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">val_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">:]</span></span></span></code></pre></div>
+</div>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">block_size</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># The maximum context length for predictions</span></span></span></code></pre></div>
+</div>
+<p>
+Quick check, and a show of what our input training data and corresponding target values are</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">train_data</span><span class="p">[:</span><span class="n">block_size</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[:</span><span class="n">block_size</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">train_data</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">block_size</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">block_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">context</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">target</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;When input is </span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2">, the target is </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+array([18, 47, 56, ..., 15, 47, 58], dtype=int32)
+When input is array([18], dtype=int32), the target is array(47, dtype=int32)
+When input is array([18, 47], dtype=int32), the target is array(56, dtype=int32)
+When input is array([18, 47, 56], dtype=int32), the target is array(57, dtype=int32)
+When input is array([18, 47, 56, 57], dtype=int32), the target is array(58, dtype=int32)
+When input is array([18, 47, 56, 57, 58], dtype=int32), the target is array(1, dtype=int32)
+When input is array([18, 47, 56, 57, 58, 1], dtype=int32), the target is array(15, dtype=int32)
+When input is array([18, 47, 56, ..., 58, 1, 15], dtype=int32), the target is array(47, dtype=int32)
+When input is array([18, 47, 56, ..., 1, 15, 47], dtype=int32), the target is array(58, dtype=int32)
+</pre>
+<p>
+Coming to now, the batch size. We pass in data in batches to be efficient with the use of the CPU/GPU resources which can handle multiple computations of the same kind in parallel.</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># Number of independent sequences we will process in parallel</span>
+</span></span><span class="line"><span class="cl"><span class="n">mx</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1337</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_batch</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Generate a small batch of data of inputs x and targets y</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ix</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">block_size</span><span class="p">,</span> <span class="p">[</span><span class="n">batch_size</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">block_size</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ix</span><span class="o">.</span><span class="n">tolist</span><span class="p">()])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">block_size</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ix</span><span class="o">.</span><span class="n">tolist</span><span class="p">()])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span></span></span></code></pre></div>
+</div>
+<p>
+Quick check</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">get_batch</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;inputs&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;targets&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">batch_size</span><span class="p">):</span> <span class="c1"># batch dimension</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">block_size</span><span class="p">):</span> <span class="c1"># time dimension</span>
+</span></span><span class="line"><span class="cl">        <span class="n">context</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="p">:</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">target</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;when input is </span><span class="si">{</span><span class="n">context</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">, target is </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+inputs
+(4, 8)
+array([[53, 1, 51, ..., 43, 50, 44],
+       [32, 53, 1, ..., 39, 58, 1],
+       [53, 59, 1, ..., 50, 50, 1],
+       [23, 17, 10, ..., 39, 52, 1]], dtype=int32)
+targets
+(4, 8)
+array([[1, 51, 63, ..., 50, 44, 0],
+       [53, 1, 61, ..., 58, 1, 61],
+       [59, 1, 58, ..., 50, 1, 51],
+       [17, 10, 0, ..., 52, 1, 52]], dtype=int32)
+when input is [53], target is array(1, dtype=int32)
+when input is [53, 1], target is array(51, dtype=int32)
+when input is [53, 1, 51], target is array(63, dtype=int32)
+when input is [53, 1, 51, 63], target is array(57, dtype=int32)
+when input is [53, 1, 51, 63, 57], target is array(43, dtype=int32)
+when input is [53, 1, 51, 63, 57, 43], target is array(50, dtype=int32)
+when input is [53, 1, 51, 63, 57, 43, 50], target is array(44, dtype=int32)
+when input is [53, 1, 51, 63, 57, 43, 50, 44], target is array(0, dtype=int32)
+when input is [32], target is array(53, dtype=int32)
+when input is [32, 53], target is array(1, dtype=int32)
+when input is [32, 53, 1], target is array(61, dtype=int32)
+when input is [32, 53, 1, 61], target is array(46, dtype=int32)
+when input is [32, 53, 1, 61, 46], target is array(39, dtype=int32)
+when input is [32, 53, 1, 61, 46, 39], target is array(58, dtype=int32)
+when input is [32, 53, 1, 61, 46, 39, 58], target is array(1, dtype=int32)
+when input is [32, 53, 1, 61, 46, 39, 58, 1], target is array(61, dtype=int32)
+when input is [53], target is array(59, dtype=int32)
+when input is [53, 59], target is array(1, dtype=int32)
+when input is [53, 59, 1], target is array(58, dtype=int32)
+when input is [53, 59, 1, 58], target is array(43, dtype=int32)
+when input is [53, 59, 1, 58, 43], target is array(50, dtype=int32)
+when input is [53, 59, 1, 58, 43, 50], target is array(50, dtype=int32)
+when input is [53, 59, 1, 58, 43, 50, 50], target is array(1, dtype=int32)
+when input is [53, 59, 1, 58, 43, 50, 50, 1], target is array(51, dtype=int32)
+when input is [23], target is array(17, dtype=int32)
+when input is [23, 17], target is array(10, dtype=int32)
+when input is [23, 17, 10], target is array(0, dtype=int32)
+when input is [23, 17, 10, 0], target is array(15, dtype=int32)
+when input is [23, 17, 10, 0, 15], target is array(39, dtype=int32)
+when input is [23, 17, 10, 0, 15, 39], target is array(52, dtype=int32)
+when input is [23, 17, 10, 0, 15, 39, 52], target is array(1, dtype=int32)
+when input is [23, 17, 10, 0, 15, 39, 52, 1], target is array(52, dtype=int32)
+</pre>
+<p>
+Let&#39;s next implement the `BigramLanguageModel`</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">mlx.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BigramLanguageModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">token_embedding_table</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">vocab_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># idx and targets are both (B,T) tensor of integers</span>
+</span></span><span class="line"><span class="cl">        <span class="n">logits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token_embedding_table</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="c1"># (B, T, C)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loss</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">logits</span></span></span></code></pre></div>
+</div>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="n">BigramLanguageModel</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">out</span> <span class="o">=</span> <span class="n">m</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+array([[4.24595, 4.1331, 4.40312, ..., 4.31248, 4.05547, 4.20361],
+       [4.10041, 4.24595, 4.21379, ..., 4.32175, 4.28335, 4.21379],
+       [4.11496, 4.26998, 4.01405, ..., 4.19023, 4.3109, 4.1331],
+       [4.0343, 4.34374, 4.10972, ..., 4.19232, 4.04217, 4.41227]], dtype=float32)
+(4, 8, 65)
+</pre>
+</div>
 </div>
 
-    </div>
-
-    <footer id="site-footer">
-        <div class="hide-for-small-only float-left author">
-    <span>&copy; <span
-            class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
+            </div>
+        </article></main>
 </div>
 
-<div class="social-media-list float-right">
-  <span class="social-media-item">
-    <a href="https://github.com/jaju">
-      <span class="svg-social-icon icon--github">
-        <svg viewBox="0 0 16 16">
-          <path fill="#828282"
-                d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-        </svg>
-      </span>
-      <span class="username">jaju</span>
+<footer class="footer">
+    <small class="footer_copyright">
+        © 2025 Ravindra R. Jaju.
+        
+    </small>
+</footer>
+
+
+<div class="fixed-social-icons">
+    <a href="https://github.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="GitHub" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
     </a>
-  </span>
-  <span class="social-media-item">
-    <a href="https://twitter.com/jaju">
-      <span class="svg-social-icon icon--twitter">
-        <svg viewBox="0 0 16 16">
-          <path fill="#828282"
-                d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
-        </svg>
-      </span>
-      <span class="username">jaju</span>
+    <a href="https://x.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="X (Twitter)" class="social-icon">
+        <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
     </a>
-  </span>
 </div>
 
-    </footer>
-</div>
-
-<script src="/js/bundle.js"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYE506V9R8"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TYE506V9R8');
-</script>
+
+
+
+
+    
+    <script src="https://example.org/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
+
+    
+
 </body>
 </html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>&#34;Gen-Ai&#34; on M&#39;Sync</title>
+    <link>https://example.org/tags/gen-ai/</link>
+    <description>Recent content in &#34;Gen-Ai&#34; on M&#39;Sync</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Apr 2024 16:57:23 +0530</lastBuildDate><atom:link href="https://example.org/tags/gen-ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GenAI Pointers (Primarily Text Domain)</title>
+      <link>https://example.org/notes/genai/</link>
+      <pubDate>Sun, 07 Apr 2024 16:57:23 +0530</pubDate>
+      
+      <guid>https://example.org/notes/genai/</guid>
+      
+      <description>&lt;div class=&#34;src src-toml&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;summary&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;GenAI Notes for Text - Mostly pointers, not details.&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Terms Worth Understanding
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;div id=&#34;outline-container-headline-2&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-2&#34;&gt;
+Tokenization
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-2&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;div id=&#34;outline-container-headline-3&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-3&#34;&gt;
+Encoding/Decoding
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-3&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;This &lt;a href=&#34;https://youtu.be/zduSFxRajkE&#34;&gt;video&lt;/a&gt; by Andrej Karpathy is a good source for understanding as he walks us through an implementation of a tokenizer.
+**&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-4&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-4&#34;&gt;
+Terms Worth Being Aware Of
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-4&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;Worth being aware of to the extent of understanding their motivations.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;
+&lt;a href=&#34;https://arxiv.org/abs/2207.14255&#34;&gt;Fill In the Middle (FIM)&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dd&gt;Making models learn to infill text&lt;/dd&gt;
+&lt;dt&gt;
+?
+&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;https://arxiv.org/abs/1911.02150&#34;&gt;Multi Query Attention (MQA)&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;
+?
+&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;https://arxiv.org/abs/2305.13245&#34;&gt;Grouped Query Attention (GQA)&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-5&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-5&#34;&gt;
+Softwares
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-5&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;div id=&#34;outline-container-headline-6&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-6&#34;&gt;
+Tokenization/Embeddings
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-6&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/openai/tiktoken&#34;&gt;OpenAI Tiktoken&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/google/sentencepiece&#34;&gt;Google Sentencepiece&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-7&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-7&#34;&gt;
+General Thoughts
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-7&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;Previous approaches to provide inputs to intelligent systems required a well-defined input structure and shape to be decided and fixed up-front. The newer approaches have done away with that, allowing for variable-length inputs. Additionally, data is not required to be processed sequentially. This is powerful because it enables the new architectures to capture &amp;#34;context&amp;#34; in more powerful ways.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

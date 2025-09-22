@@ -1,110 +1,419 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sync&#39;ing from Memory</title>
-    <link>https://msync.org/</link>
-    <description>Recent content on Sync&#39;ing from Memory</description>
-    <generator>Hugo</generator>
+    <title>M&#39;Sync</title>
+    <link>https://example.org/</link>
+    <description>Recent content on M&#39;Sync</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jul 2024 21:59:56 +0530</lastBuildDate>
-    <atom:link href="https://msync.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The History of Attention</title>
+      <link>https://example.org/notes/history-of-attention/</link>
+      <pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/notes/history-of-attention/</guid>
+      
+      <description>A comprehensive analysis tracing the evolution of attention mechanisms from bag-of-words models to FlashAttention, examining the mathematical foundations and interdisciplinary connections that enabled modern AI.</description>
+      
+    </item>
+    
+    <item>
+      <title>Notes: LLM From Scratch</title>
+      <link>https://example.org/notes/llm-from-scratch/</link>
+      <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.org/notes/llm-from-scratch/</guid>
+      
+      <description>Notes and pointers during the exploration of the book LLM From Scratch by Sebastian Raschka. Comprehensive exploration of tokenization, embeddings, and building language models from scratch.</description>
+      
+    </item>
+    
     <item>
       <title>Quick Notes - Hardware-aware programming on MacOS</title>
-      <link>https://msync.org/notes/apple-silicon-macos/</link>
+      <link>https://example.org/notes/apple-silicon-macos/</link>
       <pubDate>Sat, 29 Jun 2024 09:32:47 +0530</pubDate>
-      <guid>https://msync.org/notes/apple-silicon-macos/</guid>
+      
+      <guid>https://example.org/notes/apple-silicon-macos/</guid>
+      
       <description>Short notes - pointers to programming for speed and efficiency, leveraging hardware-specific features available on ARM Apple Silicon. MacOS-focused at most places, although ideas are easy to generalise.</description>
+      
     </item>
+    
     <item>
-      <title>LLMs: Exploring To Understand</title>
-      <link>https://msync.org/notes/llm-exploration/</link>
-      <pubDate>Mon, 29 Apr 2024 18:29:59 +0530</pubDate>
-      <guid>https://msync.org/notes/llm-exploration/</guid>
-      <description>Delving into LLMs to probe how they do what they do.</description>
+      <title>Handy Hacks</title>
+      <link>https://example.org/notes/handy-hacks/</link>
+      <pubDate>Wed, 01 May 2024 09:30:31 +0530</pubDate>
+      
+      <guid>https://example.org/notes/handy-hacks/</guid>
+      
+      <description>Quick handy hacks for reference from anywhere.</description>
+      
     </item>
+    
     <item>
-      <title>LLMs: Understanding Tokens and Embeddings</title>
-      <link>https://msync.org/notes/llm-understanding-tokens-embeddings/</link>
-      <pubDate>Sat, 13 Apr 2024 14:35:47 +0530</pubDate>
-      <guid>https://msync.org/notes/llm-understanding-tokens-embeddings/</guid>
-      <description>An overview of what tokens and embeddings mean in the context of LLMs - and related models. Please use the code along side for more grounding. Code links towards the end.</description>
+      <title>GenAI Pointers (Primarily Text Domain)</title>
+      <link>https://example.org/notes/genai/</link>
+      <pubDate>Sun, 07 Apr 2024 16:57:23 +0530</pubDate>
+      
+      <guid>https://example.org/notes/genai/</guid>
+      
+      <description>&lt;div class=&#34;src src-toml&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;summary&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;GenAI Notes for Text - Mostly pointers, not details.&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Terms Worth Understanding
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;div id=&#34;outline-container-headline-2&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-2&#34;&gt;
+Tokenization
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-2&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;div id=&#34;outline-container-headline-3&#34; class=&#34;outline-4&#34;&gt;
+&lt;h4 id=&#34;headline-3&#34;&gt;
+Encoding/Decoding
+&lt;/h4&gt;
+&lt;div id=&#34;outline-text-headline-3&#34; class=&#34;outline-text-4&#34;&gt;
+&lt;p&gt;This &lt;a href=&#34;https://youtu.be/zduSFxRajkE&#34;&gt;video&lt;/a&gt; by Andrej Karpathy is a good source for understanding as he walks us through an implementation of a tokenizer.
+**&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-4&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-4&#34;&gt;
+Terms Worth Being Aware Of
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-4&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;Worth being aware of to the extent of understanding their motivations.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;
+&lt;a href=&#34;https://arxiv.org/abs/2207.14255&#34;&gt;Fill In the Middle (FIM)&lt;/a&gt;
+&lt;/dt&gt;
+&lt;dd&gt;Making models learn to infill text&lt;/dd&gt;
+&lt;dt&gt;
+?
+&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;https://arxiv.org/abs/1911.02150&#34;&gt;Multi Query Attention (MQA)&lt;/a&gt;&lt;/dd&gt;
+&lt;dt&gt;
+?
+&lt;/dt&gt;
+&lt;dd&gt;&lt;a href=&#34;https://arxiv.org/abs/2305.13245&#34;&gt;Grouped Query Attention (GQA)&lt;/a&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-5&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-5&#34;&gt;
+Softwares
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-5&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;div id=&#34;outline-container-headline-6&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-6&#34;&gt;
+Tokenization/Embeddings
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-6&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/openai/tiktoken&#34;&gt;OpenAI Tiktoken&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/google/sentencepiece&#34;&gt;Google Sentencepiece&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-7&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-7&#34;&gt;
+General Thoughts
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-7&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;Previous approaches to provide inputs to intelligent systems required a well-defined input structure and shape to be decided and fixed up-front. The newer approaches have done away with that, allowing for variable-length inputs. Additionally, data is not required to be processed sequentially. This is powerful because it enables the new architectures to capture &amp;#34;context&amp;#34; in more powerful ways.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
     </item>
+    
     <item>
       <title>MLX</title>
-      <link>https://msync.org/notes/mlx/</link>
+      <link>https://example.org/notes/mlx/</link>
       <pubDate>Fri, 05 Apr 2024 09:36:15 +0530</pubDate>
-      <guid>https://msync.org/notes/mlx/</guid>
-      <description>MLX 20/80. With 20% effort, hope to get 80% covered on MLX&amp;rsquo;s offerings. And, I don&amp;rsquo;t stand by this claim.</description>
+      
+      <guid>https://example.org/notes/mlx/</guid>
+      
+      <description>MLX 20/80. With 20% effort, hope to get 80% covered on MLX&amp;#39;s offerings. And, I don&amp;#39;t stand by this claim.</description>
+      
     </item>
+    
     <item>
       <title>Probability</title>
-      <link>https://msync.org/notes/probability/</link>
+      <link>https://example.org/notes/probability/</link>
       <pubDate>Tue, 05 Mar 2024 17:29:37 +0530</pubDate>
-      <guid>https://msync.org/notes/probability/</guid>
+      
+      <guid>https://example.org/notes/probability/</guid>
+      
       <description>Probably definitely incomplete notes on probability.</description>
+      
     </item>
+    
+    <item>
+      <title>Javascript - Protecting Your Data</title>
+      <link>https://example.org/notes/js-safe-data/</link>
+      <pubDate>Sat, 05 Sep 2020 23:22:55 +0530</pubDate>
+      
+      <guid>https://example.org/notes/js-safe-data/</guid>
+      
+      <description>Some uncommon but useful techniques for your javascript</description>
+      
+    </item>
+    
     <item>
       <title>Notes for Deep Learning with Python</title>
-      <link>https://msync.org/notes/deep-learning-with-python/</link>
+      <link>https://example.org/notes/deep-learning-with-python/</link>
       <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
-      <guid>https://msync.org/notes/deep-learning-with-python/</guid>
-      <description>Chapter-wise notes for &lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;Deep Learning with Python&lt;/a&gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+      
+      <guid>https://example.org/notes/deep-learning-with-python/</guid>
+      
+      <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+      
     </item>
+    
+    <item>
+      <title>Graphics: Grammar of Graphics, Vega, Oz</title>
+      <link>https://example.org/notes/graphics/</link>
+      <pubDate>Sun, 22 Mar 2020 10:46:59 +0530</pubDate>
+      
+      <guid>https://example.org/notes/graphics/</guid>
+      
+      <description>Quickstart notes for being productive with graphics libraries. In the browser.</description>
+      
+    </item>
+    
     <item>
       <title>The Fallacy of the Full-stackist</title>
-      <link>https://msync.org/posts/2020/01/the-fallacy-of-the-full-stackist/</link>
+      <link>https://example.org/blog/2020/2020-01-04-the-fallacy-of-the-full-stack/</link>
       <pubDate>Sat, 04 Jan 2020 16:54:50 +0530</pubDate>
-      <guid>https://msync.org/posts/2020/01/the-fallacy-of-the-full-stackist/</guid>
-      <description>The distinction between being a full-stack developer and the perception of being one can be big.</description>
+      
+      <guid>https://example.org/blog/2020/2020-01-04-the-fallacy-of-the-full-stack/</guid>
+      
+      <description>&lt;div class=&#34;verse-block&#34;&gt;
+&lt;p&gt;It&amp;#39;s not easy to know everything.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;
+And the previous statement easily counts as one of the best understatements that can ever be made. But, it&amp;#39;s not a lie. Even if it does not convey the truth very well. But, we&amp;#39;re in the age of super-hyper competition, misinformation, and &lt;em&gt;#kill-your-cognitive-abilities-with-information-overload&lt;/em&gt;. So, the above just works fine without being called out for lying.&lt;/p&gt;
+&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-3&#34;&gt;
+&lt;h3 id=&#34;headline-1&#34;&gt;
+10x Idiot?
+&lt;/h3&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-3&#34;&gt;
+&lt;p&gt;Of course, as we are not incorrect, let&amp;#39;s take it further. &lt;code class=&#34;verbatim&#34;&gt;10 times 0 is zero.&lt;/code&gt; Or, 10 times a very small number is &lt;span style=&#34;text-decoration: underline;&#34;&gt;still quite small&lt;/span&gt;. We can now claim the existence of &lt;strong&gt;10x&lt;/strong&gt; engineers without lying, by simply leaving the value of &lt;strong&gt;x&lt;/strong&gt; unspecified. The bar is low, so we can &lt;del&gt;jump&lt;/del&gt; gloss over it.&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>JS Quick Restart for the Impatient</title>
-      <link>https://msync.org/notes/javascript-quick-restart/</link>
+      <link>https://example.org/notes/javascript-quick-restart/</link>
       <pubDate>Wed, 17 Jan 2018 14:43:59 +0530</pubDate>
-      <guid>https://msync.org/notes/javascript-quick-restart/</guid>
-      <description>For polyglots who can&amp;rsquo;t keep too many languages in their heads and need a deep refresher.</description>
+      
+      <guid>https://example.org/notes/javascript-quick-restart/</guid>
+      
+      <description>For polyglots who can&amp;#39;t keep too many languages in their heads and need a deep refresher.</description>
+      
     </item>
+    
+    <item>
+      <title>A Neural Network Primer</title>
+      <link>https://example.org/notes/neural-network-primer/</link>
+      <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
+      
+      <guid>https://example.org/notes/neural-network-primer/</guid>
+      
+      <description>An article inspired by the article - &amp;lt;a href=\&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;\&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Text Learning - Pointers</title>
+      <link>https://example.org/notes/text-learning-pointers/</link>
+      <pubDate>Sat, 16 Sep 2017 10:20:58 +0530</pubDate>
+      
+      <guid>https://example.org/notes/text-learning-pointers/</guid>
+      
+      <description>&lt;div class=&#34;src src-toml&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;summary&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Pointers for DL for text&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Synopsis
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;Text learning combines various disciplines. Of course, that&amp;#39;s true for all domains in which machine learning will be applied. But text is special because that defines humans in very special and unique ways, and with speech, is our primary form of knowledge encoding, storing, and communication.&lt;/p&gt;
+&lt;p&gt;
+Non-exhaustively, and probably haphazardly, I have the following in my mind for this document.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Good corpus. Bad corpus.&lt;/li&gt;
+&lt;li&gt;NLP. Statistics. Dictionaries. Knowledge-bases.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;SpaCy&lt;/em&gt;. &lt;em&gt;CoreNLP&lt;/em&gt;. &lt;em&gt;GATE&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Word2Vec&lt;/em&gt;. &lt;em&gt;GloVe&lt;/em&gt;. &lt;em&gt;Sense2Vec&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;em&gt;whats&lt;/em&gt; and the &lt;em&gt;whys&lt;/em&gt;, and pointers to the &lt;em&gt;hows&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Primarily my notes for reference.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Clojure</title>
-      <link>https://msync.org/notes/clojure/</link>
+      <link>https://example.org/notes/clojure/</link>
       <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      <guid>https://msync.org/notes/clojure/</guid>
-      <description>Clojure Notes - An aimless dump of anything and everything interesting I find &lt;em&gt;and&lt;/em&gt; manage to record.</description>
+      
+      <guid>https://example.org/notes/clojure/</guid>
+      
+      <description>&lt;div id=&#34;outline-container-headline-1&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-1&#34;&gt;
+Introduction
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-1&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;Interesting code/styles I&amp;#39;ve found in various Clojure open-source codebases.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;outline-container-headline-2&#34; class=&#34;outline-2&#34;&gt;
+&lt;h2 id=&#34;headline-2&#34;&gt;
+Exploring the &lt;strong&gt;Core&lt;/strong&gt;
+&lt;/h2&gt;
+&lt;div id=&#34;outline-text-headline-2&#34; class=&#34;outline-text-2&#34;&gt;
+&lt;p&gt;The built-in &lt;code&gt;clojure.repl&lt;/code&gt; namespace has useful functions to explore Clojure, and we can use it to explore the core namespaces.&lt;/p&gt;
+&lt;div class=&#34;src src-clojure&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;ns &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clojurexplore&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ss&#34;&gt;:require&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;msync.utils&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:refer&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:all&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clojure.repl&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;:refer&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;doc &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;dir&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;dir-fn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;take &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;dir-fn&lt;/span&gt; &lt;span class=&#34;ss&#34;&gt;&amp;#39;clojure.core&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;src src-clojure&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*agent*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*allow-unresolved-vars*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*assert*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*clojure-version*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*command-line-args*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*compile-files*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*compile-path*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*compiler-options*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*data-readers*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*default-data-reader-fn*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*e&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*err*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*file*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*flush-on-newline*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ,&lt;span class=&#34;nv&#34;&gt;*fn-loader*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;
+What do docs look like?&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>Org-mode Quick Guide</title>
-      <link>https://msync.org/notes/orgguide/</link>
+      <link>https://example.org/notes/orgguide/</link>
       <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
-      <guid>https://msync.org/notes/orgguide/</guid>
+      
+      <guid>https://example.org/notes/orgguide/</guid>
+      
       <description>Summarized guide for features I commonly use, for quick reference.</description>
+      
     </item>
+    
     <item>
       <title>Useful Clojure Asides - Logging and Exceptions</title>
-      <link>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</link>
+      <link>https://example.org/blog/2015/2015-06-08-clojure-useful-asides/</link>
       <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/06/useful-clojure-asides-logging-and-exceptions/</guid>
-      <description>It&amp;rsquo;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description>
+      
+      <guid>https://example.org/blog/2015/2015-06-08-clojure-useful-asides/</guid>
+      
+      <description>&lt;p&gt;Logging and exception handling are such core requirements in any application which
+are rarely, if ever, discussed. At least in the initial phases of any application.
+But as any developer would vouch (when asked, not voluntarily, I think), logging
+right is a very crucial aspect of any application. Not only does it help you understand
+the (then-) current state of the application, they also help folks trace causes of
+various problems when done right.&lt;/p&gt;</description>
+      
     </item>
+    
+    <item>
+      <title>Interesting Java in clojure.core</title>
+      <link>https://example.org/blog/2015/2015-05-16-interesting-java-in-clojure-core/</link>
+      <pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate>
+      
+      <guid>https://example.org/blog/2015/2015-05-16-interesting-java-in-clojure-core/</guid>
+      
+      <description>&lt;p&gt;The Clojure language primarily targets the Java Virtual Machine, and so obviously,
+we have a topic.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Quick array creation from some items&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;src src-java&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// clojure.lang.Intrinsics&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;oa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Developing Chrome Extensions using Clojurescript</title>
-      <link>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</link>
+      <link>https://example.org/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</link>
       <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/04/developing-chrome-extensions-using-clojurescript/</guid>
-      <description>How you may set up your clojurescript project for developing chrome extensions - an example</description>
+      
+      <guid>https://example.org/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid>
+      
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; - Of course, you can use &lt;a href=&#34;http://clojure.org/clojurescript&#34;&gt;Clojurescript&lt;/a&gt; to develop &lt;a href=&#34;https://developer.chrome.com/extensions&#34;&gt;Chrome Extensions&lt;/a&gt;. So, that&amp;#39;s not the topic of this post.
+I&amp;#39;ve only documented how you&amp;#39;d set up your project, using the latest versions (as of this post&amp;#39;s publishing)
+of piggieback and weasel.&lt;/p&gt;
+&lt;p&gt;
+Why &lt;a href=&#34;https://github.com/tomjakubowski/weasel&#34;&gt;Weasel&lt;/a&gt;? Because, as its author explains&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A WebSocket transport is simple and avoids some of the thornier bugs caused by the CrossPageChannel transport, which is used in the standard ClojureScript browser REPL and Austin.&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>On The &#39;Decay&#39; Of Small Organizations into Large Organizations</title>
-      <link>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</link>
+      <link>https://example.org/blog/2015/2015-04-01-large-and-small-organizations/</link>
       <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/04/on-the-decay-of-small-organizations-into-large-organizations/</guid>
-      <description>Some observations on challenges in managing quality and talent in organizations of different sizes.</description>
+      
+      <guid>https://example.org/blog/2015/2015-04-01-large-and-small-organizations/</guid>
+      
+      <description>&lt;p&gt;
+Size is just a number. Unless you stop using a number and qualify with adjectives like large and small.
+Implicitly, when speaking of companies/organizations, we somehow associate young and old with small
+and large respectively. We associate the term &lt;em&gt;start up&lt;/em&gt; with a young &lt;em&gt;and&lt;/em&gt; small company. But more accurately.
+there&amp;#39;s a sub-conscious association of various characteristics with such a company - agile, &lt;em&gt;ad hoc&lt;/em&gt;,
+tech-savvy, dynamic and lively, top-notch folks. These are considered a given. And we somehow
+marvel large companies who display even a fraction of these characteristics. Because we don&amp;#39;t expect
+elephants to dance.&lt;/p&gt;</description>
+      
     </item>
+    
     <item>
       <title>Welcome to the All New M&#39;Sync Blog</title>
-      <link>https://msync.org/posts/2015/03/welcome-to-the-all-new-msync-blog/</link>
+      <link>https://example.org/blog/2015/2015-03-31-welcome/</link>
       <pubDate>Tue, 31 Mar 2015 20:45:00 +0530</pubDate>
-      <guid>https://msync.org/posts/2015/03/welcome-to-the-all-new-msync-blog/</guid>
-      <description>Mandatory introductory post.</description>
+      
+      <guid>https://example.org/blog/2015/2015-03-31-welcome/</guid>
+      
+      <description>&lt;p&gt;
+Matters of the mind matter. As time flies, or crawls, or stops, and as water flows (or doesn’t) under some zillion bridges,
+I (d)evolve until I don’t. But being the megalomaniac that I am, the world needs to know how I have been living,
+thinking, existing, and degenerating. So, in this randomly chosen (lucky) year, I’ve decided to blog again.
+A few unlucky years passed by, but we’ll let that pass.&lt;/p&gt;</description>
+      
     </item>
+    
   </channel>
 </rss>

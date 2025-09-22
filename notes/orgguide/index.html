@@ -1,160 +1,193 @@
-<!doctype html>
-<html class="no-js" lang="en-us">
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Org-mode Quick Guide | Sync&#39;ing from Memory</title>
-<meta property="og:title" content="Org-mode Quick Guide"/>
+<title itemprop="name">Org-mode Quick Guide | M&#39;Sync</title>
+<meta property="og:title" content="Org-mode Quick Guide | M&#39;Sync" />
+<meta name="twitter:title" content="Org-mode Quick Guide | M&#39;Sync" />
+<meta itemprop="name" content="Org-mode Quick Guide | M&#39;Sync" />
+<meta name="application-name" content="Org-mode Quick Guide | M&#39;Sync" />
+<meta property="og:site_name" content="M&#39;Sync" />
 
-<meta property="og:description" content="Summarized guide for features I commonly use, for quick reference."/>
+<meta name="description" content="Knowledge garden with notes and computational content">
+<meta itemprop="description" content="Knowledge garden with notes and computational content" />
+<meta property="og:description" content="Knowledge garden with notes and computational content" />
+<meta name="twitter:description" content="Knowledge garden with notes and computational content" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:site" content="@jaju"/>
-<meta name="twitter:creator" content="@jaju"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="https://example.org/notes/orgguide/" title="" />
 
 
-<link rel="stylesheet" type="text/css" href="https://msync.org/css/bundle.css">
-<link rel="stylesheet" type="text/css" href="https://msync.org/css/hljs/rainbow.css">
 
+
+
+
+<meta name="generator" content="Hugo 0.150.0">
+
+    
+    <meta property="og:url" content="https://example.org/notes/orgguide/">
+  <meta property="og:site_name" content="M&#39;Sync">
+  <meta property="og:title" content="Org-mode Quick Guide">
+  <meta property="og:description" content="Summarized guide for features I commonly use, for quick reference.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2017-07-10T11:23:36+05:30">
+    <meta property="article:modified_time" content="2024-04-14T19:45:29+05:30">
+    <meta property="article:tag" content="&#34;Emacs&#34; &#34;Org Mode&#34;">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Org-mode Quick Guide">
+  <meta name="twitter:description" content="Summarized guide for features I commonly use, for quick reference.">
+
+
+    
+
+    <link rel="canonical" href="https://example.org/notes/orgguide/">
+    <link href="/style.min.8e72eaf30242279b90867e29e1caad29da8705d884235124f205cdaf7cf82fa4.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://example.org/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+      
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+    
 </head>
+<body data-theme = "light" class="notransition">
 
-<body>
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
 
-<div id="body">
-    <header id="site-header">
-        <div class="content">
-  <a href="https://msync.org/">Sync&#39;ing from Memory</a>
-  <nav>
-    
-    <a href="https://msync.org/notes/">Notes</a>
-    
-    <a href="https://msync.org/posts/">Posts</a>
-    
-  </nav>
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://example.org/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/notes/">
+                        Notes
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/blog/">
+                        Blog
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
 </div>
-    </header>
 
-    <div id="main-wrapper">
-        
-<div class="content notes">
-
-    <div class="toc">
-        <nav id="TableOfContents">
-  <ol>
-    <li>
-      <ol>
-        <li><a href="#references">References</a></li>
-        <li><a href="#document-structure">Document Structure</a>
-          <ol>
-            <li><a href="#visibility-cycling">Visibility cycling</a></li>
-            <li><a href="#motion">Motion</a></li>
-            <li><a href="#plain-lists">Plain lists</a></li>
-            <li><a href="#structure-editing">Structure editing</a></li>
-          </ol>
-        </li>
-        <li><a href="#tables">Tables</a></li>
-        <li><a href="#hyperlinks">Hyperlinks</a>
-          <ol>
-            <li><a href="#format">Format</a></li>
-            <li><a href="#internal-links">Internal links</a></li>
-            <li><a href="#external-links--schema-based">External links (schema-based)</a></li>
-            <li><a href="#handling-links">Handling links</a></li>
-          </ol>
-        </li>
-        <li><a href="#todo-items"><em>TODO</em> Items</a>
-          <ol>
-            <li><a href="#todo-multi-state-workflows"><em>TODO</em> Multi-state workflows</a></li>
-            <li><a href="#prioritizing-todo-items">Prioritizing TODO items</a></li>
-            <li><a href="#further-reading">Further reading</a></li>
-          </ol>
-        </li>
-        <li><a href="#tags">Tags <span class="tag"><span class="important">important</span></span></a>
-          <ol>
-            <li><a href="#inheritance">Inheritance</a></li>
-            <li><a href="#setting-tags">Setting tags</a></li>
-            <li><a href="#tags-that-should-be-available-in-a-file-can-be-set-with-lines-like">Tags that should be available in a file can be set with lines like</a></li>
-            <li><a href="#tag-searches">Tag Searches</a></li>
-            <li><a href="#further-reading">Further reading</a></li>
-          </ol>
-        </li>
-        <li><a href="#properties">Properties</a>
-          <ol>
-            <li><a href="#drawers">Drawers</a></li>
-          </ol>
-        </li>
-        <li><a href="#timestamps">Timestamps</a>
-          <ol>
-            <li><a href="#time-planning">Time planning</a></li>
-            <li><a href="#clocking-work-time">Clocking work time</a></li>
-            <li><a href="#further-reading">Further reading</a></li>
-          </ol>
-        </li>
-        <li><a href="#capture-refile-archive">Capture - Refile - Archive</a>
-          <ol>
-            <li><a href="#capture">Capture</a></li>
-            <li><a href="#capture-templates">Capture templates</a></li>
-            <li><a href="#refiling-notes">Refiling notes</a></li>
-            <li><a href="#archiving">Archiving</a></li>
-          </ol>
-        </li>
-        <li><a href="#agenda-views"><span class="org-todo todo TODO">TODO</span> Agenda Views <span class="tag"><span class="incomplete">incomplete</span></span></a></li>
-        <li><a href="#markup-for-rich-export">Markup for rich export <span class="tag"><span class="incomplete">incomplete</span></span></a>
-          <ol>
-            <li><a href="#structural-markup-elements">Structural markup elements</a></li>
-            <li><a href="#images-and-tables">Images and Tables</a></li>
-            <li><a href="#literal-examples">Literal examples <span class="tag"><span class="urgent">urgent</span></span></a></li>
-          </ol>
-        </li>
-        <li><a href="#exporting">Exporting <span class="tag"><span class="urgent">urgent</span><span class="incomplete">incomplete</span></span></a></li>
-        <li><a href="#technical-content">Technical Content</a>
-          <ol>
-            <li><a href="#latex">LaTeX</a></li>
-          </ol>
-        </li>
-        <li><a href="#working-with-source-code">Working with source code <span class="tag"><span class="urgent">urgent</span><span class="incomplete">incomplete</span></span></a></li>
-      </ol>
-    </li>
-  </ol>
-</nav>
-    </div>
-
-    <article itemscope itemtype="http://schema.org/CreativeWork">
-
-        <header>
-            <h1 itemprop="title">Org-mode Quick Guide</h1>
-            <summary>
-                Summarized guide for features I commonly use, for quick reference.
-            </summary>
-            <div class="meta">
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Org-mode Quick Guide</h1>
                 
-                <div class="time">
-                <time datetime="2017-07-10 11:23:36 &#43;0530 IST" itemprop="datePublished" class="pubdate">
-                    <span class="weekday">Mon</span>,
-                    <span class="day">10</span>
-                    <span class="month">Jul</span>,
-                    <span class="year">2017</span>
-                </time>
-
                 
-                <time datetime="2024-04-14 19:45:31 &#43;0530 IST" itemprop="dateModified" class="pubdate">
-                    Updated:
-                    <span class="weekday">Sun</span>,
-                    <span class="day">14</span>
-                    <span class="month">Apr</span>,
-                    <span class="year">2024</span>
-                </time>
                 
+                <div class="post-meta">
+                    <time datetime="2017-07-10T11:23:36&#43;05:30" itemprop="datePublished"> Jul 10, 2017 </time>
                 </div>
-            </div>
-        </header>
-
-        <main>
-            <h2 id="references">References</h2>
+                
+            </header>
+            
+            <div class="page-content">
+                
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+References
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
 <p>This section is first, because</p>
 <ol>
-<li>My notes are incomplete and only focus on a few useful features I&rsquo;ve managed to find. <a href="https://orgmode.org/">orgmode</a> is <strong>huge</strong>.</li>
+<li>My notes are incomplete and only focus on a few useful features I&#39;ve managed to find. <a href="https://orgmode.org/">orgmode</a> is <strong>huge</strong>.</li>
 <li>To put a disclaimer that I may have introduced errors while writing these notes.</li>
 </ol>
 <p>Here goes</p>
@@ -163,18 +196,31 @@
 <li>The online docs are <a href="https://orgmode.org/#docs">here</a></li>
 </ol>
 <p>For ready reference, here is the <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html">Emacs manual</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>May the force multiply with you!
-</span></span></code></pre></div><p>This document (and most of this site) has been written in <em>orgmode</em>. Page rendered with the help of <a href="https://gohugo.io/">Hugo</a> using the built-in org-mode publishing support.</p>
-<h2 id="document-structure">Document Structure</h2>
-<h3 id="visibility-cycling">Visibility cycling</h3>
+<div class="src src-plaintext">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">May the force multiply with you!</span></span></code></pre></div>
+</div>
+<p>
+This document (and most of this site) has been written in <em>orgmode</em>. Page rendered with the help of <a href="https://gohugo.io/">Hugo</a> using the built-in org-mode publishing support.</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Document Structure
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Visibility cycling
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
 <p>With the cursor at the top of the node - the lines with the *-s, the following work.</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>TAB</td>
@@ -190,14 +236,20 @@
 </tr>
 </tbody>
 </table>
-<h3 id="motion">Motion</h3>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+Motion
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c C-n</td>
@@ -225,50 +277,116 @@
 </tr>
 </tbody>
 </table>
-<h3 id="plain-lists">Plain lists</h3>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Plain lists
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
 <p>Within lists (ordered or unordered), the short-cuts work differently.</p>
 <ul>
-<li>Lists start with &lsquo;-&rsquo;, &lsquo;+&rsquo; or a number followed by a dot or a &lsquo;)&rsquo;.</li>
-<li>Ordered lists with &lsquo;1.&rsquo; or &lsquo;1&rsquo; or &lsquo;1)&rsquo;</li>
-<li>Use &lsquo;Shift-&lt;arrow-key&gt;&rsquo; to change the list beginning character style</li>
-<li>Description lists use &lsquo;::&rsquo; to separate the term from the description</li>
+<li>Lists start with &#39;-&#39;, &#39;+&#39; or a number followed by a dot or a &#39;)&#39;.</li>
+<li>Ordered lists with &#39;1.&#39; or &#39;1&#39; or &#39;1)&#39;</li>
+<li>Use &#39;Shift-&lt;arrow-key&gt;&#39; to change the list beginning character style</li>
+<li>Description lists use &#39;::&#39; to separate the term from the description</li>
 </ul>
-<h3 id="structure-editing">Structure editing</h3>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Structure editing
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
 <dl>
-<dt>M-RET</dt>
+<dt>
+M-RET
+</dt>
 <dd>Insert new heading at same level as current</dd>
-<dt>M-S-RET</dt>
+<dt>
+M-S-RET
+</dt>
 <dd>If heading, insert new TODO entry at same level as current heading</dd>
-<dt>M-S-RET</dt>
-<dd>If a list item, insert a new item with a checkbox
+<dt>
+M-S-RET
+</dt>
+<dd>
+<p>If a list item, insert a new item with a checkbox</p>
 <ul>
-<li><input disabled="" type="checkbox"> Like this.</li>
+<li class="unchecked">Like this.</li>
 <li>Checkboxes can be toggled with C-c C-c</li>
 </ul>
 </dd>
-<dt>M-LEFT/RIGHT</dt>
+<dt>
+M-LEFT/RIGHT
+</dt>
 <dd>Promote/demote current heading by one level</dd>
-<dt>M-S-LEFT/RIGHT</dt>
+<dt>
+M-S-LEFT/RIGHT
+</dt>
 <dd>Promote/demote current subtree by one level</dd>
-<dt>M-UP/DOWN</dt>
+<dt>
+M-UP/DOWN
+</dt>
 <dd>Move subtree up/down</dd>
-<dt>M-S-UP/DOWN</dt>
+<dt>
+M-S-UP/DOWN
+</dt>
 <dd>Move item up/down (swap with previous/next subtree at same level). Renumbering is automatic in ordered lists.</dd>
-<dt>C-c C-w</dt>
+<dt>
+C-c C-w
+</dt>
 <dd>Refile entry/region to a different location</dd>
-<dt>C-x n s/w</dt>
+<dt>
+C-x n s/w
+</dt>
 <dd>Narrow buffer to current subtree / widen it again</dd>
 </dl>
-<h2 id="tables">Tables</h2>
-<p>Tables are tables, and more! They even support spreadsheet like calculations in connection with the Emacs &lsquo;calc&rsquo; package.
-Any line with the &lsquo;|&rsquo; as the first non-whitespace character is considered part of a table. &lsquo;|&rsquo; is also a column separator. Example:</p>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+Footnotes
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>This is any paragraph that is started by a footnote marker in square brackets in column 0 (no indentation allowed.)
+The footnote reference is simply the marker in square brackets, inside text.</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
+<tbody>
+<tr>
+<td>C-c C-x f</td>
+<td>The footnote action command. When cursor is on a footnote reference, jump to the definition. And when at a definition, jump to the (first) reference. Otherwise, create a new footnote.</td>
+</tr>
+<tr>
+<td>C-c C-c</td>
+<td>Jump between definition and reference</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-2">
+<h2 id="headline-8">
+Tables
+</h2>
+<div id="outline-text-headline-8" class="outline-text-2">
+<p>Tables are tables, and more! They even support spreadsheet like calculations in connection with the Emacs &#39;calc&#39; package.
+Any line with the &#39;|&#39; as the first non-whitespace character is considered part of a table. &#39;|&#39; is also a column separator. Example:</p>
+<table>
+<tbody>
+<tr>
+<td>Shortcut</td>
+<td>Action</td>
+</tr>
+</tbody>
 <tbody>
 <tr>
 <td>TAB/ C-c C-c / RET</td>
@@ -326,30 +444,58 @@ Any line with the &lsquo;|&rsquo; as the first non-whitespace character is consi
 </table>
 <p>If a line starts with `|-`, then it inserts a row separator, which automatically re-aligns on the next TAB.
 For further detailed reading, see <a href="http://orgmode.org/manual/Tables.html#Tables">Chapter 3 - Tables</a></p>
-<h2 id="hyperlinks">Hyperlinks</h2>
-<h3 id="format">Format</h3>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+Hyperlinks
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Format
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
 <p>[ [ link ] [optional description ] ] (No spaces between brackets)</p>
-<h3 id="internal-links">Internal links</h3>
-<p>[ [#some-id] ] links to the entry with the CUSTOM_ID property set to &lsquo;some-id&rsquo;</p>
-<h3 id="external-links--schema-based">External links (schema-based)</h3>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Internal links
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
+<p>[ [#some-id] ] links to the entry with the CUSTOM_ID property set to &#39;some-id&#39;</p>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
+External links (schema-based)
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
 <ul>
-<li><a href="http://">http://</a>&hellip;</li>
-<li>file:/&hellip;</li>
+<li><a href="http://...">http://...</a></li>
+<li>file:/…</li>
 <li>/filesystem/path</li>
-<li><somepath> (relative path)</li>
+<li>file:somepath (relative path)</li>
 <li>docview:/Users/jaju/orgguide.pdf::NNN (open file in doc-view mode at page NNN)</li>
 <li>id: ABCD-EFGH Link to heading by ID</li>
-<li><a href="mailto:someemail@domain">mailto:someemail@domain</a></li>
+<li>mailto:someemail@domain</li>
 <li>irc:/irc.com/#emacs/jaju</li>
 </ul>
-<h3 id="handling-links">Handling links</h3>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
+Handling links
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c l</td>
@@ -373,14 +519,22 @@ For further detailed reading, see <a href="http://orgmode.org/manual/Tables.html
 </tr>
 </tbody>
 </table>
-<h2 id="todo-items"><em>TODO</em> Items</h2>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-14" class="outline-2">
+<h2 id="headline-14">
+<em>TODO</em> Items
+</h2>
+<div id="outline-text-headline-14" class="outline-text-2">
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Short-cut</th>
-<th>Action</th>
+<td>Short-cut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c C-t</td>
@@ -405,40 +559,54 @@ For further detailed reading, see <a href="http://orgmode.org/manual/Tables.html
 </tbody>
 </table>
 <p>Changing a TODO state can also trigger tag changes. The docstring of org-todo-state-tags-triggers has more details.</p>
-<h3 id="todo-multi-state-workflows"><em>TODO</em> Multi-state workflows</h3>
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
+<em>TODO</em> Multi-state workflows
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
 <ul>
 <li>Set the org-todo-keywords list to the new sequence you want</li>
 <li>You can even use different sets of TODO keywords-sets in parallel for different kinds of workflows</li>
-<li>When you (setq org-log-done &rsquo;time), you can keep track of when a task was finished.</li>
-<li>When you (setq org-log-done &rsquo;note), you will be prompted for a note which allows you to store a &lsquo;Closing Note&rsquo;</li>
-<li>Breaking down a large TODO into manageable subtasks
+<li>When you (setq org-log-done &#39;time), you can keep track of when a task was finished.</li>
+<li>When you (setq org-log-done &#39;note), you will be prompted for a note which allows you to store a &#39;Closing Note&#39;</li>
+<li>
+<p>Breaking down a large TODO into manageable subtasks</p>
 <ul>
 <li>Quite simple. Create an outline tree below a TODO.</li>
-<li>Insert &lsquo;<code>[0/0]</code>&rsquo; or &lsquo;<code>[0%]</code>&rsquo; anywhere in the headline to track % or fraction completed.</li>
+<li>Insert &#39;<code class="statistic">[0/0]</code>&#39; or &#39;<code class="statistic">[0%]</code>&#39; anywhere in the headline to track % or fraction completed.</li>
 </ul>
 </li>
 </ul>
-<!--listend-->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span>  <span style="color:#66d9ef">* </span>TODO This is a sample todo which is broken down into tasks [1/2] [50%]
-</span></span><span style="display:flex;"><span>  ** TODO This item is open
-</span></span><span style="display:flex;"><span>  ** DONE This item is closed
-</span></span><span style="display:flex;"><span><span style="color:#75715e">     CLOSED: </span><span style="color:#75715e">[2012-11-16 Fri 22:31]</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">* </span>TODO Another todo with lists of items [0/3]
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">- [ ]</span> This is subtask ONE [0/2]
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">- [ ]</span> Item 1-1
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">- [ ]</span> Item 1-2
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">- [ ]</span> This is subtask TWO [0/0]
-</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">- [ ]</span> This is subtask THREE [0%]
-</span></span></code></pre></div><h3 id="prioritizing-todo-items">Prioritizing TODO items</h3>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl">  <span class="k">* </span>TODO This is a sample todo which is broken down into tasks [1/2] [50%]
+</span></span><span class="line"><span class="cl">  ** TODO This item is open
+</span></span><span class="line"><span class="cl">  ** DONE This item is closed
+</span></span><span class="line"><span class="cl"><span class="c">     CLOSED: </span><span class="cs">[2012-11-16 Fri 22:31]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">* </span>TODO Another todo with lists of items [0/3]
+</span></span><span class="line"><span class="cl">   <span class="k">- [ ]</span> This is subtask ONE [0/2]
+</span></span><span class="line"><span class="cl">     <span class="k">- [ ]</span> Item 1-1
+</span></span><span class="line"><span class="cl">     <span class="k">- [ ]</span> Item 1-2
+</span></span><span class="line"><span class="cl">   <span class="k">- [ ]</span> This is subtask TWO [0/0]
+</span></span><span class="line"><span class="cl">   <span class="k">- [ ]</span> This is subtask THREE [0%]</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-16" class="outline-3">
+<h3 id="headline-16">
+Prioritizing TODO items
+</h3>
+<div id="outline-text-headline-16" class="outline-text-3">
 <p>Add a <em>Priority Cookie</em> to the headline of a TODO item. There are three priorities by default - A, B and C.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span>  <span style="color:#66d9ef">* </span>TODO [#A] A permanent high-priority todo.
-</span></span></code></pre></div><table>
-<thead>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl">  <span class="k">* </span>TODO [#A] A permanent high-priority todo.</span></span></code></pre></div>
+</div>
+<table>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c ,</td>
@@ -450,27 +618,53 @@ For further detailed reading, see <a href="http://orgmode.org/manual/Tables.html
 </tr>
 </tbody>
 </table>
-<h3 id="further-reading">Further reading</h3>
+</div>
+</div>
+<div id="outline-container-headline-17" class="outline-3">
+<h3 id="headline-17">
+Further reading
+</h3>
+<div id="outline-text-headline-17" class="outline-text-3">
 <ul>
-<li><a href="http://members.optusnet.com.au/~charles57/GTD/gtd_workflow.html">Charles Cave&rsquo;s GTD setup</a></li>
+<li><a href="http://members.optusnet.com.au/~charles57/GTD/gtd_workflow.html">Charles Cave&#39;s GTD setup</a></li>
 <li><a href="http://orgmode.org/manual/TODO-Items.html#TODO-Items">Chapter 5 of the manual</a></li>
 </ul>
-<h2 id="tags">Tags <span class="tag"><span class="important">important</span></span></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-18" class="outline-2">
+<h2 id="headline-18">
+Tags&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-important">important</span></span>
+</h2>
+<div id="outline-text-headline-18" class="outline-text-2">
 <p>Assigning tags to headlines is an excellent way to implement labels and contexts for cross-correlating information.
 Every headline can contain a list of tags; they occur at the end of the headline.
-Tags are normal words containing letters, numbers, &lsquo;_&rsquo; and &lsquo;@&rsquo;. Tags must be preceded and followed by a single colon.
-E.g., &lsquo;:work:&rsquo;. Several tags can be specified, as in &lsquo;:work:urgent:&rsquo;.</p>
-<h3 id="inheritance">Inheritance</h3>
+Tags are normal words containing letters, numbers, &#39;_&#39; and &#39;@&#39;. Tags must be preceded and followed by a single colon.
+E.g., &#39;:work:&#39;. Several tags can be specified, as in &#39;:work:urgent:&#39;.</p>
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
+Inheritance
+</h3>
+<div id="outline-text-headline-19" class="outline-text-3">
 <p>Tags are hierarchical. All subheadings inherit tags from parents.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span><span style="color:#75715e">#+FILETAGS</span><span style="color:#75715e">: :TOP:LEVEL:TAGS:</span>
-</span></span></code></pre></div><h3 id="setting-tags">Setting tags</h3>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+FILETAGS</span><span class="c">: :TOP:LEVEL:TAGS:</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-20" class="outline-3">
+<h3 id="headline-20">
+Setting tags
+</h3>
+<div id="outline-text-headline-20" class="outline-text-3">
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>M-TAB</td>
@@ -482,16 +676,26 @@ E.g., &lsquo;:work:&rsquo;. Several tags can be specified, as in &lsquo;:work:ur
 </tr>
 </tbody>
 </table>
-<h3 id="tags-that-should-be-available-in-a-file-can-be-set-with-lines-like">Tags that should be available in a file can be set with lines like</h3>
-<h3 id="tag-searches">Tag Searches</h3>
+</div>
+</div>
+<div id="outline-container-headline-21" class="outline-3">
+<h3 id="headline-21">
+Tags that should be available in a file can be set with lines like
+</h3>
+</div>
+<div id="outline-container-headline-22" class="outline-3">
+<h3 id="headline-22">
+Tag Searches
+</h3>
+<div id="outline-text-headline-22" class="outline-text-3">
 <p>Once a system of tags has been set up, it can be used to collect related information into special lists</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c \</td>
@@ -511,19 +715,33 @@ E.g., &lsquo;:work:&rsquo;. Several tags can be specified, as in &lsquo;:work:ur
 </tr>
 </tbody>
 </table>
-<h3 id="further-reading">Further reading</h3>
-<p><a href="http://sachachua.com/blog/2008/01/tagging-in-org-plus-bonus-code-for-timeclocks-and-tags/">Sacha Chua&rsquo;s article about tagging in Org-mode</a>
+</div>
+</div>
+<div id="outline-container-headline-23" class="outline-3">
+<h3 id="headline-23">
+Further reading
+</h3>
+<div id="outline-text-headline-23" class="outline-text-3">
+<p><a href="http://sachachua.com/blog/2008/01/tagging-in-org-plus-bonus-code-for-timeclocks-and-tags/">Sacha Chua&#39;s article about tagging in Org-mode</a>
 <a href="http://orgmode.org/manual/Tags.html#Tags">Chapter 6 of the manual</a></p>
-<h2 id="properties">Properties</h2>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-24" class="outline-2">
+<h2 id="headline-24">
+Properties
+</h2>
+<div id="outline-text-headline-24" class="outline-text-2">
 <p>Properties are key-value pairs associated with an entry. They live in a special drawer with the name PROPERTIES.
 Each property is specified on a single line, with the key (surrounded by colons) first, and the value after it.</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c C-x p</td>
@@ -535,24 +753,38 @@ Each property is specified on a single line, with the key (surrounded by colons)
 </tr>
 </tbody>
 </table>
-<h3 id="drawers">Drawers</h3>
-<p>A drawer is a sub-note, and can be inserted at a point using &ldquo;C-c C-x d&rdquo;
-It&rsquo;s an item you normally do not want to see. A drawer can be named with any word, and can contain arbitrarily long texts.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span><span style="color:#75715e">  :DRAWER:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">  This is a sample drawer
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">  :END:</span>
-</span></span></code></pre></div><h2 id="timestamps">Timestamps</h2>
+<div id="outline-container-headline-25" class="outline-3">
+<h3 id="headline-25">
+Drawers
+</h3>
+<div id="outline-text-headline-25" class="outline-text-3">
+<p>A drawer is a sub-note, and can be inserted at a point using &#34;C-c C-x d&#34;
+  It&#39;s an item you normally do not want to see. A drawer can be named with any word, and can contain arbitrarily long texts.</p>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="c">  :DRAWER:
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="cs">  This is a sample drawer
+</span></span></span><span class="line"><span class="cl"><span class="cs"></span><span class="c">  :END:</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-26" class="outline-2">
+<h2 id="headline-26">
+Timestamps
+</h2>
+<div id="outline-text-headline-26" class="outline-text-2">
 <p>A timestamp is a specification of a date in a special format
 &lt;YYYY-MM-DD Day&gt; or &lt;YYYY-MM-DD Day HH:MM&gt; or &lt;YYYY-MM-DD Day HH:MM-HH:MM&gt;
 You can set repeat intervals (of weeks, days, or months, years etc.) by appending one of +1d, +1w, +10m, +2y etc. to the timestamp.
-You can also have a range like &lt;YYYY-MM-DD Day&gt;&ndash;&lt;YYYY-MM-DD Day&gt;</p>
+You can also have a range like &lt;YYYY-MM-DD Day&gt;–&lt;YYYY-MM-DD Day&gt;</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action Description</th>
+<td>Shortcut</td>
+<td>Action Description</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c .</td>
@@ -572,35 +804,45 @@ You can also have a range like &lt;YYYY-MM-DD Day&gt;&ndash;&lt;YYYY-MM-DD Day&g
 </tr>
 </tbody>
 </table>
-<h3 id="time-planning">Time planning</h3>
+<div id="outline-container-headline-27" class="outline-3">
+<h3 id="headline-27">
+Time planning
+</h3>
+<div id="outline-text-headline-27" class="outline-text-3">
 <p>A timestamp may be preceded by a special keyword to facilitate planning</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c C-d</td>
-<td>Insert &lsquo;DEADLINE&rsquo;. When looking at the agenda, DEADLINE-s will show up. The range can be controlled by setting the org-deadline-warning-days&rsquo; value appropriately.</td>
+<td>Insert &#39;DEADLINE&#39;. When looking at the agenda, DEADLINE-s will show up. The range can be controlled by setting the org-deadline-warning-days&#39; value appropriately.</td>
 </tr>
 <tr>
 <td>C-c C-s</td>
-<td>Inserts &lsquo;SCHEDULED&rsquo; which means work to start on that date.</td>
+<td>Inserts &#39;SCHEDULED&#39; which means work to start on that date.</td>
 </tr>
 </tbody>
 </table>
-<h3 id="clocking-work-time">Clocking work time</h3>
+</div>
+</div>
+<div id="outline-container-headline-28" class="outline-3">
+<h3 id="headline-28">
+Clocking work time
+</h3>
+<div id="outline-text-headline-28" class="outline-text-3">
 <p>Org mode allows you to clock the time you spend on specific tasks in a project.</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c C-x C-i</td>
@@ -632,23 +874,41 @@ You can also have a range like &lt;YYYY-MM-DD Day&gt;&ndash;&lt;YYYY-MM-DD Day&g
 </tr>
 </tbody>
 </table>
-<h3 id="further-reading">Further reading</h3>
+</div>
+</div>
+<div id="outline-container-headline-29" class="outline-3">
+<h3 id="headline-29">
+Further reading
+</h3>
+<div id="outline-text-headline-29" class="outline-text-3">
 <p><a href="http://orgmode.org/manual/Dates-and-Times.html#Dates-and-Times">Chapter 8 of the manual</a>
-<a href="http://members.optusnet.com.au/~charles57/GTD/org_dates/">Charles Cave&rsquo;s Date and Time tutorial</a>
-<a href="http://doc.norang.ca/org-mode.html#Clocking">Bernt Hansen&rsquo;s clocking workflow</a></p>
-<h2 id="capture-refile-archive">Capture - Refile - Archive</h2>
-<h3 id="capture">Capture</h3>
+<a href="http://members.optusnet.com.au/~charles57/GTD/org_dates/">Charles Cave&#39;s Date and Time tutorial</a>
+<a href="http://doc.norang.ca/org-mode.html#Clocking">Bernt Hansen&#39;s clocking workflow</a></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-30" class="outline-2">
+<h2 id="headline-30">
+Capture - Refile - Archive
+</h2>
+<div id="outline-text-headline-30" class="outline-text-2">
+<div id="outline-container-headline-31" class="outline-3">
+<h3 id="headline-31">
+Capture
+</h3>
+<div id="outline-text-headline-31" class="outline-text-3">
 <p>Capture anything with little interruption to your workflow. Org lets you define templates for new entries and associate them with different targets for storing notes.
 You can set up a capture location. For example, to set a default target file for notes, and define a global key for capturing new stuff:
-(setq org-default-notes-file (concat org-directory &ldquo;/notes.org&rdquo;)
-(define-key global-map &ldquo;-cc&rdquo; &lsquo;org-capture)</p>
+(setq org-default-notes-file (concat org-directory &#34;/notes.org&#34;)
+(define-key global-map &#34;\C-cc&#34; &#39;org-capture)</p>
 <table>
-<thead>
+<tbody>
 <tr>
-<th>Shortcut</th>
-<th>Action</th>
+<td>Shortcut</td>
+<td>Action</td>
 </tr>
-</thead>
+</tbody>
 <tbody>
 <tr>
 <td>C-c c</td>
@@ -668,15 +928,41 @@ You can set up a capture location. For example, to set a default target file for
 </tr>
 </tbody>
 </table>
-<h3 id="capture-templates">Capture templates</h3>
-<p>You can use templates to generate different types of capture notes, and to store them in different places.
-For example, if you would like to store new tasks under a heading &ldquo;Tasks&rdquo; in the file &ldquo;TODO.org,&rdquo; and journal
-entries in a date tree in &lsquo;journal.org&rsquo; you could use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span>  (<span style="color:#66d9ef">setq</span> org-capture-templates <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#e6db74">&#34;Todo&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/.org/gtd.org&#34;</span> <span style="color:#e6db74">&#34;Tasks&#34;</span>) <span style="color:#e6db74">&#34;* TODO %?\n %i\n %a&#34;</span>)
-</span></span><span style="display:flex;"><span>  (<span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#34;Journal&#34;</span> entry (file+datetree <span style="color:#e6db74">&#34;~/.org/journal.org&#34;</span>) <span style="color:#e6db74">&#34;* %?\nEntered on %U\n %i\n %a&#34;</span>)))
-</span></span></code></pre></div><h3 id="refiling-notes">Refiling notes</h3>
-<h3 id="archiving">Archiving</h3>
-<h2 id="agenda-views"><span class="org-todo todo TODO">TODO</span> Agenda Views <span class="tag"><span class="incomplete">incomplete</span></span></h2>
+</div>
+</div>
+<div id="outline-container-headline-32" class="outline-3">
+<h3 id="headline-32">
+Capture templates
+</h3>
+<div id="outline-text-headline-32" class="outline-text-3">
+<p>
+You can use templates to generate different types of capture notes, and to store them in different places.
+For example, if you would like to store new tasks under a heading &#34;Tasks&#34; in the file &#34;TODO.org,&#34; and journal
+entries in a date tree in &#39;journal.org&#39; you could use:</p>
+<div class="src src-lisp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-lisp" data-lang="lisp"><span class="line"><span class="cl">  <span class="p">(</span><span class="k">setq</span> <span class="nv">org-capture-templates</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;t&#34;</span> <span class="s">&#34;Todo&#34;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+headline</span> <span class="s">&#34;~/.org/gtd.org&#34;</span> <span class="s">&#34;Tasks&#34;</span><span class="p">)</span> <span class="s">&#34;* TODO %?\n %i\n %a&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="s">&#34;j&#34;</span> <span class="s">&#34;Journal&#34;</span> <span class="nv">entry</span> <span class="p">(</span><span class="nv">file+datetree</span> <span class="s">&#34;~/.org/journal.org&#34;</span><span class="p">)</span> <span class="s">&#34;* %?\nEntered on %U\n %i\n %a&#34;</span><span class="p">)))</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-33" class="outline-3">
+<h3 id="headline-33">
+Refiling notes
+</h3>
+</div>
+<div id="outline-container-headline-34" class="outline-3">
+<h3 id="headline-34">
+Archiving
+</h3>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-35" class="outline-2">
+<h2 id="headline-35">
+<span class="todo status-todo">TODO</span>
+Agenda Views&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-incomplete">incomplete</span></span>
+</h2>
+<div id="outline-text-headline-35" class="outline-text-2">
 <ul>
 <li>Agenda files</li>
 <li>The agenda dispatcher</li>
@@ -684,8 +970,18 @@ entries in a date tree in &lsquo;journal.org&rsquo; you could use:</p>
 <li>Commands in the agenda buffer</li>
 <li>Custom agenda views</li>
 </ul>
-<h2 id="markup-for-rich-export">Markup for rich export <span class="tag"><span class="incomplete">incomplete</span></span></h2>
-<h3 id="structural-markup-elements">Structural markup elements</h3>
+</div>
+</div>
+<div id="outline-container-headline-36" class="outline-2">
+<h2 id="headline-36">
+Markup for rich export&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-incomplete">incomplete</span></span>
+</h2>
+<div id="outline-text-headline-36" class="outline-text-2">
+<div id="outline-container-headline-37" class="outline-3">
+<h3 id="headline-37">
+Structural markup elements
+</h3>
+<div id="outline-text-headline-37" class="outline-text-3">
 <ul>
 <li>Document title</li>
 <li>Headings and sections</li>
@@ -694,188 +990,252 @@ entries in a date tree in &lsquo;journal.org&rsquo; you could use:</p>
 <li>Emphasis and monospace</li>
 <li>Comment lines</li>
 </ul>
-<h3 id="images-and-tables">Images and Tables</h3>
-<h3 id="literal-examples">Literal examples <span class="tag"><span class="urgent">urgent</span></span></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>  (<span style="color:#66d9ef">defn </span>foo []
-</span></span><span style="display:flex;"><span>    (reduce + (range <span style="color:#ae81ff">10</span>)))
-</span></span></code></pre></div><p>You can edit the above block in a buffer of its own with &ldquo;C-c &lsquo;&rdquo; - and exit the buffer with the same shortcut.</p>
-<h2 id="exporting">Exporting <span class="tag"><span class="urgent">urgent</span><span class="incomplete">incomplete</span></span></h2>
+</div>
+</div>
+<div id="outline-container-headline-38" class="outline-3">
+<h3 id="headline-38">
+Images and Tables
+</h3>
+</div>
+<div id="outline-container-headline-39" class="outline-3">
+<h3 id="headline-39">
+Literal examples&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-urgent">urgent</span></span>
+</h3>
+<div id="outline-text-headline-39" class="outline-text-3">
+<div class="src src-clojure">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="p">(</span><span class="kd">defn </span><span class="nv">foo</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">)))</span></span></span></code></pre></div>
+</div>
+<p>You can edit the above block in a buffer of its own with &#34;C-c &#39;&#34; - and exit the buffer with the same shortcut.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-40" class="outline-2">
+<h2 id="headline-40">
+Exporting&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-urgent">urgent</span>&#xa0;<span class="tag-incomplete">incomplete</span></span>
+</h2>
+<div id="outline-text-headline-40" class="outline-text-2">
 <p>The exporter recognizes special lines in the buffer which provide additional information.
 These lines can be anywhere in the file. The whose set of lines can be inserted into the buffer with the shortcut:
 C-c C-e t (like below)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span><span style="color:#75715e">#+TITLE</span><span style="color:#75715e">:     orgguide.org</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+AUTHOR</span><span style="color:#75715e">:    Ravindra Jaju</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+EMAIL</span><span style="color:#75715e">:     someone@somedomain.com</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+DATE</span><span style="color:#75715e">:      2012-11-17 Sat</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+DESCRIPTION</span><span style="color:#75715e">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+KEYWORDS</span><span style="color:#75715e">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+LANGUAGE</span><span style="color:#75715e">:  en</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+OPTIONS</span><span style="color:#75715e">:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t &lt;:t</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+OPTIONS</span><span style="color:#75715e">:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+INFOJS_OPT</span><span style="color:#75715e">: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+EXPORT_SELECT_TAGS</span><span style="color:#75715e">: export</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+EXPORT_EXCLUDE_TAGS</span><span style="color:#75715e">: noexport</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+LINK_UP</span><span style="color:#75715e">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+LINK_HOME</span><span style="color:#75715e">:</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#+XSLT</span><span style="color:#75715e">:</span>
-</span></span></code></pre></div><h2 id="technical-content">Technical Content</h2>
-<h3 id="latex">LaTeX</h3>
-<h4 id="mathjax">MathJax</h4>
-<h4 id="aligning">Aligning</h4>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+TITLE</span><span class="c">:     orgguide.org</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+AUTHOR</span><span class="c">:    Ravindra Jaju</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+EMAIL</span><span class="c">:     someone@somedomain.com</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+DATE</span><span class="c">:      2012-11-17 Sat</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+DESCRIPTION</span><span class="c">:</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+KEYWORDS</span><span class="c">:</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+LANGUAGE</span><span class="c">:  en</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t &lt;:t</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+OPTIONS</span><span class="c">:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+INFOJS_OPT</span><span class="c">: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+EXPORT_SELECT_TAGS</span><span class="c">: export</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+EXPORT_EXCLUDE_TAGS</span><span class="c">: noexport</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+LINK_UP</span><span class="c">:</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+LINK_HOME</span><span class="c">:</span>
+</span></span><span class="line"><span class="cl"><span class="cs">#+XSLT</span><span class="c">:</span></span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-41" class="outline-2">
+<h2 id="headline-41">
+Technical Content
+</h2>
+<div id="outline-text-headline-41" class="outline-text-2">
+<div id="outline-container-headline-42" class="outline-3">
+<h3 id="headline-42">
+LaTeX
+</h3>
+<div id="outline-text-headline-42" class="outline-text-3">
+<div id="outline-container-headline-43" class="outline-4">
+<h4 id="headline-43">
+MathJax
+</h4>
+</div>
+<div id="outline-container-headline-44" class="outline-4">
+<h4 id="headline-44">
+Aligning
+</h4>
+<div id="outline-text-headline-44" class="outline-text-4">
 <p>A quick great set of examples at <a href="https://latex-programming.fandom.com/wiki/Align_(LaTeX_environment)">Aligning LaTeX content</a>.</p>
-<h2 id="working-with-source-code">Working with source code <span class="tag"><span class="urgent">urgent</span><span class="incomplete">incomplete</span></span></h2>
-<p>You can use <a href="https://org-babel.readthedocs.io/en/latest/">org-babel</a> to do <em>literate programming</em>. Write your code and the surrounding text
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-45" class="outline-2">
+<h2 id="headline-45">
+Working with source code&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-urgent">urgent</span>&#xa0;<span class="tag-incomplete">incomplete</span></span>
+</h2>
+<div id="outline-text-headline-45" class="outline-text-2">
+<p>
+You can use <a href="https://org-babel.readthedocs.io/en/latest/">org-babel</a> to do <em>literate programming</em>. Write your code and the surrounding text
 in a single org-document. And export the code, or generate rich documentation, or even capture
 output of running the code in an evaluation-engine right within the org document.</p>
-<p>Some sample code blocks - they are surrounded by the <span class="underline">BEGIN_SRC</span> and <span class="underline">END_SRC</span> tags.</p>
-<p><a id="code-snippet--clojure-sample"></a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>foo [x]
-</span></span><span style="display:flex;"><span>  (+ <span style="color:#ae81ff">2</span> x))
-</span></span></code></pre></div><p><a id="code-snippet--scala-sample"></a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scala" data-lang="scala"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> scala.util.parsing.combinator._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Arith</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">JavaTokenParsers</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> expr<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Parser</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Any</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> term <span style="color:#f92672">~</span> rep<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;+&#34;</span> <span style="color:#f92672">~</span> term <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;-&#34;</span> <span style="color:#f92672">~</span> term<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> term<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Parser</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Any</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> factor <span style="color:#f92672">~</span> rep<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#f92672">~</span> factor <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">~</span> factor<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> factor<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Parser</span><span style="color:#f92672">[</span><span style="color:#66d9ef">Any</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> floatingPointNumber <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;(&#34;</span> <span style="color:#f92672">~</span> expr <span style="color:#f92672">~</span> <span style="color:#e6db74">&#34;)&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>An interesting case is when you capture data for different scenarios in a table, and would like to
+<p>
+Some sample code blocks - they are surrounded by the <span style="text-decoration: underline;">BEGIN_SRC</span> and <span style="text-decoration: underline;">END_SRC</span> tags.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">foo</span> <span class="p">[</span><span class="nv">x</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="nv">x</span><span class="p">))</span></span></span></code></pre></div>
+</div>
+<div class="src src-scala">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scala" data-lang="scala"><span class="line"><span class="cl"><span class="k">import</span> <span class="nn">scala.util.parsing.combinator._</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Arith</span> <span class="k">extends</span> <span class="nc">JavaTokenParsers</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="n">expr</span><span class="k">:</span> <span class="kt">Parser</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="k">=</span> <span class="n">term</span> <span class="o">~</span> <span class="n">rep</span><span class="o">(</span><span class="s">&#34;+&#34;</span> <span class="o">~</span> <span class="n">term</span> <span class="o">|</span> <span class="s">&#34;-&#34;</span> <span class="o">~</span> <span class="n">term</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="n">term</span><span class="k">:</span> <span class="kt">Parser</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="k">=</span> <span class="n">factor</span> <span class="o">~</span> <span class="n">rep</span><span class="o">(</span><span class="s">&#34;*&#34;</span> <span class="o">~</span> <span class="n">factor</span> <span class="o">|</span> <span class="s">&#34;/&#34;</span> <span class="o">~</span> <span class="n">factor</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="n">factor</span><span class="k">:</span> <span class="kt">Parser</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="k">=</span> <span class="n">floatingPointNumber</span> <span class="o">|</span> <span class="s">&#34;(&#34;</span> <span class="o">~</span> <span class="n">expr</span> <span class="o">~</span> <span class="s">&#34;)&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span></span></span></code></pre></div>
+</div>
+<p>
+An interesting case is when you capture data for different scenarios in a table, and would like to
 run that table (individual rows, columns, or some combination) through code and capture the output
-(again in a table format, for easy visual correlation). Use the <em>NAME</em> attribute on the table and
+(again in a table format, for easy visual correlation). Use the <em>NAME</em> attribute on the table and 
 provide a unique name, like so</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span><span style="color:#75715e">#+NAME</span><span style="color:#75715e">: bin-table</span>
-</span></span></code></pre></div><p><a id="table--bin-table"></a></p>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl"><span class="cs">#+NAME</span><span class="c">: bin-table</span></span></span></code></pre></div>
+</div>
 <table>
 <thead>
 <tr>
-<th>X</th>
-<th>Y</th>
+<th class="align-right">X</th>
+<th class="align-right">Y</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>0</td>
+<td class="align-right">0</td>
+<td class="align-right">0</td>
 </tr>
 <tr>
-<td>0</td>
-<td>1</td>
+<td class="align-right">0</td>
+<td class="align-right">1</td>
 </tr>
 <tr>
-<td>1</td>
-<td>0</td>
+<td class="align-right">1</td>
+<td class="align-right">0</td>
 </tr>
 <tr>
-<td>1</td>
-<td>1</td>
+<td class="align-right">1</td>
+<td class="align-right">1</td>
 </tr>
 </tbody>
 </table>
-<p>Now, use the following on kind of <em>BEGIN_SRC</em> directive</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span>#+BEGIN_SRC clojure :results value pp :var XY=bin-table :colnames y
-</span></span></code></pre></div><p>On evaluation, the table defined above is supplied as input at the <strong>XY</strong> location in the code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>mapply [f vals]
-</span></span><span style="display:flex;"><span>  (map <span style="color:#f92672">#</span>(apply f %) vals))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">defn </span>add-my-numbers [x y]
-</span></span><span style="display:flex;"><span>  (+ x y))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>(<span style="color:#a6e22e">mapply</span> add-my-numbers XY)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(0 1 1 2)
-</span></span></code></pre></div><p>If we have another table with more columns, some of which we&rsquo;d like to ignore</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span>  #+NAME: bin-table-more
-</span></span></code></pre></div><p><a id="table--bin-table-more"></a></p>
+<p>
+Now, use the following on kind of <em>BEGIN_SRC</em> directive</p>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl">#+BEGIN_SRC clojure :results value pp :var XY=bin-table :colnames y</span></span></code></pre></div>
+</div>
+<p>
+On evaluation, the table defined above is supplied as input at the <strong>XY</strong> location in the code.</p>
+<div class="src src-clojure">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">mapply</span> <span class="p">[</span><span class="nv">f</span> <span class="nv">vals</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">apply </span><span class="nv">f</span> <span class="nv">%</span><span class="p">)</span> <span class="nv">vals</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">add-my-numbers</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">mapply</span> <span class="nv">add-my-numbers</span> <span class="nv">XY</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+(0 1 1 2)
+</pre>
+<p>
+If we have another table with more columns, some of which we&#39;d like to ignore</p>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl">  #+NAME: bin-table-more</span></span></code></pre></div>
+</div>
 <table>
 <thead>
 <tr>
-<th>W</th>
-<th>X</th>
-<th>Y</th>
-<th>Z</th>
+<th class="align-right">W</th>
+<th class="align-right">X</th>
+<th class="align-right">Y</th>
+<th class="align-right">Z</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
+<td class="align-right">0</td>
+<td class="align-right">1</td>
+<td class="align-right">2</td>
+<td class="align-right">3</td>
 </tr>
 <tr>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
+<td class="align-right">4</td>
+<td class="align-right">5</td>
+<td class="align-right">6</td>
+<td class="align-right">7</td>
 </tr>
 <tr>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>11</td>
+<td class="align-right">8</td>
+<td class="align-right">9</td>
+<td class="align-right">10</td>
+<td class="align-right">11</td>
 </tr>
 </tbody>
 </table>
-<p>We&rsquo;d like to add columns X and Y for each row.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-org" data-lang="org"><span style="display:flex;"><span>#+BEGIN_SRC clojure :results value pp :var XY=bin-table-more[1:3,1:2] :colnames y
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>(<span style="color:#a6e22e">mapply</span> add-my-numbers XY)
-</span></span></code></pre></div><p>Read more about passing <em>vars</em> to code-blocks <a href="http://orgmode.org/manual/var.html">here</a></p>
-
-        </main>
-
-    </article>
-
+<p>
+We&#39;d like to add columns X and Y for each row.</p>
+<div class="src src-org">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-org" data-lang="org"><span class="line"><span class="cl">#+BEGIN_SRC clojure :results value pp :var XY=bin-table-more[1:3,1:2] :colnames y</span></span></code></pre></div>
+</div>
+<div class="src src-clojure">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">mapply</span> <span class="nv">add-my-numbers</span> <span class="nv">XY</span><span class="p">)</span></span></span></code></pre></div>
+</div>
+<pre class="example">
+(3 11 19)
+</pre>
+<p>
+Read more about passing <em>vars</em> to code-blocks <a href="http://orgmode.org/manual/var.html">here</a></p>
+</div>
 </div>
 
-    </div>
-
-    <footer id="site-footer">
-        <div class="hide-for-small-only float-left author">
-    <span>&copy; <span
-            class="author-name">Ravindra R. Jaju</span> &mdash; 2015-2024</span>
+            </div>
+        </article></main>
 </div>
 
-<div class="social-media-list float-right">
-  <span class="social-media-item">
-    <a href="https://github.com/jaju">
-      <span class="svg-social-icon icon--github">
-        <svg viewBox="0 0 16 16">
-          <path fill="#828282"
-                d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-        </svg>
-      </span>
-      <span class="username">jaju</span>
+<footer class="footer">
+    <small class="footer_copyright">
+        © 2025 Ravindra R. Jaju.
+        
+    </small>
+</footer>
+
+
+<div class="fixed-social-icons">
+    <a href="https://github.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="GitHub" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
     </a>
-  </span>
-  <span class="social-media-item">
-    <a href="https://twitter.com/jaju">
-      <span class="svg-social-icon icon--twitter">
-        <svg viewBox="0 0 16 16">
-          <path fill="#828282"
-                d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809 c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
-        </svg>
-      </span>
-      <span class="username">jaju</span>
+    <a href="https://x.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="X (Twitter)" class="social-icon">
+        <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
     </a>
-  </span>
 </div>
 
-    </footer>
-</div>
-
-<script src="/js/bundle.js"></script>
-<script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYE506V9R8"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TYE506V9R8');
-</script>
+
+
+
+
+    
+    <script src="https://example.org/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
+
+    
+
 </body>
 </html>

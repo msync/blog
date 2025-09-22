@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">A Neural Network Primer | M&#39;Sync</title>
+<meta property="og:title" content="A Neural Network Primer | M&#39;Sync" />
+<meta name="twitter:title" content="A Neural Network Primer | M&#39;Sync" />
+<meta itemprop="name" content="A Neural Network Primer | M&#39;Sync" />
+<meta name="application-name" content="A Neural Network Primer | M&#39;Sync" />
+<meta property="og:site_name" content="M&#39;Sync" />
+
+<meta name="description" content="Knowledge garden with notes and computational content">
+<meta itemprop="description" content="Knowledge garden with notes and computational content" />
+<meta property="og:description" content="Knowledge garden with notes and computational content" />
+<meta name="twitter:description" content="Knowledge garden with notes and computational content" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="https://example.org/notes/neural-network-primer/" title="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.150.0">
+
+    
+    <meta property="og:url" content="https://example.org/notes/neural-network-primer/">
+  <meta property="og:site_name" content="M&#39;Sync">
+  <meta property="og:title" content="A Neural Network Primer">
+  <meta property="og:description" content="An article inspired by the article - &lt;a href=\&#34;https://www.croftpress.com/david/archives/academic/ann.html\&#34;&gt;A Neural Network Primer&lt;/a&gt;">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2017-09-23T11:44:27+05:30">
+    <meta property="article:modified_time" content="2024-03-12T18:38:44+05:30">
+    <meta property="article:tag" content="Neural__networks">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A Neural Network Primer">
+  <meta name="twitter:description" content="An article inspired by the article - &lt;a href=\&#34;https://www.croftpress.com/david/archives/academic/ann.html\&#34;&gt;A Neural Network Primer&lt;/a&gt;">
+
+
+    
+
+    <link rel="canonical" href="https://example.org/notes/neural-network-primer/">
+    <link href="/style.min.8e72eaf30242279b90867e29e1caad29da8705d884235124f205cdaf7cf82fa4.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://example.org/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+      
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+    
+</head>
+<body data-theme = "light" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://example.org/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/notes/">
+                        Notes
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/blog/">
+                        Blog
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">A Neural Network Primer</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2017-09-23T11:44:27&#43;05:30" itemprop="datePublished"> Sep 23, 2017 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                
+<p>
+Artifical neural networks are a fascinating topic. And it&#39;s meta, because we as biological neural network organisms have attempted to model understanding our own selves using the field of artificial neural networks.</p>
+<p>
+While this article uses neural networks as the primary topic to focus on, much of the article applies to the topic of machine learning too.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+What is Machine Learning?
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>
+Machine learning is, simply put</p>
+<ul>
+<li><span style="text-decoration: underline;">Learning</span></li>
+<li><span style="text-decoration: underline;">Using</span> what was learned</li>
+</ul>
+<p>Learning is modeled as a function implementation, but done in <strong>two parts</strong> - <span style="text-decoration: underline;">strategy</span> and <span style="text-decoration: underline;">tactic</span>, to give a somewhat amusing  analogy.</p>
+<p>
+Strategy, in more words, is the algorithm chosen - it is akin to a formula/equation in a symbolic form. Tactic is when we substitute some specific values for the &#34;parameters&#34; (and, not for the variables).</p>
+<p>
+When we say</p>
+<p>
+$ax + by = c$</p>
+<p>
+The &#34;parameters&#34; are <strong>a</strong>, <strong>b</strong> and <strong>c</strong>, while <strong>x</strong> and <strong>y</strong> are the variables. The strategy in this case is the <span style="text-decoration: underline;">linear equation</span>. The tactic is some particular choices of a, b and c.</p>
+<p>
+Coming back</p>
+<hr>
+<p>Consider a function $f$ such that</p>
+<table>
+<tbody>
+<tr>
+<td>$f(0, 0) = 0$</td>
+</tr>
+<tr>
+<td>$f(1, 0) = 0$</td>
+</tr>
+<tr>
+<td>$f(0, 1) = 0$</td>
+</tr>
+<tr>
+<td>$f{}(1, 1) = 1$</td>
+</tr>
+</tbody>
+</table>
+<p>
+Now comes the interesting bit - something that is so simple that once can miss the point completely.
+Let&#39;s posit $f$ as our machine learning function in the sense described above. On the premises introduced initially, $f$ is implemented in the following two steps</p>
+<ul>
+<li>A programmatic implementation that is capable of being <span style="text-decoration: underline;">configured</span> for a class of use-cases</li>
+<li>A learning phase that learns the above table and can answer questions that follow this known <span style="text-decoration: underline;">pattern</span>.
+
+But, but - what does the term &#34;programmatic implementation&#34; signify, you ask?</li>
+</ul>
+<p>Here&#39;s <strong>one</strong> example of $f$ that can satisfy the above, in our favourite language</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span></span></span></code></pre></div>
+</div>
+<p>
+We have an implementation, <strong>and</strong> it already satisfies the table above. Bummer - we have a new-born function that has already passed grade 10. Doesn&#39;t need no school!</p>
+<p>
+Let&#39;s ride further. How about the following table?</p>
+<table>
+<tbody>
+<tr>
+<td>$f(0, 0) = 0$</td>
+</tr>
+<tr>
+<td>$f{}(1, 0) = 1$</td>
+</tr>
+<tr>
+<td>$f{}(0, 1) = 1$</td>
+</tr>
+<tr>
+<td>$f{}(1, 1) = 1$</td>
+</tr>
+</tbody>
+</table>
+<p>
+$f$ is now attending junior college, and realises that there&#39;s more to the world than just the <strong>AND</strong> table. <strong>OR</strong>, does it?</p>
+</div>
+</div>
+<div id="outline-container-headline-2" class="outline-2">
+<h2 id="headline-2">
+Generalizing the implementation
+</h2>
+<div id="outline-text-headline-2" class="outline-text-2">
+<p>Our $f$ doesn&#39;t solve for the <strong>OR</strong> table with the previous implementation. So, here&#39;s a naïve implementation - something that we want to discard immediately after presenting for its stupidity!</p>
+<div class="src src-python">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">or</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">1</span></span></span></code></pre></div>
+</div>
+<p>
+Presenting a better idea after stupid makes it seem brilliant, right?</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
+There&#39;s a thin line between…
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
+<p>What&#39;s the better idea?
+Literally - there&#39;s a thin line between the 0&#39;s and the 1&#39;s. We&#39;re looking for discrete 0/1 answers. How about considering <strong>x</strong> and <strong>y</strong> as points in 2-D space separated into 2 half-planes by a straight line - each part representing either of the 0 and the 1 exclusively?</p>
+<p>
+$z = \text{sgn}(ax + by + c)$</p>
+<p>
+$z \in{} {0, 1}$</p>
+<p>
+If you already see it, great! If not, consider the fact that now we have an equation in <strong>a</strong> and <strong>b</strong> that can be applied to some combinations of (<strong>x</strong>, <strong>y</strong>) output a single value in the set {0, 1}</p>
+<p>
+For two distinct combination pairs of (<strong>a</strong>, <strong>b</strong>), we can have the same <span style="text-decoration: underline;">function</span> implementation solve for both <strong>AND</strong> and <strong>OR</strong>. Our choices of (<strong>a</strong>, <strong>b</strong>) pairs simply moves and/or rotates the partitioning line.</p>
+<div id="outline-container-headline-4" class="outline-3">
+<h3 id="headline-4">
+OR
+</h3>
+<div id="outline-text-headline-4" class="outline-text-3">
+<p><strong>OR</strong> has a lower threshold for a positive outcome. Here&#39;s one solution that will work. (<strong>Note</strong>: We consider the sign of <strong>0</strong> as positive - so, sign(<strong>0</strong>) = 1. But if it does not convince you, consider replacing 1 with 0.99)</p>
+<p>
+$z = \text{sgn}(x + y - 1)$</p>
+<table>
+<thead>
+<tr>
+<th class="align-right">x</th>
+<th class="align-right">y</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="align-right">0</td>
+<td class="align-right">0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td class="align-right">1</td>
+<td class="align-right">0</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td class="align-right">0</td>
+<td class="align-right">1</td>
+<td><strong>1</strong></td>
+</tr>
+<tr>
+<td class="align-right">1</td>
+<td class="align-right">1</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>
+Below is a visual representation of another solution that works. The greenish-yellow portion represents <strong>0</strong>.</p>
+<p>
+<img src="or.png" alt="or.png" title="or.png" /></p>
+</div>
+</div>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+AND
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p><strong>AND</strong> has a higher threshold. One solution that works is presented below.</p>
+<p>
+$z = \text{sgn}(x + y - 1.5)$</p>
+<table>
+<thead>
+<tr>
+<th class="align-right">x</th>
+<th class="align-right">y</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="align-right">0</td>
+<td class="align-right">0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td class="align-right">1</td>
+<td class="align-right">0</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td class="align-right">0</td>
+<td class="align-right">1</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td class="align-right">1</td>
+<td class="align-right">1</td>
+<td><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>
+Visually, another solution that works.
+<img src="and.png" alt="and.png" title="and.png" /></p>
+<p>
+There are multiple combinations of (<strong>a</strong>, <strong>b</strong>) that satisfy both. We can pick any that we like as long as they satisfy our thresholds. Our example is simplified on purpose - and shows that the <strong>discriminant</strong> lines for both cases are just laterally translated lines with the same slope. Obviously, there&#39;s no constraint on the slope as long as the line is not parallel to any of the axes.</p>
+<p>
+**</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
+Wait. Where is the <strong>learning</strong>?
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
+<p>Smart question. Let me guess - you are also going to ask</p>
+<ul>
+<li>What about the <strong>two</strong> steps mentioned above? What is the explicitly programmed &#34;generic&#34; version?</li>
+<li>And where are the bespoke versions for <strong>AND</strong> and <strong>OR</strong>?</li>
+</ul>
+<p>Kidding - you, dear reader, are smart enough to have noticed the bespoke implementations above. We only have to show the first step, first, and we are all set. Mostly…</p>
+<div id="outline-container-headline-7" class="outline-3">
+<h3 id="headline-7">
+The generalised version…
+</h3>
+<div id="outline-text-headline-7" class="outline-text-3">
+<p>… is the straight line - the discriminant - with variables <strong>a</strong>, <strong>b</strong> and <strong>c</strong>. That - <strong>that</strong> is the parameterized implementation.</p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-3">
+<h3 id="headline-8">
+And the learning…
+</h3>
+<div id="outline-text-headline-8" class="outline-text-3">
+<p>… is the act of finding combinations of (<strong>a</strong>, <strong>b</strong>, <strong>c</strong>) that satisfy our constraints. Note that even for our <strong>OR</strong> and <strong>AND</strong> tables, infinitely many combinations of (<strong>a</strong>, <strong>b</strong>, <strong>c</strong>) are possible. You can arrive at <strong>any</strong> correct combination and live with it happily. Unless you don&#39;t… and we will address that too in a bit.</p>
+<p>
+We are now descending into numerical computing territory to find our &#34;model parameters.&#34; But do appreciate the fact that the same equation can solve for both <strong>AND</strong> and <strong>OR</strong> with just different value combinations for (<strong>a</strong>, <strong>b</strong>, <strong>c</strong>).</p>
+<p>
+And thus, we segue into…</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
+Perceptrons (Neurons)
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
+<p>
+A perceptron is a computational model of the biological neuron - and for our purposes, we will use both interchangeably post this clarification.</p>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+It&#39;s just a function…
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>
+A perceptron is a computing unit – a function that acts on its input to compute an outcome. It discerns between different inputs and slots them into some categories. Mostly, two categories. Given some input, it either decides to stay inert, or fire a signal for the next-in-line perceptron to consume as <em>their</em> input. (I&#39;m obviously simplifying here…)</p>
+<p>
+That&#39;s akin to a simple function which outputs either a <strong>0</strong> or a <strong>1</strong>. Geddit?</p>
+<p>
+What we had above - the discriminant function - was but a perceptron, but presented differently. And it works very well for the simple use-cases of <strong>AND</strong> and <strong>OR</strong> where the outputs are two classes that are <strong>linearly separable</strong>.</p>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Getting somewhat bit real
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
+<p>
+Advancing our observation further - you&#39;ll notice that with the above decision functions, our inputs need not be just the binary values <strong>0</strong> and <strong>1</strong>, but can take up some fuzziness and be real values. As long as they
+stay within some acceptable ranges, passing them to the above functions will give us outcomes we will fuzzily agree with. The outcome is either <code>class 0</code> or <code>class 1</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-12" class="outline-2">
+<h2 id="headline-12">
+And, the neural network?
+</h2>
+<div id="outline-text-headline-12" class="outline-text-2">
+<p>
+The <strong>and</strong> and <strong>or</strong> functions <em>classify</em> their inputs into two groups. What we have above is an absolutely naïve <em>classifier</em> &amp;mdash; a classifier that we understand the internals of
+enough to represent them as those equations above. We encoded what we already knew into those functions.</p>
+<p>
+The premise of (artificial) neural networks is to save us from the trouble of finding specific solutions for really arbitrary problems. Just like humans learn and acquire new knowledge and skills. Imagine if we fed the above truth tables to a <em>black box</em>, with
+<em>x</em> and <em>y</em> as our input, and <em>z</em> as the expected outcome. And in turn, this black box learnt the rules and then readied itself to respond with <em>z</em> values for any combination of <em>x</em> and <em>y</em> we threw at it?</p>
+<p>
+Not hard, right? We could cache all combinations of the input and corresponding output, and respond back with the right values. That&#39;s eminently doable
+for the small size of the <span style="text-decoration: underline;">training dataset</span> we have. But it breaks down miserably when we unconstrain the input values (add some noise), or even deal with
+unforeseen input values that are different from the training data by wider margins.</p>
+<p>
+As a first step towards creating such an entity, we can approximate the <em>black box</em> as a <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a>. And training it as an activity of solving this linear
+regression. The general equation looks as follows, for the two input-signal scenario</p>
+<p>
+$z = (w_{0} x + w_{1} y &gt;= c)$</p>
+<p>
+Or, making it somewhat more general and rearranging terms to be one one side</p>
+<p>
+$z = (c + \Sigma{}w_{i}\cdot{}x_{i} &gt;= 0)$</p>
+<p>
+Which can again be re-written more generally as</p>
+<p>
+$$Z = (c + W^{T} \cdot X &gt;= 0)$$</p>
+<p>
+Where <strong>W</strong> and <strong>X</strong> are the weight and input matrices respectively. So, we could imagine this single neuron that</p>
+</div>
+</div>
+<div id="outline-container-headline-13" class="outline-2">
+<h2 id="headline-13">
+References
+</h2>
+<div id="outline-text-headline-13" class="outline-text-2">
+<ul>
+<li><a href="https://www.croftpress.com/david/archives/academic/ann.html">A Neural Network Primer</a> - by David W. Croft</li>
+</ul>
+</div>
+</div>
+
+            </div>
+        </article></main>
+</div>
+
+<footer class="footer">
+    <small class="footer_copyright">
+        © 2025 Ravindra R. Jaju.
+        
+    </small>
+</footer>
+
+
+<div class="fixed-social-icons">
+    <a href="https://github.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="GitHub" class="social-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="https://x.com/jaju" target="_blank" rel="noopener noreferrer me"
+       title="X (Twitter)" class="social-icon">
+        <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
+    </a>
+</div>
+
+
+
+
+
+
+
+    
+    <script src="https://example.org/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
+
+    
+
+</body>
+</html>

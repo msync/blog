@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neural__networks on M&#39;Sync</title>
+    <link>https://example.org/tags/neural__networks/</link>
+    <description>Recent content in Neural__networks on M&#39;Sync</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Sep 2017 11:44:27 +0530</lastBuildDate><atom:link href="https://example.org/tags/neural__networks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Neural Network Primer</title>
+      <link>https://example.org/notes/neural-network-primer/</link>
+      <pubDate>Sat, 23 Sep 2017 11:44:27 +0530</pubDate>
+      
+      <guid>https://example.org/notes/neural-network-primer/</guid>
+      
+      <description>An article inspired by the article - &amp;lt;a href=\&amp;#34;&lt;a href=&#34;https://www.croftpress.com/david/archives/academic/ann.html&#34;&gt;https://www.croftpress.com/david/archives/academic/ann.html&lt;/a&gt;\&amp;#34;&amp;gt;A Neural Network Primer&amp;lt;/a&amp;gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
