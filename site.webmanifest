@@ -1,7 +1,7 @@
 {
     "name": "M'Sync",
     "short_name": "M'Sync",
-    "start_url": "https://example.org/",
+    "start_url": "https://msync.org/",
     "theme_color": "#434648",
     "background_color": "#ffffff",
     "display": "standalone",
