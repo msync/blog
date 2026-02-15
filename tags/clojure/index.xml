@@ -1,1 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clojure on M'Sync</title><link>https://msync.org/tags/clojure/</link><description>Recent content in Clojure on M'Sync</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 06 Jun 2020 19:23:10 +0530</lastBuildDate><atom:link href="https://msync.org/tags/clojure/index.xml" rel="self" type="application/rss+xml"/><item><title>Notes for Deep Learning with Python</title><link>https://msync.org/notes/deep-learning-with-python/</link><pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate><guid>https://msync.org/notes/deep-learning-with-python/</guid><description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href="https://www.manning.com/books/deep-learning-with-python-second-edition"&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description></item><item><title>Clojure</title><link>https://msync.org/notes/clojure/</link><pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate><guid>https://msync.org/notes/clojure/</guid><description>Clojure Notes - An aimless dump of anything and everything interesting I find &amp;lt;em&amp;gt;and&amp;lt;/em&amp;gt; manage to record.</description></item><item><title>Useful Clojure Asides - Logging and Exceptions</title><link>https://msync.org/blog/2015/2015-06-08-clojure-useful-asides/</link><pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-06-08-clojure-useful-asides/</guid><description>It&amp;#39;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description></item><item><title>Interesting Java in clojure.core</title><link>https://msync.org/blog/2015/2015-05-16-interesting-java-in-clojure-core/</link><pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-05-16-interesting-java-in-clojure-core/</guid><description>Some neat Java ideas from the Clojure core</description></item><item><title>Developing Chrome Extensions using Clojurescript</title><link>https://msync.org/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</link><pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid><description>How you may set up your clojurescript project for developing chrome extensions - an example</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clojure on M&#39;Sync</title>
+    <link>http://localhost:1313/tags/clojure/</link>
+    <description>Recent content in Clojure on M&#39;Sync</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 19:23:10 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes for Deep Learning with Python</title>
+      <link>http://localhost:1313/notes/deep-learning-with-python/</link>
+      <pubDate>Sat, 06 Jun 2020 19:23:10 +0530</pubDate>
+      
+      <guid>http://localhost:1313/notes/deep-learning-with-python/</guid>
+      
+      <description>Chapter-wise notes for &amp;lt;a href=&amp;#34;&lt;a href=&#34;https://www.manning.com/books/deep-learning-with-python-second-edition&#34;&gt;https://www.manning.com/books/deep-learning-with-python-second-edition&lt;/a&gt;&amp;#34;&amp;gt;Deep Learning with Python&amp;lt;/a&amp;gt; with Python and Clojure code samples. The book is not done. These notes are evolving as I get deeper both into the book and the accompanying code.</description>
+      
+    </item>
+    
+    <item>
+      <title>Clojure</title>
+      <link>http://localhost:1313/notes/clojure/</link>
+      <pubDate>Mon, 10 Jul 2017 11:23:36 +0530</pubDate>
+      
+      <guid>http://localhost:1313/notes/clojure/</guid>
+      
+      <description>Clojure Notes - An aimless dump of anything and everything interesting I find &amp;lt;em&amp;gt;and&amp;lt;/em&amp;gt; manage to record.</description>
+      
+    </item>
+    
+    <item>
+      <title>Useful Clojure Asides - Logging and Exceptions</title>
+      <link>http://localhost:1313/blog/2015/2015-06-08-clojure-useful-asides/</link>
+      <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
+      
+      <guid>http://localhost:1313/blog/2015/2015-06-08-clojure-useful-asides/</guid>
+      
+      <description>It&amp;#39;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description>
+      
+    </item>
+    
+    <item>
+      <title>Interesting Java in clojure.core</title>
+      <link>http://localhost:1313/blog/2015/2015-05-16-interesting-java-in-clojure-core/</link>
+      <pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate>
+      
+      <guid>http://localhost:1313/blog/2015/2015-05-16-interesting-java-in-clojure-core/</guid>
+      
+      <description>Some neat Java ideas from the Clojure core</description>
+      
+    </item>
+    
+    <item>
+      <title>Developing Chrome Extensions using Clojurescript</title>
+      <link>http://localhost:1313/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</link>
+      <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
+      
+      <guid>http://localhost:1313/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid>
+      
+      <description>How you may set up your clojurescript project for developing chrome extensions - an example</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,2 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Experience on M'Sync</title><link>https://msync.org/tags/experience/</link><description>Recent content in Experience on M'Sync</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 24 Sep 2025 09:00:00 +0530</lastBuildDate><atom:link href="https://msync.org/tags/experience/index.xml" rel="self" type="application/rss+xml"/><item><title>Whisper and STT on Apple Silicon</title><link>https://msync.org/blog/2025/2025-09-24-whisper-on-apple-silicon/</link><pubDate>Wed, 24 Sep 2025 09:00:00 +0530</pubDate><guid>https://msync.org/blog/2025/2025-09-24-whisper-on-apple-silicon/</guid><description>&lt;h1 id="whisper-notes-from-my-mac-september2025"&gt;Whisper Notes from My Mac (September 2025)&lt;/h1&gt;
-&lt;p&gt;I spent the past few days gluing together a speech‑to‑text workflow on my Apple Silicon MacBook (macOS 26.0, Python 3.12). Most of what follows is a log of what actually happened: which warnings popped up, how I worked around them, and why I eventually leaned on whisper.cpp. I’m keeping this grounded so I (or anyone else) can repeat the steps later without guesswork.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experience on M&#39;Sync</title>
+    <link>http://localhost:1313/tags/experience/</link>
+    <description>Recent content in Experience on M&#39;Sync</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Sep 2025 09:00:00 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/experience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Whisper and STT on Apple Silicon</title>
+      <link>http://localhost:1313/blog/2025/2025-09-24-whisper-on-apple-silicon/</link>
+      <pubDate>Wed, 24 Sep 2025 09:00:00 +0530</pubDate>
+      
+      <guid>http://localhost:1313/blog/2025/2025-09-24-whisper-on-apple-silicon/</guid>
+      
+      <description>&lt;h1 id=&#34;whisper-notes-from-my-mac-september2025&#34;&gt;Whisper Notes from My Mac (September 2025)&lt;/h1&gt;
+&lt;p&gt;I spent the past few days gluing together a speech‑to‑text workflow on my Apple Silicon MacBook (macOS 26.0, Python 3.12). Most of what follows is a log of what actually happened: which warnings popped up, how I worked around them, and why I eventually leaned on whisper.cpp. I’m keeping this grounded so I (or anyone else) can repeat the steps later without guesswork.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
