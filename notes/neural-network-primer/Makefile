@@ -1,2 +1,0 @@
-plots:
-	gnuplot plots.gnuplot
