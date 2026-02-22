@@ -1,107 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="content-type" content="text/html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title itemprop="name">Clojure | M&#39;Sync</title>
-<meta property="og:title" content="Clojure | M&#39;Sync" />
-<meta name="twitter:title" content="Clojure | M&#39;Sync" />
-<meta itemprop="name" content="Clojure | M&#39;Sync" />
-<meta name="application-name" content="Clojure | M&#39;Sync" />
-<meta property="og:site_name" content="M&#39;Sync" />
-
-<meta name="description" content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft.">
-<meta itemprop="description" content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft." />
-<meta property="og:description" content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft." />
-<meta name="twitter:description" content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft." />
-
-<meta property="og:locale" content="en-us" />
-<meta name="language" content="en-us" />
-
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/notes/clojure/" title="" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.155.3">
-
-    
-    <meta property="og:url" content="http://localhost:1313/notes/clojure/">
-  <meta property="og:site_name" content="M&#39;Sync">
-  <meta property="og:title" content="Clojure">
-  <meta property="og:description" content="Clojure Notes - An aimless dump of anything and everything interesting I find &lt;em&gt;and&lt;/em&gt; manage to record.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="notes">
-    <meta property="article:published_time" content="2017-07-10T11:23:36+05:30">
-    <meta property="article:modified_time" content="2025-09-20T23:19:03+05:30">
-    <meta property="article:tag" content="Programming">
-    <meta property="article:tag" content="Clojure">
-
-
-    
-    
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Clojure">
-  <meta name="twitter:description" content="Clojure Notes - An aimless dump of anything and everything interesting I find &lt;em&gt;and&lt;/em&gt; manage to record.">
-
-
-    
-
-    <link rel="canonical" href="http://localhost:1313/notes/clojure/">
-    <link href="/style.min.c2b918d0b645b6732a537299abbcdb9450c4426034e60ae83fa3b194686e2200.css" rel="stylesheet">
-    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
-
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-
-
-
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
-
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#434648">
-
-    
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-
-    
-    
-      
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-
-
-<script type="module">
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Clojure | M'Sync</title><meta property="og:title" content="Clojure | M'Sync"><meta name=twitter:title content="Clojure | M'Sync"><meta itemprop=name content="Clojure | M'Sync"><meta name=application-name content="Clojure | M'Sync"><meta property="og:site_name" content="M'Sync"><meta name=description content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft."><meta itemprop=description content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft."><meta property="og:description" content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft."><meta name=twitter:description content="Notes, experiments, and experience reports on systems, machine learning, and engineering craft."><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en href=https://msync.org/notes/clojure/ title><meta name=generator content="Hugo 0.156.0"><meta property="og:url" content="https://msync.org/notes/clojure/"><meta property="og:site_name" content="M'Sync"><meta property="og:title" content="Clojure"><meta property="og:description" content="Clojure Notes - An aimless dump of anything and everything interesting I find <em>and</em> manage to record."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="notes"><meta property="article:published_time" content="2017-07-10T11:23:36+05:30"><meta property="article:modified_time" content="2025-09-20T23:19:03+05:30"><meta property="article:tag" content="Programming"><meta property="article:tag" content="Clojure"><meta name=twitter:card content="summary"><meta name=twitter:title content="Clojure"><meta name=twitter:description content="Clojure Notes - An aimless dump of anything and everything interesting I find <em>and</em> manage to record."><link rel=canonical href=https://msync.org/notes/clojure/><link href=/style.min.c2b918d0b645b6732a537299abbcdb9450c4426034e60ae83fa3b194686e2200.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://msync.org/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><meta name=color-scheme content="light dark"><link rel=icon type=image/svg+xml href=/icons/favicon.svg><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel=stylesheet><script>MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]}}</script><script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js></script><script type=module>
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: false });
   document.addEventListener('DOMContentLoaded', () => {
@@ -114,154 +11,43 @@
     });
     mermaid.run();
   });
-</script>
-    
-</head>
-<body data-theme = "light" class="notransition">
-
-<script src="/js/theme.js"></script>
-
-<div class="navbar" role="navigation">
-  <nav class="menu" aria-label="Primary navigation">
-    <a href="http://localhost:1313/" class="logo" aria-label="M&#39;Sync">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-stroke-linejoin="round" class="feather feather-home">
-<title>Home</title>
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-<polyline points="9 22 9 12 15 12 15 22"></polyline>
-</svg>
-      <span class="logo-text">M&#39;Sync</span>
-    </a>
-    <input type="checkbox" id="menu-trigger" class="menu-trigger" aria-hidden="true" />
-    <label for="menu-trigger" class="menu-toggle" aria-controls="site-menu" aria-label="Toggle navigation">
-      <span class="menu-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
-      </span>
-    </label>
-
-    <div class="trigger" id="site-menu">
-      <ul class="trigger-container">
-        
-        
-        <li>
-          <a class="menu-link " href="/">
-            Home
-          </a>
-          
-        </li>
-        
-        <li>
-          <a class="menu-link " href="/notes/">
-            Notes
-          </a>
-          
-        </li>
-        
-        <li>
-          <a class="menu-link " href="/blog/">
-            Blog
-          </a>
-          
-        </li>
-        
-        
-      </ul>
-      <a id="mode" href="#" aria-label="Toggle color scheme">
-        <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>Light mode</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>Dark mode</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-      </a>
-    </div>
-  </nav>
-</div>
-
-<div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">Clojure</h1>
-                
-                
-                
-                <div class="post-meta">
-                    <time datetime="2017-07-10T11:23:36&#43;05:30" itemprop="datePublished"> Jul 10, 2017 </time>
-                </div>
-                
-            </header>
-            
-            <div class="page-content">
-                
-<div id="outline-container-headline-1" class="outline-2">
-<h2 id="headline-1">
-Introduction
-</h2>
-<div id="outline-text-headline-1" class="outline-text-2">
-<p>Interesting code/styles I&#39;ve found in various Clojure open-source codebases.</p>
-</div>
-</div>
-<div id="outline-container-headline-2" class="outline-2">
-<h2 id="headline-2">
-Exploring the <strong>Core</strong>
-</h2>
-<div id="outline-text-headline-2" class="outline-text-2">
-<p>The built-in <code>clojure.repl</code> namespace has useful functions to explore Clojure, and we can use it to explore the core namespaces.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">ns </span><span class="nv">clojurexplore</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">msync.utils</span> <span class="ss">:refer</span> <span class="ss">:all</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">            <span class="p">[</span><span class="nv">clojure.repl</span> <span class="ss">:refer</span> <span class="p">[</span><span class="nb">doc </span><span class="nv">dir</span> <span class="nv">dir-fn</span><span class="p">]]))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">take </span><span class="mi">20</span> <span class="p">(</span><span class="nf">dir-fn</span> <span class="ss">&#39;clojure.core</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*</span><span class="o">&#39;</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*1</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*2</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*3</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*agent*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*allow-unresolved-vars*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*assert*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*clojure-version*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*command-line-args*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*compile-files*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*compile-path*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*compiler-options*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*data-readers*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*default-data-reader-fn*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*e</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*err*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*file*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*flush-on-newline*</span>
-</span></span><span class="line"><span class="cl"> ,<span class="nv">*fn-loader*</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<p>
-What do docs look like?</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">doc </span><span class="nv">+</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</script></head><body data-theme=light class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Primary navigation"><a href=https://msync.org/ class=logo aria-label="M'Sync"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+<span class=logo-text>M'Sync</span>
+</a><input type=checkbox id=menu-trigger class=menu-trigger aria-hidden=true>
+<label for=menu-trigger class=menu-toggle aria-controls=site-menu aria-label="Toggle navigation"><span class=menu-icon><svg width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger id=site-menu><ul class=trigger-container><li><a class=menu-link href=/>Home</a></li><li><a class=menu-link href=/notes/>Notes</a></li><li><a class=menu-link href=/blog/>Blog</a></li></ul><a id=mode href=# aria-label="Toggle color scheme"><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>Light mode</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+<svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>Dark mode</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Clojure</h1><div class=post-meta><time datetime=2017-07-10T11:23:36+05:30 itemprop=datePublished>Jul 10, 2017</time></div></header><div class=page-content><div id=outline-container-headline-1 class=outline-2><h2 id=headline-1>Introduction</h2><div id=outline-text-headline-1 class=outline-text-2><p>Interesting code/styles I've found in various Clojure open-source codebases.</p></div></div><div id=outline-container-headline-2 class=outline-2><h2 id=headline-2>Exploring the <strong>Core</strong></h2><div id=outline-text-headline-2 class=outline-text-2><p>The built-in <code>clojure.repl</code> namespace has useful functions to explore Clojure, and we can use it to explore the core namespaces.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>ns </span><span class=nv>clojurexplore</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=ss>:require</span> <span class=p>[</span><span class=nv>msync.utils</span> <span class=ss>:refer</span> <span class=ss>:all</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>            <span class=p>[</span><span class=nv>clojure.repl</span> <span class=ss>:refer</span> <span class=p>[</span><span class=nb>doc </span><span class=nv>dir</span> <span class=nv>dir-fn</span><span class=p>]]))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>take </span><span class=mi>20</span> <span class=p>(</span><span class=nf>dir-fn</span> <span class=ss>&#39;clojure.core</span><span class=p>))</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*</span><span class=o>&#39;</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*1</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*2</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*3</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*agent*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*allow-unresolved-vars*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*assert*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*clojure-version*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*command-line-args*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*compile-files*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*compile-path*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*compiler-options*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*data-readers*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*default-data-reader-fn*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*e</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*err*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*file*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*flush-on-newline*</span>
+</span></span><span class=line><span class=cl> ,<span class=nv>*fn-loader*</span><span class=p>)</span></span></span></code></pre></div></div><p>What do docs look like?</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nb>doc </span><span class=nv>+</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 -------------------------
 clojure.core/+
 ([] [x] [x y] [x y &amp; more])
   Returns the sum of nums. (+) returns 0. Does not auto-promote
   longs, will throw on overflow. See also: +&#39;
-</pre>
-<div id="outline-container-headline-3" class="outline-3">
-<h3 id="headline-3">
-Java Facilities :1.12+:
-</h3>
-<div id="outline-text-headline-3" class="outline-text-3">
-<p>
-The new namespace <code>clojure.java.basis</code> gives access to underlying JVM information that can be used for inspecting the runtime infrastructure. The runtime <strong>needs</strong> to have been started using the Clojure CLI.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="ss">&#39;clojure.java.basis</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">dir</span> <span class="nv">clojure.java.basis</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">doc </span><span class="nv">clojure.java.basis/initial-basis</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">doc </span><span class="nv">clojure.java.basis/current-basis</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><div id=outline-container-headline-3 class=outline-3><h3 id=headline-3>Java Facilities :1.12+:</h3><div id=outline-text-headline-3 class=outline-text-3><p>The new namespace <code>clojure.java.basis</code> gives access to underlying JVM information that can be used for inspecting the runtime infrastructure. The runtime <strong>needs</strong> to have been started using the Clojure CLI.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>require</span> <span class=ss>&#39;clojure.java.basis</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>dir</span> <span class=nv>clojure.java.basis</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>doc </span><span class=nv>clojure.java.basis/initial-basis</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>doc </span><span class=nv>clojure.java.basis/current-basis</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 current-basis
 initial-basis
 -------------------------
@@ -272,507 +58,133 @@ clojure.java.basis/initial-basis
 clojure.java.basis/current-basis
 ([])
   Return the current basis, which may have been modified since runtime launch.
-</pre>
-<p>
-The <code>clojure.java.process</code> namespace wraps the Java process API and provides some convenience functions for making use of the APIs.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">dir</span> <span class="nv">clojure.java.process</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p>The <code>clojure.java.process</code> namespace wraps the Java process API and provides some convenience functions for making use of the APIs.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>dir</span> <span class=nv>clojure.java.process</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 exec
 from-file
 io-task
 ok?
 start
 to-file
-</pre>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-4" class="outline-2">
-<h2 id="headline-4">
-Interesting Styles&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-style">style</span></span>
-</h2>
-<div id="outline-text-headline-4" class="outline-text-2">
-<div id="outline-container-headline-5" class="outline-3">
-<h3 id="headline-5">
-Optional data
-</h3>
-<div id="outline-text-headline-5" class="outline-text-3">
-<p>This is from the <a href="https://github.com/ptaoussanis/sente">Sente</a> library by <a href="https://www.taoensso.com/">Peter Taoussanis</a>.
-Taking an example from <em>sente</em> itself - a server event message is a map expected to have multiple keys, as below. Since we are in Lisp-land, almost every character on the keyboard is available for identifiers.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">event</span> <span class="nv">id</span> <span class="nv">?data</span> <span class="nv">send-fn</span> <span class="nv">?reply-fn</span> <span class="nv">uid</span> <span class="nv">ring-req</span> <span class="nv">client-id</span><span class="p">]}</span></span></span></code></pre></div>
-</div>
-<p>We start the identifier with a <code>?</code> - something that we use to indicate optional.
-So, keys <code>?data</code> and <code>?reply-fn</code> represent optional entries in the map.</p>
-</div>
-</div>
-<div id="outline-container-headline-6" class="outline-3">
-<h3 id="headline-6">
-Splitting a namespace across files
-</h3>
-<div id="outline-text-headline-6" class="outline-text-3">
-<p>When your namespace is growing too large for a single file, you can split it across multiple files.
-For example, take the <code>clojure.core</code> namespace, which is split across multiple files. As a more concrete piece, <code>core_print.clj</code> contains some <code>clojure.core</code> functions. Here&#39;s how it is done - notice that the base file-name, without the <code>.clj</code> suffix, is used.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="c1">;; In core.clj</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">load </span><span class="s">&#34;core_print&#34;</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<p>
-Inside <code>core_print.clj</code>, use the <code>in-ns</code> directive to tell the clojure reader/compiler how to treat the code in here.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">;; In core_print.clj, the beginning line is</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">in-ns </span><span class="ss">&#39;clojure.core</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="c1">;; And the implementation follows</span></span></span></code></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-7" class="outline-2">
-<h2 id="headline-7">
-Smart Tricks&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-snippets">snippets</span></span>
-</h2>
-<div id="outline-text-headline-7" class="outline-text-2">
-<div id="outline-container-headline-8" class="outline-3">
-<h3 id="headline-8">
-Convert a map (keyed by integers) into a correspondingly ordered vector
-</h3>
-<div id="outline-text-headline-8" class="outline-text-3">
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="c1">;; From clojure.edn.data</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">msync.utils</span> <span class="ss">:refer</span> <span class="ss">:all</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn- </span><span class="nv">vectorize</span>
-</span></span><span class="line"><span class="cl">  <span class="s">&#34;Convert an associative-by-numeric-index collection into
-</span></span></span><span class="line"><span class="cl"><span class="s">   an equivalent vector, with nil for any missing keys&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nv">m</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">seq </span><span class="nv">m</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nf">reduce</span>
-</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">result</span> <span class="p">[</span><span class="nv">k</span> <span class="nv">v</span><span class="p">]]</span> <span class="p">(</span><span class="nb">assoc </span><span class="nv">result</span> <span class="nv">k</span> <span class="nv">v</span><span class="p">))</span>   <span class="c1">;; 1</span>
-</span></span><span class="line"><span class="cl">     <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nb">repeat </span><span class="p">(</span><span class="nb">apply max </span><span class="p">(</span><span class="nb">keys </span><span class="nv">m</span><span class="p">))</span> <span class="nv">nil</span><span class="p">))</span> <span class="c1">;; 2</span>
-</span></span><span class="line"><span class="cl">     <span class="nv">m</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">def </span><span class="nv">m</span> <span class="p">{</span><span class="mi">0</span> <span class="ss">:A</span> <span class="mi">2</span> <span class="ss">:C</span> <span class="mi">9</span> <span class="ss">:J</span><span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">vectorize</span> <span class="nv">m</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">;; Output #&#39;user/vectorize[:A nil :C nil nil nil nil nil nil :J]</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">[</span><span class="ss">:A</span> <span class="nv">nil</span> <span class="ss">:C</span> <span class="nv">nil</span> <span class="nv">nil</span> <span class="nv">nil</span> <span class="nv">nil</span> <span class="nv">nil</span> <span class="nv">nil</span> <span class="ss">:J</span><span class="p">]</span></span></span></code></pre></div>
-</div>
-<p>
-On line marked <em>2</em>, you initialize a vector of the required length with <code>nil</code>-s, using <code>max</code></p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">apply max </span><span class="p">(</span><span class="nb">keys </span><span class="nv">m</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="mi">9</span></span></span></code></pre></div>
-</div>
-<p>
-And reduce <code>m</code> with the function defined on line marked <em>1</em> into this vector.</p>
-</div>
-</div>
-<div id="outline-container-headline-9" class="outline-3">
-<h3 id="headline-9">
-Temporarily descending into mutable-land.&#xa0;&#xa0;&#xa0;<span class="tags"><span class="tag-performance">performance</span></span>
-</h3>
-<div id="outline-text-headline-9" class="outline-text-3">
-<p>Immutability is great, but it&#39;s okay to mutate within the private confines of some scope</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="p">(</span><span class="kd">defn </span><span class="nv">filterv</span>
-</span></span><span class="line"><span class="cl">    <span class="s">&#34;Returns a vector of the items in coll for which
-</span></span></span><span class="line"><span class="cl"><span class="s">    (pred item) returns true. pred must be free of side-effects.&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="ss">:added</span> <span class="s">&#34;1.4&#34;</span>
-</span></span><span class="line"><span class="cl">     <span class="ss">:static</span> <span class="nv">true</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nv">pred</span> <span class="nv">coll</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nb">reduce </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">v</span> <span class="nv">o</span><span class="p">]</span> <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">pred</span> <span class="nv">o</span><span class="p">)</span> <span class="p">(</span><span class="nf">conj!</span> <span class="nv">v</span> <span class="nv">o</span><span class="p">)</span> <span class="nv">v</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">                <span class="p">(</span><span class="nf">transient</span> <span class="p">[])</span>
-</span></span><span class="line"><span class="cl">                <span class="nv">coll</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">persistent!</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre></div></div></div></div><div id=outline-container-headline-4 class=outline-2><h2 id=headline-4>Interesting Styles&#160;&#160;&#160;<span class=tags><span class=tag-style>style</span></span></h2><div id=outline-text-headline-4 class=outline-text-2><div id=outline-container-headline-5 class=outline-3><h3 id=headline-5>Optional data</h3><div id=outline-text-headline-5 class=outline-text-3><p>This is from the <a href=https://github.com/ptaoussanis/sente>Sente</a> library by <a href=https://www.taoensso.com/>Peter Taoussanis</a>.
+Taking an example from <em>sente</em> itself - a server event message is a map expected to have multiple keys, as below. Since we are in Lisp-land, almost every character on the keyboard is available for identifiers.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=p>{</span><span class=ss>:keys</span> <span class=p>[</span><span class=nv>event</span> <span class=nv>id</span> <span class=nv>?data</span> <span class=nv>send-fn</span> <span class=nv>?reply-fn</span> <span class=nv>uid</span> <span class=nv>ring-req</span> <span class=nv>client-id</span><span class=p>]}</span></span></span></code></pre></div></div><p>We start the identifier with a <code>?</code> - something that we use to indicate optional.
+So, keys <code>?data</code> and <code>?reply-fn</code> represent optional entries in the map.</p></div></div><div id=outline-container-headline-6 class=outline-3><h3 id=headline-6>Splitting a namespace across files</h3><div id=outline-text-headline-6 class=outline-text-3><p>When your namespace is growing too large for a single file, you can split it across multiple files.
+For example, take the <code>clojure.core</code> namespace, which is split across multiple files. As a more concrete piece, <code>core_print.clj</code> contains some <code>clojure.core</code> functions. Here's how it is done - notice that the base file-name, without the <code>.clj</code> suffix, is used.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=c1>;; In core.clj</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>load </span><span class=s>&#34;core_print&#34;</span><span class=p>)</span></span></span></code></pre></div></div><p>Inside <code>core_print.clj</code>, use the <code>in-ns</code> directive to tell the clojure reader/compiler how to treat the code in here.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=c1>;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>;; In core_print.clj, the beginning line is</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>in-ns </span><span class=ss>&#39;clojure.core</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>;; And the implementation follows</span></span></span></code></pre></div></div></div></div></div></div><div id=outline-container-headline-7 class=outline-2><h2 id=headline-7>Smart Tricks&#160;&#160;&#160;<span class=tags><span class=tag-snippets>snippets</span></span></h2><div id=outline-text-headline-7 class=outline-text-2><div id=outline-container-headline-8 class=outline-3><h3 id=headline-8>Convert a map (keyed by integers) into a correspondingly ordered vector</h3><div id=outline-text-headline-8 class=outline-text-3><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=c1>;; From clojure.edn.data</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>ns </span><span class=nv>user</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=ss>:require</span> <span class=p>[</span><span class=nv>msync.utils</span> <span class=ss>:refer</span> <span class=ss>:all</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn- </span><span class=nv>vectorize</span>
+</span></span><span class=line><span class=cl>  <span class=s>&#34;Convert an associative-by-numeric-index collection into
+</span></span></span><span class=line><span class=cl><span class=s>   an equivalent vector, with nil for any missing keys&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nv>m</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>when </span><span class=p>(</span><span class=nb>seq </span><span class=nv>m</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>(</span><span class=nf>reduce</span>
+</span></span><span class=line><span class=cl>     <span class=p>(</span><span class=k>fn </span><span class=p>[</span><span class=nv>result</span> <span class=p>[</span><span class=nv>k</span> <span class=nv>v</span><span class=p>]]</span> <span class=p>(</span><span class=nb>assoc </span><span class=nv>result</span> <span class=nv>k</span> <span class=nv>v</span><span class=p>))</span>   <span class=c1>;; 1</span>
+</span></span><span class=line><span class=cl>     <span class=p>(</span><span class=nf>vec</span> <span class=p>(</span><span class=nb>repeat </span><span class=p>(</span><span class=nb>apply max </span><span class=p>(</span><span class=nb>keys </span><span class=nv>m</span><span class=p>))</span> <span class=nv>nil</span><span class=p>))</span> <span class=c1>;; 2</span>
+</span></span><span class=line><span class=cl>     <span class=nv>m</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=k>def </span><span class=nv>m</span> <span class=p>{</span><span class=mi>0</span> <span class=ss>:A</span> <span class=mi>2</span> <span class=ss>:C</span> <span class=mi>9</span> <span class=ss>:J</span><span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>vectorize</span> <span class=nv>m</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=c1>;; Output #&#39;user/vectorize[:A nil :C nil nil nil nil nil nil :J]</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>[</span><span class=ss>:A</span> <span class=nv>nil</span> <span class=ss>:C</span> <span class=nv>nil</span> <span class=nv>nil</span> <span class=nv>nil</span> <span class=nv>nil</span> <span class=nv>nil</span> <span class=nv>nil</span> <span class=ss>:J</span><span class=p>]</span></span></span></code></pre></div></div><p>On line marked <em>2</em>, you initialize a vector of the required length with <code>nil</code>-s, using <code>max</code></p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=p>(</span><span class=nb>apply max </span><span class=p>(</span><span class=nb>keys </span><span class=nv>m</span><span class=p>))</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=mi>9</span></span></span></code></pre></div></div><p>And reduce <code>m</code> with the function defined on line marked <em>1</em> into this vector.</p></div></div><div id=outline-container-headline-9 class=outline-3><h3 id=headline-9>Temporarily descending into mutable-land.&#160;&#160;&#160;<span class=tags><span class=tag-performance>performance</span></span></h3><div id=outline-text-headline-9 class=outline-text-3><p>Immutability is great, but it's okay to mutate within the private confines of some scope</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=p>(</span><span class=kd>defn </span><span class=nv>filterv</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;Returns a vector of the items in coll for which
+</span></span></span><span class=line><span class=cl><span class=s>    (pred item) returns true. pred must be free of side-effects.&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span><span class=ss>:added</span> <span class=s>&#34;1.4&#34;</span>
+</span></span><span class=line><span class=cl>     <span class=ss>:static</span> <span class=nv>true</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nv>pred</span> <span class=nv>coll</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=p>(</span><span class=nb>-&gt; </span><span class=p>(</span><span class=nb>reduce </span><span class=p>(</span><span class=k>fn </span><span class=p>[</span><span class=nv>v</span> <span class=nv>o</span><span class=p>]</span> <span class=p>(</span><span class=k>if </span><span class=p>(</span><span class=nf>pred</span> <span class=nv>o</span><span class=p>)</span> <span class=p>(</span><span class=nf>conj!</span> <span class=nv>v</span> <span class=nv>o</span><span class=p>)</span> <span class=nv>v</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>                <span class=p>(</span><span class=nf>transient</span> <span class=p>[])</span>
+</span></span><span class=line><span class=cl>                <span class=nv>coll</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nv>persistent!</span><span class=p>))</span></span></span></code></pre></div></div><pre class=example>
 #&#39;user/filterv
-</pre>
-<p>
-<code>conj!</code> adds an element to the transient vector - notice the <strong>!</strong> at the end. Also, the transient-functions always return a reference that you are expected to use for the next step. This is important - even though it mutates in place, we are not supposed to hold on to any old reference while building the transient datastructure.
-And finally, the collection is made persistent with <code>persistent!</code>.</p>
-</div>
-</div>
-<div id="outline-container-headline-10" class="outline-3">
-<h3 id="headline-10">
-Control Flow
-</h3>
-<div id="outline-text-headline-10" class="outline-text-3">
-<p>An interesting discussion can be found at <a href="https://clojureverse.org/t/how-are-clojurians-handling-control-flow-on-their-projects/7868">How are clojurians handling control flow on their projects?</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-11" class="outline-2">
-<h2 id="headline-11">
-Uncommon Stuff
-</h2>
-<div id="outline-text-headline-11" class="outline-text-2">
-<div id="outline-container-headline-12" class="outline-3">
-<h3 id="headline-12">
-<code>deftype</code> and Mutable Members
-</h3>
-<div id="outline-text-headline-12" class="outline-text-3">
-<p>
-<code>deftype</code> allows for the definition of mutable members using the <code>^:volatile-mutable</code> tag on a member. But they become private to the object, and we need to implement methods on them (via interfaces or protocols) to access these private members for modification.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">ns </span><span class="nv">msync.deftype</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">msync.utils</span> <span class="ss">:refer</span> <span class="ss">:all</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">BarBazOperators</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">get-bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">bar-inc!</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">baz-inc!</span> <span class="p">[</span><span class="nv">this</span><span class="p">]))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">deftype </span><span class="nv">FooBarBaz</span> <span class="p">[</span><span class="nv">foo</span> <span class="o">^</span><span class="ss">:volatile-mutable</span> <span class="nv">bar</span> <span class="o">^</span><span class="ss">:volatile-mutable</span> <span class="nv">baz</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">BarBazOperators</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">get-bar</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span> <span class="nv">bar</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">bar-inc!</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span> <span class="p">(</span><span class="nf">set!</span> <span class="nv">bar</span> <span class="p">(</span><span class="nb">inc </span><span class="nv">bar</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span> <span class="nv">baz</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">baz-inc!</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span> <span class="p">(</span><span class="nf">set!</span> <span class="nv">baz</span> <span class="p">(</span><span class="nb">inc </span><span class="nv">baz</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="k">def </span><span class="nv">foo-bar-baz</span> <span class="p">(</span><span class="nf">FooBarBaz.</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p><code>conj!</code> adds an element to the transient vector - notice the <strong>!</strong> at the end. Also, the transient-functions always return a reference that you are expected to use for the next step. This is important - even though it mutates in place, we are not supposed to hold on to any old reference while building the transient datastructure.
+And finally, the collection is made persistent with <code>persistent!</code>.</p></div></div><div id=outline-container-headline-10 class=outline-3><h3 id=headline-10>Control Flow</h3><div id=outline-text-headline-10 class=outline-text-3><p>An interesting discussion can be found at <a href=https://clojureverse.org/t/how-are-clojurians-handling-control-flow-on-their-projects/7868>How are clojurians handling control flow on their projects?</a></p></div></div></div></div><div id=outline-container-headline-11 class=outline-2><h2 id=headline-11>Uncommon Stuff</h2><div id=outline-text-headline-11 class=outline-text-2><div id=outline-container-headline-12 class=outline-3><h3 id=headline-12><code>deftype</code> and Mutable Members</h3><div id=outline-text-headline-12 class=outline-text-3><p><code>deftype</code> allows for the definition of mutable members using the <code>^:volatile-mutable</code> tag on a member. But they become private to the object, and we need to implement methods on them (via interfaces or protocols) to access these private members for modification.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>ns </span><span class=nv>msync.deftype</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=ss>:require</span> <span class=p>[</span><span class=nv>msync.utils</span> <span class=ss>:refer</span> <span class=ss>:all</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defprotocol </span><span class=nv>BarBazOperators</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>get-bar</span> <span class=p>[</span><span class=nv>this</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>bar-inc!</span> <span class=p>[</span><span class=nv>this</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>baz</span> <span class=p>[</span><span class=nv>this</span><span class=p>])</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>baz-inc!</span> <span class=p>[</span><span class=nv>this</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>deftype </span><span class=nv>FooBarBaz</span> <span class=p>[</span><span class=nv>foo</span> <span class=o>^</span><span class=ss>:volatile-mutable</span> <span class=nv>bar</span> <span class=o>^</span><span class=ss>:volatile-mutable</span> <span class=nv>baz</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=nv>BarBazOperators</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>get-bar</span> <span class=p>[</span><span class=nv>_</span><span class=p>]</span> <span class=nv>bar</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>bar-inc!</span> <span class=p>[</span><span class=nv>_</span><span class=p>]</span> <span class=p>(</span><span class=nf>set!</span> <span class=nv>bar</span> <span class=p>(</span><span class=nb>inc </span><span class=nv>bar</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>baz</span> <span class=p>[</span><span class=nv>_</span><span class=p>]</span> <span class=nv>baz</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>baz-inc!</span> <span class=p>[</span><span class=nv>_</span><span class=p>]</span> <span class=p>(</span><span class=nf>set!</span> <span class=nv>baz</span> <span class=p>(</span><span class=nb>inc </span><span class=nv>baz</span><span class=p>))))</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=k>def </span><span class=nv>foo-bar-baz</span> <span class=p>(</span><span class=nf>FooBarBaz.</span> <span class=mi>10</span> <span class=mi>20</span> <span class=mi>30</span><span class=p>))</span></span></span></code></pre></div></div><pre class=example>
 #&#39;msync.deftype/foo-bar-baz
-</pre>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="c1">;; We have a problem</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">.bar</span> <span class="nv">foo-bar-baz</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=c1>;; We have a problem</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>.bar</span> <span class=nv>foo-bar-baz</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 class java.lang.IllegalArgumentException
-</pre>
-<p>
-These are method calls.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">.get-bar</span> <span class="nv">foo-bar-baz</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p>These are method calls.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>.get-bar</span> <span class=nv>foo-bar-baz</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 20
-</pre>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">.baz</span> <span class="nv">foo-bar-baz</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>.baz</span> <span class=nv>foo-bar-baz</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 30
-</pre>
-<p>
-So are these too - method calls.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">print-all</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nf">bar-inc!</span> <span class="nv">foo-bar-baz</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nf">get-bar</span> <span class="nv">foo-bar-baz</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nf">baz-inc!</span> <span class="nv">foo-bar-baz</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nf">baz</span> <span class="nv">foo-bar-baz</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p>So are these too - method calls.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>print-all</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=nf>bar-inc!</span> <span class=nv>foo-bar-baz</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=nf>get-bar</span> <span class=nv>foo-bar-baz</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=nf>baz-inc!</span> <span class=nv>foo-bar-baz</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=nf>baz</span> <span class=nv>foo-bar-baz</span><span class=p>))</span></span></span></code></pre></div></div><pre class=example>
 21
 21
 31
 31
-</pre>
-<p>
-But <code>foo</code> is different.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">.foo</span> <span class="nv">foo-bar-baz</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p>But <code>foo</code> is different.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>.foo</span> <span class=nv>foo-bar-baz</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 10
-</pre>
-<p>
-There is no method <code>foo</code></p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">foo</span> <span class="nv">foo-bar-baz</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p>There is no method <code>foo</code></p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>foo</span> <span class=nv>foo-bar-baz</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 class clojure.lang.Compiler$CompilerException
-</pre>
-</div>
-</div>
-<div id="outline-container-headline-13" class="outline-3">
-<h3 id="headline-13">
-<code>&amp;env</code> in Macros
-</h3>
-<div id="outline-text-headline-13" class="outline-text-3">
-<p>Inside of macros, you have access to the context in which you are being evaluated.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defmacro </span><span class="nv">show-env</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">into </span><span class="p">[]</span> <span class="p">(</span><span class="nb">map class </span><span class="p">(</span><span class="nb">keys </span><span class="o">&amp;</span><span class="nv">env</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-env-wrapper</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">show-env-wrapper</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre></div></div><div id=outline-container-headline-13 class=outline-3><h3 id=headline-13><code>&amp;env</code> in Macros</h3><div id=outline-text-headline-13 class=outline-text-3><p>Inside of macros, you have access to the context in which you are being evaluated.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>defmacro </span><span class=nv>show-env</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>into </span><span class=p>[]</span> <span class=p>(</span><span class=nb>map class </span><span class=p>(</span><span class=nb>keys </span><span class=o>&amp;</span><span class=nv>env</span><span class=p>))))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn </span><span class=nv>show-env-wrapper</span> <span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>show-env-wrapper</span> <span class=mi>10</span> <span class=mi>20</span><span class=p>)</span></span></span></code></pre></div></div><pre class=example>
 [clojure.lang.Symbol clojure.lang.Symbol]
-</pre>
-<p>
-Although, it is an extremely tricky place to be in. <code>map</code> is lazy, so let&#39;s try to return the result of the <code>map</code> operation rather than the call to <code>(into []..)</code></p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defmacro </span><span class="nv">show-env</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">map class </span><span class="p">(</span><span class="nb">keys </span><span class="o">&amp;</span><span class="nv">env</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-env-wrapper</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">show-env-wrapper</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="nb">class </span><span class="nv">clojure.lang.Compiler$CompilerException</span></span></span></code></pre></div>
-</div>
-<p>
-Nope. Did not go well.</p>
-<p>
-Let&#39;s try getting the keys out.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defmacro </span><span class="nv">show-env</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">into </span><span class="p">[]</span> <span class="p">(</span><span class="nb">keys </span><span class="o">&amp;</span><span class="nv">env</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-env-wrapper</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">show-env-wrapper</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="nb">class </span><span class="nv">clojure.lang.Compiler$CompilerException</span></span></span></code></pre></div>
-</div>
-<p>
-<strong>Wut!?</strong> The <code>keys</code> actually turn out to be the <code>vals</code>! What if we used <code>vals</code> instead of keys (non-lazy)?</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defmacro </span><span class="nv">show-env</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">into </span><span class="p">[]</span> <span class="p">(</span><span class="nb">vals </span><span class="o">&amp;</span><span class="nv">env</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-env-wrapper</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="nb">class </span><span class="nv">clojure.lang.Compiler$CompilerException</span></span></span></code></pre></div>
-</div>
-<p>
-Nope - we can&#39;t get the <code>vals</code> to escape. What are those?</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defmacro </span><span class="nv">show-env</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">into </span><span class="p">[]</span> <span class="p">(</span><span class="nb">map class </span><span class="p">(</span><span class="nb">vals </span><span class="o">&amp;</span><span class="nv">env</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-env-wrapper</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">show-env-wrapper</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">)</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">[</span><span class="nv">clojure.lang.Compiler$LocalBinding</span> <span class="nv">clojure.lang.Compiler$LocalBinding</span><span class="p">]</span></span></span></code></pre></div>
-</div>
-<p>
-Turns out - a core <code>Compiler</code> artifact - an inner class <code>LocalBinding</code>.</p>
-<p>
-The <code>keys</code> are <code>Symbol</code> objects. Printing them gets us the values <strong>held</strong> in them. Ok, we can get all we want from the keys.
-Here&#39;s the culmination (final version of <code>show-env</code> via @codesmith on the <a href="https://clojurians.slack.com/">Clojurians Slack</a>, which was also the inspiration for this section on <code>&amp;env</code>)</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">msync.utils</span> <span class="ss">:refer</span> <span class="ss">:all</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defmacro </span><span class="nv">show-env</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">into </span><span class="p">{}</span> <span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="nf">juxt</span> <span class="p">(</span><span class="nb">comp keyword </span><span class="nv">name</span><span class="p">)</span> <span class="nv">identity</span><span class="p">)</span> <span class="p">(</span><span class="nb">keys </span><span class="o">&amp;</span><span class="nv">env</span><span class="p">))))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-env-wrapper</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">print-all</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="nf">show-env-wrapper</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">a-for</span> <span class="s">&#34;Apple&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">b-for</span> <span class="s">&#34;Bat&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">show-env-wrapper</span> <span class="mi">100</span> <span class="mi">200</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"> <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">a-for</span> <span class="s">&#34;Apple&#34;</span>
-</span></span><span class="line"><span class="cl">      <span class="nv">b-for</span> <span class="s">&#34;Bat&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">((</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nf">show-env</span><span class="p">))</span> <span class="mi">1000</span> <span class="mi">2000</span><span class="p">)))</span></span></span></code></pre></div>
-</div>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:x</span> <span class="mi">10</span>, <span class="ss">:y</span> <span class="mi">20</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:x</span> <span class="mi">100</span>, <span class="ss">:y</span> <span class="mi">200</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:a-for</span> <span class="nv">Apple</span>, <span class="ss">:b-for</span> <span class="nv">Bat</span>, <span class="ss">:x</span> <span class="mi">1000</span>, <span class="ss">:y</span> <span class="mi">2000</span><span class="p">}</span></span></span></code></pre></div>
-</div>
-<p>
-As you can notice above, <span style="text-decoration: underline;">macros</span> do their things at <strong>compile</strong> time. The first <code>let</code> block bindings aren&#39;t available to the <code>show-env-wrapper</code> function. The second <code>let</code> block&#39;s bindings, which uses an inline function, are available via the <code>&amp;env</code> processing.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-14" class="outline-2">
-<h2 id="headline-14">
-Java Interop
-</h2>
-<div id="outline-text-headline-14" class="outline-text-2">
-<div id="outline-container-headline-15" class="outline-3">
-<h3 id="headline-15">
-Some useful libraries
-</h3>
-<div id="outline-text-headline-15" class="outline-text-3">
-<ul>
-<li><a href="https://github.com/rschmitt/dynamic-object">Dynamic Object</a> - leverage Clojure datastructures from Java</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-16" class="outline-2">
-<h2 id="headline-16">
-Leiningen
-</h2>
-<div id="outline-text-headline-16" class="outline-text-2">
-<div id="outline-container-headline-17" class="outline-3">
-<h3 id="headline-17">
-It&#39;s macro-land, after all
-</h3>
-<div id="outline-text-headline-17" class="outline-text-3">
-<p>If you&#39;d like to declare some constants at the top of your <em>project.clj</em> for reuse within <em>defproject</em></p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="k">def </span><span class="nv">my-version</span> <span class="s">&#34;1.2.3&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defproject </span><span class="nv">org.msync/my-pet-project</span> <span class="o">~</span><span class="nv">my-version</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">;; And all your directives</span>
-</span></span><span class="line"><span class="cl">  <span class="p">)</span></span></span></code></pre></div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-18" class="outline-3">
-<h3 id="headline-18">
-The eval-reader for dynamism
-</h3>
-<div id="outline-text-headline-18" class="outline-text-3">
-<p>Some self-evident example code. Notice the use of the eval reader <em>#=</em>.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="ss">:source-paths</span> <span class="p">[</span><span class="o">#</span><span class="nv">=</span><span class="p">(</span><span class="nb">eval </span><span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">System/getProperty</span> <span class="s">&#34;user.home&#34;</span><span class="p">)</span> <span class="s">&#34;/.lein/dev-srcs&#34;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">               <span class="s">&#34;src&#34;</span><span class="p">]</span></span></span></code></pre></div>
-</div>
-<p>You can unlimit your imagination and find quite a few uses.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-19" class="outline-2">
-<h2 id="headline-19">
-Gotchas
-</h2>
-<div id="outline-text-headline-19" class="outline-text-2">
-<div id="outline-container-headline-20" class="outline-3">
-<h3 id="headline-20">
-<code>with-redefs</code>
-</h3>
-<div id="outline-text-headline-20" class="outline-text-3">
-<p><code>with-redefs</code> and <span style="text-decoration: underline;">inlined</span>-annotated vars  don&#39;t play well.</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">with-redefs</span> <span class="p">[</span><span class="nb">+ </span><span class="nv">-</span><span class="p">]</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span><span class="p">))</span></span></span></code></pre></div>
-</div>
-<pre class="example">
+</pre><p>Although, it is an extremely tricky place to be in. <code>map</code> is lazy, so let's try to return the result of the <code>map</code> operation rather than the call to <code>(into []..)</code></p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>defmacro </span><span class=nv>show-env</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>map class </span><span class=p>(</span><span class=nb>keys </span><span class=o>&amp;</span><span class=nv>env</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn </span><span class=nv>show-env-wrapper</span> <span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>show-env-wrapper</span> <span class=mi>10</span> <span class=mi>20</span><span class=p>)</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=nb>class </span><span class=nv>clojure.lang.Compiler$CompilerException</span></span></span></code></pre></div></div><p>Nope. Did not go well.</p><p>Let's try getting the keys out.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>defmacro </span><span class=nv>show-env</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>into </span><span class=p>[]</span> <span class=p>(</span><span class=nb>keys </span><span class=o>&amp;</span><span class=nv>env</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn </span><span class=nv>show-env-wrapper</span> <span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>show-env-wrapper</span> <span class=mi>10</span> <span class=mi>20</span><span class=p>)</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=nb>class </span><span class=nv>clojure.lang.Compiler$CompilerException</span></span></span></code></pre></div></div><p><strong>Wut!?</strong> The <code>keys</code> actually turn out to be the <code>vals</code>! What if we used <code>vals</code> instead of keys (non-lazy)?</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>defmacro </span><span class=nv>show-env</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>into </span><span class=p>[]</span> <span class=p>(</span><span class=nb>vals </span><span class=o>&amp;</span><span class=nv>env</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn </span><span class=nv>show-env-wrapper</span> <span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=nb>class </span><span class=nv>clojure.lang.Compiler$CompilerException</span></span></span></code></pre></div></div><p>Nope - we can't get the <code>vals</code> to escape. What are those?</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=kd>defmacro </span><span class=nv>show-env</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>into </span><span class=p>[]</span> <span class=p>(</span><span class=nb>map class </span><span class=p>(</span><span class=nb>vals </span><span class=o>&amp;</span><span class=nv>env</span><span class=p>))))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn </span><span class=nv>show-env-wrapper</span> <span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>show-env-wrapper</span> <span class=mi>10</span> <span class=mi>20</span><span class=p>)</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>[</span><span class=nv>clojure.lang.Compiler$LocalBinding</span> <span class=nv>clojure.lang.Compiler$LocalBinding</span><span class=p>]</span></span></span></code></pre></div></div><p>Turns out - a core <code>Compiler</code> artifact - an inner class <code>LocalBinding</code>.</p><p>The <code>keys</code> are <code>Symbol</code> objects. Printing them gets us the values <strong>held</strong> in them. Ok, we can get all we want from the keys.
+Here's the culmination (final version of <code>show-env</code> via @codesmith on the <a href=https://clojurians.slack.com/>Clojurians Slack</a>, which was also the inspiration for this section on <code>&amp;env</code>)</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=nf>require</span> <span class=o>&#39;</span><span class=p>[</span><span class=nv>msync.utils</span> <span class=ss>:refer</span> <span class=ss>:all</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defmacro </span><span class=nv>show-env</span> <span class=p>[]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nb>into </span><span class=p>{}</span> <span class=p>(</span><span class=nb>map </span><span class=p>(</span><span class=nf>juxt</span> <span class=p>(</span><span class=nb>comp keyword </span><span class=nv>name</span><span class=p>)</span> <span class=nv>identity</span><span class=p>)</span> <span class=p>(</span><span class=nb>keys </span><span class=o>&amp;</span><span class=nv>env</span><span class=p>))))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defn </span><span class=nv>show-env-wrapper</span> <span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nf>print-all</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=nf>show-env-wrapper</span> <span class=mi>10</span> <span class=mi>20</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=k>let </span><span class=p>[</span><span class=nv>a-for</span> <span class=s>&#34;Apple&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=nv>b-for</span> <span class=s>&#34;Bat&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>(</span><span class=nf>show-env-wrapper</span> <span class=mi>100</span> <span class=mi>200</span><span class=p>))</span>
+</span></span><span class=line><span class=cl> <span class=p>(</span><span class=k>let </span><span class=p>[</span><span class=nv>a-for</span> <span class=s>&#34;Apple&#34;</span>
+</span></span><span class=line><span class=cl>      <span class=nv>b-for</span> <span class=s>&#34;Bat&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>((</span><span class=k>fn </span><span class=p>[</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=nf>show-env</span><span class=p>))</span> <span class=mi>1000</span> <span class=mi>2000</span><span class=p>)))</span></span></span></code></pre></div></div><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>{</span><span class=ss>:x</span> <span class=mi>10</span>, <span class=ss>:y</span> <span class=mi>20</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>{</span><span class=ss>:x</span> <span class=mi>100</span>, <span class=ss>:y</span> <span class=mi>200</span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>{</span><span class=ss>:a-for</span> <span class=nv>Apple</span>, <span class=ss>:b-for</span> <span class=nv>Bat</span>, <span class=ss>:x</span> <span class=mi>1000</span>, <span class=ss>:y</span> <span class=mi>2000</span><span class=p>}</span></span></span></code></pre></div></div><p>As you can notice above, <span style=text-decoration:underline>macros</span> do their things at <strong>compile</strong> time. The first <code>let</code> block bindings aren't available to the <code>show-env-wrapper</code> function. The second <code>let</code> block's bindings, which uses an inline function, are available via the <code>&amp;env</code> processing.</p></div></div></div></div><div id=outline-container-headline-14 class=outline-2><h2 id=headline-14>Java Interop</h2><div id=outline-text-headline-14 class=outline-text-2><div id=outline-container-headline-15 class=outline-3><h3 id=headline-15>Some useful libraries</h3><div id=outline-text-headline-15 class=outline-text-3><ul><li><a href=https://github.com/rschmitt/dynamic-object>Dynamic Object</a> - leverage Clojure datastructures from Java</li></ul></div></div></div></div><div id=outline-container-headline-16 class=outline-2><h2 id=headline-16>Leiningen</h2><div id=outline-text-headline-16 class=outline-text-2><div id=outline-container-headline-17 class=outline-3><h3 id=headline-17>It's macro-land, after all</h3><div id=outline-text-headline-17 class=outline-text-3><p>If you'd like to declare some constants at the top of your <em>project.clj</em> for reuse within <em>defproject</em></p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=p>(</span><span class=k>def </span><span class=nv>my-version</span> <span class=s>&#34;1.2.3&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=kd>defproject </span><span class=nv>org.msync/my-pet-project</span> <span class=o>~</span><span class=nv>my-version</span>
+</span></span><span class=line><span class=cl>  <span class=c1>;; And all your directives</span>
+</span></span><span class=line><span class=cl>  <span class=p>)</span></span></span></code></pre></div></div></div></div><div id=outline-container-headline-18 class=outline-3><h3 id=headline-18>The eval-reader for dynamism</h3><div id=outline-text-headline-18 class=outline-text-3><p>Some self-evident example code. Notice the use of the eval reader <em>#=</em>.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl><span class=ss>:source-paths</span> <span class=p>[</span><span class=o>#</span><span class=nv>=</span><span class=p>(</span><span class=nb>eval </span><span class=p>(</span><span class=nb>str </span><span class=p>(</span><span class=nf>System/getProperty</span> <span class=s>&#34;user.home&#34;</span><span class=p>)</span> <span class=s>&#34;/.lein/dev-srcs&#34;</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>               <span class=s>&#34;src&#34;</span><span class=p>]</span></span></span></code></pre></div></div><p>You can unlimit your imagination and find quite a few uses.</p></div></div></div></div><div id=outline-container-headline-19 class=outline-2><h2 id=headline-19>Gotchas</h2><div id=outline-text-headline-19 class=outline-text-2><div id=outline-container-headline-20 class=outline-3><h3 id=headline-20><code>with-redefs</code></h3><div id=outline-text-headline-20 class=outline-text-3><p><code>with-redefs</code> and <span style=text-decoration:underline>inlined</span>-annotated vars don't play well.</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=p>(</span><span class=nf>with-redefs</span> <span class=p>[</span><span class=nb>+ </span><span class=nv>-</span><span class=p>]</span> <span class=p>(</span><span class=nb>+ </span><span class=mi>10</span> <span class=mi>20</span> <span class=mi>30</span><span class=p>))</span></span></span></code></pre></div></div><pre class=example>
 60
-</pre>
-<p>
-<code>+</code>, <code>-</code> and other functions (many math operations, among others) fall under this category. For reference, here is the source of <code>+</code> in Clojure 1.10.3</p>
-<div class="src src-clojure">
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">  <span class="p">(</span><span class="kd">defn </span><span class="nv">+</span>
-</span></span><span class="line"><span class="cl">    <span class="s">&#34;Returns the sum of nums. (+) returns 0. Does not auto-promote
-</span></span></span><span class="line"><span class="cl"><span class="s">    longs, will throw on overflow. See also: +&#39;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="ss">:inline</span> <span class="p">(</span><span class="nf">nary-inline</span> <span class="ss">&#39;add</span> <span class="ss">&#39;unchecked_add</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">     <span class="ss">:inline-arities</span> <span class="nv">&gt;1?</span>
-</span></span><span class="line"><span class="cl">     <span class="ss">:added</span> <span class="s">&#34;1.2&#34;</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">([]</span> <span class="mi">0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="p">(</span><span class="nb">cast </span><span class="nv">Number</span> <span class="nv">x</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="k">. </span><span class="nv">clojure.lang.Numbers</span> <span class="p">(</span><span class="nf">add</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">([</span><span class="nv">x</span> <span class="nv">y</span> <span class="o">&amp;</span> <span class="nv">more</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nf">reduce1</span> <span class="nb">+ </span><span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="nv">more</span><span class="p">)))</span></span></span></code></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-21" class="outline-2">
-<h2 id="headline-21">
-Monads
-</h2>
-<div id="outline-text-headline-21" class="outline-text-2">
-<p>Since no article is complete without an attempt at monads, we refer to Monads for completeness&#39; sake.</p>
-<p>
-This is only a re-run of <a href="https://github.com/leonoel/cloroutine/blob/master/doc/05-monads.md">05-monads</a>.</p>
-<p>
-Monads refer to a category of values associated with a pair of functions</p>
-<ol>
-<li><code>unit</code></li>
-<li><code>bind</code></li>
-</ol>
-<p>which have certain properties, as described below.</p>
-<p>
-First, let us introduce some terminology and symbols</p>
-<dl>
-<dt>
-<code>Category</code>
-</dt>
-<dd><strong>The</strong> category to which our monads belong.</dd>
-<dt>
-x
-</dt>
-<dd>Any value</dd>
-<dt>
-m
-</dt>
-<dd>A value belonging to the <code>Category</code></dd>
-<dt>
-f
-</dt>
-<dd>An arbitrary function, that returns a value belonging to the <code>Category</code></dd>
-<dt>
-?
-</dt>
-<dd><code>(unit x)</code> results in a value that belongs to this category, given any <code>x</code></dd>
-<dt>
-?
-</dt>
-<dd><code>(bind f m)</code> returns a value in the said category</dd>
-</dl>
-</div>
-</div>
-
-            </div>
-        </article></main>
-</div>
-
-<footer class="footer">
-    <small class="footer_copyright">
-        © 2026 Ravindra R. Jaju.
-        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
-    </small>
-</footer>
-
-
-<div class="fixed-social-icons">
-    <a href="https://github.com/jaju" target="_blank" rel="noopener noreferrer me"
-       title="GitHub" class="social-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-    <a href="https://x.com/jaju" target="_blank" rel="noopener noreferrer me"
-       title="X (Twitter)" class="social-icon">
-        <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path
-        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
-</svg>
-    </a>
-</div>
-
-
-
-
-
-    
-    
-        
-    
-
-
-
-    
-    <script async src="http://localhost:1313/js/main.js" ></script>
-
-    
-        
-        <script async src="http://localhost:1313/js/custom.js" ></script>
-    
-
-</body>
-</html>
+</pre><p><code>+</code>, <code>-</code> and other functions (many math operations, among others) fall under this category. For reference, here is the source of <code>+</code> in Clojure 1.10.3</p><div class="src src-clojure"><div class=highlight><pre tabindex=0 class=chroma><code class=language-clojure data-lang=clojure><span class=line><span class=cl>  <span class=p>(</span><span class=kd>defn </span><span class=nv>+</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;Returns the sum of nums. (+) returns 0. Does not auto-promote
+</span></span></span><span class=line><span class=cl><span class=s>    longs, will throw on overflow. See also: +&#39;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>{</span><span class=ss>:inline</span> <span class=p>(</span><span class=nf>nary-inline</span> <span class=ss>&#39;add</span> <span class=ss>&#39;unchecked_add</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>     <span class=ss>:inline-arities</span> <span class=nv>&gt;1?</span>
+</span></span><span class=line><span class=cl>     <span class=ss>:added</span> <span class=s>&#34;1.2&#34;</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>([]</span> <span class=mi>0</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>([</span><span class=nv>x</span><span class=p>]</span> <span class=p>(</span><span class=nb>cast </span><span class=nv>Number</span> <span class=nv>x</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>([</span><span class=nv>x</span> <span class=nv>y</span><span class=p>]</span> <span class=p>(</span><span class=k>. </span><span class=nv>clojure.lang.Numbers</span> <span class=p>(</span><span class=nf>add</span> <span class=nv>x</span> <span class=nv>y</span><span class=p>)))</span>
+</span></span><span class=line><span class=cl>    <span class=p>([</span><span class=nv>x</span> <span class=nv>y</span> <span class=o>&amp;</span> <span class=nv>more</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>       <span class=p>(</span><span class=nf>reduce1</span> <span class=nb>+ </span><span class=p>(</span><span class=nb>+ </span><span class=nv>x</span> <span class=nv>y</span><span class=p>)</span> <span class=nv>more</span><span class=p>)))</span></span></span></code></pre></div></div></div></div></div></div><div id=outline-container-headline-21 class=outline-2><h2 id=headline-21>Monads</h2><div id=outline-text-headline-21 class=outline-text-2><p>Since no article is complete without an attempt at monads, we refer to Monads for completeness' sake.</p><p>This is only a re-run of <a href=https://github.com/leonoel/cloroutine/blob/master/doc/05-monads.md>05-monads</a>.</p><p>Monads refer to a category of values associated with a pair of functions</p><ol><li><code>unit</code></li><li><code>bind</code></li></ol><p>which have certain properties, as described below.</p><p>First, let us introduce some terminology and symbols</p><dl><dt><code>Category</code></dt><dd><strong>The</strong> category to which our monads belong.</dd><dt>x</dt><dd>Any value</dd><dt>m</dt><dd>A value belonging to the <code>Category</code></dd><dt>f</dt><dd>An arbitrary function, that returns a value belonging to the <code>Category</code></dd><dt>?</dt><dd><code>(unit x)</code> results in a value that belongs to this category, given any <code>x</code></dd><dt>?</dt><dd><code>(bind f m)</code> returns a value in the said category</dd></dl></div></div></div></article></main></div><footer class=footer><small class=footer_copyright>© 2026 Ravindra R. Jaju.
+Powered by <a href=https://github.com/hugo-sid/hugo-blog-awesome target=_blank rel=noopener>Hugo blog awesome</a>.</small></footer><div class=fixed-social-icons><a href=https://github.com/jaju target=_blank rel="noopener noreferrer me" title=GitHub class=social-icon><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href=https://x.com/jaju target=_blank rel="noopener noreferrer me" title="X (Twitter)" class=social-icon><svg viewBox="0 0 1200 1227" fill="currentColor"><path d="M714.163 519.284 1160.89.0H1055.03L667.137 450.887 357.328.0H0L468.492 681.821.0 1226.37H105.866L515.491 750.218 842.672 1226.37H12e2L714.137 519.284H714.163zM569.165 687.828l-47.468-67.894L144.011 79.6944H306.615L611.412 515.685l47.468 67.894 396.2 566.721H892.476L569.165 687.854V687.828z"/></svg></a></div><script src=https://msync.org/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script><script src=https://msync.org/js/custom.min.ce76cc231156f4a0a0a8dd045fb3a4712eae135f4a7178b6f24efd3223aa3faa.js integrity="sha256-znbMIxFW9KCgqN0EX7OkcS6uE19KcXi28k79MiOqP6o="></script></body></html>

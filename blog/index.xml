@@ -1,109 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Blog on M&#39;Sync</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Blog on M&#39;Sync</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 15 Feb 2026 09:00:00 +0530</lastBuildDate><atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Qwen 3 ASR vs Voxtral Mini Realtime</title>
-      <link>http://localhost:1313/blog/2026/2026-02-15-qwen-3-asr-vs-voxtral-mini-realtime/</link>
-      <pubDate>Sun, 15 Feb 2026 09:00:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2026/2026-02-15-qwen-3-asr-vs-voxtral-mini-realtime/</guid>
-      
-      <description>&lt;h1 id=&#34;two-ways-a-machine-can-listen-qwen3-asr-vs-voxtral-realtime&#34;&gt;Two Ways a Machine Can Listen: Qwen3-ASR vs Voxtral Realtime&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog on M'Sync</title><link>https://msync.org/blog/</link><description>Recent content in Blog on M'Sync</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 21 Feb 2026 09:00:00 +0530</lastBuildDate><atom:link href="https://msync.org/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Feeback is Trust</title><link>https://msync.org/blog/2026/2026-02-21-feeback-is-trust/</link><pubDate>Sat, 21 Feb 2026 09:00:00 +0530</pubDate><guid>https://msync.org/blog/2026/2026-02-21-feeback-is-trust/</guid><description>&lt;h1 id="feedback-is-trust-what-were-learning-while-designing-citra-voice"&gt;Feedback Is Trust: What We’re Learning While Designing Citra Voice&lt;/h1&gt;
+&lt;p&gt;There is a stage every product hits where the architecture is strong, the features work, and the experience still feels unfinished. That is where Citra Voice is right now, and it has taught us something important:&lt;/p&gt;
+&lt;p&gt;A technically correct system can still feel untrustworthy if the interface doesn’t make system state legible to humans.&lt;/p&gt;
+&lt;p&gt;One line from UX review captured this perfectly:&lt;/p&gt;</description></item><item><title>Qwen 3 ASR vs Voxtral Mini Realtime</title><link>https://msync.org/blog/2026/2026-02-15-qwen-3-asr-vs-voxtral-mini-realtime/</link><pubDate>Sun, 15 Feb 2026 09:00:00 +0530</pubDate><guid>https://msync.org/blog/2026/2026-02-15-qwen-3-asr-vs-voxtral-mini-realtime/</guid><description>&lt;h1 id="two-ways-a-machine-can-listen-qwen3-asr-vs-voxtral-realtime"&gt;Two Ways a Machine Can Listen: Qwen3-ASR vs Voxtral Realtime&lt;/h1&gt;
 &lt;p&gt;&lt;em&gt;A detailed, source-checked architectural comparison of two speech-to-text systems — one centered on segment-style decoding, one designed for native realtime decoding.&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;1-why-this-comparison-matters&#34;&gt;1. Why This Comparison Matters&lt;/h2&gt;
+&lt;h2 id="1-why-this-comparison-matters"&gt;1. Why This Comparison Matters&lt;/h2&gt;
 &lt;p&gt;This article compares two open ASR systems that target similar use cases but are architecturally very different:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Qwen3-ASR-0.6B&lt;/strong&gt; (Qwen)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Voxtral-Mini-4B-Realtime-2602&lt;/strong&gt; (Mistral)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Both convert speech to text. Both target practical deployment. But their core inference loops and runtime assumptions are not the same.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Whisper and STT on Apple Silicon</title>
-      <link>http://localhost:1313/blog/2025/2025-09-24-whisper-on-apple-silicon/</link>
-      <pubDate>Wed, 24 Sep 2025 09:00:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2025/2025-09-24-whisper-on-apple-silicon/</guid>
-      
-      <description>&lt;h1 id=&#34;whisper-notes-from-my-mac-september2025&#34;&gt;Whisper Notes from My Mac (September 2025)&lt;/h1&gt;
-&lt;p&gt;I spent the past few days gluing together a speech‑to‑text workflow on my Apple Silicon MacBook (macOS 26.0, Python 3.12). Most of what follows is a log of what actually happened: which warnings popped up, how I worked around them, and why I eventually leaned on whisper.cpp. I’m keeping this grounded so I (or anyone else) can repeat the steps later without guesswork.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>The Fallacy of the Full-stackist</title>
-      <link>http://localhost:1313/blog/2020/2020-01-04-the-fallacy-of-the-full-stack/</link>
-      <pubDate>Sat, 04 Jan 2020 16:54:50 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2020/2020-01-04-the-fallacy-of-the-full-stack/</guid>
-      
-      <description>The distinction between being a full-stack developer and the perception of being one can be big.</description>
-      
-    </item>
-    
-    <item>
-      <title>Useful Clojure Asides - Logging and Exceptions</title>
-      <link>http://localhost:1313/blog/2015/2015-06-08-clojure-useful-asides/</link>
-      <pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/2015-06-08-clojure-useful-asides/</guid>
-      
-      <description>It&amp;#39;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description>
-      
-    </item>
-    
-    <item>
-      <title>Interesting Java in clojure.core</title>
-      <link>http://localhost:1313/blog/2015/2015-05-16-interesting-java-in-clojure-core/</link>
-      <pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/2015-05-16-interesting-java-in-clojure-core/</guid>
-      
-      <description>Some neat Java ideas from the Clojure core</description>
-      
-    </item>
-    
-    <item>
-      <title>Developing Chrome Extensions using Clojurescript</title>
-      <link>http://localhost:1313/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</link>
-      <pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid>
-      
-      <description>How you may set up your clojurescript project for developing chrome extensions - an example</description>
-      
-    </item>
-    
-    <item>
-      <title>On The &#39;Decay&#39; Of Small Organizations into Large Organizations</title>
-      <link>http://localhost:1313/blog/2015/2015-04-01-large-and-small-organizations/</link>
-      <pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/2015-04-01-large-and-small-organizations/</guid>
-      
-      <description>Some observations on challenges in managing quality and talent in organizations of different sizes.</description>
-      
-    </item>
-    
-    <item>
-      <title>Welcome to the All New M&#39;Sync Blog</title>
-      <link>http://localhost:1313/blog/2015/2015-03-31-welcome/</link>
-      <pubDate>Tue, 31 Mar 2015 20:45:00 +0530</pubDate>
-      
-      <guid>http://localhost:1313/blog/2015/2015-03-31-welcome/</guid>
-      
-      <description>Mandatory introductory post.</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;Both convert speech to text. Both target practical deployment. But their core inference loops and runtime assumptions are not the same.&lt;/p&gt;</description></item><item><title>Whisper and STT on Apple Silicon</title><link>https://msync.org/blog/2025/2025-09-24-whisper-on-apple-silicon/</link><pubDate>Wed, 24 Sep 2025 09:00:00 +0530</pubDate><guid>https://msync.org/blog/2025/2025-09-24-whisper-on-apple-silicon/</guid><description>&lt;h1 id="whisper-notes-from-my-mac-september2025"&gt;Whisper Notes from My Mac (September 2025)&lt;/h1&gt;
+&lt;p&gt;I spent the past few days gluing together a speech‑to‑text workflow on my Apple Silicon MacBook (macOS 26.0, Python 3.12). Most of what follows is a log of what actually happened: which warnings popped up, how I worked around them, and why I eventually leaned on whisper.cpp. I’m keeping this grounded so I (or anyone else) can repeat the steps later without guesswork.&lt;/p&gt;</description></item><item><title>The Fallacy of the Full-stackist</title><link>https://msync.org/blog/2020/2020-01-04-the-fallacy-of-the-full-stack/</link><pubDate>Sat, 04 Jan 2020 16:54:50 +0530</pubDate><guid>https://msync.org/blog/2020/2020-01-04-the-fallacy-of-the-full-stack/</guid><description>The distinction between being a full-stack developer and the perception of being one can be big.</description></item><item><title>Useful Clojure Asides - Logging and Exceptions</title><link>https://msync.org/blog/2015/2015-06-08-clojure-useful-asides/</link><pubDate>Mon, 08 Jun 2015 22:20:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-06-08-clojure-useful-asides/</guid><description>It&amp;#39;s always useful to have some nice logging when writing code. Simple logging and exception handling samples to make it a bit easier for the developer.</description></item><item><title>Interesting Java in clojure.core</title><link>https://msync.org/blog/2015/2015-05-16-interesting-java-in-clojure-core/</link><pubDate>Fri, 15 May 2015 22:11:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-05-16-interesting-java-in-clojure-core/</guid><description>Some neat Java ideas from the Clojure core</description></item><item><title>Developing Chrome Extensions using Clojurescript</title><link>https://msync.org/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</link><pubDate>Sun, 05 Apr 2015 14:55:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-04-05-chrome-extensions-and-clojurescript/</guid><description>How you may set up your clojurescript project for developing chrome extensions - an example</description></item><item><title>On The 'Decay' Of Small Organizations into Large Organizations</title><link>https://msync.org/blog/2015/2015-04-01-large-and-small-organizations/</link><pubDate>Wed, 01 Apr 2015 14:38:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-04-01-large-and-small-organizations/</guid><description>Some observations on challenges in managing quality and talent in organizations of different sizes.</description></item><item><title>Welcome to the All New M'Sync Blog</title><link>https://msync.org/blog/2015/2015-03-31-welcome/</link><pubDate>Tue, 31 Mar 2015 20:45:00 +0530</pubDate><guid>https://msync.org/blog/2015/2015-03-31-welcome/</guid><description>Mandatory introductory post.</description></item></channel></rss>
