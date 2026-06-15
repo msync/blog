@@ -1,0 +1,8 @@
+{
+  "schema": "rasa.preview.static.v1",
+  "name": "Rasa Browser Preview",
+  "mode": "static-browser-wasm",
+  "engine": "./engine.wasm",
+  "pages": ["./index.html", "./article.html"],
+  "examples": "./examples.json"
+}
